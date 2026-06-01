@@ -31,6 +31,11 @@ export function Contact() {
   };
 
   const handleCopy = (e: React.MouseEvent) => {
+    // On mobile/tablet, let the native mailto: link open the default email app
+    if (typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches) {
+      return;
+    }
+
     e.preventDefault();
     if (navigator.clipboard && window.isSecureContext) {
       navigator.clipboard.writeText("binjobiz@gmail.com").catch(() => fallbackCopy("binjobiz@gmail.com"));
@@ -54,12 +59,13 @@ export function Contact() {
         style={{ position: "relative", zIndex: 2 }}
       >
         <div className="flex flex-col items-center gap-[var(--space-8xl)] max-w-[621px]">
-          <button
+          <a
+            href="mailto:binjobiz@gmail.com"
             onClick={handleCopy}
             className="bigcta group flex flex-col items-center gap-[var(--space-lg)] relative z-[2] cursor-pointer"
           >
-            {/* Tooltip */}
-            <div className="absolute -top-[54px] left-1/2 -translate-x-1/2 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none flex items-center justify-center bg-[var(--color-surface)] border border-[var(--color-border-strong)] rounded-[30px] px-4 py-2 shadow-lg z-10">
+            {/* Tooltip (hidden on mobile) */}
+            <div className="absolute -top-[54px] left-1/2 -translate-x-1/2 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none hidden md:flex items-center justify-center bg-[var(--color-surface)] border border-[var(--color-border-strong)] rounded-[30px] px-4 py-2 shadow-lg z-10">
               <span className="ts-pills-label text-[var(--color-text-primary)] whitespace-nowrap">
                 {copied ? "Copied to clipboard!" : "Copy binjobiz@gmail.com"}
               </span>
@@ -77,7 +83,7 @@ export function Contact() {
                 </svg>
               </span>
             </div>
-          </button>
+          </a>
 
           <p className="ts-body text-[var(--color-text-muted)] text-center max-w-[520px] relative z-[2]">
             I&apos;m most energized by 0→1 products where I can own the loop from interface
@@ -89,19 +95,20 @@ export function Contact() {
         <div className="links flex gap-[var(--space-6xl)] justify-center flex-wrap relative z-[2]">
           {links.map(({ href, label }) => (
             label === "Email" ? (
-              <button
+              <a
                 key={label}
+                href="mailto:binjobiz@gmail.com"
                 onClick={handleCopy}
                 className="ts-colophon text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors duration-[250ms] cursor-pointer relative group"
               >
                 {label}
-                {/* Small Tooltip for Footer Email */}
-                <div className="absolute -top-[36px] left-1/2 -translate-x-1/2 opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none flex items-center justify-center bg-[var(--color-surface)] border border-[var(--color-border-strong)] rounded-[30px] px-3 py-1 shadow-md z-10">
+                {/* Small Tooltip for Footer Email (hidden on mobile) */}
+                <div className="absolute -top-[36px] left-1/2 -translate-x-1/2 opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none hidden md:flex items-center justify-center bg-[var(--color-surface)] border border-[var(--color-border-strong)] rounded-[30px] px-3 py-1 shadow-md z-10">
                   <span className="ts-pills-label text-[var(--color-text-primary)] whitespace-nowrap text-[10px]">
                     {copied ? "Copied!" : "Copy Email"}
                   </span>
                 </div>
-              </button>
+              </a>
             ) : (
               <a
                 key={label}
