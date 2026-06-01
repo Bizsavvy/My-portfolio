@@ -1,0 +1,197 @@
+{
+  "schema": "1.0.0",
+  "screen": "desktop",
+  "section": "about",
+  "width": 1440,
+  "height": 476,
+  "layout": {
+    "direction": "horizontal",
+    "padding": { "top": 88, "right": 64, "bottom": 88, "left": 64 },
+    "justifyContent": "space-between"
+  },
+  "style": {
+    "borderTop": { "width": 1, "color": "color-border" }
+  },
+  "children": [
+    {
+      "id": "31:3",
+      "name": "AboutL",
+      "kind": "container",
+      "responsive": { "width": "hug", "height": "hug" },
+      "layout": {
+        "direction": "vertical",
+        "gap": "spacing-5xl"
+      },
+      "children": [
+        {
+          "id": "31:4", "name": "what's up", "kind": "text",
+          "content": "what's up",
+          "typography": "mono-label", "color": "color-accent",
+          "textAlign": "left",
+          "signals": { "nonInteractive": true }
+        },
+        {
+          "id": "31:5", "name": "tagline", "kind": "text",
+          "content": "I'm a design engineer who doesn't stop at the mockup. I take vague problems, design them, and ship them to working code — owning the loop from interface to infrastructure.",
+          "typography": "body-about", "color": "color-text-primary",
+          "textAlign": "left",
+          "signals": { "nonInteractive": true }
+        },
+        {
+          "id": "31:6", "name": "subtitle", "kind": "text",
+          "content": "I've built deep product expertise in Nigerian and African markets, and I work with ambitious teams anywhere — remotely and across borders.",
+          "typography": "body-default", "color": "color-text-muted",
+          "textAlign": "left",
+          "signals": { "nonInteractive": true }
+        },
+        {
+          "id": "31:7", "name": "Skills", "kind": "container",
+          "responsive": { "width": "hug" },
+          "layout": { "direction": "horizontal", "gap": "spacing-md", "wrap": true },
+          "signals": { "nonInteractive": true },
+          "children": [
+            {
+              "id": "skill-product-design", "name": "Product Design", "kind": "pill",
+              "layout": { "direction": "horizontal", "padding": { "top": 10, "right": 16, "bottom": 10, "left": 16 } },
+              "style": { "borderColor": "color-border-strong", "borderWidth": 1, "borderRadius": "radius-30" },
+              "text": { "content": "Product Design", "typography": "mono-pills-label", "color": "color-text-secondary" },
+              "signals": { "nonInteractive": true }
+            },
+            {
+              "id": "skill-frontend-engineering", "name": "Front-end Engineering", "kind": "pill",
+              "layout": { "direction": "horizontal", "padding": { "top": 10, "right": 16, "bottom": 10, "left": 16 } },
+              "style": { "borderColor": "color-border-strong", "borderWidth": 1, "borderRadius": "radius-30" },
+              "text": { "content": "Front-end Engineering", "typography": "mono-pills-label", "color": "color-text-secondary" },
+              "signals": { "nonInteractive": true }
+            },
+            {
+              "id": "skill-design-systems", "name": "Design Systems", "kind": "pill",
+              "layout": { "direction": "horizontal", "padding": { "top": 10, "right": 16, "bottom": 10, "left": 16 } },
+              "style": { "borderColor": "color-border-strong", "borderWidth": 1, "borderRadius": "radius-30" },
+              "text": { "content": "Design Systems", "typography": "mono-pills-label", "color": "color-text-secondary" },
+              "signals": { "nonInteractive": true }
+            },
+            {
+              "id": "skill-prototyping", "name": "Prototyping", "kind": "pill",
+              "layout": { "direction": "horizontal", "padding": { "top": 10, "right": 16, "bottom": 10, "left": 16 } },
+              "style": { "borderColor": "color-border-strong", "borderWidth": 1, "borderRadius": "radius-30" },
+              "text": { "content": "Prototyping", "typography": "mono-pills-label", "color": "color-text-secondary" },
+              "signals": { "nonInteractive": true }
+            },
+            {
+              "id": "skill-user-research", "name": "User Research", "kind": "pill",
+              "layout": { "direction": "horizontal", "padding": { "top": 10, "right": 16, "bottom": 10, "left": 16 } },
+              "style": { "borderColor": "color-border-strong", "borderWidth": 1, "borderRadius": "radius-30" },
+              "text": { "content": "User Research", "typography": "mono-pills-label", "color": "color-text-secondary" },
+              "signals": { "nonInteractive": true }
+            },
+            {
+              "id": "skill-motion", "name": "Motion", "kind": "pill",
+              "layout": { "direction": "horizontal", "padding": { "top": 10, "right": 16, "bottom": 10, "left": 16 } },
+              "style": { "borderColor": "color-border-strong", "borderWidth": 1, "borderRadius": "radius-30" },
+              "text": { "content": "Motion", "typography": "mono-pills-label", "color": "color-text-secondary" },
+              "signals": { "nonInteractive": true }
+            }
+          ]
+        }
+      ],
+      "signals": { "nonInteractive": true }
+    },
+    {
+      "id": "31:20", "name": "Nowcard", "kind": "card",
+      "width": 360,
+      "layout": {
+        "direction": "vertical",
+        "gap": "spacing-3xl",
+        "padding": 28
+      },
+      "style": {
+        "background": "color-surface",
+        "borderColor": "color-border",
+        "borderWidth": 1,
+        "borderRadius": "radius-18"
+      },
+      "signals": { "nonInteractive": true },
+      "children": [
+        {
+          "id": "31:21", "name": "NcHeading", "kind": "container",
+          "responsive": { "width": "hug", "height": "hug" },
+          "layout": { "direction": "horizontal", "gap": "spacing-sm", "alignItems": "center" },
+          "signals": { "nonInteractive": true },
+          "children": [
+            {
+              "id": "31:22", "name": "Element", "kind": "decorative",
+              "width": 8, "height": 8,
+              "style": { "background": "color-accent", "borderRadius": "radius-xs" },
+              "signals": { "nonInteractive": true }
+            },
+            {
+              "id": "31:23", "name": "CURRENTLY", "kind": "text",
+              "content": "Currently",
+              "typography": "mono-label", "color": "color-text-muted",
+              "signals": { "nonInteractive": true }
+            }
+          ]
+        },
+        {
+          "id": "36:560", "name": "Nowrows", "kind": "container",
+          "responsive": { "height": "hug" },
+          "layout": { "direction": "vertical" },
+          "signals": { "nonInteractive": true },
+          "children": [
+            {
+              "id": "nowrow-building", "name": "Nowrow: Building", "kind": "row",
+              "layout": { "direction": "horizontal", "padding": { "top": 13, "right": 0, "bottom": 13, "left": 0 }, "justifyContent": "space-between" },
+              "style": { "borderBottom": { "width": 1, "color": "color-border" } },
+              "signals": { "nonInteractive": true },
+              "children": [
+                { "kind": "text", "content": "Building", "typography": "body-caption", "color": "color-text-muted" },
+                { "kind": "text", "content": "Shappay — wallet-first QR", "typography": "body-caption-medium", "color": "color-text-primary" }
+              ]
+            },
+            {
+              "id": "nowrow-shipping", "name": "Nowrow: Shipping", "kind": "row",
+              "layout": { "direction": "horizontal", "padding": { "top": 13, "right": 0, "bottom": 13, "left": 0 }, "justifyContent": "space-between" },
+              "style": { "borderBottom": { "width": 1, "color": "color-border" } },
+              "signals": { "nonInteractive": true },
+              "children": [
+                { "kind": "text", "content": "Shipping", "typography": "body-caption", "color": "color-text-muted" },
+                { "kind": "text", "content": "UI to JSON · 170+ users", "typography": "body-caption-medium", "color": "color-text-primary" }
+              ]
+            },
+            {
+              "id": "nowrow-based-in", "name": "Nowrow: Based in", "kind": "row",
+              "layout": { "direction": "horizontal", "padding": { "top": 13, "right": 0, "bottom": 13, "left": 0 }, "justifyContent": "space-between" },
+              "style": { "borderBottom": { "width": 1, "color": "color-border" } },
+              "signals": { "nonInteractive": true },
+              "children": [
+                { "kind": "text", "content": "Based in", "typography": "body-caption", "color": "color-text-muted" },
+                { "kind": "text", "content": "Abuja, NG · remote-friendly", "typography": "body-caption-medium", "color": "color-text-primary" }
+              ]
+            },
+            {
+              "id": "nowrow-open-to", "name": "Nowrow: Open to", "kind": "row",
+              "layout": { "direction": "horizontal", "padding": { "top": 13, "right": 0, "bottom": 13, "left": 0 }, "justifyContent": "space-between" },
+              "signals": { "nonInteractive": true },
+              "children": [
+                { "kind": "text", "content": "Open to", "typography": "body-caption", "color": "color-text-muted" },
+                { "kind": "text", "content": "Roles · contract · worldwide", "typography": "body-caption-medium", "color": "color-text-primary" }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "interpreted": {
+    "visualEffects": [],
+    "notes": [
+      "Root: horizontal two-column layout (AboutL + Nowcard) with space-between",
+      "AboutL: vertical stack — eyebrow label, statement body, muted subtitle, wrapped skill pills",
+      "Nowcard: card with heading row (accent dot + 'Currently') and 4 key-value rows with bottom borders",
+      "All nodes nonInteractive — informational display only",
+      "Accent color is lime (#C7F94B) matching project's --color-accent",
+      "Spacing-5xl (24px) → var(--space-5xl), spacing-md (10px) → var(--space-md), etc."
+    ]
+  }
+}

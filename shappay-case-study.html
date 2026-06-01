@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shappay — Case Study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Pixelify+Sans:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<style>
+  :root{
+    --ink:#0C0C0A;
+    --surface:#15150F;
+    --surface-2:#1C1C14;
+    --paper:#EFEBE0;
+    --accent:#38BDF8;
+    --accent-dim:rgba(56,189,248,.14);
+    --text:#ECEAE0;
+    --muted:#8C8B7E;
+    --line:rgba(236,234,224,.11);
+    --line-strong:rgba(236,234,224,.2);
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ink);
+    color:var(--text);
+    font-family:"Hanken Grotesk",system-ui,sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:1;
+    background:radial-gradient(120% 80% at 80% -10%, rgba(56,189,248,.06), transparent 55%);
+  }
+  ::selection{background:var(--accent);color:var(--ink)}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+
+  /* scroll progress */
+  .progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--accent);z-index:50;transition:width .08s linear}
+
+  /* nav */
+  nav{position:relative;z-index:5;padding:26px 0;font-family:"JetBrains Mono",monospace;font-size:12.5px;letter-spacing:.04em}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center}
+  nav .crumb{color:var(--muted)}
+  nav .crumb b{color:var(--text);font-weight:500}
+  nav .status{display:flex;align-items:center;gap:8px;color:var(--muted)}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 var(--accent);animation:pulse 2.4s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(56,189,248,.5)}70%{box-shadow:0 0 0 7px rgba(56,189,248,0)}100%{box-shadow:0 0 0 0 rgba(56,189,248,0)}}
+
+  /* hero */
+  header.hero{position:relative;z-index:5;padding:64px 0 80px;overflow:hidden}
+  .eyebrow{font-family:"JetBrains Mono",monospace;font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:26px}
+  h1{
+    font-family:"Pixelify Sans",sans-serif;
+    font-weight:700;
+    font-size:clamp(56px,11vw,148px);
+    line-height:.95;
+    letter-spacing:.02em;
+    margin-bottom:28px;
+  }
+  h1 .scanwrap{position:relative;display:inline-block}
+  h1 .beam{position:absolute;left:-4%;width:108%;height:5px;background:var(--accent);top:50%;box-shadow:0 0 22px 2px var(--accent);transform:scaleX(0);transform-origin:left;opacity:0}
+  .lede{font-family:"Hanken Grotesk",sans-serif;font-weight:400;font-size:clamp(20px,3vw,32px);line-height:1.35;max-width:20ch;color:var(--text);letter-spacing:-.02em}
+  .lede em{font-style:italic;color:var(--accent)}
+  .meta{margin-top:54px;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .meta div{background:var(--ink);padding:18px 20px}
+  .meta dt{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+  .meta dd{font-size:15.5px;font-weight:500}
+
+  /* animation primitives */
+  /* GSAP owns reveal state — no CSS opacity needed */
+
+  /* sections */
+  section{position:relative;z-index:5;padding:62px 0;border-top:1px solid var(--line)}
+  .kicker{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;display:flex;align-items:center;gap:12px}
+  .kicker::before{content:"";width:26px;height:1px;background:var(--accent);display:inline-block}
+  h2{font-family:"Hanken Grotesk",sans-serif;font-weight:700;font-size:clamp(28px,4.5vw,48px);line-height:1.06;letter-spacing:-.02em;margin-bottom:26px;max-width:20ch}
+  h3{font-family:"Hanken Grotesk",sans-serif;font-weight:700;font-size:22px;letter-spacing:-.01em;margin-bottom:10px}
+  p{color:#D6D4C9;max-width:62ch;margin-bottom:20px}
+  p.big{font-family:"Hanken Grotesk",sans-serif;font-size:20px;line-height:1.58;color:var(--text);max-width:48ch;letter-spacing:-.01em}
+  strong{color:var(--text);font-weight:600}
+  .accent-text{color:var(--accent)}
+
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+  @media(max-width:760px){.two{grid-template-columns:1fr;gap:28px}}
+
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:30px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;transition:border-color .3s,transform .3s,background .3s}
+  .card:hover{border-color:var(--line-strong);transform:translateY(-3px);background:var(--surface-2)}
+  .card .num{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--accent);margin-bottom:14px}
+  .card p{font-size:15px;margin-bottom:0;color:var(--muted)}
+
+  /* demo */
+  .demo{background:var(--surface);border:1px solid var(--line-strong);border-radius:20px;overflow:hidden;margin-top:36px}
+  .demo-head{padding:20px 26px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .demo-head .label{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .demo-head .live{display:flex;align-items:center;gap:8px;font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--accent);letter-spacing:.1em}
+  .demo-grid{display:grid;grid-template-columns:1.1fr 1fr}
+  @media(max-width:820px){.demo-grid{grid-template-columns:1fr}}
+  .demo-left{padding:30px 26px;border-right:1px solid var(--line)}
+  @media(max-width:820px){.demo-left{border-right:none;border-bottom:1px solid var(--line)}}
+  .field{margin-bottom:22px}
+  .field label{display:block;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:9px}
+  .field input{width:100%;background:var(--ink);border:1px solid var(--line-strong);color:var(--text);font-family:"JetBrains Mono",monospace;font-size:15px;padding:13px 14px;border-radius:10px;outline:none;transition:border-color .25s,box-shadow .25s}
+  .field input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-dim)}
+  .field input:disabled{opacity:.4;cursor:not-allowed}
+  .field .hint{font-size:12.5px;color:var(--muted);margin-top:8px;font-family:"Hanken Grotesk"}
+  .toggle{display:inline-flex;background:var(--ink);border:1px solid var(--line-strong);border-radius:10px;padding:4px;gap:4px}
+  .toggle button{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.06em;padding:9px 16px;border:none;background:transparent;color:var(--muted);border-radius:7px;cursor:pointer;transition:.25s}
+  .toggle button.on{background:var(--accent);color:var(--ink);font-weight:600}
+
+  .demo-right{padding:30px 26px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start}
+  .qr-card{position:relative;background:var(--paper);border-radius:16px;padding:18px;line-height:0;box-shadow:0 20px 60px -20px rgba(0,0,0,.6);overflow:hidden}
+  .qr-card canvas{display:block;border-radius:4px}
+  .qr-card .scanline{position:absolute;left:0;width:100%;height:36px;top:0;background:linear-gradient(180deg,transparent,rgba(56,189,248,.55),transparent);opacity:0;pointer-events:none}
+  .qr-card.scanning .scanline{animation:scan 1.1s cubic-bezier(.4,0,.2,1)}
+  @keyframes scan{0%{top:-36px;opacity:1}100%{top:100%;opacity:1}}
+  .qr-fallback{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--ink);padding:90px 20px;text-align:center;line-height:1.5}
+  .qr-caption{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted);margin-top:18px;text-align:center;letter-spacing:.05em;max-width:30ch}
+
+  .payload-block{margin-top:8px;background:var(--ink);border-top:1px solid var(--line)}
+  .payload-head{padding:16px 26px 6px;display:flex;justify-content:space-between;align-items:center}
+  .payload-head .t{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .copybtn{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--accent);background:transparent;border:1px solid var(--line-strong);border-radius:7px;padding:6px 12px;cursor:pointer;transition:.25s}
+  .copybtn:hover{border-color:var(--accent);background:var(--accent-dim)}
+  .raw{font-family:"JetBrains Mono",monospace;font-size:13px;line-height:1.9;color:var(--muted);padding:6px 26px 22px;word-break:break-all}
+  .raw .crc{color:var(--accent);font-weight:600}
+
+  .tlv-table{width:100%;border-collapse:collapse;font-family:"JetBrains Mono",monospace;font-size:12.5px}
+  .tlv-table th{text-align:left;color:var(--muted);font-weight:500;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;padding:0 26px 12px;border-bottom:1px solid var(--line)}
+  .tlv-table td{padding:11px 26px;border-bottom:1px solid var(--line);vertical-align:top}
+  .tlv-table tr:last-child td{border-bottom:none}
+  .tlv-table .tag{color:var(--accent);width:48px}
+  .tlv-table .name{color:#D6D4C9}
+  .tlv-table .val{color:var(--muted);word-break:break-all}
+  .tlv-row{animation:rowin .45s both}
+  @keyframes rowin{from{opacity:0;transform:translateX(-6px)}to{opacity:1;transform:none}}
+
+  /* architecture */
+  .arch{margin-top:34px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  @media(max-width:760px){.arch{grid-template-columns:1fr}}
+  .arch .node{padding:26px 22px;border-right:1px solid var(--line);background:var(--surface);position:relative}
+  .arch .node:last-child{border-right:none}
+  @media(max-width:760px){.arch .node{border-right:none;border-bottom:1px solid var(--line)}.arch .node:last-child{border-bottom:none}}
+  .arch .node .ix{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--accent);margin-bottom:14px}
+  .arch .node h4{font-family:"Hanken Grotesk",sans-serif;font-weight:700;font-size:18px;letter-spacing:-.01em;margin-bottom:8px}
+  .arch .node p{font-size:13.5px;color:var(--muted);margin:0}
+  .arch-note{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--muted);margin-top:18px;text-align:center;letter-spacing:.04em}
+
+  .flows{margin-top:42px;display:flex;flex-direction:column;gap:14px}
+  .flow{border:1px solid var(--line);border-radius:14px;padding:18px 22px;background:var(--surface)}
+  .flow.after{border-color:rgba(56,189,248,.28)}
+  .flow-tag{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:14px}
+  .flow.after .flow-tag{color:var(--accent)}
+  .flow .chips{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
+  .flow .chips span{font-family:"JetBrains Mono",monospace;font-size:13px;padding:8px 14px;border:1px solid var(--line-strong);border-radius:8px;color:var(--muted)}
+  .flow.before .chips span{opacity:.6}
+  .flow.after .chips span{color:var(--text);border-color:rgba(56,189,248,.32)}
+  .flow .chips i{font-style:normal;color:var(--muted);font-family:"JetBrains Mono",monospace;font-size:12px}
+
+  /* roadmap */
+  .road{margin-top:30px;display:flex;flex-direction:column}
+  .road-item{display:grid;grid-template-columns:120px 1fr;gap:24px;padding:22px 0;border-bottom:1px solid var(--line);align-items:baseline}
+  @media(max-width:600px){.road-item{grid-template-columns:1fr;gap:6px}}
+  .road-item .phase{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--accent);letter-spacing:.06em}
+  .road-item h4{font-family:"Hanken Grotesk",sans-serif;font-weight:700;font-size:20px;letter-spacing:-.01em;margin-bottom:6px}
+  .road-item p{font-size:14.5px;color:var(--muted);margin:0;max-width:60ch}
+  .tag-ship{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:20px;border:1px solid var(--line-strong);color:var(--muted);margin-left:10px;vertical-align:middle}
+  .tag-ship.now{color:var(--accent);border-color:var(--accent)}
+
+  blockquote{font-family:"Hanken Grotesk",sans-serif;font-style:italic;font-weight:400;font-size:clamp(22px,3.6vw,36px);line-height:1.28;letter-spacing:-.01em;color:var(--text);max-width:24ch;margin:10px 0}
+  blockquote .accent-text{font-style:normal}
+
+  /* footer */
+  footer{position:relative;z-index:5;border-top:1px solid var(--line);padding:70px 0 90px}
+  .next{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px}
+  .next .lbl{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+  .next a.big-link{font-family:"Hanken Grotesk",sans-serif;font-weight:700;font-size:clamp(32px,5.5vw,62px);letter-spacing:-.02em;line-height:1;color:var(--text);transition:color .3s}
+  .next a.big-link:hover{color:var(--accent)}
+  .next a.big-link .arrow{display:inline-block;transition:transform .3s}
+  .next a.big-link:hover .arrow{transform:translateX(8px)}
+  .colophon{margin-top:60px;font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--muted);letter-spacing:.04em;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<nav>
+  <div class="wrap">
+    <div class="crumb">Work&nbsp;&nbsp;/&nbsp;&nbsp;<b>Shappay</b></div>
+    <div class="status"><span class="dot"></span> In development · MVP</div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow reveal">Consumer fintech · QR payments · Nigeria</div>
+    <h1><span class="scanwrap">Shappay<span class="beam" id="beam"></span></span></h1>
+    <p class="lede reveal">A <em>QR-driven payment resolution engine</em> that selects the correct financial rail — wallet, bank, or external network — based on merchant and user preferences.</p>
+    <dl class="meta reveal">
+      <div><dt>Role</dt><dd>Design Engineer</dd></div>
+      <div><dt>Scope</dt><dd>Product design → front-end</dd></div>
+      <div><dt>Model</dt><dd>Wallet-first QR</dd></div>
+      <div><dt>Rails</dt><dd>NIBSS NQR · EMVCo</dd></div>
+      <div><dt>Platform</dt><dd>React Native · Mobile</dd></div>
+      <div><dt>Year</dt><dd>2025 — present</dd></div>
+    </dl>
+  </div>
+</header>
+
+<section>
+  <div class="wrap two">
+    <div class="reveal">
+      <div class="kicker">The problem</div>
+      <h2>Sending money should not require memorising a bank.</h2>
+    </div>
+    <div class="reveal">
+      <p class="big">Most Nigerians hold multiple bank accounts across different banks. Every transfer means typing a 10-digit account number, choosing the right bank from a growing list, and hoping you got it right — multiplied across every account you own.</p>
+      <p>It is the single most error-prone, anxiety-inducing moment in everyday payments — and it scales terribly to small merchants, who have no card terminal and no way to get paid except by dictating account details out loud. The rails to fix this already exist. <strong>NIBSS NQR</strong> is Nigeria's national interoperable QR standard, built on the same <strong>EMVCo</strong> spec that powers India's UPI QR and the global push for Digital Public Infrastructure. The standard was there. The consumer experience was not.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">The core bet</div>
+      <h2>One scan replaces the entire account-entry ritual.</h2>
+      <p class="big">Shappay's central design decision: <span class="accent-text">remove manual entry completely.</span> The QR <em>is</em> the recipient. Scan it and the app already knows who to pay and on which rail.</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal"><div class="num">01 / Decision</div><h3 style="font-size:18px">Static QR first</h3><p>The MVP ships a static merchant QR where the payer enters the amount. It's the cheapest possible path to a working loop — print it once, accept money forever — and it mirrors how UPI actually reached scale.</p></div>
+      <div class="card reveal"><div class="num">02 / Decision</div><h3 style="font-size:18px">Two addressing modes</h3><p>Every user gets a <strong>name@shappay</strong> virtual address — so P2P payments work by typing an ID, not scanning a code. QR and VPA resolve through the same engine, hitting the same rail. One resolution layer, two entry points.</p></div>
+      <div class="card reveal"><div class="num">03 / Decision</div><h3 style="font-size:18px">Wallet-first execution</h3><p>Funding and checkout are decoupled. Banks are touched once — topping up from up to four linked accounts via Mono — not on every payment. Checkout clears against wallet balance on Anchor, instant and never hostage to bank uptime.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">Live · The engine</div>
+      <h2>This is the payload, built in real time.</h2>
+      <p>Every NQR code is an EMVCo <strong>TLV</strong> string — a chain of Tag · Length · Value triplets, sealed with a CRC-16 checksum. Below is the actual builder logic from Shappay's QR engine, running in your browser. Edit the merchant, switch the QR type, and watch the standard-compliant payload — and a real, scannable code — regenerate.</p>
+    </div>
+
+    <div class="demo reveal">
+      <div class="demo-head">
+        <span class="label">Shappay · NQR Payload Builder</span>
+        <span class="live"><span class="dot"></span> EMVCo MPM · CRC-16/CCITT</span>
+      </div>
+      <div class="demo-grid">
+        <div class="demo-left">
+          <div class="field">
+            <label for="merchant">Merchant name</label>
+            <input id="merchant" type="text" maxlength="25" value="ADAEZE BAKERY" />
+          </div>
+          <div class="field">
+            <label for="city">Merchant city</label>
+            <input id="city" type="text" maxlength="15" value="LAGOS" />
+          </div>
+          <div class="field">
+            <label>QR type · Point of Initiation</label>
+            <div class="toggle" id="modeToggle">
+              <button data-mode="static" class="on">Static · 11</button>
+              <button data-mode="dynamic">Dynamic · 12</button>
+            </div>
+          </div>
+          <div class="field">
+            <label for="amount">Amount (₦)</label>
+            <input id="amount" type="number" min="0" step="0.01" value="2500.00" disabled />
+            <div class="hint" id="amountHint">Static QR carries no amount — the payer types it at scan time.</div>
+          </div>
+        </div>
+        <div class="demo-right">
+          <div class="qr-card" id="qrCard">
+            <span class="scanline"></span>
+            <canvas id="qrCanvas" width="240" height="240"></canvas>
+          </div>
+          <div class="qr-caption" id="qrCaption">Scannable EMVCo QR · currency 566 (NGN) · country NG</div>
+        </div>
+      </div>
+      <div class="payload-block">
+        <table class="tlv-table">
+          <thead><tr><th class="tag">Tag</th><th>Field</th><th>Value</th></tr></thead>
+          <tbody id="tlvBody"></tbody>
+        </table>
+        <div class="payload-head">
+          <span class="t">Raw payload</span>
+          <button class="copybtn" id="copyBtn">Copy</button>
+        </div>
+        <div class="raw" id="rawPayload"></div>
+      </div>
+    </div>
+    <p class="reveal" style="margin-top:26px;font-size:14.5px;color:var(--muted)">The GUID shown represents the NIBSS-PLC account-information template; production values are issued per merchant. CRC is computed over the full payload including the <code style="color:var(--accent);font-family:'JetBrains Mono'">6304</code> tag — exactly as a compliant scanner verifies it.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">The pivot</div>
+      <h2>Mid-build, the architecture was wrong. So I changed it.</h2>
+      <p class="big">The original plan: scan a QR, resolve the merchant, fire a real-time transfer straight from the payer's linked bank. Validation proved that bet couldn't hold.</p>
+    </div>
+    <div class="two" style="margin-top:8px">
+      <div class="reveal">
+        <h3>What testing revealed</h3>
+        <p>Providers like Mono DirectPay handle account linking, authorization, and payment initiation — but not persistent, real-time orchestration across multiple banks at the moment of checkout. And no accessible Nigerian provider exposes a clean, developer-ready stack for universal bank-to-bank QR routing. Every payment would have inherited bank uptime, authorization latency, redirect flows, and per-bank quirks. A checkout that fragile isn't a product.</p>
+      </div>
+      <div class="reveal">
+        <h3>The re-architecture</h3>
+        <p>Separate the two flows that were wrongly fused: <strong>funding ≠ checkout.</strong> Banks are now touched when a user funds their wallet — linking up to four accounts — not on every scan. Payments execute against wallet balance, and both merchants and users choose where money lands: <strong>Shappay wallet or direct to bank.</strong> The QR strategy is untouched; the wallet simply becomes the execution and settlement layer beneath the same EMVCo/NQR engine.</p>
+      </div>
+    </div>
+
+    <div class="flows reveal">
+      <div class="flow before">
+        <span class="flow-tag">Before · fragile</span>
+        <div class="chips"><span>Scan</span><i>→</i><span>Bank auth</span><i>→</i><span>External redirect</span><i>→</i><span>Settlement</span></div>
+      </div>
+      <div class="flow after">
+        <span class="flow-tag">After · instant</span>
+        <div class="chips"><span>Scan</span><i>→</i><span>Resolve</span><i>→</i><span>Wallet debit</span><i>→</i><span>Settlement</span></div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h3 style="margin-top:48px">The honest tradeoffs</h3>
+      <p>Holding balances raises the bar — and pretending it doesn't is the tell of someone who hasn't shipped. Naming them is part of owning the decision.</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal"><div class="num">↑ Regulatory surface</div><p style="color:var(--muted)">Storing value pulls in a sponsor-bank partnership and stronger compliance controls.</p></div>
+      <div class="card reveal"><div class="num">↑ User trust</div><p style="color:var(--muted)">Users now trust Shappay with balances — raising the bar on security and withdrawals.</p></div>
+      <div class="card reveal"><div class="num">↑ Ledger work</div><p style="color:var(--muted)">Internal balance tracking, ledger consistency, and failed-transfer recovery.</p></div>
+      <div class="card reveal"><div class="num">↑ Float &amp; settlement</div><p style="color:var(--muted)">Liquidity movement, settlement timing, reversals, and reconciliation.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">Systems</div>
+      <h2>Three layers, one loop.</h2>
+      <p>The pivot resolved into a clean separation of concerns. Being able to build each layer is what let me design the UX around its real constraints — and decide, deliberately, where Shappay should and shouldn't sit.</p>
+    </div>
+    <div class="arch">
+      <div class="node reveal"><div class="ix">→ 01</div><h4>Identity Layer</h4><p>EMVCo / NQR payload generation and parsing, plus <strong>name@shappay</strong> VPA addressing — two ways to identify any payment destination.</p></div>
+      <div class="node reveal"><div class="ix">→ 02</div><h4>Resolution Layer</h4><p>Merchant and account resolution, settlement-preference routing, and rail selection.</p></div>
+      <div class="node reveal"><div class="ix">→ 03</div><h4>Execution Layer</h4><p>Wallet infrastructure, bank transfer rails, and settlement execution beneath it all.</p></div>
+    </div>
+    <div class="arch-note reveal">scan / VPA&nbsp;&nbsp;→&nbsp;&nbsp;resolve&nbsp;&nbsp;→&nbsp;&nbsp;wallet debit&nbsp;&nbsp;→&nbsp;&nbsp;settlement</div>
+    <p class="reveal" style="margin-top:18px;font-size:14px;color:var(--muted)">Funding via Mono DirectPay. Wallet, ledger, and outbound payouts via Anchor. NQR interoperability carries through every layer.</p>
+
+    <div class="reveal" style="margin-top:42px">
+      <h3>Routing rules</h3>
+      <p>The resolution engine outputs a routing decision on every transaction. Three cases, evaluated in order:</p>
+    </div>
+    <div class="cards" style="margin-top:20px">
+      <div class="card reveal">
+        <div class="num">Case A · Fast path</div>
+        <h3 style="font-size:17px">Shappay → Shappay</h3>
+        <p style="font-size:14.5px">Destination has a Shappay wallet. Execute instant ledger transfer on Anchor — wallet to wallet. Highest success rate, lowest latency.</p>
+      </div>
+      <div class="card reveal">
+        <div class="num">Case B · Payout path</div>
+        <h3 style="font-size:17px">Shappay → External bank</h3>
+        <p style="font-size:14.5px">Destination is an external merchant. Debit customer wallet on Anchor, trigger async outbound payout to merchant's bank account via Anchor's payout rail.</p>
+      </div>
+      <div class="card reveal">
+        <div class="num">Case C · Fallback</div>
+        <h3 style="font-size:17px">Unsupported QR scheme</h3>
+        <p style="font-size:14.5px">QR payload cannot be resolved. Surface manual bank transfer entry screen — always a path forward, never a dead end.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap two">
+    <div class="reveal">
+      <div class="kicker">Why it matters</div>
+      <blockquote>An interoperable QR is <span class="accent-text">public infrastructure</span> — it bridges the digital divide instead of building another silo.</blockquote>
+    </div>
+    <div class="reveal">
+      <p>This is the part of Shappay I care about most. Interoperable QR is a form of <strong>Digital Public Infrastructure</strong> — the same pattern that took India's UPI from zero to billions of transactions. The global reference, the <strong>CDPI</strong> specification, is already in discussion with 30+ central banks, Nigeria among them.</p>
+      <p>Shappay isn't trying to reinvent that layer. It builds on <strong>NIBSS NQR as Nigeria's implementation of it</strong> — and treats the design problem as: how do you make national-scale financial inclusion feel like scanning a square? When the rail is shared, a small tailor in Aba and a diaspora sender in London get the same frictionless loop. That's the brief.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">Roadmap</div>
+      <h2>From a printed square to a payments platform.</h2>
+    </div>
+    <div class="road">
+      <div class="road-item reveal"><div class="phase">NOW</div><div><h4>Wallet-first MVP <span class="tag-ship now">In build</span></h4><p>Link up to four banks, fund a Shappay wallet, and pay by scanning a static QR — settling to wallet or bank. The smallest complete loop that proves the model.</p></div></div>
+      <div class="road-item reveal"><div class="phase">NEXT</div><div><h4>Dynamic QR <span class="tag-ship">Roadmap</span></h4><p>Amount embedded in the code for point-of-sale and one-tap checkout — no typing, no mistakes.</p></div></div>
+      <div class="road-item reveal"><div class="phase">THEN</div><div><h4>Merchant tools · POS · Invoice QR <span class="tag-ship">Roadmap</span></h4><p>Payment links, invoice-bound codes, and a merchant dashboard with analytics on top of the same rail.</p></div></div>
+      <div class="road-item reveal"><div class="phase">LATERAL</div><div><h4>QR-powered product verification <span class="tag-ship">Exploration</span></h4><p>A point-of-sale check that reads a product's NAFDAC registration to flag counterfeits — the scan engine, pointed at trust instead of payment.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">Success metrics</div>
+      <h2>What good looks like, defined up front.</h2>
+      <p>Quantified targets set before build — not retrofitted after. These are the numbers the product is designed around.</p>
+    </div>
+    <div class="cards" style="margin-top:28px">
+      <div class="card reveal">
+        <div class="num">Resolution latency</div>
+        <h3 style="font-size:17px">&lt; 200ms</h3>
+        <p style="font-size:14.5px">QR payload parsed and routing decision output before the user finishes reading the merchant name.</p>
+      </div>
+      <div class="card reveal">
+        <div class="num">Wallet-to-wallet success</div>
+        <h3 style="font-size:17px">&gt; 99%</h3>
+        <p style="font-size:14.5px">Internal Anchor ledger transfers. Near-perfect reliability by bypassing bank uptime entirely.</p>
+      </div>
+      <div class="card reveal">
+        <div class="num">Time to confirmation</div>
+        <h3 style="font-size:17px">&lt; 3 seconds</h3>
+        <p style="font-size:14.5px">PIN entry to merchant alert dispatch. Wallet-to-wallet path only — the standard every design decision defers to.</p>
+      </div>
+      <div class="card reveal">
+        <div class="num">External payout success</div>
+        <h3 style="font-size:17px">&gt; 95%</h3>
+        <p style="font-size:14.5px">Async outbound bank payouts via Anchor. Lower floor than internal transfers, accounted for in UX with async confirmation states.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap two">
+    <div class="reveal">
+      <div class="kicker">Reflection</div>
+      <h2>What designing the engine taught me.</h2>
+    </div>
+    <div class="reveal">
+      <p>The temptation in fintech is to design the screens and treat the rails as someone else's problem. Shappay only works because I refused that split. Understanding the TLV format changed the product: <strong>static-first</strong> stopped being a compromise and became the obvious wedge once I'd built the payload by hand and seen how little it needed to be useful.</p>
+      <p>The hardest decisions weren't visual — and the most important was admitting the first architecture was wrong. Re-drawing the line between funding and checkout, choosing to hold a wallet, deciding where settlement lands: those are architecture calls a designer who builds will reach for, and they're what turned a fragile demo into something shippable, lawful, and fast.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="next">
+      <div>
+        <div class="lbl">Next project</div>
+        <a class="big-link" href="#">UI to JSON <span class="arrow">→</span></a>
+      </div>
+      <div style="text-align:right">
+        <div class="lbl">170+ users in production</div>
+      </div>
+    </div>
+    <div class="colophon">
+      <span>Shappay — Design Engineering case study</span>
+      <span>Designed & built end to end · 2026</span>
+    </div>
+  </div>
+</footer>
+
+<!-- GSAP + plugins -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script>
+(function(){
+  "use strict";
+
+  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ── scroll progress ── */
+  var progress = document.getElementById('progress');
+  function onScroll(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    progress.style.width = (max>0?(h.scrollTop/max)*100:0)+'%';
+  }
+  document.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* ── TLV/QR demo ── */
+  function crc16(str){
+    var crc=0xFFFF;
+    for(var i=0;i<str.length;i++){crc^=str.charCodeAt(i)<<8;for(var j=0;j<8;j++){crc=(crc&0x8000)?((crc<<1)^0x1021):(crc<<1);crc&=0xFFFF;}}
+    return crc.toString(16).toUpperCase().padStart(4,'0');
+  }
+  function tlv(id,v){v=String(v);return id+String(v.length).padStart(2,'0')+v;}
+  var NAMES={'00':'Payload Format Indicator','01':'Point of Initiation Method','26':'Merchant Account Info (NIBSS)','52':'Merchant Category Code','53':'Transaction Currency','54':'Transaction Amount','58':'Country Code','59':'Merchant Name','60':'Merchant City','63':'CRC Checksum'};
+  var state={mode:'static',merchant:'ADAEZE BAKERY',city:'LAGOS',amount:'2500.00'};
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function build(){
+    var rows=[],p='';
+    function push(id,val){rows.push({tag:id,name:NAMES[id]||id,val:val});}
+    p+=tlv('00','01');push('00','01');
+    var poi=state.mode==='static'?'11':'12';p+=tlv('01',poi);push('01',poi);
+    var acct=tlv('00','NG.COM.NIBSS-PLC.QR')+tlv('01','0011000012');p+=tlv('26',acct);push('26','NG.COM.NIBSS-PLC.QR · 0011000012');
+    p+=tlv('52','0000');push('52','0000');p+=tlv('53','566');push('53','566 · NGN');
+    if(state.mode==='dynamic'){var amt=(parseFloat(state.amount||'0')||0).toFixed(2);p+=tlv('54',amt);push('54','₦'+amt);}
+    p+=tlv('58','NG');push('58','NG');
+    var name=(state.merchant||'MERCHANT').toUpperCase().slice(0,25);p+=tlv('59',name);push('59',name);
+    var city=(state.city||'LAGOS').toUpperCase().slice(0,15);p+=tlv('60',city);push('60',city);
+    p+='6304';var crc=crc16(p);p+=crc;push('63',crc);
+    var tb=document.getElementById('tlvBody');
+    if(tb){tb.innerHTML='';rows.forEach(function(r,i){var tr=document.createElement('tr');tr.className='tlv-row';tr.style.animationDelay=(i*35)+'ms';tr.innerHTML='<td class="tag">'+esc(r.tag)+'</td><td class="name">'+esc(r.name)+'</td><td class="val">'+esc(r.val)+'</td>';tb.appendChild(tr);});}
+    var rw=document.getElementById('rawPayload');
+    if(rw)rw.innerHTML=esc(p.slice(0,p.length-4))+'<span class="crc">'+crc+'</span>';
+    var canvas=document.getElementById('qrCanvas');
+    if(canvas&&typeof qrcode!=='undefined'){
+      var qr=qrcode(0,'M');qr.addData(p);qr.make();
+      var count=qr.getModuleCount(),margin=4,cell=Math.max(2,Math.floor(240/(count+margin*2)));
+      var dim=cell*(count+margin*2);canvas.width=dim;canvas.height=dim;
+      var ctx=canvas.getContext('2d');ctx.fillStyle='#EFEBE0';ctx.fillRect(0,0,dim,dim);ctx.fillStyle='#0C0C0A';
+      for(var r=0;r<count;r++)for(var c=0;c<count;c++){if(qr.isDark(r,c))ctx.fillRect((c+margin)*cell,(r+margin)*cell,cell,cell);}
+      var qrCard=document.getElementById('qrCard');
+      if(qrCard){qrCard.classList.remove('scanning');void qrCard.offsetWidth;qrCard.classList.add('scanning');}
+    }
+  }
+  var me=document.getElementById('merchant'),ci=document.getElementById('city'),am=document.getElementById('amount');
+  if(me)me.addEventListener('input',function(){state.merchant=this.value;build();});
+  if(ci)ci.addEventListener('input',function(){state.city=this.value;build();});
+  if(am)am.addEventListener('input',function(){state.amount=this.value;build();});
+  var tog=document.getElementById('modeToggle');
+  if(tog)tog.addEventListener('click',function(e){
+    var btn=e.target.closest('button');if(!btn)return;
+    state.mode=btn.getAttribute('data-mode');
+    this.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b===btn);});
+    var dyn=state.mode==='dynamic';
+    if(am)am.disabled=!dyn;
+    var hint=document.getElementById('amountHint');
+    if(hint)hint.textContent=dyn?'Dynamic QR embeds the amount — payer just confirms.':'Static QR carries no amount — the payer types it at scan time.';
+    build();
+  });
+  var cb=document.getElementById('copyBtn');
+  if(cb)cb.addEventListener('click',function(){
+    var self=this,rw=document.getElementById('rawPayload');
+    if(rw&&navigator.clipboard)navigator.clipboard.writeText(rw.textContent).then(function(){self.textContent='Copied';setTimeout(function(){self.textContent='Copy';},1400);});
+  });
+  build();
+
+  /* ── scan beam on load ── */
+  window.addEventListener('load',function(){
+    var beam=document.getElementById('beam');
+    if(!beam)return;
+    setTimeout(function(){
+      beam.style.transition='transform .6s cubic-bezier(.4,0,.2,1),opacity .3s';
+      beam.style.opacity='1';beam.style.transform='scaleX(1)';
+      setTimeout(function(){beam.style.opacity='0';},620);
+    },500);
+  });
+
+  /* ── safety: show everything if GSAP fails ── */
+  function showAll(){
+    document.querySelectorAll('.reveal').forEach(function(el){
+      el.style.opacity='1';el.style.transform='none';
+    });
+  }
+  if(prefersReduced){showAll();return;}
+  var safetyTimer=setTimeout(showAll,2000);
+
+  function runAnimations(){
+    try{
+      clearTimeout(safetyTimer);
+      if(typeof gsap==='undefined'){showAll();return;}
+
+      var ease='power3.out', easeSoft='power2.out';
+      if(typeof ScrollTrigger!=='undefined') gsap.registerPlugin(ScrollTrigger);
+
+      /* manual char split on h1 */
+      (function(){
+        var el=document.querySelector('h1 .scanwrap')||document.querySelector('h1');
+        if(!el)return;
+        var txt=el.textContent;el.innerHTML='';
+        var spans=[];
+        txt.split('').forEach(function(ch){
+          var s=document.createElement('span');
+          s.style.display='inline-block';
+          s.textContent=ch===' '?' ':ch;
+          el.appendChild(s);spans.push(s);
+        });
+        gsap.set(spans,{opacity:0,y:48});
+        gsap.to(spans,{opacity:1,y:0,duration:0.6,stagger:0.06,ease:ease,delay:0.25});
+      })();
+
+      /* eyebrow + lede + meta */
+      gsap.set('.eyebrow, .lede',{opacity:0,y:20});
+      gsap.to('.eyebrow, .lede',{opacity:1,y:0,duration:0.65,stagger:0.12,ease:ease,delay:0.6});
+      gsap.set('.meta > div',{opacity:0,y:14});
+      gsap.to('.meta > div',{opacity:1,y:0,duration:0.5,stagger:0.07,ease:ease,delay:0.85});
+
+      /* scroll reveal for all .reveal elements */
+      function revealOnScroll(){
+        var winH=window.innerHeight;
+        document.querySelectorAll('.reveal').forEach(function(el){
+          if(el._revealed)return;
+          var rect=el.getBoundingClientRect();
+          if(rect.top<winH*0.91){
+            el._revealed=true;
+            gsap.fromTo(el,{opacity:0,y:28},{opacity:1,y:0,duration:0.75,ease:ease});
+          }
+        });
+      }
+      revealOnScroll();
+      window.addEventListener('scroll',revealOnScroll,{passive:true});
+
+      /* card hover lift */
+      document.querySelectorAll('.card').forEach(function(card){
+        card.addEventListener('mouseenter',function(){gsap.to(card,{y:-4,duration:0.28,ease:easeSoft});});
+        card.addEventListener('mouseleave',function(){gsap.to(card,{y:0, duration:0.38,ease:easeSoft});});
+      });
+
+      /* footer next-link letter-spacing */
+      var bl=document.querySelector('.next a.big-link');
+      if(bl){
+        bl.addEventListener('mouseenter',function(){gsap.to(bl,{letterSpacing:'0.03em',duration:0.35,ease:easeSoft});});
+        bl.addEventListener('mouseleave',function(){gsap.to(bl,{letterSpacing:'-0.02em',duration:0.35,ease:easeSoft});});
+      }
+
+      /* scroll progress bar accent glow */
+      document.addEventListener('scroll',function(){
+        progress.style.boxShadow='0 0 8px rgba(56,189,248,.55)';
+        clearTimeout(progress._t);
+        progress._t=setTimeout(function(){progress.style.boxShadow='none';},300);
+      },{passive:true});
+
+    }catch(err){console.warn('GSAP error:',err);showAll();}
+  }
+
+  if(document.readyState==='complete'||document.readyState==='interactive'){
+    setTimeout(runAnimations,60);
+  } else {
+    window.addEventListener('load',runAnimations);
+  }
+
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+{
+  "spacing": {
+    "xs": {
+      "value": 4,
+      "type": "number",
+      "prefix": "scale"
+    },
+    "sm": {
+      "value": 8,
+      "type": "number",
+      "prefix": "scale"
+    },
+    "md": {
+      "value": 10,
+      "type": "number",
+      "prefix": "scale"
+    },
+    "lg": {
+      "value": 12,
+      "type": "number",
+      "prefix": "scale"
+    },
+    "xl": {
+      "value": 14,
+      "type": "number",
+      "prefix": "scale"
+    },
+    "2xl": {
+      "value": 16,
+      "type": "number",
+      "prefix": "scale"
+    },
+    "3xl": {
+      "value": 20,
+      "type": "number",
+      "prefix": "scale"
+    },
+    "4xl": {
+      "value": 22,
+      "type": "number",
+      "prefix": "scale"
+    },
+    "5xl": {
+      "value": 24,
+      "type": "number",
+      "prefix": "scale"
+    },
+    "6xl": {
+      "value": 28,
+      "type": "number",
+      "prefix": "scale"
+    },
+    "7xl": {
+      "value": 30,
+      "type": "number",
+      "prefix": "scale"
+    },
+    "8xl": {
+      "value": 32,
+      "type": "number",
+      "prefix": "scale"
+    },
+    "9xl": {
+      "value": 36,
+      "type": "number",
+      "prefix": "scale"
+    },
+    "10xl": {
+      "value": 44,
+      "type": "number",
+      "prefix": "scale"
+    },
+    "11xl": {
+      "value": 48,
+      "type": "number",
+      "prefix": "scale"
+    },
+    "12xl": {
+      "value": 60,
+      "type": "number",
+      "prefix": "scale"
+    },
+    "13xl": {
+      "value": 62,
+      "type": "number",
+      "prefix": "scale"
+    },
+    "14xl": {
+      "value": 72,
+      "type": "number",
+      "prefix": "scale"
+    },
+    "15xl": {
+      "value": 88,
+      "type": "number",
+      "prefix": "scale"
+    },
+    "16xl": {
+      "value": 100,
+      "type": "number",
+      "prefix": "scale"
+    },
+    "17xl": {
+      "value": 120,
+      "type": "number",
+      "prefix": "scale"
+    }
+  },
+  "radius": {
+    "none": {
+      "value": 0,
+      "type": "number",
+      "prefix": "scale"
+    },
+    "sm": {
+      "value": 7,
+      "type": "number",
+      "prefix": "scale"
+    },
+    "md": {
+      "value": 10,
+      "type": "number",
+      "prefix": "scale"
+    },
+    "lg": {
+      "value": 14,
+      "type": "number",
+      "prefix": "scale"
+    },
+    "xl": {
+      "value": 18,
+      "type": "number",
+      "prefix": "scale"
+    },
+    "2xl": {
+      "value": 20,
+      "type": "number",
+      "prefix": "scale"
+    },
+    "full": {
+      "value": 999,
+      "type": "number",
+      "prefix": "scale"
+    }
+  }
+}

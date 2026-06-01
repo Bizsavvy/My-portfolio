@@ -1,0 +1,148 @@
+{
+  "screen": "desktop",
+  "section": "work.folder",
+  "stack": "next",
+  "source": "ai-systems/schema/desktop/work/folder.raw.json",
+  "interpretation_notes": [
+    "Root Folder1 has variant Z-pattern=1 (info-left, visual-right). Odd index = Z-pattern 1; even index = Z-pattern 2 (flipped) — existing isOdd logic preserved.",
+    "TabRow: single Tab, positioned flush-left for odd / flush-right for even. Tab has border-b-0 to visually merge with Fbody.",
+    "Fbody: CSS grid 2-col (1fr 1fr). order property drives Z-pattern flip. border-radius adapts per pattern to create the folder tab effect.",
+    "Fcontent layout: vertical flex, justify-between — Finfo group at top, Tags&link group at bottom. padding: spacing-44 (44px).",
+    "Finfo: vertical flex, gap spacing-lg (12px) — Title+Badge row + hook paragraph.",
+    "Tags&link: vertical flex, gap spacing-5xl (24px) — tags row + CTA text.",
+    "TagPill: border color-border, radius-20 (--rad-2xl), padding 8px 12px.",
+    "Badge: border color-accent, radius-20 (--rad-2xl), padding 4px 8px.",
+    "CTA: mono-cta (12px, 400, 0 tracking), color-text-primary. Arrow gap of 9px maintained from existing.",
+    "Visual pane: right half on Z-pattern 1, left half on Z-pattern 2. bg color-ink, overflow hidden, minHeight 320px floor.",
+    "Hover animations: translateY(-4px) on fbody, text-shadow glow on number, color shift on CTA — all preserved as CSS in style block."
+  ],
+  "root": {
+    "name": "Folder",
+    "tag": "Link",
+    "interactive": true,
+    "layout": { "direction": "column" },
+    "children": [
+      {
+        "name": "TabRow",
+        "tag": "div",
+        "layout": {
+          "direction": "row",
+          "justifyContent": "flex-start (odd) | flex-end (even)"
+        },
+        "children": [
+          {
+            "name": "Tab",
+            "tag": "span",
+            "layout": {
+              "direction": "row",
+              "gap": "9px (spacing-9)",
+              "padding": "10px 22px",
+              "alignItems": "center"
+            },
+            "style": {
+              "background": "color-surface-elevated → var(--color-surface-2)",
+              "border": "top/right/left only, color-border → var(--color-border)",
+              "borderRadius": "var(--rad-lg) var(--rad-lg) 0 0"
+            },
+            "children": [
+              {
+                "name": "number",
+                "typography": "mono-label-medium → .ts-mono-label-md (500, 12px, 0.06em)",
+                "color": "color-accent → var(--color-accent)"
+              },
+              {
+                "name": "label",
+                "typography": "mono-meta-label (400, 12px, 0.08em, NO uppercase)",
+                "color": "color-text-muted → var(--color-muted)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Fbody",
+        "tag": "div",
+        "layout": { "display": "grid", "columns": "1fr 1fr" },
+        "style": {
+          "background": "color-surface → var(--color-surface)",
+          "border": "1px color-border → var(--color-border)",
+          "borderRadius": "0 var(--rad-xl)×3 (odd) | var(--rad-xl) 0 var(--rad-xl)×2 (even)"
+        },
+        "children": [
+          {
+            "name": "Fcontent (info pane)",
+            "layout": {
+              "direction": "column",
+              "justifyContent": "space-between",
+              "padding": "44px (spacing-44)"
+            },
+            "order": "1 (odd) | 2 (even)",
+            "children": [
+              {
+                "name": "Finfo",
+                "layout": { "direction": "column", "gap": "var(--space-lg)" },
+                "children": [
+                  {
+                    "name": "Title row",
+                    "layout": { "direction": "row", "gap": "var(--space-lg)", "alignItems": "center", "wrap": true },
+                    "children": [
+                      {
+                        "name": "title text",
+                        "typography": "heading-card-title → .ts-card-title (font-pixel 700 28px -0.01em)",
+                        "lineHeight": "1.2",
+                        "color": "color-text-primary → var(--color-text)"
+                      },
+                      {
+                        "name": "Badge (optional)",
+                        "component": "Badge",
+                        "style": "border color-accent, radius-20, padding 4px 8px, text mono-badge (10px 0.06em uppercase)"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "hook paragraph",
+                    "typography": "body-default → .ts-body (hanken 400 16px 0)",
+                    "lineHeight": "1.65",
+                    "color": "color-text-secondary → var(--color-body)",
+                    "maxWidth": "46ch"
+                  }
+                ]
+              },
+              {
+                "name": "Tags&link",
+                "layout": { "direction": "column", "gap": "var(--space-5xl)" },
+                "children": [
+                  {
+                    "name": "Tags row",
+                    "layout": { "direction": "row", "gap": "var(--space-sm)", "wrap": true },
+                    "children": [
+                      {
+                        "name": "TagPill",
+                        "typography": "mono-tag (400, 10px, 0)",
+                        "color": "color-text-muted → var(--color-muted)",
+                        "style": "border var(--color-border), rounded-[var(--rad-2xl)], px-[12px] py-[8px]"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "CTA text",
+                    "typography": "mono-cta → .ts-cta (mono 400 12px 0)",
+                    "color": "color-text-primary → var(--color-text)",
+                    "gap": "9px between text and arrow"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Visual pane",
+            "tag": "div",
+            "order": "2 (odd) | 1 (even)",
+            "style": { "background": "var(--color-ink)", "overflow": "hidden", "minHeight": "320px" },
+            "content": "visual prop (React.ReactNode)"
+          }
+        ]
+      }
+    ]
+  }
+}

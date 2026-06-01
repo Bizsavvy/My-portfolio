@@ -1,0 +1,545 @@
+@import "tailwindcss";
+
+/* ══════════════════════════════════════════════════════════
+   LAYER 1 · PRIMITIVES
+   Source: tokens/primitives.json + tokens/scale.json
+   Raw reference values — not consumed directly in components.
+══════════════════════════════════════════════════════════ */
+:root {
+  /* Colors */
+  --prim-ink: #0c0c0a;
+  --prim-surface: #15150f;
+  --prim-surface-elevated: #1c1c14;
+  --prim-cream: #efebe0;
+  --prim-lime: #c7f94b;
+  --prim-lime-dark: #4d7c0f;
+  --prim-violet: #8a4beb;
+  --prim-white: #fafaf7;
+  --prim-pure-white: #ffffff;
+  --prim-light-surface: #f2f0eb;
+  --prim-near-black: #1a1a16;
+  --prim-text-light: #eceae0;
+  --prim-body-light: #d6d4c9;
+  --prim-neutral: #8c8b7e;
+  --prim-dark-body: #4a4940;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 10px;
+  --space-lg: 12px;
+  --space-xl: 14px;
+  --space-2xl: 16px;
+  --space-3xl: 20px;
+  --space-4xl: 22px;
+  --space-5xl: 24px;
+  --space-6xl: 28px;
+  --space-7xl: 30px;
+  --space-8xl: 32px;
+  --space-9xl: 36px;
+  --space-10xl: 44px;
+  --space-11xl: 48px;
+  --space-12xl: 60px;
+  --space-13xl: 62px;
+  --space-14xl: 72px;
+  --space-15xl: 88px;
+  --space-16xl: 100px;
+  --space-17xl: 120px;
+
+  /* Radius */
+  --rad-none: 0px;
+  --rad-sm: 7px;
+  --rad-md: 10px;
+  --rad-lg: 14px;
+  --rad-xl: 18px;
+  --rad-2xl: 20px;
+  --rad-full: 999px;
+}
+
+/* ══════════════════════════════════════════════════════════
+   LAYER 2 · SEMANTIC TOKENS (dark mode)
+   Source: tokens/semantic.json
+   Lives in @theme so Tailwind generates bg-*, text-*, border-* utilities.
+   Legacy aliases kept so existing component code needs no changes.
+══════════════════════════════════════════════════════════ */
+@theme {
+  /* Backgrounds */
+  --color-ink: #0c0c0a;
+  --color-surface: #15150f;
+  --color-surface-elevated: #1c1c14;
+  --color-surface-2: #1c1c14;
+  --color-cream: #efebe0;
+  --color-paper: #efebe0;
+
+  /* Accent */
+  --color-accent: #c7f94b;
+  --color-accent-dim: #c7f94b21;
+  --color-accent-text: #c7f94b;
+  --color-on-accent: #0c0c0a;
+
+  /* Secondary */
+  --color-secondary: #8a4beb;
+  --color-violet: #8a4beb;
+
+  /* Text */
+  --color-text: #eceae0;
+  --color-text-primary: #eceae0;
+  --color-text-secondary: #d6d4c9;
+  --color-body: #d6d4c9;
+  --color-text-muted: #8c8b7e;
+  --color-muted: #8c8b7e;
+
+  /* Borders */
+  --color-border: #eceae01c;
+  --color-line: #eceae01c;
+  --color-border-strong: #eceae033;
+  --color-line-strong: #eceae033;
+
+  /* Fonts */
+  --font-pixel: "Pixelify Sans", sans-serif;
+  --font-hanken: "Hanken Grotesk", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-caveat: "Caveat", cursive;
+
+  /* Layout */
+  --width-maxw: 1440px;
+}
+
+/* ══════════════════════════════════════════════════════════
+   BASE RESET + ELEMENT DEFAULTS
+   All element-level styles in @layer base so Tailwind
+   utilities always win via the layer cascade.
+══════════════════════════════════════════════════════════ */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--color-ink);
+    color: var(--color-text);
+    font-family: var(--font-hanken);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    background: radial-gradient(110% 60% at 50% 0%, rgba(199, 249, 75, .07), transparent 55%);
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════
+   ANIMATIONS
+   @keyframes live outside layers — they're referenced by
+   name and don't apply styles directly.
+══════════════════════════════════════════════════════════ */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(199, 249, 75, .5);
+  }
+
+  70% {
+    box-shadow: 0 0 0 7px rgba(199, 249, 75, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(199, 249, 75, 0);
+  }
+}
+
+@keyframes scroll-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes beam-scan {
+
+  0%,
+  100% {
+    transform: translateY(-100px);
+    opacity: .2;
+  }
+
+  50% {
+    transform: translateY(100px);
+    opacity: 1;
+  }
+}
+
+@keyframes stage-pulse {
+
+  0%,
+  100% {
+    color: var(--color-muted);
+    border-color: var(--color-border-strong);
+    background: transparent;
+  }
+
+  15%,
+  32% {
+    color: var(--color-on-accent);
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+  }
+}
+
+@keyframes scan-line {
+  0% {
+    top: -36px;
+    opacity: 1;
+  }
+
+  100% {
+    top: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes rowin {
+  from {
+    opacity: 0;
+    transform: translateX(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════
+   LAYER 3 · TEXT STYLES + COMPONENT UTILITIES
+   All class-based styles in @layer components so Tailwind
+   utilities always override them.
+   Source: tokens/textStyles.json
+   letter-spacing: PERCENT value / 100 = em
+══════════════════════════════════════════════════════════ */
+@layer components {
+
+  /* Display */
+  .ts-display {
+    font-family: var(--font-pixel);
+    font-weight: 700;
+    font-size: 160px;
+    letter-spacing: 0.02em;
+  }
+
+  .ts-project-name {
+    font-family: var(--font-pixel);
+    font-weight: 700;
+    font-size: 120px;
+    letter-spacing: 0.02em;
+  }
+
+  .ts-project-name-sm {
+    font-family: var(--font-hanken);
+    font-weight: 700;
+    font-size: 48px;
+    letter-spacing: -0.02em;
+  }
+
+  /* Heading */
+  .ts-h2 {
+    font-family: var(--font-hanken);
+    font-weight: 700;
+    font-size: 40px;
+    letter-spacing: -0.02em;
+    line-height: 1.06;
+  }
+
+  .ts-h3 {
+    font-family: var(--font-hanken);
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+  }
+
+  .ts-h4 {
+    font-family: var(--font-hanken);
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -0.01em;
+  }
+
+  .ts-card-title {
+    font-family: var(--font-pixel);
+    font-weight: 700;
+    font-size: 28px;
+    letter-spacing: -0.01em;
+  }
+
+  /* Body */
+  .ts-statement {
+    font-family: var(--font-hanken);
+    font-weight: 400;
+    font-size: 36px;
+    letter-spacing: -0.01em;
+  }
+
+  .ts-about {
+    font-family: var(--font-hanken);
+    font-weight: 400;
+    font-size: 28px;
+    letter-spacing: -0.01em;
+  }
+
+  .ts-lede {
+    font-family: var(--font-hanken);
+    font-weight: 400;
+    font-size: 28px;
+    letter-spacing: -0.01em;
+  }
+
+  .ts-body-large {
+    font-family: var(--font-hanken);
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 0;
+  }
+
+  .ts-body {
+    font-family: var(--font-hanken);
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0;
+  }
+
+  .ts-caption {
+    font-family: var(--font-hanken);
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0;
+  }
+
+  .ts-caption-medium {
+    font-family: var(--font-hanken);
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0;
+  }
+
+  .ts-blockquote {
+    font-family: var(--font-hanken);
+    font-weight: 400;
+    font-size: 30px;
+    letter-spacing: -0.01em;
+  }
+
+  .ts-footnote {
+    font-family: var(--font-hanken);
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0;
+  }
+
+  /* Mono */
+  .ts-kicker {
+    font-family: var(--font-mono);
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .ts-eyebrow {
+    font-family: var(--font-mono);
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .ts-mono-label {
+    font-family: var(--font-mono);
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+  }
+
+  .ts-mono-label-md {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+  }
+
+  .ts-nav-link {
+    font-family: var(--font-mono);
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+  }
+
+  .ts-tag {
+    font-family: var(--font-mono);
+    font-weight: 400;
+    font-size: 10px;
+    letter-spacing: 0;
+  }
+
+  .ts-badge {
+    font-family: var(--font-mono);
+    font-weight: 400;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .ts-meta-label {
+    font-family: var(--font-mono);
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .ts-cta {
+    font-family: var(--font-mono);
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0;
+  }
+
+  .ts-cta-medium {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+  }
+
+  .ts-code {
+    font-family: var(--font-mono);
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0;
+  }
+
+  .ts-code-sm {
+    font-family: var(--font-mono);
+    font-weight: 400;
+    font-size: 10px;
+    letter-spacing: 0.05em;
+  }
+
+  .ts-colophon {
+    font-family: var(--font-mono);
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+  }
+
+  .ts-chip {
+    font-family: var(--font-mono);
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0;
+  }
+
+  .ts-pills-label {
+    font-family: var(--font-mono);
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0;
+  }
+
+  /* Special */
+  .ts-handwritten {
+    font-family: var(--font-caveat);
+    font-weight: 400;
+    font-size: 30px;
+    letter-spacing: 0.01em;
+  }
+
+  .ts-big-cta {
+    font-family: var(--font-pixel);
+    font-weight: 700;
+    font-size: 100px;
+    letter-spacing: 0.02em;
+  }
+
+  .ts-nav-brand {
+    font-family: var(--font-pixel);
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.02em;
+  }
+
+  .ts-marquee {
+    font-family: var(--font-hanken);
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 0;
+  }
+
+  .ts-meta-value {
+    font-family: var(--font-hanken);
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0;
+  }
+
+  /* ── Layout ── */
+  .site-wrap {
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: var(--space-2xl);
+  }
+
+  @media (min-width: 768px) {
+    .site-wrap {
+      padding-inline: 40px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .site-wrap {
+      padding-inline: 64px;
+    }
+  }
+
+  /* ── Component atoms ── */
+  .live-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    animation: pulse 2.4s infinite;
+    flex-shrink: 0;
+  }
+}

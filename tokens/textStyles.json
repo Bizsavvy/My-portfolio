@@ -1,0 +1,412 @@
+{
+  "fileName": "Case studies",
+  "textStyles": [
+    {
+      "name": "Display/Display",
+      "fontFamily": "Pixelify Sans",
+      "fontWeight": "Bold",
+      "fontSize": 160,
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 2
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "Display/Project Name",
+      "fontFamily": "Pixelify Sans",
+      "fontWeight": "Bold",
+      "fontSize": 120,
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 2
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "Display/Project Name SM",
+      "fontFamily": "Hanken Grotesk",
+      "fontWeight": "Bold",
+      "fontSize": 48,
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": -2
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "Heading/H2",
+      "fontFamily": "Hanken Grotesk",
+      "fontWeight": "Bold",
+      "fontSize": 40,
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": -2
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "Heading/H3",
+      "fontFamily": "Hanken Grotesk",
+      "fontWeight": "Bold",
+      "fontSize": 22,
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": -1
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "Heading/H4",
+      "fontFamily": "Hanken Grotesk",
+      "fontWeight": "Bold",
+      "fontSize": 18,
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": -1
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "Heading/Card Title",
+      "fontFamily": "Pixelify Sans",
+      "fontWeight": "Bold",
+      "fontSize": 28,
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": -1
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "Body/Statement",
+      "fontFamily": "Hanken Grotesk",
+      "fontWeight": "Regular",
+      "fontSize": 36,
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": -1
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "Body/About",
+      "fontFamily": "Hanken Grotesk",
+      "fontWeight": "Regular",
+      "fontSize": 28,
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": -1
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "Body/Lede",
+      "fontFamily": "Hanken Grotesk",
+      "fontWeight": "Regular",
+      "fontSize": 28,
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": -1
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "Body/Large",
+      "fontFamily": "Hanken Grotesk",
+      "fontWeight": "Regular",
+      "fontSize": 20,
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "Body/Default",
+      "fontFamily": "Hanken Grotesk",
+      "fontWeight": "Regular",
+      "fontSize": 16,
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "Body/Small",
+      "fontFamily": "Hanken Grotesk",
+      "fontWeight": "Regular",
+      "fontSize": 16,
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "Body/Caption",
+      "fontFamily": "Hanken Grotesk",
+      "fontWeight": "Regular",
+      "fontSize": 14,
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "Body/Caption Medium",
+      "fontFamily": "Hanken Grotesk",
+      "fontWeight": "Medium",
+      "fontSize": 14,
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "Body/Blockquote",
+      "fontFamily": "Hanken Grotesk",
+      "fontWeight": "Regular",
+      "fontSize": 30,
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": -1
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "Body/Footnote",
+      "fontFamily": "Hanken Grotesk",
+      "fontWeight": "Regular",
+      "fontSize": 14,
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "Mono/Kicker",
+      "fontFamily": "JetBrains Mono",
+      "fontWeight": "Regular",
+      "fontSize": 12,
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 16
+      },
+      "textCase": "UPPER"
+    },
+    {
+      "name": "Mono/Eyebrow",
+      "fontFamily": "JetBrains Mono",
+      "fontWeight": "Regular",
+      "fontSize": 12,
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 18
+      },
+      "textCase": "UPPER"
+    },
+    {
+      "name": "Mono/Label",
+      "fontFamily": "JetBrains Mono",
+      "fontWeight": "Regular",
+      "fontSize": 12,
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 4
+      },
+      "textCase": "TITLE"
+    },
+    {
+      "name": "Mono/Label Medium",
+      "fontFamily": "JetBrains Mono",
+      "fontWeight": "Medium",
+      "fontSize": 12,
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 6
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "Mono/Nav Link",
+      "fontFamily": "JetBrains Mono",
+      "fontWeight": "Regular",
+      "fontSize": 12,
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 4
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "Mono/Tag",
+      "fontFamily": "JetBrains Mono",
+      "fontWeight": "Regular",
+      "fontSize": 10,
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "Mono/Badge",
+      "fontFamily": "JetBrains Mono",
+      "fontWeight": "Regular",
+      "fontSize": 10,
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 6
+      },
+      "textCase": "UPPER"
+    },
+    {
+      "name": "Mono/Meta Label",
+      "fontFamily": "JetBrains Mono",
+      "fontWeight": "Regular",
+      "fontSize": 12,
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 8
+      },
+      "textCase": "UPPER"
+    },
+    {
+      "name": "Mono/CTA",
+      "fontFamily": "JetBrains Mono",
+      "fontWeight": "Regular",
+      "fontSize": 12,
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "Mono/CTA Medium",
+      "fontFamily": "JetBrains Mono",
+      "fontWeight": "Medium",
+      "fontSize": 14,
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 4
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "Mono/Code",
+      "fontFamily": "JetBrains Mono",
+      "fontWeight": "Regular",
+      "fontSize": 12,
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "Mono/Code Small",
+      "fontFamily": "JetBrains Mono",
+      "fontWeight": "Regular",
+      "fontSize": 10,
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 5
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "Mono/Colophon",
+      "fontFamily": "JetBrains Mono",
+      "fontWeight": "Regular",
+      "fontSize": 12,
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 4
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "Mono/Chip",
+      "fontFamily": "JetBrains Mono",
+      "fontWeight": "Regular",
+      "fontSize": 12,
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "Mono/Pills Label",
+      "fontFamily": "JetBrains Mono",
+      "fontWeight": "Regular",
+      "fontSize": 12,
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "Special/Handwritten",
+      "fontFamily": "Caveat",
+      "fontWeight": "Regular",
+      "fontSize": 30,
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 1
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "Special/Big CTA",
+      "fontFamily": "Pixelify Sans",
+      "fontWeight": "Bold",
+      "fontSize": 100,
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 2
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "Special/Nav Brand",
+      "fontFamily": "Pixelify Sans",
+      "fontWeight": "Bold",
+      "fontSize": 20,
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 2
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "Special/Marquee",
+      "fontFamily": "Hanken Grotesk",
+      "fontWeight": "Regular",
+      "fontSize": 20,
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "Special/Meta Value",
+      "fontFamily": "Hanken Grotesk",
+      "fontWeight": "Medium",
+      "fontSize": 14,
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "textCase": "ORIGINAL"
+    }
+  ]
+}

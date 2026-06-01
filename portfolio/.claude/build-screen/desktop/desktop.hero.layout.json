@@ -1,0 +1,171 @@
+{
+  "screen": "desktop",
+  "section": "hero",
+  "stack": "next",
+  "source": "ai-systems/schema/desktop/hero/hero.raw.json",
+  "interpretation_notes": [
+    "Root is a <header> with vertical flex column, gap=spacing-10xl(44px), padding 88px top / 72px bottom, horizontal padding via site-wrap",
+    "Left/right padding of 200px at 1440px → content area ~1040px, matches site-wrap max-width convention",
+    "No atmospheric or decorative nodes in raw JSON; existing HeroGeo background decoration preserved as atmospheric layer",
+    "Statement text has no explicit color token → inferred color-text-primary from context"
+  ],
+  "root": {
+    "name": "Hero",
+    "tag": "header",
+    "layout": {
+      "direction": "column",
+      "gap": "var(--space-10xl)",
+      "paddingTop": "88px",
+      "paddingBottom": "72px",
+      "paddingInline": "site-wrap",
+      "alignItems": "center",
+      "textAlign": "center"
+    },
+    "children": [
+      {
+        "name": "Identity",
+        "tag": "div",
+        "layout": {
+          "direction": "column",
+          "gap": "var(--space-8xl)",
+          "alignItems": "center"
+        },
+        "children": [
+          {
+            "name": "Eyebrow",
+            "tag": "div",
+            "layout": {
+              "direction": "row",
+              "gap": "var(--space-2xl)",
+              "alignItems": "center"
+            },
+            "children": [
+              {
+                "name": "LineLeft",
+                "tag": "span",
+                "size": "28px × 1px",
+                "fill": "color-accent",
+                "nonInteractive": true
+              },
+              {
+                "name": "EyebrowText",
+                "tag": "span",
+                "text": "DESIGN ENGINEER · ABUJA, WORKING WORLDWIDE",
+                "typography": "mono-eyebrow → .ts-eyebrow (font-mono 12px tracking-[.18em] uppercase)",
+                "color": "color-accent → var(--color-accent)",
+                "nonInteractive": true
+              },
+              {
+                "name": "LineRight",
+                "tag": "span",
+                "size": "28px × 1px",
+                "fill": "color-accent",
+                "nonInteractive": true
+              }
+            ]
+          },
+          {
+            "name": "Intro",
+            "tag": "div",
+            "layout": {
+              "direction": "column",
+              "gap": "var(--space-2xl)",
+              "alignItems": "center"
+            },
+            "children": [
+              {
+                "name": "HandwrittenLabel",
+                "tag": "span",
+                "text": "Hi, my name is",
+                "typography": "special-handwritten → .ts-handwritten (font-caveat 30px)",
+                "color": "color-text-muted → var(--color-muted)",
+                "nonInteractive": true
+              },
+              {
+                "name": "DisplayName",
+                "tag": "div",
+                "text": "Haye",
+                "typography": "display-display → font-pixel font-bold, responsive clamp(60px,11.1vw,160px) at 1440px = 160px",
+                "lineHeight": "1 (100% per spec)",
+                "color": "color-text-primary → var(--color-text)",
+                "nonInteractive": true
+              }
+            ]
+          },
+          {
+            "name": "Statement",
+            "tag": "p",
+            "text": "I design & build consumer & fintech products from interface to infrastructure.",
+            "typography": "body-statement → .ts-statement base, clamp(20px,2.5vw,36px) for responsiveness",
+            "lineHeight": "1.32 (132% per spec)",
+            "color": "color-text-primary (inferred) → var(--color-text)",
+            "layout": { "maxWidth": "680px", "textAlign": "center" },
+            "note": "Inline brand marks (QrMark, UIMark, CodeMark) are creative enhancements from existing; preserved as non-structural decorations"
+          }
+        ]
+      },
+      {
+        "name": "Pills",
+        "tag": "div",
+        "layout": {
+          "direction": "row",
+          "wrap": true,
+          "gap": "var(--space-md)",
+          "justifyContent": "center",
+          "alignItems": "center"
+        },
+        "children": [
+          {
+            "name": "PillAvailable",
+            "component": "Pill",
+            "props": { "variant": "go" },
+            "text": "Available for design engineering roles",
+            "style": "accent border + live-dot + accent text"
+          },
+          {
+            "name": "PillBuilding",
+            "component": "Pill",
+            "props": { "variant": "default" },
+            "text": "Currently building Shappay",
+            "style": "border-strong + text-secondary"
+          },
+          {
+            "name": "PillRemote",
+            "component": "Pill",
+            "props": { "variant": "default" },
+            "text": "Open to remote / global work",
+            "style": "border-strong + text-secondary"
+          }
+        ]
+      },
+      {
+        "name": "Ctas",
+        "tag": "div",
+        "layout": {
+          "direction": "row",
+          "wrap": true,
+          "gap": "var(--space-2xl)",
+          "justifyContent": "center"
+        },
+        "children": [
+          {
+            "name": "ButtonPrimary",
+            "component": "Link (next/link)",
+            "href": "/#contact",
+            "text": "Let's talk →",
+            "style": "bg color-accent, text color-on-accent, radius-30→rounded-full, padding 16px 26px, ts-cta-medium",
+            "hover": "lift + accent glow box-shadow"
+          },
+          {
+            "name": "ButtonGhost",
+            "component": "Link (next/link)",
+            "href": "/#work",
+            "text": "See the work ↓",
+            "style": "border color-border-strong, text color-text-primary, radius-30→rounded-full, padding 16px 26px, ts-cta-medium",
+            "hover": "border + text shift to color-accent"
+          }
+        ]
+      }
+    ]
+  }
+}

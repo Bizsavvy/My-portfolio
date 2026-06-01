@@ -1,0 +1,713 @@
+{
+    "version": "1.0.0",
+    "source": {
+        "fileName": "Case studies",
+        "selection": [
+            "27:15"
+        ],
+        "extractedAt": "2026-06-01T00:24:26.209Z"
+    },
+    "tokens": {
+        "colors": {
+            "color-accent": "#C7F94B",
+            "color-text-muted": "#8C8B7E",
+            "color-text-primary": "#ECEAE0",
+            "color-border-strong": "rgba(236, 234, 224, 0.2)",
+            "color-text-secondary": "#D6D4C9",
+            "color-on-accent": "#0C0C0A"
+        },
+        "typography": {
+            "mono-eyebrow": {
+                "fontWeight": 400,
+                "fontSize": 12,
+                "lineHeight": "120.00000476837158%",
+                "letterSpacing": 18
+            },
+            "special-handwritten": {
+                "fontWeight": 400,
+                "fontSize": 30,
+                "lineHeight": "100%",
+                "letterSpacing": 1
+            },
+            "display-display": {
+                "fontWeight": 700,
+                "fontSize": 160,
+                "lineHeight": "100%",
+                "letterSpacing": 2
+            },
+            "body-statement": {
+                "fontWeight": 400,
+                "fontSize": 36,
+                "lineHeight": "132.00000524520874%",
+                "letterSpacing": -1
+            },
+            "mono-pills-label": {
+                "fontWeight": 400,
+                "fontSize": 12,
+                "letterSpacing": 0
+            },
+            "mono-cta-medium": {
+                "fontWeight": 500,
+                "fontSize": 14,
+                "lineHeight": "100%",
+                "letterSpacing": 4
+            }
+        },
+        "spacing": {
+            "spacing-10xl": 44,
+            "spacing-8xl": 32,
+            "spacing-lg": 16,
+            "spacing-md": 10,
+            "spacing-sm": 8,
+            "spacing-2xl": 16
+        },
+        "radius": {
+            "radius-30": 30
+        },
+        "shadows": {}
+    },
+    "components": [
+        {
+            "name": "Hero",
+            "variants": [],
+            "instances": 1
+        },
+        {
+            "name": "ButtonPrimary",
+            "variants": [],
+            "instances": 1
+        },
+        {
+            "name": "ButtonGhost",
+            "variants": [],
+            "instances": 1
+        }
+    ],
+    "root": {
+        "id": "27:15",
+        "kind": "screen",
+        "name": "Hero",
+        "width": 1440,
+        "height": 710,
+        "component": "Hero",
+        "position": "relational",
+        "layout": {
+            "direction": "vertical",
+            "gap": "spacing-10xl",
+            "padding": {
+                "top": 88,
+                "right": 200,
+                "bottom": 72,
+                "left": 200
+            },
+            "alignItems": "center"
+        },
+        "children": [
+            {
+                "id": "50:1221",
+                "kind": "container",
+                "name": "Identity",
+                "width": 680,
+                "height": 376,
+                "position": "relational",
+                "layout": {
+                    "direction": "vertical",
+                    "gap": "spacing-8xl",
+                    "alignItems": "center"
+                },
+                "responsive": {
+                    "width": "hug",
+                    "height": "hug"
+                },
+                "children": [
+                    {
+                        "id": "27:16",
+                        "kind": "container",
+                        "name": "Eyebrow",
+                        "width": 471,
+                        "height": 14,
+                        "position": "relational",
+                        "layout": {
+                            "direction": "horizontal",
+                            "gap": "spacing-lg",
+                            "alignItems": "center"
+                        },
+                        "responsive": {
+                            "width": "hug",
+                            "height": "hug"
+                        },
+                        "children": [
+                            {
+                                "id": "27:17",
+                                "kind": "rectangle",
+                                "name": "Element",
+                                "width": 28,
+                                "height": 1,
+                                "position": "relational",
+                                "style": {
+                                    "background": "color-accent"
+                                },
+                                "semanticRole": "structural",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "27:18",
+                                "kind": "text",
+                                "name": "DESIGN ENGINEER · ABUJA, WORKING WORLDWIDE",
+                                "width": 391,
+                                "height": 14,
+                                "position": "relational",
+                                "text": {
+                                    "content": "DESIGN ENGINEER · ABUJA, WORKING WORLDWIDE",
+                                    "typography": "mono-eyebrow",
+                                    "color": "color-accent",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "27:19",
+                                "kind": "rectangle",
+                                "name": "Element",
+                                "width": 28,
+                                "height": 1,
+                                "position": "relational",
+                                "style": {
+                                    "background": "color-accent"
+                                },
+                                "semanticRole": "structural",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    },
+                    {
+                        "id": "50:1222",
+                        "kind": "container",
+                        "name": "Intro",
+                        "width": 396,
+                        "height": 202,
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "spacing-lg",
+                            "alignItems": "center"
+                        },
+                        "responsive": {
+                            "width": "hug",
+                            "height": "hug"
+                        },
+                        "children": [
+                            {
+                                "id": "27:21",
+                                "kind": "text",
+                                "name": "Hi, my name is",
+                                "width": 151,
+                                "height": 30,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Hi, my name is",
+                                    "typography": "special-handwritten",
+                                    "color": "color-text-muted",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "27:23",
+                                "kind": "text",
+                                "name": "Haye",
+                                "width": 396,
+                                "height": 160,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Haye",
+                                    "typography": "display-display",
+                                    "color": "color-text-primary",
+                                    "textAlign": "center"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    },
+                    {
+                        "id": "27:25",
+                        "kind": "text",
+                        "name": "I design & build consumer & fintech products from interface to infrastructure.",
+                        "width": 680,
+                        "height": 96,
+                        "position": "relational",
+                        "text": {
+                            "content": "I design & build consumer & fintech products from interface to infrastructure.",
+                            "typography": "body-statement",
+                            "textAlign": "center"
+                        },
+                        "semanticRole": "semantic",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    }
+                ],
+                "semanticRole": "structural",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            },
+            {
+                "id": "27:27",
+                "kind": "container",
+                "name": "Pills",
+                "width": 1040,
+                "height": 40,
+                "position": "relational",
+                "layout": {
+                    "direction": "horizontal",
+                    "gap": "spacing-md",
+                    "justifyContent": "center",
+                    "alignItems": "center",
+                    "wrap": true
+                },
+                "responsive": {
+                    "width": "hug"
+                },
+                "children": [
+                    {
+                        "id": "27:28",
+                        "kind": "container",
+                        "name": "Pill",
+                        "width": 320,
+                        "height": 40,
+                        "position": "relational",
+                        "layout": {
+                            "direction": "horizontal",
+                            "gap": "spacing-sm",
+                            "padding": {
+                                "top": 12,
+                                "right": 16,
+                                "bottom": 12,
+                                "left": 16
+                            },
+                            "alignItems": "center"
+                        },
+                        "responsive": {
+                            "width": "hug",
+                            "height": "hug"
+                        },
+                        "style": {
+                            "borderColor": "color-accent",
+                            "borderWidth": 1,
+                            "borderRadius": "radius-30"
+                        },
+                        "children": [
+                            {
+                                "id": "27:29",
+                                "kind": "circle",
+                                "name": "Element",
+                                "width": 6,
+                                "height": 6,
+                                "position": "relational",
+                                "style": {
+                                    "background": "color-accent"
+                                },
+                                "semanticRole": "structural",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "27:30",
+                                "kind": "text",
+                                "name": "Available for design engineering roles",
+                                "width": 274,
+                                "height": 16,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Available for design engineering roles",
+                                    "typography": "mono-pills-label",
+                                    "color": "color-accent",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    },
+                    {
+                        "id": "27:31",
+                        "kind": "container",
+                        "name": "Pill",
+                        "width": 220,
+                        "height": 40,
+                        "position": "relational",
+                        "layout": {
+                            "direction": "horizontal",
+                            "padding": {
+                                "top": 12,
+                                "right": 16,
+                                "bottom": 12,
+                                "left": 16
+                            },
+                            "alignItems": "center"
+                        },
+                        "responsive": {
+                            "width": "hug",
+                            "height": "hug"
+                        },
+                        "style": {
+                            "borderColor": "color-border-strong",
+                            "borderWidth": 1,
+                            "borderRadius": "radius-30"
+                        },
+                        "children": [
+                            {
+                                "id": "27:32",
+                                "kind": "text",
+                                "name": "Currently building Shappay",
+                                "width": 188,
+                                "height": 16,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Currently building Shappay",
+                                    "typography": "mono-pills-label",
+                                    "color": "color-text-secondary",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    },
+                    {
+                        "id": "27:33",
+                        "kind": "container",
+                        "name": "Pill",
+                        "width": 234,
+                        "height": 40,
+                        "position": "relational",
+                        "layout": {
+                            "direction": "horizontal",
+                            "padding": {
+                                "top": 12,
+                                "right": 16,
+                                "bottom": 12,
+                                "left": 16
+                            },
+                            "alignItems": "center"
+                        },
+                        "responsive": {
+                            "width": "hug",
+                            "height": "hug"
+                        },
+                        "style": {
+                            "borderColor": "color-border-strong",
+                            "borderWidth": 1,
+                            "borderRadius": "radius-30"
+                        },
+                        "children": [
+                            {
+                                "id": "27:34",
+                                "kind": "text",
+                                "name": "Open to remote / global work",
+                                "width": 202,
+                                "height": 16,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Open to remote / global work",
+                                    "typography": "mono-pills-label",
+                                    "color": "color-text-secondary",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    }
+                ],
+                "semanticRole": "structural",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            },
+            {
+                "id": "27:36",
+                "kind": "button",
+                "name": "Ctas",
+                "width": 1040,
+                "height": 46,
+                "position": "relational",
+                "layout": {
+                    "direction": "horizontal",
+                    "gap": "spacing-2xl",
+                    "justifyContent": "center"
+                },
+                "responsive": {
+                    "width": "hug"
+                },
+                "children": [
+                    {
+                        "id": "37:6370",
+                        "kind": "component",
+                        "name": "ButtonPrimary",
+                        "width": 159,
+                        "height": 46,
+                        "component": "ButtonPrimary",
+                        "position": "relational",
+                        "layout": {
+                            "direction": "horizontal",
+                            "padding": {
+                                "top": 16,
+                                "right": 26,
+                                "bottom": 16,
+                                "left": 26
+                            }
+                        },
+                        "responsive": {
+                            "width": "hug",
+                            "height": "hug"
+                        },
+                        "style": {
+                            "background": "color-accent",
+                            "borderRadius": "radius-30"
+                        },
+                        "children": [
+                            {
+                                "id": "I37:6370;37:6355",
+                                "kind": "text",
+                                "name": "Let's talk →",
+                                "width": 107,
+                                "height": 14,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Let's talk →",
+                                    "typography": "mono-cta-medium",
+                                    "color": "color-on-accent",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "insideComponent": true,
+                                    "hierarchyDepth": 3
+                                },
+                                "interaction": {
+                                    "insideInteractiveComponent": true
+                                }
+                            }
+                        ],
+                        "semanticRole": "interactive",
+                        "signals": {
+                            "interactive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "insideComponent": true,
+                            "interactive": true,
+                            "hierarchyDepth": 2
+                        },
+                        "interaction": {
+                            "interactive": true,
+                            "insideInteractiveComponent": true
+                        }
+                    },
+                    {
+                        "id": "37:6367",
+                        "kind": "component",
+                        "name": "ButtonGhost",
+                        "width": 177,
+                        "height": 46,
+                        "component": "ButtonGhost",
+                        "position": "relational",
+                        "layout": {
+                            "direction": "horizontal",
+                            "padding": {
+                                "top": 16,
+                                "right": 26,
+                                "bottom": 16,
+                                "left": 26
+                            }
+                        },
+                        "responsive": {
+                            "width": "hug",
+                            "height": "hug"
+                        },
+                        "style": {
+                            "borderColor": "color-border-strong",
+                            "borderWidth": 1,
+                            "borderRadius": "radius-30"
+                        },
+                        "children": [
+                            {
+                                "id": "I37:6367;37:6364",
+                                "kind": "text",
+                                "name": "See the work ↓",
+                                "width": 125,
+                                "height": 14,
+                                "position": "relational",
+                                "text": {
+                                    "content": "See the work ↓",
+                                    "typography": "mono-cta-medium",
+                                    "color": "color-text-primary",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "insideComponent": true,
+                                    "hierarchyDepth": 3
+                                },
+                                "interaction": {
+                                    "insideInteractiveComponent": true
+                                }
+                            }
+                        ],
+                        "semanticRole": "interactive",
+                        "signals": {
+                            "interactive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "insideComponent": true,
+                            "interactive": true,
+                            "hierarchyDepth": 2
+                        },
+                        "interaction": {
+                            "interactive": true,
+                            "insideInteractiveComponent": true
+                        }
+                    }
+                ],
+                "semanticRole": "interactive",
+                "signals": {
+                    "interactive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "interactive": true,
+                    "hierarchyDepth": 1
+                },
+                "interaction": {
+                    "interactive": true
+                }
+            }
+        ],
+        "semanticRole": "structural",
+        "signals": {
+            "nonInteractive": true
+        },
+        "context": {
+            "zIndex": -1
+        }
+    }
+}

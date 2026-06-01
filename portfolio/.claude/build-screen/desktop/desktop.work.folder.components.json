@@ -1,0 +1,137 @@
+{
+  "screen": "desktop",
+  "section": "work.folder",
+  "stack": "next",
+  "allowed_set": ["Header", "Button", "Input", "SearchInput", "Card", "ListItem", "Avatar", "BottomNav", "Icon", "Image", "Pill", "Badge"],
+  "mapped": [
+    {
+      "figmaId": "36:1310",
+      "figmaName": "Folder1",
+      "kind": "screen / component",
+      "maps_to": "Link (next/link) — interactive wrapper, full width",
+      "component": "Link",
+      "signals": ["interactive"]
+    },
+    {
+      "figmaId": "I36:1310;36:562",
+      "figmaName": "TabRow",
+      "kind": "container",
+      "maps_to": "div flex (justify-start odd / justify-end even)",
+      "component": "native HTML"
+    },
+    {
+      "figmaId": "I36:1310;36:563",
+      "figmaName": "Tab",
+      "kind": "container",
+      "maps_to": "span inline-flex items-center gap-[9px] px-[22px] py-[10px], border-b-0",
+      "component": "native HTML",
+      "signals": ["nonInteractive"]
+    },
+    {
+      "figmaId": "I36:1310;36:564",
+      "figmaName": "01 (number)",
+      "kind": "text",
+      "maps_to": "span .ts-mono-label-md text-[var(--color-accent)]",
+      "component": "native HTML",
+      "signals": ["nonInteractive"]
+    },
+    {
+      "figmaId": "I36:1310;36:565",
+      "figmaName": "Flagship · Fintech (tab label)",
+      "kind": "text",
+      "maps_to": "span font-mono text-[12px] tracking-[0.08em] text-[var(--color-muted)] — NO uppercase",
+      "component": "native HTML",
+      "signals": ["nonInteractive"]
+    },
+    {
+      "figmaId": "I36:1310;36:566",
+      "figmaName": "Fbody",
+      "kind": "container",
+      "maps_to": "div CSS grid 2-col, border var(--color-border), bg var(--color-surface), border-radius adapts per Z-pattern",
+      "component": "native HTML"
+    },
+    {
+      "figmaId": "I36:1310;36:567",
+      "figmaName": "Fcontent",
+      "kind": "container",
+      "maps_to": "div flex-col justify-between p-[44px]",
+      "component": "native HTML"
+    },
+    {
+      "figmaId": "I36:1310;36:584",
+      "figmaName": "Finfo",
+      "kind": "container",
+      "maps_to": "div flex-col gap-[var(--space-lg)]",
+      "component": "native HTML"
+    },
+    {
+      "figmaId": "I36:1310;36:568",
+      "figmaName": "Title (row)",
+      "kind": "container",
+      "maps_to": "div flex items-center gap-[var(--space-lg)] flex-wrap",
+      "component": "native HTML"
+    },
+    {
+      "figmaId": "I36:1310;36:569",
+      "figmaName": "Shappay (title text)",
+      "kind": "text",
+      "maps_to": "span .ts-card-title text-[var(--color-text)] leading-[1.2]",
+      "component": "native HTML",
+      "signals": ["nonInteractive"]
+    },
+    {
+      "figmaId": "I36:1310;36:1064",
+      "figmaName": "Badge",
+      "kind": "component",
+      "maps_to": "Badge (project component)",
+      "component": "Badge"
+    },
+    {
+      "figmaId": "I36:1310;36:572",
+      "figmaName": "hook text",
+      "kind": "text",
+      "maps_to": "p .ts-body text-[var(--color-body)] leading-[1.65] max-w-[46ch]",
+      "component": "native HTML",
+      "signals": ["nonInteractive"]
+    },
+    {
+      "figmaId": "I36:1310;36:585",
+      "figmaName": "Tags&link",
+      "kind": "container",
+      "maps_to": "div flex-col gap-[var(--space-5xl)]",
+      "component": "native HTML"
+    },
+    {
+      "figmaId": "I36:1310;36:573",
+      "figmaName": "Tags",
+      "kind": "container",
+      "maps_to": "div flex gap-[var(--space-sm)] flex-wrap",
+      "component": "native HTML"
+    },
+    {
+      "figmaId": "I36:1310;36:812 / 815 / 818",
+      "figmaName": "TagPill ×3",
+      "kind": "component",
+      "maps_to": "span font-mono text-[10px] text-[var(--color-muted)] border border-[var(--color-border)] rounded-[var(--rad-2xl)] px-[12px] py-[8px]",
+      "component": "native HTML (TagPill not in project contract set)"
+    },
+    {
+      "figmaId": "I36:1310;36:580",
+      "figmaName": "View case study →",
+      "kind": "text",
+      "maps_to": "span .ts-cta text-[var(--color-text)] inline-flex items-center gap-[9px]",
+      "component": "native HTML",
+      "signals": ["interactive"]
+    }
+  ],
+  "flagged": [
+    {
+      "node": "TagPill",
+      "reason": "Not in project component contract set — rendered as native span with inline styles matching Figma spec exactly"
+    },
+    {
+      "node": "QrCard (visual pane)",
+      "reason": "Visual pane content is passed as React.ReactNode prop — not reconstructed from JSON, preserves existing creative visual components"
+    }
+  ]
+}

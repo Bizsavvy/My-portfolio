@@ -1,0 +1,140 @@
+{
+  "dark": {
+    "color": {
+      "bg": {
+        "value": "{color.ink}",
+        "type": "color",
+        "prefix": "semantic"
+      },
+      "surface": {
+        "value": "{color.surface}",
+        "type": "color",
+        "prefix": "semantic"
+      },
+      "surface-elevated": {
+        "value": "{color.surface-elevated}",
+        "type": "color",
+        "prefix": "semantic"
+      },
+      "accent": {
+        "value": "{color.lime}",
+        "type": "color",
+        "prefix": "semantic"
+      },
+      "accent-dim": {
+        "value": "#c7f94b21",
+        "type": "color",
+        "prefix": "semantic"
+      },
+      "accent-text": {
+        "value": "{color.lime}",
+        "type": "color",
+        "prefix": "semantic"
+      },
+      "on-accent": {
+        "value": "{color.ink}",
+        "type": "color",
+        "prefix": "semantic"
+      },
+      "text-primary": {
+        "value": "{color.text-light}",
+        "type": "color",
+        "prefix": "semantic"
+      },
+      "text-secondary": {
+        "value": "{color.body-light}",
+        "type": "color",
+        "prefix": "semantic"
+      },
+      "text-muted": {
+        "value": "{color.neutral}",
+        "type": "color",
+        "prefix": "semantic"
+      },
+      "border": {
+        "value": "#eceae01c",
+        "type": "color",
+        "prefix": "semantic"
+      },
+      "border-strong": {
+        "value": "#eceae033",
+        "type": "color",
+        "prefix": "semantic"
+      },
+      "secondary": {
+        "value": "{color.violet}",
+        "type": "color",
+        "prefix": "semantic"
+      }
+    }
+  },
+  "light": {
+    "color": {
+      "bg": {
+        "value": "{color.white}",
+        "type": "color",
+        "prefix": "semantic"
+      },
+      "surface": {
+        "value": "{color.pure-white}",
+        "type": "color",
+        "prefix": "semantic"
+      },
+      "surface-elevated": {
+        "value": "{color.light-surface}",
+        "type": "color",
+        "prefix": "semantic"
+      },
+      "accent": {
+        "value": "{color.lime}",
+        "type": "color",
+        "prefix": "semantic"
+      },
+      "accent-dim": {
+        "value": "#c7f94b21",
+        "type": "color",
+        "prefix": "semantic"
+      },
+      "accent-text": {
+        "value": "{color.lime-dark}",
+        "type": "color",
+        "prefix": "semantic"
+      },
+      "on-accent": {
+        "value": "{color.ink}",
+        "type": "color",
+        "prefix": "semantic"
+      },
+      "text-primary": {
+        "value": "{color.near-black}",
+        "type": "color",
+        "prefix": "semantic"
+      },
+      "text-secondary": {
+        "value": "{color.dark-body}",
+        "type": "color",
+        "prefix": "semantic"
+      },
+      "text-muted": {
+        "value": "{color.neutral}",
+        "type": "color",
+        "prefix": "semantic"
+      },
+      "border": {
+        "value": "#1a1a1614",
+        "type": "color",
+        "prefix": "semantic"
+      },
+      "border-strong": {
+        "value": "#1a1a1624",
+        "type": "color",
+        "prefix": "semantic"
+      },
+      "secondary": {
+        "value": "{color.violet}",
+        "type": "color",
+        "prefix": "semantic"
+      }
+    }
+  }
+}

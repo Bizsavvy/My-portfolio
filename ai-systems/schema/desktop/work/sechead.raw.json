@@ -1,0 +1,157 @@
+{
+    "version": "1.0.0",
+    "source": {
+        "fileName": "Case studies",
+        "selection": [
+            "29:3"
+        ],
+        "extractedAt": "2026-06-01T01:10:42.065Z"
+    },
+    "tokens": {
+        "colors": {
+            "color-accent": "#C7F94B",
+            "color-text-primary": "#ECEAE0",
+            "color-text-muted": "#8C8B7E"
+        },
+        "typography": {
+            "mono-label": {
+                "fontWeight": 400,
+                "fontSize": 12,
+                "lineHeight": "139.9999976158142%",
+                "letterSpacing": 4
+            },
+            "display-project-name-sm": {
+                "fontWeight": 700,
+                "fontSize": 48,
+                "lineHeight": "110.00000238418579%",
+                "letterSpacing": -2
+            },
+            "body-small": {
+                "fontWeight": 400,
+                "fontSize": 16,
+                "lineHeight": "160.0000023841858%",
+                "letterSpacing": 0
+            }
+        },
+        "spacing": {
+            "spacing-lg": 12
+        },
+        "radius": {},
+        "shadows": {}
+    },
+    "components": [],
+    "root": {
+        "id": "29:3",
+        "kind": "screen",
+        "name": "Sechead",
+        "width": 1312,
+        "height": 135,
+        "position": "relational",
+        "layout": {
+            "direction": "horizontal",
+            "justifyContent": "space-between",
+            "alignItems": "end"
+        },
+        "children": [
+            {
+                "id": "29:4",
+                "kind": "container",
+                "name": "Shl",
+                "width": 368,
+                "height": 135,
+                "position": "relational",
+                "layout": {
+                    "direction": "vertical",
+                    "gap": "spacing-lg"
+                },
+                "responsive": {
+                    "width": "hug",
+                    "height": "hug"
+                },
+                "children": [
+                    {
+                        "id": "29:5",
+                        "kind": "text",
+                        "name": "selected work",
+                        "width": 100,
+                        "height": 17,
+                        "position": "relational",
+                        "text": {
+                            "content": "selected work",
+                            "typography": "mono-label",
+                            "color": "color-accent",
+                            "textAlign": "left"
+                        },
+                        "semanticRole": "semantic",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    },
+                    {
+                        "id": "29:6",
+                        "kind": "text",
+                        "name": "Things I designed, then shipped.",
+                        "width": 368,
+                        "height": 106,
+                        "position": "relational",
+                        "text": {
+                            "content": "Things I designed,\nthen shipped.",
+                            "typography": "display-project-name-sm",
+                            "color": "color-text-primary",
+                            "textAlign": "left"
+                        },
+                        "semanticRole": "semantic",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    }
+                ],
+                "semanticRole": "structural",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            },
+            {
+                "id": "29:7",
+                "kind": "text",
+                "name": "Not static mockups — products designed, coded, and made ready for backend integration.",
+                "width": 320,
+                "height": 78,
+                "position": "relational",
+                "text": {
+                    "content": "Not static mockups — products designed,\ncoded, and made ready for backend integration.",
+                    "typography": "body-small",
+                    "color": "color-text-muted",
+                    "textAlign": "right"
+                },
+                "semanticRole": "semantic",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            }
+        ],
+        "semanticRole": "structural",
+        "signals": {
+            "nonInteractive": true
+        },
+        "context": {
+            "zIndex": -1
+        }
+    }
+}

@@ -1,0 +1,70 @@
+{
+  "screen": "desktop",
+  "section": "work.sechead",
+  "stack": "next",
+  "source": "ai-systems/schema/desktop/work/sechead.raw.json",
+  "interpretation_notes": [
+    "Root is a flex row, justify-between, align-items end — two children sit at opposite ends, bottom-aligned",
+    "Left child Shl: flex column, gap spacing-lg (12px) — matches --space-lg: 12px exactly",
+    "Right child is a lone text node, 320px wide, right-aligned — use max-w-[320px]",
+    "No padding on root — horizontal padding comes from site-wrap on the parent in page.tsx",
+    "spacing-lg in this JSON = 12, matches --space-lg: 12px exactly (unlike hero where spacing-lg = 16)",
+    "Responsive: at <680px right text flips to left-align (handled by existing media query in page.tsx)"
+  ],
+  "root": {
+    "name": "Sechead",
+    "tag": "div",
+    "layout": {
+      "direction": "row",
+      "justifyContent": "space-between",
+      "alignItems": "end",
+      "wrap": true,
+      "gap": "gap-6 (mobile fallback when wrapped)"
+    },
+    "children": [
+      {
+        "name": "Shl",
+        "tag": "div",
+        "layout": {
+          "direction": "column",
+          "gap": "var(--space-lg)",
+          "sizing": "hug"
+        },
+        "children": [
+          {
+            "name": "selected work",
+            "tag": "span",
+            "text": "selected work",
+            "typography": "mono-label → .ts-mono-label (font-mono 12px tracking-[0.04em])",
+            "lineHeight": "1.4 (139.9% per spec)",
+            "color": "color-accent → var(--color-accent)",
+            "nonInteractive": true
+          },
+          {
+            "name": "Things I designed, then shipped.",
+            "tag": "h2",
+            "text": "Things I designed,\nthen shipped.",
+            "typography": "display-project-name-sm → .ts-project-name-sm (font-hanken 700 48px tracking-[-0.02em])",
+            "lineHeight": "1.1 (110% per spec)",
+            "color": "color-text-primary → var(--color-text)",
+            "responsive": "clamp(26px, 3.33vw, 48px) — 3.33vw hits 48px at 1440px",
+            "nonInteractive": true
+          }
+        ]
+      },
+      {
+        "name": "body-right",
+        "tag": "p",
+        "text": "Not static mockups — products designed, coded, and made ready for backend integration.",
+        "typography": "body-small → .ts-body (font-hanken 400 16px tracking-0)",
+        "lineHeight": "1.6 (160% per spec)",
+        "color": "color-text-muted → var(--color-muted)",
+        "layout": {
+          "maxWidth": "320px",
+          "textAlign": "right"
+        },
+        "nonInteractive": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "schema": "1.0.0",
+  "screen": "desktop",
+  "section": "about",
+  "mappings": [
+    {
+      "node": "31:2",
+      "name": "About",
+      "component": "section",
+      "type": "primitive",
+      "notes": "Root section container — maps to <section> with two-column grid"
+    },
+    {
+      "node": "31:3",
+      "name": "AboutL",
+      "component": "div",
+      "type": "primitive",
+      "notes": "Left column — vertical stack of eyebrow + body + subtitle + skills"
+    },
+    {
+      "node": "31:4",
+      "name": "what's up",
+      "component": "span",
+      "type": "text",
+      "className": "ts-kicker",
+      "tokenColor": "color-accent",
+      "notes": "Eyebrow label 'what's up' — maps to mono kicker style"
+    },
+    {
+      "node": "31:5",
+      "name": "tagline",
+      "component": "p",
+      "type": "text",
+      "className": "ts-about",
+      "tokenColor": "color-text-primary",
+      "notes": "Main about statement in 28px body-about style"
+    },
+    {
+      "node": "31:6",
+      "name": "subtitle",
+      "component": "p",
+      "type": "text",
+      "className": "ts-body",
+      "tokenColor": "color-text-muted",
+      "notes": "Secondary text about market expertise"
+    },
+    {
+      "node": "31:7",
+      "name": "Skills",
+      "component": "div",
+      "type": "primitive",
+      "notes": "Flex container for skill pills with wrap"
+    },
+    {
+      "node": "skill-*",
+      "name": "Skill pill",
+      "component": "span",
+      "type": "tag",
+      "className": "ts-pills-label",
+      "tokenColor": "color-text-secondary",
+      "notes": "Repeated pill pattern — border, rounded-full, padding"
+    },
+    {
+      "node": "31:20",
+      "name": "Nowcard",
+      "component": "NowCard",
+      "type": "component",
+      "existingFile": "components/about/NowCard.tsx",
+      "notes": "Maps to existing NowCard component — card with heading + key-value rows"
+    },
+    {
+      "node": "31:21",
+      "name": "NcHeading",
+      "component": "div",
+      "type": "primitive",
+      "notes": "Heading row inside NowCard: accent dot + 'Currently' label"
+    },
+    {
+      "node": "31:22",
+      "name": "Element",
+      "component": "span",
+      "type": "decorative",
+      "tokenColor": "color-accent",
+      "notes": "Small accent-colored square (8x8, radius-xs) — decorative dot"
+    },
+    {
+      "node": "31:23",
+      "name": "CURRENTLY",
+      "component": "span",
+      "type": "text",
+      "className": "ts-mono-label",
+      "tokenColor": "color-text-muted",
+      "notes": "Heading text 'Currently'"
+    },
+    {
+      "node": "nowrow-*",
+      "name": "Nowrow",
+      "component": "div",
+      "type": "primitive",
+      "notes": "Repeated key-value row with bottom border, space-between layout"
+    }
+  ],
+  "unmappedNodes": [],
+  "notes": [
+    "Nowcard maps to existing component — reuse the contract from components/about/NowCard.tsx",
+    "All other nodes map to primitive elements with project token references",
+    "No component variants invented — existing NowCard is sufficient",
+    "Skill pills use consistent ts-pills-label class + color-text-secondary"
+  ]
+}

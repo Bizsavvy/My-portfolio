@@ -1,0 +1,79 @@
+{
+  "color": {
+    "ink": {
+      "value": "#0c0c0a",
+      "type": "color",
+      "prefix": "primitives"
+    },
+    "surface": {
+      "value": "#15150f",
+      "type": "color",
+      "prefix": "primitives"
+    },
+    "surface-elevated": {
+      "value": "#1c1c14",
+      "type": "color",
+      "prefix": "primitives"
+    },
+    "cream": {
+      "value": "#efebe0",
+      "type": "color",
+      "prefix": "primitives"
+    },
+    "lime": {
+      "value": "#c7f94b",
+      "type": "color",
+      "prefix": "primitives"
+    },
+    "lime-dark": {
+      "value": "#4d7c0f",
+      "type": "color",
+      "prefix": "primitives"
+    },
+    "violet": {
+      "value": "#8a4beb",
+      "type": "color",
+      "prefix": "primitives"
+    },
+    "white": {
+      "value": "#fafaf7",
+      "type": "color",
+      "prefix": "primitives"
+    },
+    "pure-white": {
+      "value": "#ffffff",
+      "type": "color",
+      "prefix": "primitives"
+    },
+    "light-surface": {
+      "value": "#f2f0eb",
+      "type": "color",
+      "prefix": "primitives"
+    },
+    "near-black": {
+      "value": "#1a1a16",
+      "type": "color",
+      "prefix": "primitives"
+    },
+    "text-light": {
+      "value": "#eceae0",
+      "type": "color",
+      "prefix": "primitives"
+    },
+    "body-light": {
+      "value": "#d6d4c9",
+      "type": "color",
+      "prefix": "primitives"
+    },
+    "neutral": {
+      "value": "#8c8b7e",
+      "type": "color",
+      "prefix": "primitives"
+    },
+    "dark-body": {
+      "value": "#4a4940",
+      "type": "color",
+      "prefix": "primitives"
+    }
+  }
+}

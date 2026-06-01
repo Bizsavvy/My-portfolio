@@ -1,0 +1,48 @@
+{
+  "screen": "desktop",
+  "section": "work.sechead",
+  "stack": "next",
+  "allowed_set": ["Header", "Button", "Input", "SearchInput", "Card", "ListItem", "Avatar", "BottomNav", "Icon", "Image", "Pill"],
+  "mapped": [
+    {
+      "figmaId": "29:3",
+      "figmaName": "Sechead",
+      "kind": "screen",
+      "maps_to": "div (flex row, justify-between, items-end)",
+      "component": "native HTML"
+    },
+    {
+      "figmaId": "29:4",
+      "figmaName": "Shl",
+      "kind": "container",
+      "maps_to": "div (flex column, gap --space-lg)",
+      "component": "native HTML"
+    },
+    {
+      "figmaId": "29:5",
+      "figmaName": "selected work",
+      "kind": "text",
+      "maps_to": "span with .ts-mono-label text-[var(--color-accent)] leading-[1.4]",
+      "signals": ["nonInteractive"],
+      "component": "native HTML"
+    },
+    {
+      "figmaId": "29:6",
+      "figmaName": "Things I designed, then shipped.",
+      "kind": "text",
+      "maps_to": "h2 with .ts-project-name-sm text-[var(--color-text)] text-[clamp(26px,3.33vw,48px)] leading-[1.1]",
+      "signals": ["nonInteractive"],
+      "component": "native HTML",
+      "note": "ts-project-name-sm covers font-family(hanken), weight(700), size(48px base), tracking(-0.02em). Size overridden to clamp for responsiveness."
+    },
+    {
+      "figmaId": "29:7",
+      "figmaName": "Not static mockups — ...",
+      "kind": "text",
+      "maps_to": "p with .ts-body text-[var(--color-muted)] text-right leading-[1.6] max-w-[320px]",
+      "signals": ["nonInteractive"],
+      "component": "native HTML"
+    }
+  ],
+  "flagged": []
+}

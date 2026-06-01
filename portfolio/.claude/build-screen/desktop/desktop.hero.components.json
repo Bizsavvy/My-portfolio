@@ -1,0 +1,146 @@
+{
+  "screen": "desktop",
+  "section": "hero",
+  "stack": "next",
+  "allowed_set": ["Header", "Button", "Input", "SearchInput", "Card", "ListItem", "Avatar", "BottomNav", "Icon", "Image", "Pill"],
+  "mapped": [
+    {
+      "figmaId": "27:15",
+      "figmaName": "Hero",
+      "kind": "screen",
+      "maps_to": "header",
+      "component": "native HTML"
+    },
+    {
+      "figmaId": "50:1221",
+      "figmaName": "Identity",
+      "kind": "container",
+      "maps_to": "div (flex column)",
+      "component": "native HTML"
+    },
+    {
+      "figmaId": "27:16",
+      "figmaName": "Eyebrow",
+      "kind": "container",
+      "maps_to": "div (flex row)",
+      "component": "native HTML"
+    },
+    {
+      "figmaId": "27:17",
+      "figmaName": "Element (left line)",
+      "kind": "rectangle",
+      "maps_to": "span w-7 h-px bg-[var(--color-accent)]",
+      "signals": ["nonInteractive"],
+      "component": "native HTML"
+    },
+    {
+      "figmaId": "27:18",
+      "figmaName": "DESIGN ENGINEER · ABUJA, WORKING WORLDWIDE",
+      "kind": "text",
+      "maps_to": "span with .ts-eyebrow text-[var(--color-accent)]",
+      "signals": ["nonInteractive"],
+      "component": "native HTML"
+    },
+    {
+      "figmaId": "27:19",
+      "figmaName": "Element (right line)",
+      "kind": "rectangle",
+      "maps_to": "span w-7 h-px bg-[var(--color-accent)]",
+      "signals": ["nonInteractive"],
+      "component": "native HTML"
+    },
+    {
+      "figmaId": "50:1222",
+      "figmaName": "Intro",
+      "kind": "container",
+      "maps_to": "div (flex column)",
+      "component": "native HTML"
+    },
+    {
+      "figmaId": "27:21",
+      "figmaName": "Hi, my name is",
+      "kind": "text",
+      "maps_to": "span with .ts-handwritten text-[var(--color-muted)]",
+      "signals": ["nonInteractive"],
+      "component": "native HTML"
+    },
+    {
+      "figmaId": "27:23",
+      "figmaName": "Haye",
+      "kind": "text",
+      "maps_to": "div with font-pixel font-bold clamp(60px,11.1vw,160px) line-height:1",
+      "signals": ["nonInteractive"],
+      "component": "native HTML"
+    },
+    {
+      "figmaId": "27:25",
+      "figmaName": "I design & build...",
+      "kind": "text",
+      "maps_to": "p with .ts-statement clamp(20px,2.5vw,36px) maxWidth:680px",
+      "signals": ["nonInteractive"],
+      "component": "native HTML",
+      "note": "Inline QrMark/UIMark/CodeMark creative enhancements preserved from existing implementation"
+    },
+    {
+      "figmaId": "27:27",
+      "figmaName": "Pills",
+      "kind": "container",
+      "maps_to": "div (flex row wrap)",
+      "component": "native HTML"
+    },
+    {
+      "figmaId": "27:28",
+      "figmaName": "Pill (available for roles)",
+      "kind": "container",
+      "maps_to": "Pill variant=\"go\"",
+      "component": "Pill",
+      "signals": ["nonInteractive"]
+    },
+    {
+      "figmaId": "27:31",
+      "figmaName": "Pill (currently building Shappay)",
+      "kind": "container",
+      "maps_to": "Pill variant=\"default\"",
+      "component": "Pill",
+      "signals": ["nonInteractive"]
+    },
+    {
+      "figmaId": "27:33",
+      "figmaName": "Pill (open to remote)",
+      "kind": "container",
+      "maps_to": "Pill variant=\"default\"",
+      "component": "Pill",
+      "signals": ["nonInteractive"]
+    },
+    {
+      "figmaId": "27:36",
+      "figmaName": "Ctas",
+      "kind": "button",
+      "maps_to": "div (flex row)",
+      "signals": ["interactive"],
+      "component": "native HTML container"
+    },
+    {
+      "figmaId": "37:6370",
+      "figmaName": "ButtonPrimary",
+      "kind": "component",
+      "maps_to": "Link (next/link) with primary styles",
+      "component": "Button (via Link)",
+      "signals": ["interactive"]
+    },
+    {
+      "figmaId": "37:6367",
+      "figmaName": "ButtonGhost",
+      "kind": "component",
+      "maps_to": "Link (next/link) with ghost styles",
+      "component": "Button (via Link)",
+      "signals": ["interactive"]
+    }
+  ],
+  "flagged": [],
+  "preserved_from_existing": [
+    "HeroGeo: atmospheric background geometry decoration — not in raw JSON, retained as existing visual layer",
+    "QrMark / UIMark / CodeMark: inline brand marks within statement text — creative enhancement, not in raw JSON",
+    "runHomeAnimations: GSAP/CSS entry animations wired in useEffect"
+  ]
+}
