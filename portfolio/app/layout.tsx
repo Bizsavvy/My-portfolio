@@ -5,6 +5,7 @@ import {
   Hanken_Grotesk,
   JetBrains_Mono,
 } from "next/font/google";
+import { CustomCursor } from "@/components/ui/CustomCursor";
 import "./globals.css";
 
 const caveat = Caveat({
@@ -51,6 +52,7 @@ export default function RootLayout({
       <body
         className={`${caveat.variable} ${pixelifySans.variable} ${hankenGrotesk.variable} ${jetbrainsMono.variable}`}
       >
+        <CustomCursor />
         {children}
       </body>
     </html>

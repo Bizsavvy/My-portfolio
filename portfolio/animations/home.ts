@@ -15,7 +15,7 @@ export function charSplit(el: HTMLElement): HTMLSpanElement[] {
 function showAll() {
   document
     .querySelectorAll(
-      ".reveal, .hero-label, .bigname, .statement, .herometa, .herocta, nav, .folder, .sechead, .aboutgrid > div, .bigcta, .contact-section p, .links"
+      ".reveal, .hero-label, .bigname, .statement, .herometa, .herocta, nav, .folder, .sechead, .aboutgrid > div, .nowcard, .bigcta, .contact-section p, .links a, .links button, .marquee, .geo-contact rect"
     )
     .forEach((el) => {
       (el as HTMLElement).style.opacity = "1";
@@ -51,6 +51,12 @@ export async function runHomeAnimations() {
     gsap.set(".herometa .pill", { opacity: 0, y: 14 });
     gsap.set(".herocta .btn", { opacity: 0, y: 12 });
     gsap.set("nav", { opacity: 0, y: -20 });
+
+    /* 1b. initial states for scroll reveals (prevents glitching) */
+    gsap.set(
+      ".sechead, .aboutgrid > div, .nowcard, .folder, .marquee, .geo-contact rect, .bigcta, .contact-section p, .links a, .links button",
+      { opacity: 0 }
+    );
 
     /* 2. Hero timeline */
     const heroTl = gsap.timeline({ defaults: { ease } });
@@ -118,7 +124,7 @@ export async function runHomeAnimations() {
         );
         gsap.fromTo(".bigcta", { opacity: 0, y: 36 }, { opacity: 1, y: 0, duration: 0.8, ease, delay: 0.2 });
         gsap.fromTo(
-          ".contact-section p, .links a",
+          ".contact-section p, .links a, .links button",
           { opacity: 0, y: 16 },
           { opacity: 1, y: 0, duration: 0.55, stagger: 0.08, ease: easeSoft, delay: 0.4 }
         );
