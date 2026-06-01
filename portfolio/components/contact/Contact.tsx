@@ -4,7 +4,7 @@ import { useState } from "react";
 import { GeoContact } from "./GeoContact";
 
 const links = [
-  { href: "mailto:binjobiz@gmail.com", label: "Email" },
+  { href: "#", label: "Email" },
   { href: "#", label: "LinkedIn" },
   { href: "#", label: "GitHub" },
   { href: "#", label: "Read.cv" },
@@ -12,6 +12,7 @@ const links = [
 
 export function Contact() {
   const [copied, setCopied] = useState(false);
+  const [mobileTooltip, setMobileTooltip] = useState<'primary' | 'footer' | null>(null);
 
   const fallbackCopy = (text: string) => {
     const textArea = document.createElement("textarea");
@@ -30,12 +31,8 @@ export function Contact() {
     document.body.removeChild(textArea);
   };
 
-  const handleCopy = (e: React.MouseEvent) => {
-    // On mobile/tablet, let the native mailto: link open the default email app
-    if (typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches) {
-      return;
-    }
-
+  const executeCopy = (e: React.MouseEvent) => {
+    e.stopPropagation();
     e.preventDefault();
     if (navigator.clipboard && window.isSecureContext) {
       navigator.clipboard.writeText("binjobiz@gmail.com").catch(() => fallbackCopy("binjobiz@gmail.com"));
@@ -43,7 +40,45 @@ export function Contact() {
       fallbackCopy("binjobiz@gmail.com");
     }
     setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    setTimeout(() => {
+      setCopied(false);
+      setMobileTooltip(null);
+    }, 2000);
+  };
+
+  const handleActionClick = (e: React.MouseEvent, type: 'primary' | 'footer') => {
+    e.preventDefault();
+    if (typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches) {
+      if (mobileTooltip !== type) {
+        setMobileTooltip(type);
+        setCopied(false);
+      }
+    } else {
+      executeCopy(e);
+    }
+  };
+
+  const renderTooltip = (type: 'primary' | 'footer', topOffset: string, defaultText: string) => {
+    const isMobileVisible = mobileTooltip === type;
+    return (
+      <div 
+        onClick={isMobileVisible ? executeCopy : undefined}
+        className={`absolute ${topOffset} left-1/2 -translate-x-1/2 transition-all duration-300 flex items-center justify-center bg-[var(--color-surface)] border border-[var(--color-border-strong)] rounded-[30px] px-4 py-2 shadow-lg z-10 cursor-pointer
+        ${isMobileVisible ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-2 pointer-events-none"} 
+        md:opacity-0 md:group-hover:opacity-100 md:group-hover:translate-y-0 md:pointer-events-none`}
+      >
+        <span className="ts-pills-label text-[var(--color-text-primary)] whitespace-nowrap flex items-center gap-2">
+          {copied ? "Copied!" : (
+            <>
+              <span className="md:hidden flex items-center">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </span>
+              {defaultText}
+            </>
+          )}
+        </span>
+      </div>
+    );
   };
 
   return (
@@ -59,17 +94,11 @@ export function Contact() {
         style={{ position: "relative", zIndex: 2 }}
       >
         <div className="flex flex-col items-center gap-[var(--space-8xl)] max-w-[621px]">
-          <a
-            href="mailto:binjobiz@gmail.com"
-            onClick={handleCopy}
+          <button
+            onClick={(e) => handleActionClick(e, 'primary')}
             className="bigcta group flex flex-col items-center gap-[var(--space-lg)] relative z-[2] cursor-pointer"
           >
-            {/* Tooltip (hidden on mobile) */}
-            <div className="absolute -top-[54px] left-1/2 -translate-x-1/2 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none hidden md:flex items-center justify-center bg-[var(--color-surface)] border border-[var(--color-border-strong)] rounded-[30px] px-4 py-2 shadow-lg z-10">
-              <span className="ts-pills-label text-[var(--color-text-primary)] whitespace-nowrap">
-                {copied ? "Copied to clipboard!" : "Copy binjobiz@gmail.com"}
-              </span>
-            </div>
+            {renderTooltip('primary', '-top-[54px]', 'Copy binjobiz@gmail.com')}
 
             <div className="ts-mono-label text-[var(--color-accent)] text-center">
               say hello
@@ -83,7 +112,7 @@ export function Contact() {
                 </svg>
               </span>
             </div>
-          </a>
+          </button>
 
           <p className="ts-body text-[var(--color-text-muted)] text-center max-w-[520px] relative z-[2]">
             I&apos;m most energized by 0→1 products where I can own the loop from interface
@@ -95,20 +124,14 @@ export function Contact() {
         <div className="links flex gap-[var(--space-6xl)] justify-center flex-wrap relative z-[2]">
           {links.map(({ href, label }) => (
             label === "Email" ? (
-              <a
+              <button
                 key={label}
-                href="mailto:binjobiz@gmail.com"
-                onClick={handleCopy}
+                onClick={(e) => handleActionClick(e, 'footer')}
                 className="ts-colophon text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors duration-[250ms] cursor-pointer relative group"
               >
                 {label}
-                {/* Small Tooltip for Footer Email (hidden on mobile) */}
-                <div className="absolute -top-[36px] left-1/2 -translate-x-1/2 opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none hidden md:flex items-center justify-center bg-[var(--color-surface)] border border-[var(--color-border-strong)] rounded-[30px] px-3 py-1 shadow-md z-10">
-                  <span className="ts-pills-label text-[var(--color-text-primary)] whitespace-nowrap text-[10px]">
-                    {copied ? "Copied!" : "Copy Email"}
-                  </span>
-                </div>
-              </a>
+                {renderTooltip('footer', '-top-[40px]', 'Copy Email')}
+              </button>
             ) : (
               <a
                 key={label}
