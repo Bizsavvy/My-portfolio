@@ -14,8 +14,8 @@ export function PivotSection() {
       className="relative z-[5] border-t border-[var(--color-line)]"
       style={{ padding: "62px 0" }}
     >
-      <div className="max-w-[var(--width-maxw)] mx-auto px-[var(--space-16xl)] flex flex-col gap-6">
-        <div className="reveal">
+      <div className="cs-wrap flex flex-col gap-6">
+        <div className="flex flex-col gap-6 reveal">
           <Kicker>The pivot</Kicker>
           <h2
             className="font-hanken font-bold tracking-[-0.02em]"
@@ -30,7 +30,7 @@ export function PivotSection() {
           from the payer&apos;s linked bank. Validation proved that bet couldn&apos;t hold.
         </p>
 
-        <div className="flex gap-12 reveal">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-12 reveal">
           <div className="flex-1 flex flex-col gap-4">
             <h3 className="font-hanken font-bold text-[22px] tracking-[-0.01em] text-[var(--color-text)]">
               What testing revealed
@@ -76,11 +76,11 @@ export function PivotSection() {
           Holding balances raises the bar — naming the costs is part of owning the decision.
         </p>
 
-        <div className="flex gap-4 reveal">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 reveal">
           {tradeoffs.map((card) => (
             <div
               key={card.badge}
-              className="flex-1 flex flex-col gap-3 bg-[var(--color-surface)] border border-[var(--color-line)] rounded-[var(--rad-lg)] p-[var(--space-4xl)]"
+              className="flex flex-col gap-3 bg-[var(--color-surface)] border border-[var(--color-line)] rounded-[var(--rad-lg)] p-[var(--space-4xl)]"
             >
               <div className="font-mono text-[10px] tracking-[.06em] uppercase text-[var(--color-accent)]">
                 {card.badge}

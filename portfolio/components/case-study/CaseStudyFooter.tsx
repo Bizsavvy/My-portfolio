@@ -18,7 +18,7 @@ export function CaseStudyFooter({
       className="relative z-[5] border-t border-[var(--color-line)] flex flex-col gap-[var(--space-12xl)]"
       style={{ padding: "70px 0 90px" }}
     >
-      <div className="max-w-[var(--width-maxw)] mx-auto px-[var(--space-16xl)] w-full flex flex-col gap-[var(--space-12xl)]">
+      <div className="cs-wrap flex flex-col gap-[var(--space-12xl)]">
         <div className="flex justify-between items-end flex-wrap gap-6">
           <div className="flex flex-col gap-4">
             <div className="font-mono text-[12px] tracking-[.08em] uppercase text-[var(--color-muted)]">

@@ -7,8 +7,8 @@ export function QrEngineDemo() {
       className="relative z-[5] border-t border-[var(--color-line)]"
       style={{ padding: "62px 0" }}
     >
-      <div className="max-w-[var(--width-maxw)] mx-auto px-[var(--space-16xl)] flex flex-col gap-6">
-        <div className="reveal">
+      <div className="cs-wrap flex flex-col gap-6">
+        <div className="flex flex-col gap-6 reveal">
           <Kicker>Live · The engine</Kicker>
           <h2
             className="font-hanken font-bold tracking-[-0.02em]"

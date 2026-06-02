@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 interface CaseStudyNavbarProps {
   title: string;
   status?: string;
@@ -9,9 +11,15 @@ export function CaseStudyNavbar({
 }: CaseStudyNavbarProps) {
   return (
     <nav className="relative z-[5] py-[28px] font-mono text-[12px] tracking-[.04em]">
-      <div className="max-w-[var(--width-maxw)] mx-auto px-[var(--space-16xl)] flex justify-between items-center">
+      <div className="cs-wrap flex justify-between items-center">
         <div className="text-[var(--color-muted)]">
-          Work&nbsp;&nbsp;/&nbsp;&nbsp;
+          <Link
+            href="/#work"
+            className="hover:text-[var(--color-accent)] transition-colors duration-[250ms]"
+          >
+            Work
+          </Link>
+          &nbsp;&nbsp;/&nbsp;&nbsp;
           <span className="text-[var(--color-text)]">{title}</span>
         </div>
         <div className="flex items-center gap-2 text-[var(--color-muted)]">

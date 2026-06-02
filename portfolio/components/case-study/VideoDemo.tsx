@@ -6,8 +6,8 @@ export function VideoDemo() {
       className="relative z-[5] border-t border-[var(--color-line)]"
       style={{ padding: "62px 0" }}
     >
-      <div className="max-w-[var(--width-maxw)] mx-auto px-[var(--space-16xl)] flex flex-col gap-6">
-        <div className="reveal">
+      <div className="cs-wrap flex flex-col gap-6">
+        <div className="flex flex-col gap-6 reveal">
           <Kicker>Experience</Kicker>
           <h2
             className="font-hanken font-bold tracking-[-0.02em]"
@@ -22,10 +22,7 @@ export function VideoDemo() {
           on the actual React Native build.
         </p>
 
-        <div
-          className="flex items-center justify-center rounded-[var(--rad-2xl)] border border-[var(--color-border-strong)] bg-[var(--color-surface)] reveal"
-          style={{ height: 520 }}
-        >
+        <div className="flex items-center justify-center rounded-[var(--rad-2xl)] border border-[var(--color-border-strong)] bg-[var(--color-surface)] h-[300px] md:h-[520px] reveal">
           <button
             className="flex items-center justify-center w-[72px] h-[72px] rounded-full bg-[var(--color-accent)] transition-transform duration-200 hover:scale-105 active:scale-95"
             aria-label="Play demo video"
@@ -40,16 +37,16 @@ export function VideoDemo() {
           Scan → Resolve → Wallet debit → Confirmation
         </p>
 
-        <div className="flex items-center gap-4 pt-[10px] reveal">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4 pt-[10px] reveal">
           <a
             href="#"
-            className="inline-flex items-center px-[26px] py-[14px] rounded-full bg-[var(--color-accent)] font-mono font-medium text-[14px] tracking-[.04em] text-[var(--color-on-accent)] transition-all duration-[280ms] hover:-translate-y-0.5 whitespace-nowrap"
+            className="inline-flex items-center justify-center px-[26px] py-[14px] rounded-full bg-[var(--color-accent)] font-mono font-medium text-[14px] tracking-[.04em] text-[var(--color-on-accent)] transition-all duration-[280ms] hover:-translate-y-0.5 whitespace-nowrap"
           >
             Try the live demo →
           </a>
           <a
             href="#"
-            className="inline-flex items-center px-[26px] py-[14px] rounded-full border border-[var(--color-border-strong)] font-mono text-[12px] text-[var(--color-text)] transition-colors duration-[250ms] hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] whitespace-nowrap"
+            className="inline-flex items-center justify-center px-[26px] py-[14px] rounded-full border border-[var(--color-border-strong)] font-mono text-[12px] text-[var(--color-text)] transition-colors duration-[250ms] hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] whitespace-nowrap"
           >
             Open in Expo Go
           </a>

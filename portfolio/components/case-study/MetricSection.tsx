@@ -29,8 +29,8 @@ export function MetricSection() {
       className="relative z-[5] border-t border-[var(--color-line)]"
       style={{ padding: "62px 0" }}
     >
-      <div className="max-w-[var(--width-maxw)] mx-auto px-[var(--space-16xl)] flex flex-col gap-6">
-        <div className="reveal">
+      <div className="cs-wrap flex flex-col gap-6">
+        <div className="flex flex-col gap-6 reveal">
           <Kicker>Success metrics</Kicker>
           <h2
             className="font-hanken font-bold tracking-[-0.02em]"
@@ -45,11 +45,11 @@ export function MetricSection() {
           product is designed around.
         </p>
 
-        <div className="flex gap-3 reveal">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 reveal">
           {metrics.map((card) => (
             <div
               key={card.badge}
-              className="flex-1 flex flex-col gap-3 bg-[var(--color-surface)] border border-[var(--color-line)] rounded-[var(--rad-lg)] p-[var(--space-4xl)]"
+              className="flex flex-col gap-3 bg-[var(--color-surface)] border border-[var(--color-line)] rounded-[var(--rad-lg)] p-[var(--space-4xl)]"
             >
               <div className="font-mono text-[10px] tracking-[.06em] text-[var(--color-accent)]">
                 {card.badge}

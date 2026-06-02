@@ -637,6 +637,26 @@
     }
   }
 
+  /* Case-study wrap — same breakpoints as site-wrap, widens to 100px on desktop */
+  .cs-wrap {
+    width: 100%;
+    max-width: var(--width-maxw);
+    margin-inline: auto;
+    padding-inline: var(--space-2xl);
+  }
+
+  @media (min-width: 768px) {
+    .cs-wrap {
+      padding-inline: 40px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .cs-wrap {
+      padding-inline: var(--space-16xl);
+    }
+  }
+
   /* ── Component atoms ── */
   .live-dot {
     width: 6px;

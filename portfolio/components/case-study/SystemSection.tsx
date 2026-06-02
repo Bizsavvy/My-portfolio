@@ -42,8 +42,8 @@ export function SystemSection() {
       className="relative z-[5] border-t border-[var(--color-line)]"
       style={{ padding: "62px 0" }}
     >
-      <div className="max-w-[var(--width-maxw)] mx-auto px-[var(--space-16xl)] flex flex-col gap-6">
-        <div className="reveal">
+      <div className="cs-wrap flex flex-col gap-6">
+        <div className="flex flex-col gap-6 reveal">
           <Kicker>Systems</Kicker>
           <h2
             className="font-hanken font-bold tracking-[-0.02em]"
@@ -58,12 +58,14 @@ export function SystemSection() {
           is what let me design the UX around its real constraints.
         </p>
 
-        <div className="flex rounded-[var(--rad-xl)] border border-[var(--color-line)] overflow-hidden reveal">
+        <div className="flex flex-col md:flex-row rounded-[var(--rad-xl)] border border-[var(--color-line)] overflow-hidden reveal">
           {archNodes.map((node, i) => (
             <div
               key={node.index}
               className={`flex-1 flex flex-col gap-3 py-[26px] px-[22px] bg-[var(--color-surface)] ${
-                i < archNodes.length - 1 ? "border-r border-[var(--color-line)]" : ""
+                i < archNodes.length - 1
+                  ? "border-b md:border-b-0 md:border-r border-[var(--color-line)]"
+                  : ""
               }`}
             >
               <div className="font-mono text-[10px] tracking-[.05em] text-[var(--color-accent)]">
@@ -94,11 +96,11 @@ export function SystemSection() {
           evaluated in order:
         </p>
 
-        <div className="flex gap-3 reveal">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 reveal">
           {routingCards.map((card) => (
             <div
               key={card.badge}
-              className="flex-1 flex flex-col gap-3 bg-[var(--color-surface)] border border-[var(--color-line)] rounded-[var(--rad-lg)] p-[var(--space-4xl)]"
+              className="flex flex-col gap-3 bg-[var(--color-surface)] border border-[var(--color-line)] rounded-[var(--rad-lg)] p-[var(--space-4xl)]"
             >
               <div className="font-mono text-[10px] tracking-[.06em] text-[var(--color-accent)]">
                 {card.badge}

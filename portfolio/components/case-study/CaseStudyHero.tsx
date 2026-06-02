@@ -35,7 +35,7 @@ export function CaseStudyHero({ eyebrow, title, lede, meta, status = "In develop
 
       {/* Hero */}
       <header className="relative z-[5] overflow-hidden" style={{ padding: "36px 0 72px" }}>
-        <div className="max-w-[var(--width-maxw)] mx-auto px-[var(--space-16xl)] flex flex-col gap-6">
+        <div className="cs-wrap flex flex-col gap-6">
           {/* Eyebrow + title */}
           <div className="flex flex-col gap-4">
             <div className="eyebrow font-mono text-[12px] tracking-[.18em] uppercase text-[var(--color-accent)]">
@@ -75,19 +75,15 @@ export function CaseStudyHero({ eyebrow, title, lede, meta, status = "In develop
           </p>
 
           <dl
-            className="meta flex flex-col gap-px rounded-[14px] overflow-hidden reveal"
+            className="meta grid grid-cols-1 md:grid-cols-3 gap-px rounded-[14px] overflow-hidden reveal"
             style={{ background: "var(--color-line)" }}
           >
-            {[meta.slice(0, 3), meta.slice(3)].map((row, ri) => (
-              <div key={ri} className="flex gap-px">
-                {row.map(({ label, value }) => (
-                  <div key={label} className="flex-1 bg-[var(--color-bg)] px-5 py-[18px] flex flex-col gap-[7px]">
-                    <dt className="font-mono text-[12px] tracking-[.08em] uppercase text-[var(--color-muted)]">
-                      {label}
-                    </dt>
-                    <dd className="text-[14px] font-medium">{value}</dd>
-                  </div>
-                ))}
+            {meta.map(({ label, value }) => (
+              <div key={label} className="bg-[var(--color-bg)] px-5 py-[18px] flex flex-col gap-[7px]">
+                <dt className="font-mono text-[12px] tracking-[.08em] uppercase text-[var(--color-muted)]">
+                  {label}
+                </dt>
+                <dd className="text-[14px] font-medium">{value}</dd>
               </div>
             ))}
           </dl>
