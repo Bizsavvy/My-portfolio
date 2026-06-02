@@ -182,7 +182,6 @@ export function DemoWidget() {
             style={{
               background: "var(--color-paper)",
               lineHeight: 0,
-              boxShadow: "0 20px 60px -20px rgba(0,0,0,.6)",
               overflow: "hidden",
             }}
           >
@@ -225,7 +224,7 @@ export function DemoWidget() {
                 style={{ animation: `rowin .45s ${i * 35}ms both` }}
               >
                 <td className="px-[26px] py-[11px] text-[var(--color-accent)] align-top">{row.tag}</td>
-                <td className="px-[26px] py-[11px] text-[#D6D4C9] align-top">{row.name}</td>
+                <td className="px-[26px] py-[11px] text-[var(--color-text-secondary)] align-top">{row.name}</td>
                 <td className="px-[26px] py-[11px] text-[var(--color-muted)] align-top break-all">{row.val}</td>
               </tr>
             ))}
