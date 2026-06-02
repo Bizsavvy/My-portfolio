@@ -1,0 +1,326 @@
+{
+    "version": "1.0.0",
+    "source": {
+        "fileName": "Case studies",
+        "selection": [
+            "84:1514"
+        ],
+        "extractedAt": "2026-06-02T18:21:37.841Z"
+    },
+    "tokens": {
+        "colors": {
+            "color-border": "rgba(236, 234, 224, 0.11)",
+            "color-text-muted": "#8C8B7E",
+            "color-text-primary": "#ECEAE0"
+        },
+        "typography": {
+            "mono-meta-label": {
+                "fontWeight": 400,
+                "fontSize": 12,
+                "lineHeight": "139.9999976158142%",
+                "letterSpacing": 8
+            },
+            "display-project-name-sm": {
+                "fontWeight": 700,
+                "fontSize": 48,
+                "lineHeight": "110.00000238418579%",
+                "letterSpacing": -2
+            },
+            "heading-h2": {
+                "fontWeight": 700,
+                "fontSize": 40,
+                "lineHeight": "108.00000429153442%",
+                "letterSpacing": -2
+            },
+            "mono-colophon": {
+                "fontWeight": 400,
+                "fontSize": 12,
+                "lineHeight": "120.00000476837158%",
+                "letterSpacing": 4
+            }
+        },
+        "spacing": {
+            "spacing-12xl": 60,
+            "spacing-2xl": 16
+        },
+        "radius": {},
+        "shadows": {}
+    },
+    "components": [
+        {
+            "name": "Footer",
+            "variants": [],
+            "instances": 1
+        }
+    ],
+    "root": {
+        "id": "84:1514",
+        "kind": "screen",
+        "name": "Footer",
+        "width": 1280,
+        "height": 320,
+        "component": "Footer",
+        "position": "relational",
+        "layout": {
+            "direction": "vertical",
+            "gap": "spacing-12xl",
+            "padding": {
+                "top": 70,
+                "right": 100,
+                "bottom": 90,
+                "left": 100
+            }
+        },
+        "style": {
+            "borderColor": "color-border",
+            "borderWidth": {
+                "top": 1
+            }
+        },
+        "children": [
+            {
+                "id": "84:1515",
+                "kind": "container",
+                "name": "Next",
+                "width": 1080,
+                "height": 86,
+                "position": "relational",
+                "layout": {
+                    "direction": "horizontal",
+                    "justifyContent": "space-between",
+                    "alignItems": "end"
+                },
+                "responsive": {
+                    "width": "hug"
+                },
+                "children": [
+                    {
+                        "id": "84:1516",
+                        "kind": "container",
+                        "name": "Nl",
+                        "width": 292,
+                        "height": 86,
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "spacing-2xl"
+                        },
+                        "responsive": {
+                            "width": "hug",
+                            "height": "hug"
+                        },
+                        "children": [
+                            {
+                                "id": "84:1517",
+                                "kind": "text",
+                                "name": "NEXT PROJECT",
+                                "width": 97,
+                                "height": 17,
+                                "position": "relational",
+                                "text": {
+                                    "content": "NEXT PROJECT",
+                                    "typography": "mono-meta-label",
+                                    "color": "color-text-muted",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1518",
+                                "kind": "container",
+                                "name": "Link",
+                                "width": 292,
+                                "height": 53,
+                                "position": "relational",
+                                "layout": {
+                                    "direction": "horizontal",
+                                    "gap": "spacing-2xl",
+                                    "alignItems": "center"
+                                },
+                                "responsive": {
+                                    "width": "hug",
+                                    "height": "hug"
+                                },
+                                "children": [
+                                    {
+                                        "id": "84:1519",
+                                        "kind": "text",
+                                        "name": "UI to JSON",
+                                        "width": 229,
+                                        "height": 53,
+                                        "position": "relational",
+                                        "text": {
+                                            "content": "UI to JSON",
+                                            "typography": "display-project-name-sm",
+                                            "color": "color-text-primary",
+                                            "textAlign": "left"
+                                        },
+                                        "semanticRole": "semantic",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 4
+                                        }
+                                    },
+                                    {
+                                        "id": "84:1520",
+                                        "kind": "text",
+                                        "name": "→",
+                                        "width": 47,
+                                        "height": 43,
+                                        "position": "relational",
+                                        "text": {
+                                            "content": "→",
+                                            "typography": "heading-h2",
+                                            "color": "color-text-primary",
+                                            "textAlign": "left"
+                                        },
+                                        "semanticRole": "semantic",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 4
+                                        }
+                                    }
+                                ],
+                                "semanticRole": "structural",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    },
+                    {
+                        "id": "84:1521",
+                        "kind": "text",
+                        "name": "170+ USERS IN PRODUCTION",
+                        "width": 195,
+                        "height": 17,
+                        "position": "relational",
+                        "text": {
+                            "content": "170+ USERS IN PRODUCTION",
+                            "typography": "mono-meta-label",
+                            "color": "color-text-muted",
+                            "textAlign": "left"
+                        },
+                        "semanticRole": "semantic",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    }
+                ],
+                "semanticRole": "structural",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            },
+            {
+                "id": "84:1522",
+                "kind": "container",
+                "name": "Colophon",
+                "width": 1080,
+                "height": 14,
+                "position": "relational",
+                "layout": {
+                    "direction": "horizontal",
+                    "justifyContent": "space-between"
+                },
+                "responsive": {
+                    "width": "hug"
+                },
+                "children": [
+                    {
+                        "id": "84:1523",
+                        "kind": "text",
+                        "name": "Shappay — Design Engineering case study",
+                        "width": 299,
+                        "height": 14,
+                        "position": "relational",
+                        "text": {
+                            "content": "Shappay — Design Engineering case study",
+                            "typography": "mono-colophon",
+                            "color": "color-text-muted",
+                            "textAlign": "left"
+                        },
+                        "semanticRole": "semantic",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    },
+                    {
+                        "id": "84:1524",
+                        "kind": "text",
+                        "name": "Designed & built end to end · 2026",
+                        "width": 261,
+                        "height": 14,
+                        "position": "relational",
+                        "text": {
+                            "content": "Designed & built end to end · 2026",
+                            "typography": "mono-colophon",
+                            "color": "color-text-muted",
+                            "textAlign": "left"
+                        },
+                        "semanticRole": "semantic",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    }
+                ],
+                "semanticRole": "structural",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            }
+        ],
+        "semanticRole": "structural",
+        "signals": {
+            "nonInteractive": true
+        },
+        "context": {
+            "zIndex": -1
+        }
+    }
+}

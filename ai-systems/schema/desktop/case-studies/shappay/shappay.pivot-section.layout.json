@@ -1,0 +1,98 @@
+{
+  "section": "shappay.pivot-section",
+  "source": "ai-systems/schema/desktop/case-studies/shappay/pivot-section.raw.json",
+  "frameworkInterpretation": "next",
+  "layout": {
+    "element": "section",
+    "border": "border-t border-[var(--color-line)]",
+    "padding": { "vertical": "62px", "horizontal": "100px → px-[var(--space-16xl)]" },
+    "direction": "vertical",
+    "gap": "spacing-5xl → 24px → gap-6",
+    "maxWidth": "var(--width-maxw) mx-auto",
+    "directChildren": 8
+  },
+  "children": [
+    { "name": "Kicker", "mapping": "Kicker component", "content": "The pivot" },
+    {
+      "name": "H2",
+      "content": "Mid-build, the architecture was wrong. So I changed it.",
+      "typography": "heading-h2 → clamp(28px,4vw,40px) 700 -0.02em 1.08",
+      "color": "color-text-primary → var(--color-text)"
+    },
+    {
+      "name": "Body large",
+      "content": "The original plan: scan a QR, resolve the merchant, fire a real-time transfer straight from the payer's linked bank. Validation proved that bet couldn't hold.",
+      "typography": "body-large → font-hanken 20px 1.58",
+      "color": "color-text-primary → var(--color-text)"
+    },
+    {
+      "name": "Two",
+      "direction": "horizontal",
+      "gap": "spacing-3xl → 48px → gap-12",
+      "children": [
+        {
+          "name": "ColL",
+          "direction": "vertical",
+          "gap": "spacing-18 → 18px → gap-[18px] (flagged: between --space-2xl=16px and --space-4xl=22px)",
+          "children": [
+            { "name": "h3 What testing revealed", "typography": "heading-h3 → 22px 700 -0.01em", "color": "color-text-primary" },
+            { "name": "body-default paragraph", "typography": "body-default → 16px 1.65", "color": "color-text-secondary → var(--color-body)" }
+          ]
+        },
+        {
+          "name": "ColR",
+          "direction": "vertical",
+          "gap": "spacing-18 → 18px → gap-[18px]",
+          "children": [
+            { "name": "h3 The re-architecture", "typography": "heading-h3 → 22px 700 -0.01em", "color": "color-text-primary" },
+            { "name": "body-default paragraph", "typography": "body-default → 16px 1.65", "color": "inherits → var(--color-text)" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Flows",
+      "direction": "vertical",
+      "gap": "spacing-2xl → 16px → gap-4",
+      "paddingTop": "spacing-18 → 18px → pt-[18px]",
+      "children": [
+        { "name": "Flow BEFORE", "mapping": "FlowCard variant=before", "label": "BEFORE · FRAGILE", "chips": ["Scan", "Bank auth", "External redirect", "Settlement"] },
+        { "name": "Flow AFTER",  "mapping": "FlowCard variant=after",  "label": "AFTER · INSTANT",  "chips": ["Scan", "Resolve", "Wallet debit", "Settlement"] }
+      ]
+    },
+    {
+      "name": "h3 The honest tradeoffs",
+      "typography": "heading-h3 → 22px 700 -0.01em",
+      "color": "color-text-primary → var(--color-text)"
+    },
+    {
+      "name": "Tradeoffs intro",
+      "content": "Holding balances raises the bar — naming the costs is part of owning the decision.",
+      "typography": "body-default → 16px 1.65",
+      "color": "color-text-secondary → var(--color-body)"
+    },
+    {
+      "name": "Cards",
+      "direction": "horizontal",
+      "gap": "spacing-2xl → 16px → gap-4",
+      "children": {
+        "repeat": 4,
+        "padding": "spacing-22 → 22px → p-[var(--space-4xl)]",
+        "background": "color-surface",
+        "border": "color-border 1px",
+        "borderRadius": "radius-14 → var(--rad-lg)",
+        "children": [
+          { "name": "badge", "typography": "mono-badge → font-mono 10px 0.06em uppercase", "color": "color-accent" },
+          { "name": "body", "typography": "body-caption → 14px 1.4", "color": "color-text-muted" }
+        ]
+      }
+    }
+  ],
+  "tokenNotes": {
+    "spacing-3xl (48px)": "gap-12 ✓ (project --space-11xl: 48px)",
+    "spacing-18 (18px)": "gap-[18px] — flagged: no exact token, between --space-2xl=16px and --space-4xl=22px",
+    "spacing-22 (22px)": "p-[var(--space-4xl)] ✓",
+    "spacing-2xl (16px)": "gap-4 ✓",
+    "FlowCard fixes": "border accent corrected lime→lime, chip size 13px→12px, opacity-60 removed from before chips"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "section": "shappay.hero",
+  "source": "ai-systems/schema/desktop/case-studies/shappay/hero.raw.json",
+  "frameworkInterpretation": "next",
+  "layout": {
+    "element": "header",
+    "direction": "vertical",
+    "gap": "spacing-5xl → 24px → gap-6",
+    "padding": {
+      "top": "36px",
+      "horizontal": "spacing-16xl → 100px → px-[var(--space-16xl)]",
+      "bottom": "72px"
+    },
+    "maxWidth": "var(--width-maxw) with mx-auto",
+    "zIndex": 5,
+    "position": "relative"
+  },
+  "children": [
+    {
+      "name": "Header",
+      "kind": "container",
+      "direction": "vertical",
+      "gap": "spacing-2xl → 16px → gap-4",
+      "children": [
+        {
+          "name": "CONSUMER FINTECH · QR PAYMENTS · NIGERIA",
+          "kind": "text",
+          "typography": "mono-eyebrow → .ts-eyebrow (font-mono 12px 0.18em uppercase)",
+          "color": "color-accent → var(--color-accent)",
+          "signals": { "nonInteractive": true }
+        },
+        {
+          "name": "Shappay",
+          "kind": "text",
+          "typography": "display-project-name → .ts-project-name (font-pixel 700 120px 0.02em leading-[.95])",
+          "color": "color-text-primary → var(--color-text)",
+          "responsive": "clamp(56px, 11vw, 120px)",
+          "signals": { "nonInteractive": true },
+          "enhancement": "scan-beam animation overlay (not in Figma — preserve existing)"
+        }
+      ]
+    },
+    {
+      "name": "Lede",
+      "kind": "text",
+      "typography": "body-lede → .ts-lede (font-hanken 28px -0.01em leading-[1.38])",
+      "color": "inherits body color → var(--color-text)",
+      "maxWidth": "660px",
+      "responsive": "clamp(20px, 2.5vw, 28px)",
+      "signals": { "nonInteractive": true }
+    },
+    {
+      "name": "Meta",
+      "kind": "container",
+      "direction": "horizontal",
+      "wrap": true,
+      "gap": "spacing-1 → 1px → gap-px",
+      "background": "color-border → var(--color-line)",
+      "borderRadius": "radius-14 → 14px → rounded-[14px]",
+      "overflow": "hidden (clips tile corners to parent radius)",
+      "implementation": "CSS grid auto-fit preferred over flex-wrap for even column fill",
+      "children": {
+        "name": "Tile",
+        "repeat": 6,
+        "kind": "container",
+        "direction": "vertical",
+        "gap": "spacing-7 → 7px → gap-[7px] (flag: no exact token, nearest --space-sm=8px; flagged)",
+        "padding": "18px vertical (py-[18px]), 20px horizontal (px-5)",
+        "background": "color-bg → var(--color-bg)",
+        "children": [
+          {
+            "name": "label",
+            "typography": "mono-meta-label → .ts-meta-label (font-mono 12px 0.08em uppercase)",
+            "color": "color-text-muted → var(--color-muted)"
+          },
+          {
+            "name": "value",
+            "typography": "special-meta-value → .ts-meta-value (font-hanken 500 14px)",
+            "color": "color-text-primary → var(--color-text)"
+          }
+        ]
+      }
+    }
+  ],
+  "tokenNotes": {
+    "spacing-5xl (24px)": "gap-6 ✓ exact",
+    "spacing-2xl (16px)": "gap-4 ✓ exact",
+    "spacing-1 (1px)": "gap-px ✓ exact",
+    "spacing-7 (7px)": "no exact token; nearest --space-sm=8px (within 25% → flag); using gap-[7px] literal",
+    "radius-14 (14px)": "--rad-lg: 14px ✓",
+    "padding-horizontal (100px)": "--space-16xl: 100px ✓"
+  }
+}

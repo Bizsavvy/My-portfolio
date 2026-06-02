@@ -1,0 +1,77 @@
+{
+  "section": "desktop.case-studies.shappay.navbar",
+  "source": "ai-systems/schema/desktop/case-studies/shappay/navbar.raw.json",
+  "frameworkInterpretation": "next",
+  "layout": {
+    "element": "nav",
+    "direction": "horizontal",
+    "justifyContent": "space-between",
+    "alignItems": "center",
+    "padding": {
+      "vertical": "28px",
+      "horizontal": "site-wrap (16px / 40px / 64px responsive)"
+    },
+    "maxWidth": "1080px",
+    "zIndex": 5,
+    "position": "relative",
+    "typography": "mono-label (font-mono, 12px, weight 400, tracking 0.04em)"
+  },
+  "children": [
+    {
+      "name": "Crumb",
+      "intent": "breadcrumb navigation label",
+      "direction": "horizontal",
+      "alignItems": "center",
+      "children": [
+        {
+          "name": "WorkLabel",
+          "kind": "text",
+          "content": "Work  /  ",
+          "typography": "mono-label",
+          "color": "color-muted",
+          "signals": { "nonInteractive": true }
+        },
+        {
+          "name": "PageLabel",
+          "kind": "text",
+          "content": "{title}",
+          "typography": "mono-label",
+          "color": "color-text",
+          "signals": { "nonInteractive": true }
+        }
+      ]
+    },
+    {
+      "name": "Status",
+      "intent": "project status indicator",
+      "direction": "horizontal",
+      "gap": "8px (--space-sm / spacing-sm token)",
+      "alignItems": "center",
+      "children": [
+        {
+          "name": "Dot",
+          "kind": "circle",
+          "width": 7,
+          "height": 7,
+          "color": "color-accent",
+          "signals": { "nonInteractive": true },
+          "animation": "pulse 2.4s infinite (defined in globals.css)"
+        },
+        {
+          "name": "StatusText",
+          "kind": "text",
+          "content": "{status}",
+          "typography": "mono-label",
+          "color": "color-muted",
+          "signals": { "nonInteractive": true }
+        }
+      ]
+    }
+  ],
+  "tokenNotes": {
+    "spacing-sm": "8px → --space-sm → gap-2 Tailwind",
+    "padding-vertical": "28px → --space-6xl → py-[28px]",
+    "padding-horizontal": "100px Figma canvas → site-wrap + max-w-[1080px] (existing page convention)",
+    "mono-label": "font-mono text-[12px] tracking-[.04em] weight-400 → .ts-mono-label"
+  }
+}

@@ -1,0 +1,305 @@
+{
+    "version": "1.0.0",
+    "source": {
+        "fileName": "Case studies",
+        "selection": [
+            "84:1239"
+        ],
+        "extractedAt": "2026-06-02T17:16:10.742Z"
+    },
+    "tokens": {
+        "colors": {
+            "color-border": "rgba(236, 234, 224, 0.11)",
+            "color-accent": "#C7F94B",
+            "color-text-primary": "#ECEAE0"
+        },
+        "typography": {
+            "mono-kicker": {
+                "fontWeight": 400,
+                "fontSize": 12,
+                "letterSpacing": 16
+            },
+            "heading-h2": {
+                "fontWeight": 700,
+                "fontSize": 40,
+                "lineHeight": "108.00000429153442%",
+                "letterSpacing": -2
+            },
+            "body-default": {
+                "fontWeight": 400,
+                "fontSize": 16,
+                "lineHeight": "164.9999976158142%",
+                "letterSpacing": 0
+            }
+        },
+        "spacing": {
+            "spacing-3xl": 48,
+            "spacing-5xl": 24,
+            "spacing-md": 12,
+            "spacing-2xl": 16
+        },
+        "radius": {},
+        "shadows": {}
+    },
+    "components": [
+        {
+            "name": "ColL",
+            "variants": [],
+            "instances": 1
+        },
+        {
+            "name": "ColR",
+            "variants": [],
+            "instances": 1
+        },
+        {
+            "name": "MostNigeriansHoldMultipleBankAccountsAcrossDifferentBanksEveryTransferMeansTypingA10DigitAccountNumberChoosingTheRightBankFromAGrowingListAndHopingYouGotItRight—MultipliedAcrossEveryAccountYouOwn",
+            "variants": [],
+            "instances": 1
+        }
+    ],
+    "root": {
+        "id": "84:1239",
+        "kind": "screen",
+        "name": "ProblemStatement",
+        "width": 1280,
+        "height": 426,
+        "position": "relational",
+        "layout": {
+            "direction": "vertical",
+            "padding": {
+                "top": 62,
+                "right": 100,
+                "bottom": 62,
+                "left": 100
+            }
+        },
+        "style": {
+            "borderColor": "color-border",
+            "borderWidth": {
+                "top": 1
+            }
+        },
+        "children": [
+            {
+                "id": "84:1240",
+                "kind": "container",
+                "name": "Two",
+                "width": 1080,
+                "height": 302,
+                "position": "relational",
+                "layout": {
+                    "direction": "horizontal",
+                    "gap": "spacing-3xl"
+                },
+                "responsive": {
+                    "width": "hug"
+                },
+                "children": [
+                    {
+                        "id": "84:1241",
+                        "kind": "container",
+                        "name": "ColL",
+                        "width": 516,
+                        "height": 169,
+                        "component": "ColL",
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "spacing-5xl"
+                        },
+                        "responsive": {
+                            "width": "hug"
+                        },
+                        "children": [
+                            {
+                                "id": "84:1242",
+                                "kind": "container",
+                                "name": "Kicker",
+                                "width": 137,
+                                "height": 16,
+                                "position": "relational",
+                                "layout": {
+                                    "direction": "horizontal",
+                                    "gap": "spacing-md",
+                                    "alignItems": "center"
+                                },
+                                "responsive": {
+                                    "width": "hug",
+                                    "height": "hug"
+                                },
+                                "children": [
+                                    {
+                                        "id": "84:1243",
+                                        "kind": "rectangle",
+                                        "name": "Element",
+                                        "width": 26,
+                                        "height": 1,
+                                        "position": "relational",
+                                        "style": {
+                                            "background": "color-accent"
+                                        },
+                                        "semanticRole": "structural",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 4
+                                        }
+                                    },
+                                    {
+                                        "id": "84:1244",
+                                        "kind": "text",
+                                        "name": "The problem",
+                                        "width": 99,
+                                        "height": 16,
+                                        "position": "relational",
+                                        "text": {
+                                            "content": "The problem",
+                                            "typography": "mono-kicker",
+                                            "color": "color-accent",
+                                            "textAlign": "left"
+                                        },
+                                        "semanticRole": "semantic",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 4
+                                        }
+                                    }
+                                ],
+                                "semanticRole": "structural",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1245",
+                                "kind": "text",
+                                "name": "Sending money should not require typing 10-digits all the time.",
+                                "width": 516,
+                                "height": 129,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Sending money should not require typing 10-digits all the time.",
+                                    "typography": "heading-h2",
+                                    "color": "color-text-primary",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    },
+                    {
+                        "id": "84:1246",
+                        "kind": "container",
+                        "name": "ColR",
+                        "width": 516,
+                        "height": 302,
+                        "component": "ColR",
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "spacing-2xl"
+                        },
+                        "responsive": {
+                            "width": "hug"
+                        },
+                        "children": [
+                            {
+                                "id": "84:1247",
+                                "kind": "text",
+                                "name": "MostNigeriansHoldMultipleBankAccountsAcrossDifferentBanksEveryTransferMeansTypingA10DigitAccountNumberChoosingTheRightBankFromAGrowingListAndHopingYouGotItRight—MultipliedAcrossEveryAccountYouOwn",
+                                "width": 516,
+                                "height": 104,
+                                "component": "MostNigeriansHoldMultipleBankAccountsAcrossDifferentBanksEveryTransferMeansTypingA10DigitAccountNumberChoosingTheRightBankFromAGrowingListAndHopingYouGotItRight—MultipliedAcrossEveryAccountYouOwn",
+                                "position": "relational",
+                                "text": {
+                                    "content": "Most Nigerians hold multiple bank accounts across different banks. Every transfer means typing a 10-digit account number, choosing the right bank from a growing list, and hoping you got it right — multiplied across every account you own.",
+                                    "typography": "body-default",
+                                    "color": "color-text-primary",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1248",
+                                "kind": "text",
+                                "name": "It is the single most error-prone moment in everyday payments and it scales terribly to merchants, who have no terminal and no way to get paid except by dictating account details out loud. The rails to fix this already exist. NIBSS NQR is Nigeria's national interoperable QR standard, built on the same EMVCo spec that powers India's UPI QR. The standard was there. The experience and the resolution engine beneath it was not.",
+                                "width": 516,
+                                "height": 182,
+                                "position": "relational",
+                                "text": {
+                                    "content": "It is the single most error-prone moment in everyday payments and it scales terribly to merchants, who have no terminal and no way to get paid except by dictating account details out loud. The rails to fix this already exist. NIBSS NQR is Nigeria's national interoperable QR standard, built on the same EMVCo spec that powers India's UPI QR. The standard was there. The experience and the resolution engine beneath it was not.",
+                                    "typography": "body-default",
+                                    "color": "color-text-primary",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    }
+                ],
+                "semanticRole": "structural",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            }
+        ],
+        "semanticRole": "structural",
+        "signals": {
+            "nonInteractive": true
+        },
+        "context": {
+            "zIndex": -1
+        }
+    }
+}

@@ -1,0 +1,1072 @@
+{
+    "version": "1.0.0",
+    "source": {
+        "fileName": "Case studies",
+        "selection": [
+            "84:1466"
+        ],
+        "extractedAt": "2026-06-02T18:20:12.366Z"
+    },
+    "tokens": {
+        "colors": {
+            "color-border": "rgba(236, 234, 224, 0.11)",
+            "color-accent": "#C7F94B",
+            "color-text-primary": "#ECEAE0",
+            "color-text-muted": "#8C8B7E"
+        },
+        "typography": {
+            "mono-kicker": {
+                "fontWeight": 400,
+                "fontSize": 12,
+                "letterSpacing": 16
+            },
+            "heading-h2": {
+                "fontWeight": 700,
+                "fontSize": 40,
+                "lineHeight": "108.00000429153442%",
+                "letterSpacing": -2
+            },
+            "mono-label": {
+                "fontWeight": 400,
+                "fontSize": 12,
+                "lineHeight": "139.9999976158142%",
+                "letterSpacing": 4
+            },
+            "heading-h4": {
+                "fontWeight": 700,
+                "fontSize": 18,
+                "lineHeight": "135.0000023841858%",
+                "letterSpacing": -1
+            },
+            "mono-badge": {
+                "fontWeight": 400,
+                "fontSize": 10,
+                "lineHeight": "129.99999523162842%",
+                "letterSpacing": 6
+            },
+            "body-caption": {
+                "fontWeight": 400,
+                "fontSize": 14,
+                "lineHeight": "139.9999976158142%",
+                "letterSpacing": 0
+            }
+        },
+        "spacing": {
+            "spacing-5xl": 24,
+            "spacing-md": 12,
+            "spacing-sm": 8,
+            "spacing-10": 10
+        },
+        "radius": {
+            "radius-20": 20
+        },
+        "shadows": {}
+    },
+    "components": [
+        {
+            "name": "RoadmapSection",
+            "variants": [],
+            "instances": 1
+        }
+    ],
+    "root": {
+        "id": "84:1466",
+        "kind": "screen",
+        "name": "RoadmapSection",
+        "width": 1280,
+        "height": 615,
+        "component": "RoadmapSection",
+        "position": "relational",
+        "layout": {
+            "direction": "vertical",
+            "gap": "spacing-5xl",
+            "padding": {
+                "top": 62,
+                "right": 100,
+                "bottom": 62,
+                "left": 100
+            }
+        },
+        "style": {
+            "borderColor": "color-border",
+            "borderWidth": {
+                "top": 1
+            }
+        },
+        "children": [
+            {
+                "id": "84:1467",
+                "kind": "container",
+                "name": "Kicker",
+                "width": 100,
+                "height": 16,
+                "position": "relational",
+                "layout": {
+                    "direction": "horizontal",
+                    "gap": "spacing-md",
+                    "alignItems": "center"
+                },
+                "responsive": {
+                    "width": "hug",
+                    "height": "hug"
+                },
+                "children": [
+                    {
+                        "id": "84:1468",
+                        "kind": "rectangle",
+                        "name": "Element",
+                        "width": 26,
+                        "height": 1,
+                        "position": "relational",
+                        "style": {
+                            "background": "color-accent"
+                        },
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    },
+                    {
+                        "id": "84:1469",
+                        "kind": "text",
+                        "name": "Roadmap",
+                        "width": 62,
+                        "height": 16,
+                        "position": "relational",
+                        "text": {
+                            "content": "Roadmap",
+                            "typography": "mono-kicker",
+                            "color": "color-accent",
+                            "textAlign": "left"
+                        },
+                        "semanticRole": "semantic",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    }
+                ],
+                "semanticRole": "structural",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            },
+            {
+                "id": "84:1470",
+                "kind": "text",
+                "name": "From a printed square to a payments platform.",
+                "width": 1080,
+                "height": 43,
+                "position": "relational",
+                "text": {
+                    "content": "From a printed square to a payments platform.",
+                    "typography": "heading-h2",
+                    "color": "color-text-primary",
+                    "textAlign": "left"
+                },
+                "semanticRole": "semantic",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            },
+            {
+                "id": "84:1471",
+                "kind": "container",
+                "name": "Road",
+                "width": 1080,
+                "height": 384,
+                "position": "relational",
+                "layout": {
+                    "direction": "vertical"
+                },
+                "responsive": {
+                    "height": "hug"
+                },
+                "children": [
+                    {
+                        "id": "84:1472",
+                        "kind": "container",
+                        "name": "RoadItem",
+                        "width": 1080,
+                        "height": 96,
+                        "position": "relational",
+                        "layout": {
+                            "direction": "horizontal",
+                            "gap": "spacing-5xl",
+                            "padding": {
+                                "top": 22,
+                                "right": 0,
+                                "bottom": 22,
+                                "left": 0
+                            }
+                        },
+                        "responsive": {
+                            "width": "hug"
+                        },
+                        "style": {
+                            "borderColor": "color-border",
+                            "borderWidth": {
+                                "bottom": 1
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "84:1473",
+                                "kind": "text",
+                                "name": "NOW",
+                                "width": 120,
+                                "height": 17,
+                                "position": "relational",
+                                "text": {
+                                    "content": "NOW",
+                                    "typography": "mono-label",
+                                    "color": "color-accent",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1474",
+                                "kind": "container",
+                                "name": "Rc",
+                                "width": 936,
+                                "height": 52,
+                                "position": "relational",
+                                "layout": {
+                                    "direction": "vertical",
+                                    "gap": "spacing-sm"
+                                },
+                                "responsive": {
+                                    "width": "hug"
+                                },
+                                "children": [
+                                    {
+                                        "id": "84:1475",
+                                        "kind": "container",
+                                        "name": "Hr",
+                                        "width": 213,
+                                        "height": 24,
+                                        "position": "relational",
+                                        "layout": {
+                                            "direction": "horizontal",
+                                            "gap": "spacing-10",
+                                            "alignItems": "center"
+                                        },
+                                        "responsive": {
+                                            "width": "hug",
+                                            "height": "hug"
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "84:1476",
+                                                "kind": "text",
+                                                "name": "Wallet-first MVP",
+                                                "width": 132,
+                                                "height": 24,
+                                                "position": "relational",
+                                                "text": {
+                                                    "content": "Wallet-first MVP",
+                                                    "typography": "heading-h4",
+                                                    "color": "color-text-primary",
+                                                    "textAlign": "left"
+                                                },
+                                                "semanticRole": "semantic",
+                                                "signals": {
+                                                    "nonInteractive": true
+                                                },
+                                                "context": {
+                                                    "zIndex": -1,
+                                                    "hierarchyDepth": 5
+                                                }
+                                            },
+                                            {
+                                                "id": "84:1477",
+                                                "kind": "container",
+                                                "name": "Pill",
+                                                "width": 71,
+                                                "height": 19,
+                                                "position": "relational",
+                                                "layout": {
+                                                    "direction": "horizontal",
+                                                    "padding": {
+                                                        "top": 3,
+                                                        "right": 9,
+                                                        "bottom": 3,
+                                                        "left": 9
+                                                    }
+                                                },
+                                                "responsive": {
+                                                    "width": "hug",
+                                                    "height": "hug"
+                                                },
+                                                "style": {
+                                                    "borderColor": "color-accent",
+                                                    "borderWidth": 1,
+                                                    "borderRadius": "radius-20"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "id": "84:1478",
+                                                        "kind": "text",
+                                                        "name": "IN BUILD",
+                                                        "width": 53,
+                                                        "height": 13,
+                                                        "position": "relational",
+                                                        "text": {
+                                                            "content": "IN BUILD",
+                                                            "typography": "mono-badge",
+                                                            "color": "color-accent",
+                                                            "textAlign": "left"
+                                                        },
+                                                        "semanticRole": "semantic",
+                                                        "signals": {
+                                                            "nonInteractive": true
+                                                        },
+                                                        "context": {
+                                                            "zIndex": -1,
+                                                            "hierarchyDepth": 6
+                                                        }
+                                                    }
+                                                ],
+                                                "semanticRole": "structural",
+                                                "signals": {
+                                                    "nonInteractive": true
+                                                },
+                                                "context": {
+                                                    "zIndex": -1,
+                                                    "hierarchyDepth": 5
+                                                }
+                                            }
+                                        ],
+                                        "semanticRole": "structural",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 4
+                                        }
+                                    },
+                                    {
+                                        "id": "84:1479",
+                                        "kind": "text",
+                                        "name": "Link banks, fund wallet, pay by scanning a QR or typing name@shappay — settling to wallet or bank.",
+                                        "width": 936,
+                                        "height": 20,
+                                        "position": "relational",
+                                        "text": {
+                                            "content": "Link banks, fund wallet, pay by scanning a QR or typing name@shappay — settling to wallet or bank.",
+                                            "typography": "body-caption",
+                                            "color": "color-text-muted",
+                                            "textAlign": "left"
+                                        },
+                                        "semanticRole": "semantic",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 4
+                                        }
+                                    }
+                                ],
+                                "semanticRole": "structural",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    },
+                    {
+                        "id": "84:1480",
+                        "kind": "container",
+                        "name": "RoadItem",
+                        "width": 1080,
+                        "height": 96,
+                        "position": "relational",
+                        "layout": {
+                            "direction": "horizontal",
+                            "gap": "spacing-5xl",
+                            "padding": {
+                                "top": 22,
+                                "right": 0,
+                                "bottom": 22,
+                                "left": 0
+                            }
+                        },
+                        "responsive": {
+                            "width": "hug"
+                        },
+                        "style": {
+                            "borderColor": "color-border",
+                            "borderWidth": {
+                                "bottom": 1
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "84:1481",
+                                "kind": "text",
+                                "name": "NEXT",
+                                "width": 120,
+                                "height": 17,
+                                "position": "relational",
+                                "text": {
+                                    "content": "NEXT",
+                                    "typography": "mono-label",
+                                    "color": "color-accent",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1482",
+                                "kind": "container",
+                                "name": "Rc",
+                                "width": 936,
+                                "height": 52,
+                                "position": "relational",
+                                "layout": {
+                                    "direction": "vertical",
+                                    "gap": "spacing-sm"
+                                },
+                                "responsive": {
+                                    "width": "hug"
+                                },
+                                "children": [
+                                    {
+                                        "id": "84:1483",
+                                        "kind": "container",
+                                        "name": "Hr",
+                                        "width": 173,
+                                        "height": 24,
+                                        "position": "relational",
+                                        "layout": {
+                                            "direction": "horizontal",
+                                            "gap": "spacing-10",
+                                            "alignItems": "center"
+                                        },
+                                        "responsive": {
+                                            "width": "hug",
+                                            "height": "hug"
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "84:1484",
+                                                "kind": "text",
+                                                "name": "Dynamic QR",
+                                                "width": 99,
+                                                "height": 24,
+                                                "position": "relational",
+                                                "text": {
+                                                    "content": "Dynamic QR",
+                                                    "typography": "heading-h4",
+                                                    "color": "color-text-primary",
+                                                    "textAlign": "left"
+                                                },
+                                                "semanticRole": "semantic",
+                                                "signals": {
+                                                    "nonInteractive": true
+                                                },
+                                                "context": {
+                                                    "zIndex": -1,
+                                                    "hierarchyDepth": 5
+                                                }
+                                            },
+                                            {
+                                                "id": "84:1485",
+                                                "kind": "container",
+                                                "name": "Pill",
+                                                "width": 64,
+                                                "height": 19,
+                                                "position": "relational",
+                                                "layout": {
+                                                    "direction": "horizontal",
+                                                    "padding": {
+                                                        "top": 3,
+                                                        "right": 9,
+                                                        "bottom": 3,
+                                                        "left": 9
+                                                    }
+                                                },
+                                                "responsive": {
+                                                    "width": "hug",
+                                                    "height": "hug"
+                                                },
+                                                "style": {
+                                                    "borderColor": "color-border",
+                                                    "borderWidth": 1,
+                                                    "borderRadius": "radius-20"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "id": "84:1486",
+                                                        "kind": "text",
+                                                        "name": "ROADMAP",
+                                                        "width": 46,
+                                                        "height": 13,
+                                                        "position": "relational",
+                                                        "text": {
+                                                            "content": "ROADMAP",
+                                                            "typography": "mono-badge",
+                                                            "color": "color-text-muted",
+                                                            "textAlign": "left"
+                                                        },
+                                                        "semanticRole": "semantic",
+                                                        "signals": {
+                                                            "nonInteractive": true
+                                                        },
+                                                        "context": {
+                                                            "zIndex": -1,
+                                                            "hierarchyDepth": 6
+                                                        }
+                                                    }
+                                                ],
+                                                "semanticRole": "structural",
+                                                "signals": {
+                                                    "nonInteractive": true
+                                                },
+                                                "context": {
+                                                    "zIndex": -1,
+                                                    "hierarchyDepth": 5
+                                                }
+                                            }
+                                        ],
+                                        "semanticRole": "structural",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 4
+                                        }
+                                    },
+                                    {
+                                        "id": "84:1487",
+                                        "kind": "text",
+                                        "name": "Amount embedded in the code for point-of-sale and one-tap checkout.",
+                                        "width": 936,
+                                        "height": 20,
+                                        "position": "relational",
+                                        "text": {
+                                            "content": "Amount embedded in the code for point-of-sale and one-tap checkout.",
+                                            "typography": "body-caption",
+                                            "color": "color-text-muted",
+                                            "textAlign": "left"
+                                        },
+                                        "semanticRole": "semantic",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 4
+                                        }
+                                    }
+                                ],
+                                "semanticRole": "structural",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    },
+                    {
+                        "id": "84:1488",
+                        "kind": "container",
+                        "name": "RoadItem",
+                        "width": 1080,
+                        "height": 96,
+                        "position": "relational",
+                        "layout": {
+                            "direction": "horizontal",
+                            "gap": "spacing-5xl",
+                            "padding": {
+                                "top": 22,
+                                "right": 0,
+                                "bottom": 22,
+                                "left": 0
+                            }
+                        },
+                        "responsive": {
+                            "width": "hug"
+                        },
+                        "style": {
+                            "borderColor": "color-border",
+                            "borderWidth": {
+                                "bottom": 1
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "84:1489",
+                                "kind": "text",
+                                "name": "THEN",
+                                "width": 120,
+                                "height": 17,
+                                "position": "relational",
+                                "text": {
+                                    "content": "THEN",
+                                    "typography": "mono-label",
+                                    "color": "color-accent",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1490",
+                                "kind": "container",
+                                "name": "Rc",
+                                "width": 936,
+                                "height": 52,
+                                "position": "relational",
+                                "layout": {
+                                    "direction": "vertical",
+                                    "gap": "spacing-sm"
+                                },
+                                "responsive": {
+                                    "width": "hug"
+                                },
+                                "children": [
+                                    {
+                                        "id": "84:1491",
+                                        "kind": "container",
+                                        "name": "Hr",
+                                        "width": 344,
+                                        "height": 24,
+                                        "position": "relational",
+                                        "layout": {
+                                            "direction": "horizontal",
+                                            "gap": "spacing-10",
+                                            "alignItems": "center"
+                                        },
+                                        "responsive": {
+                                            "width": "hug",
+                                            "height": "hug"
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "84:1492",
+                                                "kind": "text",
+                                                "name": "Merchant tools · POS · Invoice QR",
+                                                "width": 270,
+                                                "height": 24,
+                                                "position": "relational",
+                                                "text": {
+                                                    "content": "Merchant tools · POS · Invoice QR",
+                                                    "typography": "heading-h4",
+                                                    "color": "color-text-primary",
+                                                    "textAlign": "left"
+                                                },
+                                                "semanticRole": "semantic",
+                                                "signals": {
+                                                    "nonInteractive": true
+                                                },
+                                                "context": {
+                                                    "zIndex": -1,
+                                                    "hierarchyDepth": 5
+                                                }
+                                            },
+                                            {
+                                                "id": "84:1493",
+                                                "kind": "container",
+                                                "name": "Pill",
+                                                "width": 64,
+                                                "height": 19,
+                                                "position": "relational",
+                                                "layout": {
+                                                    "direction": "horizontal",
+                                                    "padding": {
+                                                        "top": 3,
+                                                        "right": 9,
+                                                        "bottom": 3,
+                                                        "left": 9
+                                                    }
+                                                },
+                                                "responsive": {
+                                                    "width": "hug",
+                                                    "height": "hug"
+                                                },
+                                                "style": {
+                                                    "borderColor": "color-border",
+                                                    "borderWidth": 1,
+                                                    "borderRadius": "radius-20"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "id": "84:1494",
+                                                        "kind": "text",
+                                                        "name": "ROADMAP",
+                                                        "width": 46,
+                                                        "height": 13,
+                                                        "position": "relational",
+                                                        "text": {
+                                                            "content": "ROADMAP",
+                                                            "typography": "mono-badge",
+                                                            "color": "color-text-muted",
+                                                            "textAlign": "left"
+                                                        },
+                                                        "semanticRole": "semantic",
+                                                        "signals": {
+                                                            "nonInteractive": true
+                                                        },
+                                                        "context": {
+                                                            "zIndex": -1,
+                                                            "hierarchyDepth": 6
+                                                        }
+                                                    }
+                                                ],
+                                                "semanticRole": "structural",
+                                                "signals": {
+                                                    "nonInteractive": true
+                                                },
+                                                "context": {
+                                                    "zIndex": -1,
+                                                    "hierarchyDepth": 5
+                                                }
+                                            }
+                                        ],
+                                        "semanticRole": "structural",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 4
+                                        }
+                                    },
+                                    {
+                                        "id": "84:1495",
+                                        "kind": "text",
+                                        "name": "Payment links, invoice-bound codes, and a merchant dashboard with analytics.",
+                                        "width": 936,
+                                        "height": 20,
+                                        "position": "relational",
+                                        "text": {
+                                            "content": "Payment links, invoice-bound codes, and a merchant dashboard with analytics.",
+                                            "typography": "body-caption",
+                                            "color": "color-text-muted",
+                                            "textAlign": "left"
+                                        },
+                                        "semanticRole": "semantic",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 4
+                                        }
+                                    }
+                                ],
+                                "semanticRole": "structural",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    },
+                    {
+                        "id": "84:1496",
+                        "kind": "container",
+                        "name": "RoadItem",
+                        "width": 1080,
+                        "height": 96,
+                        "position": "relational",
+                        "layout": {
+                            "direction": "horizontal",
+                            "gap": "spacing-5xl",
+                            "padding": {
+                                "top": 22,
+                                "right": 0,
+                                "bottom": 22,
+                                "left": 0
+                            }
+                        },
+                        "responsive": {
+                            "width": "hug"
+                        },
+                        "style": {
+                            "borderColor": "color-border",
+                            "borderWidth": {
+                                "bottom": 1
+                            }
+                        },
+                        "children": [
+                            {
+                                "id": "84:1497",
+                                "kind": "text",
+                                "name": "LATERAL",
+                                "width": 120,
+                                "height": 17,
+                                "position": "relational",
+                                "text": {
+                                    "content": "LATERAL",
+                                    "typography": "mono-label",
+                                    "color": "color-accent",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1498",
+                                "kind": "container",
+                                "name": "Rc",
+                                "width": 936,
+                                "height": 52,
+                                "position": "relational",
+                                "layout": {
+                                    "direction": "vertical",
+                                    "gap": "spacing-sm"
+                                },
+                                "responsive": {
+                                    "width": "hug"
+                                },
+                                "children": [
+                                    {
+                                        "id": "84:1499",
+                                        "kind": "container",
+                                        "name": "Hr",
+                                        "width": 279,
+                                        "height": 24,
+                                        "position": "relational",
+                                        "layout": {
+                                            "direction": "horizontal",
+                                            "gap": "spacing-10",
+                                            "alignItems": "center"
+                                        },
+                                        "responsive": {
+                                            "width": "hug",
+                                            "height": "hug"
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "84:1500",
+                                                "kind": "text",
+                                                "name": "AI powered QR Soundbox",
+                                                "width": 205,
+                                                "height": 24,
+                                                "position": "relational",
+                                                "text": {
+                                                    "content": "AI powered QR Soundbox",
+                                                    "typography": "heading-h4",
+                                                    "color": "color-text-primary",
+                                                    "textAlign": "left"
+                                                },
+                                                "semanticRole": "semantic",
+                                                "signals": {
+                                                    "nonInteractive": true
+                                                },
+                                                "context": {
+                                                    "zIndex": -1,
+                                                    "hierarchyDepth": 5
+                                                }
+                                            },
+                                            {
+                                                "id": "84:1501",
+                                                "kind": "container",
+                                                "name": "Pill",
+                                                "width": 64,
+                                                "height": 19,
+                                                "position": "relational",
+                                                "layout": {
+                                                    "direction": "horizontal",
+                                                    "padding": {
+                                                        "top": 3,
+                                                        "right": 9,
+                                                        "bottom": 3,
+                                                        "left": 9
+                                                    }
+                                                },
+                                                "responsive": {
+                                                    "width": "hug",
+                                                    "height": "hug"
+                                                },
+                                                "style": {
+                                                    "borderColor": "color-border",
+                                                    "borderWidth": 1,
+                                                    "borderRadius": "radius-20"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "id": "84:1502",
+                                                        "kind": "text",
+                                                        "name": "ROADMAP",
+                                                        "width": 46,
+                                                        "height": 13,
+                                                        "position": "relational",
+                                                        "text": {
+                                                            "content": "ROADMAP",
+                                                            "typography": "mono-badge",
+                                                            "color": "color-text-muted",
+                                                            "textAlign": "left"
+                                                        },
+                                                        "semanticRole": "semantic",
+                                                        "signals": {
+                                                            "nonInteractive": true
+                                                        },
+                                                        "context": {
+                                                            "zIndex": -1,
+                                                            "hierarchyDepth": 6
+                                                        }
+                                                    }
+                                                ],
+                                                "semanticRole": "structural",
+                                                "signals": {
+                                                    "nonInteractive": true
+                                                },
+                                                "context": {
+                                                    "zIndex": -1,
+                                                    "hierarchyDepth": 5
+                                                }
+                                            }
+                                        ],
+                                        "semanticRole": "structural",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 4
+                                        }
+                                    },
+                                    {
+                                        "id": "84:1503",
+                                        "kind": "text",
+                                        "name": "An AI powered QR Soundbox that reads out payment received, available in multiple Nigerian languages. Can also respond with transaction summary.",
+                                        "width": 936,
+                                        "height": 20,
+                                        "position": "relational",
+                                        "text": {
+                                            "content": "An AI powered QR Soundbox that reads out payment received, available in multiple Nigerian languages. Can also respond with transaction summary.",
+                                            "typography": "body-caption",
+                                            "color": "color-text-muted",
+                                            "textAlign": "left"
+                                        },
+                                        "semanticRole": "semantic",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 4
+                                        }
+                                    }
+                                ],
+                                "semanticRole": "structural",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    }
+                ],
+                "semanticRole": "structural",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            }
+        ],
+        "semanticRole": "structural",
+        "signals": {
+            "nonInteractive": true
+        },
+        "context": {
+            "zIndex": -1
+        }
+    }
+}

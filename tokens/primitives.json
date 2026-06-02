@@ -35,8 +35,8 @@
       "type": "color",
       "prefix": "primitives"
     },
-    "white": {
-      "value": "#fafaf7",
+    "off-white": {
+      "value": "#f6fee1",
       "type": "color",
       "prefix": "primitives"
     },

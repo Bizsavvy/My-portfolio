@@ -1,0 +1,537 @@
+{
+    "version": "1.0.0",
+    "source": {
+        "fileName": "Case studies",
+        "selection": [
+            "84:1249"
+        ],
+        "extractedAt": "2026-06-02T17:19:28.592Z"
+    },
+    "tokens": {
+        "colors": {
+            "color-border": "rgba(236, 234, 224, 0.11)",
+            "color-accent": "#C7F94B",
+            "color-text-primary": "#ECEAE0",
+            "color-surface": "#15150F",
+            "color-text-muted": "#8C8B7E"
+        },
+        "typography": {
+            "mono-kicker": {
+                "fontWeight": 400,
+                "fontSize": 12,
+                "letterSpacing": 16
+            },
+            "heading-h2": {
+                "fontWeight": 700,
+                "fontSize": 40,
+                "lineHeight": "108.00000429153442%",
+                "letterSpacing": -2
+            },
+            "body-large": {
+                "fontWeight": 400,
+                "fontSize": 20,
+                "lineHeight": "158.00000429153442%",
+                "letterSpacing": 0
+            },
+            "mono-badge": {
+                "fontWeight": 400,
+                "fontSize": 10,
+                "lineHeight": "129.99999523162842%",
+                "letterSpacing": 6
+            },
+            "heading-h4": {
+                "fontWeight": 700,
+                "fontSize": 18,
+                "lineHeight": "135.0000023841858%",
+                "letterSpacing": -1
+            },
+            "body-caption": {
+                "fontWeight": 400,
+                "fontSize": 14,
+                "lineHeight": "139.9999976158142%",
+                "letterSpacing": 0
+            }
+        },
+        "spacing": {
+            "spacing-5xl": 24,
+            "spacing-lg": 12
+        },
+        "radius": {
+            "radius-14": 14
+        },
+        "shadows": {}
+    },
+    "components": [
+        {
+            "name": "Card",
+            "variants": [],
+            "instances": 3
+        }
+    ],
+    "root": {
+        "id": "84:1249",
+        "kind": "screen",
+        "name": "CoreBet",
+        "width": 1280,
+        "height": 508,
+        "position": "relational",
+        "layout": {
+            "direction": "vertical",
+            "gap": "spacing-5xl",
+            "padding": {
+                "top": 62,
+                "right": 100,
+                "bottom": 62,
+                "left": 100
+            }
+        },
+        "style": {
+            "borderColor": "color-border",
+            "borderWidth": {
+                "top": 1
+            }
+        },
+        "children": [
+            {
+                "id": "84:1250",
+                "kind": "container",
+                "name": "Kicker",
+                "width": 146,
+                "height": 16,
+                "position": "relational",
+                "layout": {
+                    "direction": "horizontal",
+                    "gap": "spacing-lg",
+                    "alignItems": "center"
+                },
+                "responsive": {
+                    "width": "hug",
+                    "height": "hug"
+                },
+                "children": [
+                    {
+                        "id": "84:1251",
+                        "kind": "rectangle",
+                        "name": "Element",
+                        "width": 26,
+                        "height": 1,
+                        "position": "relational",
+                        "style": {
+                            "background": "color-accent"
+                        },
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    },
+                    {
+                        "id": "84:1252",
+                        "kind": "text",
+                        "name": "The core bet",
+                        "width": 108,
+                        "height": 16,
+                        "position": "relational",
+                        "text": {
+                            "content": "The core bet",
+                            "typography": "mono-kicker",
+                            "color": "color-accent",
+                            "textAlign": "left"
+                        },
+                        "semanticRole": "semantic",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    }
+                ],
+                "semanticRole": "structural",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            },
+            {
+                "id": "84:1253",
+                "kind": "text",
+                "name": "One scan or one ID replaces the entire ritual.",
+                "width": 1080,
+                "height": 43,
+                "position": "relational",
+                "text": {
+                    "content": "One scan or one ID replaces the entire ritual.",
+                    "typography": "heading-h2",
+                    "color": "color-text-primary",
+                    "textAlign": "left"
+                },
+                "semanticRole": "semantic",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            },
+            {
+                "id": "84:1254",
+                "kind": "text",
+                "name": "Shappay's central design decision: remove manual entry completely. Scan a QR or type a name@shappay address, and the resolution engine already knows who to pay and on which rail.",
+                "width": 1080,
+                "height": 64,
+                "position": "relational",
+                "text": {
+                    "content": "Shappay's central design decision: remove manual entry completely. Scan a QR or type a name@shappay address, and the resolution engine already knows who to pay and on which rail.",
+                    "typography": "body-large",
+                    "textAlign": "left"
+                },
+                "semanticRole": "semantic",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            },
+            {
+                "id": "84:1255",
+                "kind": "container",
+                "name": "Cards",
+                "width": 1080,
+                "height": 189,
+                "position": "relational",
+                "layout": {
+                    "direction": "horizontal",
+                    "gap": "spacing-lg"
+                },
+                "responsive": {
+                    "width": "hug"
+                },
+                "children": [
+                    {
+                        "id": "84:1256",
+                        "kind": "container",
+                        "name": "Card",
+                        "width": 349.33,
+                        "height": 189,
+                        "component": "Card",
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "spacing-lg",
+                            "padding": "spacing-5xl"
+                        },
+                        "responsive": {
+                            "width": "hug"
+                        },
+                        "style": {
+                            "background": "color-surface",
+                            "borderColor": "color-border",
+                            "borderWidth": 1,
+                            "borderRadius": "radius-14"
+                        },
+                        "children": [
+                            {
+                                "id": "84:1257",
+                                "kind": "text",
+                                "name": "01 / DECISION",
+                                "width": 86,
+                                "height": 13,
+                                "position": "relational",
+                                "text": {
+                                    "content": "01 / DECISION",
+                                    "typography": "mono-badge",
+                                    "color": "color-accent",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1258",
+                                "kind": "text",
+                                "name": "Static QR first",
+                                "width": 112,
+                                "height": 24,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Static QR first",
+                                    "typography": "heading-h4",
+                                    "color": "color-text-primary",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1259",
+                                "kind": "text",
+                                "name": "The MVP ships a static merchant QR where the payer enters the amount. The cheapest path to a working loop; print it once, accept money forever.",
+                                "width": 301.33,
+                                "height": 80,
+                                "position": "relational",
+                                "text": {
+                                    "content": "The MVP ships a static merchant QR where the payer enters the amount. The cheapest path to a working loop; print it once, accept money forever.",
+                                    "typography": "body-caption",
+                                    "color": "color-text-muted",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    },
+                    {
+                        "id": "84:1260",
+                        "kind": "container",
+                        "name": "Card",
+                        "width": 349.33,
+                        "height": 189,
+                        "component": "Card",
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "spacing-lg",
+                            "padding": "spacing-5xl"
+                        },
+                        "responsive": {
+                            "width": "hug"
+                        },
+                        "style": {
+                            "background": "color-surface",
+                            "borderColor": "color-border",
+                            "borderWidth": 1,
+                            "borderRadius": "radius-14"
+                        },
+                        "children": [
+                            {
+                                "id": "84:1261",
+                                "kind": "text",
+                                "name": "02 / DECISION",
+                                "width": 86,
+                                "height": 13,
+                                "position": "relational",
+                                "text": {
+                                    "content": "02 / DECISION",
+                                    "typography": "mono-badge",
+                                    "color": "color-accent",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1262",
+                                "kind": "text",
+                                "name": "Two addressing modes",
+                                "width": 182,
+                                "height": 24,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Two addressing modes",
+                                    "typography": "heading-h4",
+                                    "color": "color-text-primary",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1263",
+                                "kind": "text",
+                                "name": "Every user gets a name@shappay virtual address — so P2P payments work by typing an ID, not only scanning. QR and VPA resolve through the same engine.",
+                                "width": 301.33,
+                                "height": 80,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Every user gets a name@shappay virtual address — so P2P payments work by typing an ID, not only scanning. QR and VPA resolve through the same engine.",
+                                    "typography": "body-caption",
+                                    "color": "color-text-muted",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    },
+                    {
+                        "id": "84:1264",
+                        "kind": "container",
+                        "name": "Card",
+                        "width": 349.33,
+                        "height": 189,
+                        "component": "Card",
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "spacing-lg",
+                            "padding": "spacing-5xl"
+                        },
+                        "responsive": {
+                            "width": "hug"
+                        },
+                        "style": {
+                            "background": "color-surface",
+                            "borderColor": "color-border",
+                            "borderWidth": 1,
+                            "borderRadius": "radius-14"
+                        },
+                        "children": [
+                            {
+                                "id": "84:1265",
+                                "kind": "text",
+                                "name": "03 / DECISION",
+                                "width": 86,
+                                "height": 13,
+                                "position": "relational",
+                                "text": {
+                                    "content": "03 / DECISION",
+                                    "typography": "mono-badge",
+                                    "color": "color-accent",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1266",
+                                "kind": "text",
+                                "name": "Wallet-first execution",
+                                "width": 172,
+                                "height": 24,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Wallet-first execution",
+                                    "typography": "heading-h4",
+                                    "color": "color-text-primary",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1267",
+                                "kind": "text",
+                                "name": "Funding and checkout are decoupled. Banks are touched once, topping up via Mono not on every payment. Checkout clears against wallet balance.",
+                                "width": 301.33,
+                                "height": 80,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Funding and checkout are decoupled. Banks are touched once, topping up via Mono not on every payment. Checkout clears against wallet balance.",
+                                    "typography": "body-caption",
+                                    "color": "color-text-muted",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    }
+                ],
+                "semanticRole": "structural",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            }
+        ],
+        "semanticRole": "structural",
+        "signals": {
+            "nonInteractive": true
+        },
+        "context": {
+            "zIndex": -1
+        }
+    }
+}

@@ -1,0 +1,741 @@
+{
+    "version": "1.0.0",
+    "source": {
+        "fileName": "Case studies",
+        "selection": [
+            "84:1216"
+        ],
+        "extractedAt": "2026-06-02T17:45:27.244Z"
+    },
+    "tokens": {
+        "colors": {
+            "color-accent": "#C7F94B",
+            "color-text-primary": "#ECEAE0",
+            "color-border": "rgba(236, 234, 224, 0.11)",
+            "color-bg": "#0C0C0A",
+            "color-text-muted": "#8C8B7E"
+        },
+        "typography": {
+            "mono-eyebrow": {
+                "fontWeight": 400,
+                "fontSize": 12,
+                "lineHeight": "120.00000476837158%",
+                "letterSpacing": 18
+            },
+            "display-project-name": {
+                "fontWeight": 700,
+                "fontSize": 120,
+                "lineHeight": "94.9999988079071%",
+                "letterSpacing": 2
+            },
+            "body-lede": {
+                "fontWeight": 400,
+                "fontSize": 28,
+                "lineHeight": "137.99999952316284%",
+                "letterSpacing": -1
+            },
+            "mono-meta-label": {
+                "fontWeight": 400,
+                "fontSize": 12,
+                "lineHeight": "139.9999976158142%",
+                "letterSpacing": 8
+            },
+            "special-meta-value": {
+                "fontWeight": 500,
+                "fontSize": 14,
+                "lineHeight": "129.99999523162842%",
+                "letterSpacing": 0
+            }
+        },
+        "spacing": {
+            "spacing-5xl": 24,
+            "spacing-2xl": 16,
+            "spacing-1": 1,
+            "spacing-7": 7
+        },
+        "radius": {
+            "radius-14": 14
+        },
+        "shadows": {}
+    },
+    "components": [
+        {
+            "name": "Hero",
+            "variants": [],
+            "instances": 1
+        },
+        {
+            "name": "Header",
+            "variants": [],
+            "instances": 1
+        }
+    ],
+    "root": {
+        "id": "84:1216",
+        "kind": "screen",
+        "name": "Hero",
+        "width": 1280,
+        "height": 574,
+        "component": "Hero",
+        "position": "relational",
+        "layout": {
+            "direction": "vertical",
+            "gap": "spacing-5xl",
+            "padding": {
+                "top": 36,
+                "right": 100,
+                "bottom": 72,
+                "left": 100
+            }
+        },
+        "children": [
+            {
+                "id": "90:2151",
+                "kind": "container",
+                "name": "Header",
+                "width": 1080,
+                "height": 144,
+                "component": "Header",
+                "position": "relational",
+                "layout": {
+                    "direction": "vertical",
+                    "gap": "spacing-2xl"
+                },
+                "responsive": {
+                    "height": "hug"
+                },
+                "children": [
+                    {
+                        "id": "84:1217",
+                        "kind": "text",
+                        "name": "CONSUMER FINTECH · QR PAYMENTS · NIGERIA",
+                        "width": 373,
+                        "height": 14,
+                        "position": "relational",
+                        "text": {
+                            "content": "CONSUMER FINTECH · QR PAYMENTS · NIGERIA",
+                            "typography": "mono-eyebrow",
+                            "color": "color-accent",
+                            "textAlign": "left"
+                        },
+                        "semanticRole": "semantic",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    },
+                    {
+                        "id": "84:1218",
+                        "kind": "text",
+                        "name": "Shappay",
+                        "width": 1080,
+                        "height": 114,
+                        "position": "relational",
+                        "text": {
+                            "content": "Shappay",
+                            "typography": "display-project-name",
+                            "color": "color-text-primary",
+                            "textAlign": "left"
+                        },
+                        "semanticRole": "semantic",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    }
+                ],
+                "semanticRole": "structural",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            },
+            {
+                "id": "84:1219",
+                "kind": "text",
+                "name": "A QR-driven payment resolution engine that selects the correct financial rail; wallet, bank, or external network based on merchant and user preferences.",
+                "width": 660,
+                "height": 117,
+                "position": "relational",
+                "text": {
+                    "content": "A QR-driven payment resolution engine that selects the correct financial rail; wallet, bank, or external network based on merchant and user preferences.",
+                    "typography": "body-lede",
+                    "textAlign": "left"
+                },
+                "semanticRole": "semantic",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            },
+            {
+                "id": "84:1220",
+                "kind": "screen",
+                "name": "Meta",
+                "width": 1080,
+                "height": 157,
+                "position": "relational",
+                "layout": {
+                    "direction": "vertical",
+                    "gap": "spacing-1"
+                },
+                "style": {
+                    "background": "color-border",
+                    "borderColor": "color-border",
+                    "borderWidth": 0,
+                    "borderRadius": "radius-14"
+                },
+                "children": [
+                    {
+                        "id": "92:3495",
+                        "kind": "container",
+                        "name": "TopTiles",
+                        "width": 1079.99,
+                        "height": 78,
+                        "position": "relational",
+                        "layout": {
+                            "direction": "horizontal",
+                            "gap": "spacing-1",
+                            "alignItems": "center"
+                        },
+                        "responsive": {
+                            "width": "hug",
+                            "height": "hug"
+                        },
+                        "children": [
+                            {
+                                "id": "84:1221",
+                                "kind": "container",
+                                "name": "Tile",
+                                "width": 359.33,
+                                "height": 78,
+                                "position": "relational",
+                                "layout": {
+                                    "direction": "vertical",
+                                    "gap": "spacing-7",
+                                    "padding": {
+                                        "top": 18,
+                                        "right": 20,
+                                        "bottom": 18,
+                                        "left": 20
+                                    }
+                                },
+                                "responsive": {
+                                    "width": "hug"
+                                },
+                                "style": {
+                                    "background": "color-bg"
+                                },
+                                "children": [
+                                    {
+                                        "id": "84:1222",
+                                        "kind": "text",
+                                        "name": "ROLE",
+                                        "width": 32,
+                                        "height": 17,
+                                        "position": "relational",
+                                        "text": {
+                                            "content": "ROLE",
+                                            "typography": "mono-meta-label",
+                                            "color": "color-text-muted",
+                                            "textAlign": "left"
+                                        },
+                                        "semanticRole": "semantic",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 3
+                                        }
+                                    },
+                                    {
+                                        "id": "84:1223",
+                                        "kind": "text",
+                                        "name": "Design Engineer & Founder",
+                                        "width": 170,
+                                        "height": 18,
+                                        "position": "relational",
+                                        "text": {
+                                            "content": "Design Engineer & Founder",
+                                            "typography": "special-meta-value",
+                                            "color": "color-text-primary",
+                                            "textAlign": "left"
+                                        },
+                                        "semanticRole": "semantic",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 3
+                                        }
+                                    }
+                                ],
+                                "semanticRole": "structural",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 2
+                                }
+                            },
+                            {
+                                "id": "84:1224",
+                                "kind": "container",
+                                "name": "Tile",
+                                "width": 359.33,
+                                "height": 78,
+                                "position": "relational",
+                                "layout": {
+                                    "direction": "vertical",
+                                    "gap": "spacing-7",
+                                    "padding": {
+                                        "top": 18,
+                                        "right": 20,
+                                        "bottom": 18,
+                                        "left": 20
+                                    }
+                                },
+                                "responsive": {
+                                    "width": "hug"
+                                },
+                                "style": {
+                                    "background": "color-bg"
+                                },
+                                "children": [
+                                    {
+                                        "id": "84:1225",
+                                        "kind": "text",
+                                        "name": "SCOPE",
+                                        "width": 40,
+                                        "height": 17,
+                                        "position": "relational",
+                                        "text": {
+                                            "content": "SCOPE",
+                                            "typography": "mono-meta-label",
+                                            "color": "color-text-muted",
+                                            "textAlign": "left"
+                                        },
+                                        "semanticRole": "semantic",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 3
+                                        }
+                                    },
+                                    {
+                                        "id": "84:1226",
+                                        "kind": "text",
+                                        "name": "Product design → front-end",
+                                        "width": 176,
+                                        "height": 18,
+                                        "position": "relational",
+                                        "text": {
+                                            "content": "Product design → front-end",
+                                            "typography": "special-meta-value",
+                                            "color": "color-text-primary",
+                                            "textAlign": "left"
+                                        },
+                                        "semanticRole": "semantic",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 3
+                                        }
+                                    }
+                                ],
+                                "semanticRole": "structural",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 2
+                                }
+                            },
+                            {
+                                "id": "84:1227",
+                                "kind": "container",
+                                "name": "Tile",
+                                "width": 359.33,
+                                "height": 78,
+                                "position": "relational",
+                                "layout": {
+                                    "direction": "vertical",
+                                    "gap": "spacing-7",
+                                    "padding": {
+                                        "top": 18,
+                                        "right": 20,
+                                        "bottom": 18,
+                                        "left": 20
+                                    }
+                                },
+                                "responsive": {
+                                    "width": "hug"
+                                },
+                                "style": {
+                                    "background": "color-bg"
+                                },
+                                "children": [
+                                    {
+                                        "id": "84:1228",
+                                        "kind": "text",
+                                        "name": "MODEL",
+                                        "width": 40,
+                                        "height": 17,
+                                        "position": "relational",
+                                        "text": {
+                                            "content": "MODEL",
+                                            "typography": "mono-meta-label",
+                                            "color": "color-text-muted",
+                                            "textAlign": "left"
+                                        },
+                                        "semanticRole": "semantic",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 3
+                                        }
+                                    },
+                                    {
+                                        "id": "84:1229",
+                                        "kind": "text",
+                                        "name": "Wallet-first QR",
+                                        "width": 93,
+                                        "height": 18,
+                                        "position": "relational",
+                                        "text": {
+                                            "content": "Wallet-first QR",
+                                            "typography": "special-meta-value",
+                                            "color": "color-text-primary",
+                                            "textAlign": "left"
+                                        },
+                                        "semanticRole": "semantic",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 3
+                                        }
+                                    }
+                                ],
+                                "semanticRole": "structural",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 2
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 1
+                        }
+                    },
+                    {
+                        "id": "92:3496",
+                        "kind": "container",
+                        "name": "BottomTiles",
+                        "width": 1079.99,
+                        "height": 78,
+                        "position": "relational",
+                        "layout": {
+                            "direction": "horizontal",
+                            "gap": "spacing-1",
+                            "alignItems": "center"
+                        },
+                        "responsive": {
+                            "width": "hug",
+                            "height": "hug"
+                        },
+                        "children": [
+                            {
+                                "id": "84:1230",
+                                "kind": "container",
+                                "name": "Tile",
+                                "width": 359.33,
+                                "height": 78,
+                                "position": "relational",
+                                "layout": {
+                                    "direction": "vertical",
+                                    "gap": "spacing-7",
+                                    "padding": {
+                                        "top": 18,
+                                        "right": 20,
+                                        "bottom": 18,
+                                        "left": 20
+                                    }
+                                },
+                                "responsive": {
+                                    "width": "hug"
+                                },
+                                "style": {
+                                    "background": "color-bg"
+                                },
+                                "children": [
+                                    {
+                                        "id": "84:1231",
+                                        "kind": "text",
+                                        "name": "RAILS",
+                                        "width": 40,
+                                        "height": 17,
+                                        "position": "relational",
+                                        "text": {
+                                            "content": "RAILS",
+                                            "typography": "mono-meta-label",
+                                            "color": "color-text-muted",
+                                            "textAlign": "left"
+                                        },
+                                        "semanticRole": "semantic",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 3
+                                        }
+                                    },
+                                    {
+                                        "id": "84:1232",
+                                        "kind": "text",
+                                        "name": "NIBSS NQR · EMVCo",
+                                        "width": 129,
+                                        "height": 18,
+                                        "position": "relational",
+                                        "text": {
+                                            "content": "NIBSS NQR · EMVCo",
+                                            "typography": "special-meta-value",
+                                            "color": "color-text-primary",
+                                            "textAlign": "left"
+                                        },
+                                        "semanticRole": "semantic",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 3
+                                        }
+                                    }
+                                ],
+                                "semanticRole": "structural",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 2
+                                }
+                            },
+                            {
+                                "id": "84:1233",
+                                "kind": "container",
+                                "name": "Tile",
+                                "width": 359.33,
+                                "height": 78,
+                                "position": "relational",
+                                "layout": {
+                                    "direction": "vertical",
+                                    "gap": "spacing-7",
+                                    "padding": {
+                                        "top": 18,
+                                        "right": 20,
+                                        "bottom": 18,
+                                        "left": 20
+                                    }
+                                },
+                                "responsive": {
+                                    "width": "hug"
+                                },
+                                "style": {
+                                    "background": "color-bg"
+                                },
+                                "children": [
+                                    {
+                                        "id": "84:1234",
+                                        "kind": "text",
+                                        "name": "PLATFORM",
+                                        "width": 65,
+                                        "height": 17,
+                                        "position": "relational",
+                                        "text": {
+                                            "content": "PLATFORM",
+                                            "typography": "mono-meta-label",
+                                            "color": "color-text-muted",
+                                            "textAlign": "left"
+                                        },
+                                        "semanticRole": "semantic",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 3
+                                        }
+                                    },
+                                    {
+                                        "id": "84:1235",
+                                        "kind": "text",
+                                        "name": "React Native · Mobile",
+                                        "width": 134,
+                                        "height": 18,
+                                        "position": "relational",
+                                        "text": {
+                                            "content": "React Native · Mobile",
+                                            "typography": "special-meta-value",
+                                            "color": "color-text-primary",
+                                            "textAlign": "left"
+                                        },
+                                        "semanticRole": "semantic",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 3
+                                        }
+                                    }
+                                ],
+                                "semanticRole": "structural",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 2
+                                }
+                            },
+                            {
+                                "id": "84:1236",
+                                "kind": "container",
+                                "name": "Tile",
+                                "width": 359.33,
+                                "height": 78,
+                                "position": "relational",
+                                "layout": {
+                                    "direction": "vertical",
+                                    "gap": "spacing-7",
+                                    "padding": {
+                                        "top": 18,
+                                        "right": 20,
+                                        "bottom": 18,
+                                        "left": 20
+                                    }
+                                },
+                                "responsive": {
+                                    "width": "hug"
+                                },
+                                "style": {
+                                    "background": "color-bg"
+                                },
+                                "children": [
+                                    {
+                                        "id": "84:1237",
+                                        "kind": "text",
+                                        "name": "YEAR",
+                                        "width": 32,
+                                        "height": 17,
+                                        "position": "relational",
+                                        "text": {
+                                            "content": "YEAR",
+                                            "typography": "mono-meta-label",
+                                            "color": "color-text-muted",
+                                            "textAlign": "left"
+                                        },
+                                        "semanticRole": "semantic",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 3
+                                        }
+                                    },
+                                    {
+                                        "id": "84:1238",
+                                        "kind": "text",
+                                        "name": "2025 — present",
+                                        "width": 102,
+                                        "height": 18,
+                                        "position": "relational",
+                                        "text": {
+                                            "content": "2025 — present",
+                                            "typography": "special-meta-value",
+                                            "color": "color-text-primary",
+                                            "textAlign": "left"
+                                        },
+                                        "semanticRole": "semantic",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 3
+                                        }
+                                    }
+                                ],
+                                "semanticRole": "structural",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 2
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 1
+                        }
+                    }
+                ],
+                "semanticRole": "structural",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1
+                }
+            }
+        ],
+        "semanticRole": "structural",
+        "signals": {
+            "nonInteractive": true
+        },
+        "context": {
+            "zIndex": -1
+        }
+    }
+}

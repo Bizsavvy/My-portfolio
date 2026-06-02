@@ -14,14 +14,31 @@
   --prim-lime: #c7f94b;
   --prim-lime-dark: #4d7c0f;
   --prim-violet: #8a4beb;
-  --prim-white: #fafaf7;
+  --prim-off-white: #f6fee1;
   --prim-pure-white: #ffffff;
   --prim-light-surface: #f2f0eb;
   --prim-near-black: #1a1a16;
   --prim-text-light: #eceae0;
   --prim-body-light: #d6d4c9;
   --prim-neutral: #8c8b7e;
+  --prim-neutral-2: #79786c;
   --prim-dark-body: #4a4940;
+
+  /* Semantic Light Mode Defaults */
+  --theme-bg: var(--prim-off-white);
+  --theme-surface: var(--prim-pure-white);
+  --theme-surface-elevated: var(--prim-light-surface);
+  --theme-accent: var(--prim-lime-dark);
+  --theme-accent-dim: #c7f94b21;
+  --theme-accent-text: var(--prim-lime-dark);
+  --theme-on-accent: var(--prim-pure-white);
+  --theme-text-primary: var(--prim-near-black);
+  --theme-text-secondary: var(--prim-dark-body);
+  --theme-text-muted: var(--prim-neutral);
+  --theme-border: #1a1a1614;
+  --theme-border-strong: #1a1a1624;
+  --theme-secondary: var(--prim-violet);
+  --theme-nav-bg: rgba(246, 254, 225, .88);
 
   /* Spacing */
   --space-xs: 4px;
@@ -56,44 +73,102 @@
   --rad-full: 999px;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --theme-bg: var(--prim-ink);
+    --theme-surface: var(--prim-surface);
+    --theme-surface-elevated: var(--prim-surface-elevated);
+    --theme-accent: var(--prim-lime);
+    --theme-accent-dim: #c7f94b21;
+    --theme-accent-text: var(--prim-lime);
+    --theme-on-accent: var(--prim-ink);
+    --theme-text-primary: var(--prim-text-light);
+    --theme-text-secondary: var(--prim-body-light);
+    --theme-text-muted: var(--prim-neutral-2);
+    --theme-border: #eceae01c;
+    --theme-border-strong: #eceae033;
+    --theme-secondary: var(--prim-violet);
+    --theme-nav-bg: rgba(12, 12, 10, .72);
+  }
+}
+
+/* Manual overrides — JS sets data-theme on <html>, beats the media query */
+:root[data-theme="dark"] {
+  --theme-bg: var(--prim-ink);
+  --theme-surface: var(--prim-surface);
+  --theme-surface-elevated: var(--prim-surface-elevated);
+  --theme-accent: var(--prim-lime);
+  --theme-accent-dim: #c7f94b21;
+  --theme-accent-text: var(--prim-lime);
+  --theme-on-accent: var(--prim-ink);
+  --theme-text-primary: var(--prim-text-light);
+  --theme-text-secondary: var(--prim-body-light);
+  --theme-text-muted: var(--prim-neutral-2);
+  --theme-border: #eceae01c;
+  --theme-border-strong: #eceae033;
+  --theme-secondary: var(--prim-violet);
+  --theme-nav-bg: rgba(12, 12, 10, .72);
+}
+
+:root[data-theme="light"] {
+  --theme-bg: var(--prim-off-white);
+  --theme-surface: var(--prim-pure-white);
+  --theme-surface-elevated: var(--prim-light-surface);
+  --theme-accent: var(--prim-lime-dark);
+  --theme-accent-dim: #4d7c0f1a;
+  --theme-accent-text: var(--prim-lime-dark);
+  --theme-on-accent: var(--prim-pure-white);
+  --theme-text-primary: var(--prim-near-black);
+  --theme-text-secondary: var(--prim-dark-body);
+  --theme-text-muted: var(--prim-neutral);
+  --theme-border: #1a1a1614;
+  --theme-border-strong: #1a1a1624;
+  --theme-secondary: var(--prim-violet);
+  --theme-nav-bg: rgba(246, 254, 225, .88);
+}
+
 /* ══════════════════════════════════════════════════════════
-   LAYER 2 · SEMANTIC TOKENS (dark mode)
+   LAYER 2 · SEMANTIC TOKENS
    Source: tokens/semantic.json
    Lives in @theme so Tailwind generates bg-*, text-*, border-* utilities.
    Legacy aliases kept so existing component code needs no changes.
 ══════════════════════════════════════════════════════════ */
 @theme {
   /* Backgrounds */
-  --color-ink: #0c0c0a;
-  --color-surface: #15150f;
-  --color-surface-elevated: #1c1c14;
-  --color-surface-2: #1c1c14;
-  --color-cream: #efebe0;
-  --color-paper: #efebe0;
+  --color-bg: var(--theme-bg);
+  --color-ink: var(--theme-bg);
+  --color-surface: var(--theme-surface);
+  --color-surface-elevated: var(--theme-surface-elevated);
+  --color-surface-2: var(--theme-surface-elevated);
+  --color-cream: var(--prim-cream);
+  --color-paper: var(--prim-cream);
 
   /* Accent */
-  --color-accent: #c7f94b;
-  --color-accent-dim: #c7f94b21;
-  --color-accent-text: #c7f94b;
-  --color-on-accent: #0c0c0a;
+  --color-accent: var(--theme-accent);
+  --color-accent-dim: var(--theme-accent-dim);
+  --color-accent-text: var(--theme-accent-text);
+  --color-on-accent: var(--theme-on-accent);
 
   /* Secondary */
-  --color-secondary: #8a4beb;
-  --color-violet: #8a4beb;
+  --color-secondary: var(--theme-secondary);
+  --color-violet: var(--theme-secondary);
 
   /* Text */
-  --color-text: #eceae0;
-  --color-text-primary: #eceae0;
-  --color-text-secondary: #d6d4c9;
-  --color-body: #d6d4c9;
-  --color-text-muted: #8c8b7e;
-  --color-muted: #8c8b7e;
+  --color-text: var(--theme-text-primary);
+  --color-text-primary: var(--theme-text-primary);
+  --color-text-secondary: var(--theme-text-secondary);
+  --color-body: var(--theme-text-secondary);
+  --color-text-muted: var(--theme-text-muted);
+  --color-muted: var(--theme-text-muted);
 
   /* Borders */
-  --color-border: #eceae01c;
-  --color-line: #eceae01c;
-  --color-border-strong: #eceae033;
-  --color-line-strong: #eceae033;
+  --color-border: var(--theme-border);
+  --color-line: var(--theme-border);
+  --color-border-strong: var(--theme-border-strong);
+  --color-line-strong: var(--theme-border-strong);
+
+  /* Nav */
+  --color-nav-bg: var(--theme-nav-bg);
 
   /* Fonts */
   --font-pixel: "Pixelify Sans", sans-serif;
@@ -340,6 +415,13 @@
     letter-spacing: 0;
   }
 
+  .ts-body-small {
+    font-family: var(--font-hanken);
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0;
+  }
+
   .ts-caption {
     font-family: var(--font-hanken);
     font-weight: 400;
@@ -351,6 +433,13 @@
     font-family: var(--font-hanken);
     font-weight: 500;
     font-size: 14px;
+    letter-spacing: 0;
+  }
+
+  .ts-caption-small {
+    font-family: var(--font-hanken);
+    font-weight: 400;
+    font-size: 12px;
     letter-spacing: 0;
   }
 
@@ -475,6 +564,21 @@
     font-family: var(--font-mono);
     font-weight: 400;
     font-size: 12px;
+    letter-spacing: 0;
+  }
+
+  .ts-field-label {
+    font-family: var(--font-mono);
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .ts-input-text {
+    font-family: var(--font-mono);
+    font-weight: 400;
+    font-size: 14px;
     letter-spacing: 0;
   }
 

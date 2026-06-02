@@ -1,0 +1,305 @@
+{
+    "version": "1.0.0",
+    "source": {
+        "fileName": "Case studies",
+        "selection": [
+            "84:1504"
+        ],
+        "extractedAt": "2026-06-02T18:20:52.061Z"
+    },
+    "tokens": {
+        "colors": {
+            "color-border": "rgba(236, 234, 224, 0.11)",
+            "color-accent": "#C7F94B",
+            "color-text-primary": "#ECEAE0",
+            "color-text-secondary": "#D6D4C9"
+        },
+        "typography": {
+            "mono-kicker": {
+                "fontWeight": 400,
+                "fontSize": 12,
+                "letterSpacing": 16
+            },
+            "heading-h2": {
+                "fontWeight": 700,
+                "fontSize": 40,
+                "lineHeight": "108.00000429153442%",
+                "letterSpacing": -2
+            },
+            "body-default": {
+                "fontWeight": 400,
+                "fontSize": 16,
+                "lineHeight": "164.9999976158142%",
+                "letterSpacing": 0
+            }
+        },
+        "spacing": {
+            "spacing-5xl": 24,
+            "spacing-md": 12,
+            "spacing-18": 18
+        },
+        "radius": {},
+        "shadows": {}
+    },
+    "components": [
+        {
+            "name": "ReflectionSection",
+            "variants": [],
+            "instances": 1
+        },
+        {
+            "name": "ColL",
+            "variants": [],
+            "instances": 1
+        },
+        {
+            "name": "ColR",
+            "variants": [],
+            "instances": 1
+        }
+    ],
+    "root": {
+        "id": "84:1504",
+        "kind": "screen",
+        "name": "ReflectionSection",
+        "width": 1280,
+        "height": 353,
+        "component": "ReflectionSection",
+        "position": "relational",
+        "layout": {
+            "direction": "vertical",
+            "padding": {
+                "top": 62,
+                "right": 100,
+                "bottom": 62,
+                "left": 100
+            }
+        },
+        "style": {
+            "borderColor": "color-border",
+            "borderWidth": {
+                "top": 1
+            }
+        },
+        "children": [
+            {
+                "id": "84:1505",
+                "kind": "container",
+                "name": "Two",
+                "width": 1080,
+                "height": 229,
+                "position": "relational",
+                "layout": {
+                    "direction": "vertical",
+                    "gap": "spacing-5xl"
+                },
+                "responsive": {
+                    "height": "hug"
+                },
+                "children": [
+                    {
+                        "id": "84:1506",
+                        "kind": "container",
+                        "name": "ColL",
+                        "width": 1080,
+                        "height": 83,
+                        "component": "ColL",
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "spacing-5xl"
+                        },
+                        "responsive": {
+                            "height": "hug"
+                        },
+                        "children": [
+                            {
+                                "id": "84:1507",
+                                "kind": "container",
+                                "name": "Kicker",
+                                "width": 128,
+                                "height": 16,
+                                "position": "relational",
+                                "layout": {
+                                    "direction": "horizontal",
+                                    "gap": "spacing-md",
+                                    "alignItems": "center"
+                                },
+                                "responsive": {
+                                    "width": "hug",
+                                    "height": "hug"
+                                },
+                                "children": [
+                                    {
+                                        "id": "84:1508",
+                                        "kind": "rectangle",
+                                        "name": "Element",
+                                        "width": 26,
+                                        "height": 1,
+                                        "position": "relational",
+                                        "style": {
+                                            "background": "color-accent"
+                                        },
+                                        "semanticRole": "structural",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 4
+                                        }
+                                    },
+                                    {
+                                        "id": "84:1509",
+                                        "kind": "text",
+                                        "name": "Reflection",
+                                        "width": 90,
+                                        "height": 16,
+                                        "position": "relational",
+                                        "text": {
+                                            "content": "Reflection",
+                                            "typography": "mono-kicker",
+                                            "color": "color-accent",
+                                            "textAlign": "left"
+                                        },
+                                        "semanticRole": "semantic",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 4
+                                        }
+                                    }
+                                ],
+                                "semanticRole": "structural",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1510",
+                                "kind": "text",
+                                "name": "What designing the engine taught me.",
+                                "width": 1080,
+                                "height": 43,
+                                "position": "relational",
+                                "text": {
+                                    "content": "What designing the engine taught me.",
+                                    "typography": "heading-h2",
+                                    "color": "color-text-primary",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    },
+                    {
+                        "id": "84:1511",
+                        "kind": "container",
+                        "name": "ColR",
+                        "width": 1080,
+                        "height": 122,
+                        "component": "ColR",
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "spacing-18"
+                        },
+                        "responsive": {
+                            "height": "hug"
+                        },
+                        "children": [
+                            {
+                                "id": "84:1512",
+                                "kind": "text",
+                                "name": "The temptation in fintech is to design the screens and treat the rails as someone else's problem. Shappay only works because I refused that split. Understanding the TLV format changed the product: static-first stopped being a compromise and became the obvious wedge.",
+                                "width": 1080,
+                                "height": 52,
+                                "position": "relational",
+                                "text": {
+                                    "content": "The temptation in fintech is to design the screens and treat the rails as someone else's problem. Shappay only works because I refused that split. Understanding the TLV format changed the product: static-first stopped being a compromise and became the obvious wedge.",
+                                    "typography": "body-default",
+                                    "color": "color-text-secondary",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1513",
+                                "kind": "text",
+                                "name": "The hardest decisions weren't visual — and the most important was admitting the first architecture was wrong. Re-drawing the line between funding and checkout, choosing to hold a wallet, deciding where settlement lands: those are the calls that turned a fragile demo into something shippable.",
+                                "width": 1080,
+                                "height": 52,
+                                "position": "relational",
+                                "text": {
+                                    "content": "The hardest decisions weren't visual — and the most important was admitting the first architecture was wrong. Re-drawing the line between funding and checkout, choosing to hold a wallet, deciding where settlement lands: those are the calls that turned a fragile demo into something shippable.",
+                                    "typography": "body-default",
+                                    "color": "color-text-secondary",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    }
+                ],
+                "semanticRole": "structural",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            }
+        ],
+        "semanticRole": "structural",
+        "signals": {
+            "nonInteractive": true
+        },
+        "context": {
+            "zIndex": -1
+        }
+    }
+}

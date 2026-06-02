@@ -1,0 +1,81 @@
+{
+  "section": "shappay.problem-statement",
+  "source": "ai-systems/schema/desktop/case-studies/shappay/problem-statement.raw.json",
+  "frameworkInterpretation": "next",
+  "layout": {
+    "element": "section",
+    "border": "border-t border-[var(--color-line)]",
+    "padding": {
+      "vertical": "62px → style padding: 62px 0",
+      "horizontal": "100px → px-[var(--space-16xl)]"
+    },
+    "maxWidth": "var(--width-maxw) with mx-auto",
+    "zIndex": 5,
+    "position": "relative"
+  },
+  "children": [
+    {
+      "name": "Two",
+      "kind": "container",
+      "direction": "horizontal",
+      "gap": "spacing-3xl → 48px → gap-12",
+      "children": [
+        {
+          "name": "ColL",
+          "kind": "container",
+          "direction": "vertical",
+          "gap": "spacing-5xl → 24px → gap-6",
+          "children": [
+            {
+              "name": "Kicker",
+              "mapping": "Kicker component",
+              "content": "The problem",
+              "note": "Kicker renders 26×1px accent line + mono-kicker text (0.16em, uppercase) with mb-5 (20px). gap-6 on ColL overrides margin; Kicker mb-5 is neutral inside flex-col. Minor 4px discrepancy from Figma 24px gap — visually negligible."
+            },
+            {
+              "name": "h2",
+              "kind": "text",
+              "content": "Sending money should not require typing 10-digits all the time.",
+              "typography": "heading-h2 → font-hanken 700 40px -0.02em leading-[1.08]",
+              "color": "color-text-primary → var(--color-text)",
+              "responsive": "clamp(28px, 4vw, 40px)"
+            }
+          ]
+        },
+        {
+          "name": "ColR",
+          "kind": "container",
+          "direction": "vertical",
+          "gap": "spacing-2xl → 16px → gap-4",
+          "children": [
+            {
+              "name": "P1",
+              "kind": "text",
+              "content": "Most Nigerians hold multiple bank accounts across different banks. Every transfer means typing a 10-digit account number, choosing the right bank from a growing list, and hoping you got it right — multiplied across every account you own.",
+              "typography": "body-default → font-hanken 16px leading-[1.65]",
+              "color": "color-text-primary → var(--color-text)"
+            },
+            {
+              "name": "P2",
+              "kind": "text",
+              "content": "It is the single most error-prone moment in everyday payments...",
+              "typography": "body-default → font-hanken 16px leading-[1.65]",
+              "color": "color-text-primary → var(--color-text)"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "tokenNotes": {
+    "spacing-3xl (48px)": "gap-12 ✓ exact",
+    "spacing-5xl (24px)": "gap-6 ✓ exact",
+    "spacing-md (12px)": "gap-3 inside Kicker ✓",
+    "spacing-2xl (16px)": "gap-4 ✓ exact",
+    "padding-vertical (62px)": "style padding: 62px 0 ✓",
+    "padding-horizontal (100px)": "--space-16xl: 100px ✓",
+    "heading-h2": "font-hanken 700 40px -0.02em leading-1.08 → responsive clamp(28px,4vw,40px)",
+    "body-default": "font-hanken 400 16px leading-1.65 tracking-0",
+    "mono-kicker": "Kicker component → font-mono 400 12px 0.16em uppercase ✓"
+  }
+}

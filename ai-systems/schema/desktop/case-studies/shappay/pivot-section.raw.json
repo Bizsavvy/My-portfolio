@@ -1,0 +1,1629 @@
+{
+    "version": "1.0.0",
+    "source": {
+        "fileName": "Case studies",
+        "selection": [
+            "84:1299"
+        ],
+        "extractedAt": "2026-06-02T17:21:39.715Z"
+    },
+    "tokens": {
+        "colors": {
+            "color-border": "rgba(236, 234, 224, 0.11)",
+            "color-accent": "#C7F94B",
+            "color-text-primary": "#ECEAE0",
+            "color-text-secondary": "#D6D4C9",
+            "color-surface": "#15150F",
+            "color-text-muted": "#8C8B7E",
+            "color-border-strong": "rgba(236, 234, 224, 0.2)"
+        },
+        "typography": {
+            "mono-kicker": {
+                "fontWeight": 400,
+                "fontSize": 12,
+                "letterSpacing": 16
+            },
+            "heading-h2": {
+                "fontWeight": 700,
+                "fontSize": 40,
+                "lineHeight": "108.00000429153442%",
+                "letterSpacing": -2
+            },
+            "body-large": {
+                "fontWeight": 400,
+                "fontSize": 20,
+                "lineHeight": "158.00000429153442%",
+                "letterSpacing": 0
+            },
+            "heading-h3": {
+                "fontWeight": 700,
+                "fontSize": 22,
+                "lineHeight": "129.99999523162842%",
+                "letterSpacing": -1
+            },
+            "body-default": {
+                "fontWeight": 400,
+                "fontSize": 16,
+                "lineHeight": "164.9999976158142%",
+                "letterSpacing": 0
+            },
+            "mono-code-small": {
+                "fontWeight": 400,
+                "fontSize": 10,
+                "lineHeight": "160.0000023841858%",
+                "letterSpacing": 5
+            },
+            "mono-chip": {
+                "fontWeight": 400,
+                "fontSize": 12,
+                "lineHeight": "120.00000476837158%",
+                "letterSpacing": 0
+            },
+            "mono-label": {
+                "fontWeight": 400,
+                "fontSize": 12,
+                "lineHeight": "139.9999976158142%",
+                "letterSpacing": 4
+            },
+            "mono-badge": {
+                "fontWeight": 400,
+                "fontSize": 10,
+                "lineHeight": "129.99999523162842%",
+                "letterSpacing": 6
+            },
+            "body-caption": {
+                "fontWeight": 400,
+                "fontSize": 14,
+                "lineHeight": "139.9999976158142%",
+                "letterSpacing": 0
+            }
+        },
+        "spacing": {
+            "spacing-5xl": 24,
+            "spacing-3xl": 48,
+            "spacing-18": 18,
+            "spacing-2xl": 16,
+            "spacing-xl": 14,
+            "spacing-22": 22,
+            "spacing-lg": 12
+        },
+        "radius": {
+            "radius-14": 14,
+            "radius-md": 8
+        },
+        "shadows": {}
+    },
+    "components": [
+        {
+            "name": "Chip",
+            "variants": [],
+            "instances": 8
+        },
+        {
+            "name": "Card",
+            "variants": [],
+            "instances": 4
+        },
+        {
+            "name": "PivotSection",
+            "variants": [],
+            "instances": 1
+        },
+        {
+            "name": "ColL",
+            "variants": [],
+            "instances": 1
+        },
+        {
+            "name": "ColR",
+            "variants": [],
+            "instances": 1
+        }
+    ],
+    "root": {
+        "id": "84:1299",
+        "kind": "screen",
+        "name": "PivotSection",
+        "width": 1280,
+        "height": 976,
+        "component": "PivotSection",
+        "position": "relational",
+        "layout": {
+            "direction": "vertical",
+            "gap": "spacing-5xl",
+            "padding": {
+                "top": 62,
+                "right": 100,
+                "bottom": 62,
+                "left": 100
+            }
+        },
+        "style": {
+            "borderColor": "color-border",
+            "borderWidth": {
+                "top": 1
+            }
+        },
+        "children": [
+            {
+                "id": "84:1300",
+                "kind": "container",
+                "name": "Kicker",
+                "width": 119,
+                "height": 16,
+                "position": "relational",
+                "layout": {
+                    "direction": "horizontal",
+                    "gap": "spacing-lg",
+                    "alignItems": "center"
+                },
+                "responsive": {
+                    "width": "hug",
+                    "height": "hug"
+                },
+                "children": [
+                    {
+                        "id": "84:1301",
+                        "kind": "rectangle",
+                        "name": "Element",
+                        "width": 26,
+                        "height": 1,
+                        "position": "relational",
+                        "style": {
+                            "background": "color-accent"
+                        },
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    },
+                    {
+                        "id": "84:1302",
+                        "kind": "text",
+                        "name": "The pivot",
+                        "width": 81,
+                        "height": 16,
+                        "position": "relational",
+                        "text": {
+                            "content": "The pivot",
+                            "typography": "mono-kicker",
+                            "color": "color-accent",
+                            "textAlign": "left"
+                        },
+                        "semanticRole": "semantic",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    }
+                ],
+                "semanticRole": "structural",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            },
+            {
+                "id": "84:1303",
+                "kind": "text",
+                "name": "Mid-build, the architecture was wrong. So I changed it.",
+                "width": 1080,
+                "height": 43,
+                "position": "relational",
+                "text": {
+                    "content": "Mid-build, the architecture was wrong. So I changed it.",
+                    "typography": "heading-h2",
+                    "color": "color-text-primary",
+                    "textAlign": "left"
+                },
+                "semanticRole": "semantic",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            },
+            {
+                "id": "84:1304",
+                "kind": "text",
+                "name": "The original plan: scan a QR, resolve the merchant, fire a real-time transfer straight from the payer's linked bank. Validation proved that bet couldn't hold.",
+                "width": 1080,
+                "height": 64,
+                "position": "relational",
+                "text": {
+                    "content": "The original plan: scan a QR, resolve the merchant, fire a real-time transfer straight from the payer's linked bank. Validation proved that bet couldn't hold.",
+                    "typography": "body-large",
+                    "color": "color-text-primary",
+                    "textAlign": "left"
+                },
+                "semanticRole": "semantic",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            },
+            {
+                "id": "84:1305",
+                "kind": "container",
+                "name": "Two",
+                "width": 1080,
+                "height": 151,
+                "position": "relational",
+                "layout": {
+                    "direction": "horizontal",
+                    "gap": "spacing-3xl"
+                },
+                "responsive": {
+                    "width": "hug"
+                },
+                "children": [
+                    {
+                        "id": "84:1306",
+                        "kind": "container",
+                        "name": "ColL",
+                        "width": 516,
+                        "height": 151,
+                        "component": "ColL",
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "spacing-18"
+                        },
+                        "responsive": {
+                            "width": "hug"
+                        },
+                        "children": [
+                            {
+                                "id": "84:1307",
+                                "kind": "text",
+                                "name": "What testing revealed",
+                                "width": 516,
+                                "height": 29,
+                                "position": "relational",
+                                "text": {
+                                    "content": "What testing revealed",
+                                    "typography": "heading-h3",
+                                    "color": "color-text-primary",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1308",
+                                "kind": "text",
+                                "name": "Providers like Mono DirectPay handle account linking, authorization, and payment initiation — but not persistent, real-time orchestration across multiple banks. Every payment would have inherited bank uptime, latency, high fees, and redirects.",
+                                "width": 516,
+                                "height": 104,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Providers like Mono DirectPay handle account linking, authorization, and payment initiation — but not persistent, real-time orchestration across multiple banks. Every payment would have inherited bank uptime, latency, high fees, and redirects.",
+                                    "typography": "body-default",
+                                    "color": "color-text-secondary",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    },
+                    {
+                        "id": "84:1309",
+                        "kind": "container",
+                        "name": "ColR",
+                        "width": 516,
+                        "height": 151,
+                        "component": "ColR",
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "spacing-18"
+                        },
+                        "responsive": {
+                            "width": "hug"
+                        },
+                        "children": [
+                            {
+                                "id": "84:1310",
+                                "kind": "text",
+                                "name": "The re-architecture",
+                                "width": 516,
+                                "height": 29,
+                                "position": "relational",
+                                "text": {
+                                    "content": "The re-architecture",
+                                    "typography": "heading-h3",
+                                    "color": "color-text-primary",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1311",
+                                "kind": "text",
+                                "name": "Separate the two flows that were wrongly fused: funding ≠ checkout. Banks are touched when a user funds their wallet — not on every scan. Payments execute against wallet balance. For a high volume transaction startup, this architecture fits perfectly.",
+                                "width": 516,
+                                "height": 104,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Separate the two flows that were wrongly fused: funding ≠ checkout. Banks are touched when a user funds their wallet — not on every scan. Payments execute against wallet balance. For a high volume transaction startup, this architecture fits perfectly.",
+                                    "typography": "body-default",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    }
+                ],
+                "semanticRole": "structural",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            },
+            {
+                "id": "84:1312",
+                "kind": "container",
+                "name": "Flows",
+                "width": 1080,
+                "height": 226,
+                "position": "relational",
+                "layout": {
+                    "direction": "vertical",
+                    "gap": "spacing-2xl",
+                    "padding": {
+                        "top": 18,
+                        "right": 0,
+                        "bottom": 0,
+                        "left": 0
+                    }
+                },
+                "responsive": {
+                    "height": "hug"
+                },
+                "children": [
+                    {
+                        "id": "84:1313",
+                        "kind": "container",
+                        "name": "Flow",
+                        "width": 1080,
+                        "height": 96,
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "spacing-xl",
+                            "padding": {
+                                "top": 18,
+                                "right": 22,
+                                "bottom": 18,
+                                "left": 22
+                            }
+                        },
+                        "responsive": {
+                            "height": "hug"
+                        },
+                        "style": {
+                            "background": "color-surface",
+                            "borderColor": "color-border",
+                            "borderWidth": 1,
+                            "borderRadius": "radius-14"
+                        },
+                        "children": [
+                            {
+                                "id": "84:1314",
+                                "kind": "text",
+                                "name": "BEFORE · FRAGILE",
+                                "width": 104,
+                                "height": 16,
+                                "position": "relational",
+                                "text": {
+                                    "content": "BEFORE · FRAGILE",
+                                    "typography": "mono-code-small",
+                                    "color": "color-text-muted",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1315",
+                                "kind": "container",
+                                "name": "Chips",
+                                "width": 1036,
+                                "height": 30,
+                                "position": "relational",
+                                "layout": {
+                                    "direction": "horizontal",
+                                    "gap": "spacing-lg",
+                                    "alignItems": "center",
+                                    "wrap": true
+                                },
+                                "responsive": {
+                                    "width": "hug"
+                                },
+                                "children": [
+                                    {
+                                        "id": "84:1316",
+                                        "kind": "container",
+                                        "name": "Chip",
+                                        "width": 57,
+                                        "height": 30,
+                                        "component": "Chip",
+                                        "position": "relational",
+                                        "layout": {
+                                            "direction": "horizontal",
+                                            "padding": {
+                                                "top": 8,
+                                                "right": 14,
+                                                "bottom": 8,
+                                                "left": 14
+                                            }
+                                        },
+                                        "responsive": {
+                                            "width": "hug",
+                                            "height": "hug"
+                                        },
+                                        "style": {
+                                            "borderColor": "color-border-strong",
+                                            "borderWidth": 1,
+                                            "borderRadius": "radius-md"
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "84:1317",
+                                                "kind": "text",
+                                                "name": "Scan",
+                                                "width": 29,
+                                                "height": 14,
+                                                "position": "relational",
+                                                "text": {
+                                                    "content": "Scan",
+                                                    "typography": "mono-chip",
+                                                    "color": "color-text-muted",
+                                                    "textAlign": "left"
+                                                },
+                                                "semanticRole": "semantic",
+                                                "signals": {
+                                                    "nonInteractive": true
+                                                },
+                                                "context": {
+                                                    "zIndex": -1,
+                                                    "hierarchyDepth": 5
+                                                }
+                                            }
+                                        ],
+                                        "semanticRole": "structural",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 4
+                                        }
+                                    },
+                                    {
+                                        "id": "84:1318",
+                                        "kind": "text",
+                                        "name": "→",
+                                        "width": 8,
+                                        "height": 17,
+                                        "position": "relational",
+                                        "style": {
+                                            "borderColor": "color-border-strong",
+                                            "borderWidth": 1
+                                        },
+                                        "text": {
+                                            "content": "→",
+                                            "typography": "mono-label",
+                                            "color": "color-text-muted",
+                                            "textAlign": "left"
+                                        },
+                                        "semanticRole": "semantic",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 4
+                                        }
+                                    },
+                                    {
+                                        "id": "84:1319",
+                                        "kind": "container",
+                                        "name": "Chip",
+                                        "width": 93,
+                                        "height": 30,
+                                        "component": "Chip",
+                                        "position": "relational",
+                                        "layout": {
+                                            "direction": "horizontal",
+                                            "padding": {
+                                                "top": 8,
+                                                "right": 14,
+                                                "bottom": 8,
+                                                "left": 14
+                                            }
+                                        },
+                                        "responsive": {
+                                            "width": "hug",
+                                            "height": "hug"
+                                        },
+                                        "style": {
+                                            "borderColor": "color-border-strong",
+                                            "borderWidth": 1,
+                                            "borderRadius": "radius-md"
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "84:1320",
+                                                "kind": "text",
+                                                "name": "Bank auth",
+                                                "width": 65,
+                                                "height": 14,
+                                                "position": "relational",
+                                                "text": {
+                                                    "content": "Bank auth",
+                                                    "typography": "mono-chip",
+                                                    "color": "color-text-muted",
+                                                    "textAlign": "left"
+                                                },
+                                                "semanticRole": "semantic",
+                                                "signals": {
+                                                    "nonInteractive": true
+                                                },
+                                                "context": {
+                                                    "zIndex": -1,
+                                                    "hierarchyDepth": 5
+                                                }
+                                            }
+                                        ],
+                                        "semanticRole": "structural",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 4
+                                        }
+                                    },
+                                    {
+                                        "id": "84:1321",
+                                        "kind": "text",
+                                        "name": "→",
+                                        "width": 8,
+                                        "height": 17,
+                                        "position": "relational",
+                                        "style": {
+                                            "borderColor": "color-border-strong",
+                                            "borderWidth": 1
+                                        },
+                                        "text": {
+                                            "content": "→",
+                                            "typography": "mono-label",
+                                            "color": "color-text-muted",
+                                            "textAlign": "left"
+                                        },
+                                        "semanticRole": "semantic",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 4
+                                        }
+                                    },
+                                    {
+                                        "id": "84:1322",
+                                        "kind": "container",
+                                        "name": "Chip",
+                                        "width": 151,
+                                        "height": 30,
+                                        "component": "Chip",
+                                        "position": "relational",
+                                        "layout": {
+                                            "direction": "horizontal",
+                                            "padding": {
+                                                "top": 8,
+                                                "right": 14,
+                                                "bottom": 8,
+                                                "left": 14
+                                            }
+                                        },
+                                        "responsive": {
+                                            "width": "hug",
+                                            "height": "hug"
+                                        },
+                                        "style": {
+                                            "borderColor": "color-border-strong",
+                                            "borderWidth": 1,
+                                            "borderRadius": "radius-md"
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "84:1323",
+                                                "kind": "text",
+                                                "name": "External redirect",
+                                                "width": 123,
+                                                "height": 14,
+                                                "position": "relational",
+                                                "text": {
+                                                    "content": "External redirect",
+                                                    "typography": "mono-chip",
+                                                    "color": "color-text-muted",
+                                                    "textAlign": "left"
+                                                },
+                                                "semanticRole": "semantic",
+                                                "signals": {
+                                                    "nonInteractive": true
+                                                },
+                                                "context": {
+                                                    "zIndex": -1,
+                                                    "hierarchyDepth": 5
+                                                }
+                                            }
+                                        ],
+                                        "semanticRole": "structural",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 4
+                                        }
+                                    },
+                                    {
+                                        "id": "84:1324",
+                                        "kind": "text",
+                                        "name": "→",
+                                        "width": 8,
+                                        "height": 17,
+                                        "position": "relational",
+                                        "style": {
+                                            "borderColor": "color-border-strong",
+                                            "borderWidth": 1
+                                        },
+                                        "text": {
+                                            "content": "→",
+                                            "typography": "mono-label",
+                                            "color": "color-text-muted",
+                                            "textAlign": "left"
+                                        },
+                                        "semanticRole": "semantic",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 4
+                                        }
+                                    },
+                                    {
+                                        "id": "84:1325",
+                                        "kind": "container",
+                                        "name": "Chip",
+                                        "width": 100,
+                                        "height": 30,
+                                        "component": "Chip",
+                                        "position": "relational",
+                                        "layout": {
+                                            "direction": "horizontal",
+                                            "padding": {
+                                                "top": 8,
+                                                "right": 14,
+                                                "bottom": 8,
+                                                "left": 14
+                                            }
+                                        },
+                                        "responsive": {
+                                            "width": "hug",
+                                            "height": "hug"
+                                        },
+                                        "style": {
+                                            "borderColor": "color-border-strong",
+                                            "borderWidth": 1,
+                                            "borderRadius": "radius-md"
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "84:1326",
+                                                "kind": "text",
+                                                "name": "Settlement",
+                                                "width": 72,
+                                                "height": 14,
+                                                "position": "relational",
+                                                "text": {
+                                                    "content": "Settlement",
+                                                    "typography": "mono-chip",
+                                                    "color": "color-text-muted",
+                                                    "textAlign": "left"
+                                                },
+                                                "semanticRole": "semantic",
+                                                "signals": {
+                                                    "nonInteractive": true
+                                                },
+                                                "context": {
+                                                    "zIndex": -1,
+                                                    "hierarchyDepth": 5
+                                                }
+                                            }
+                                        ],
+                                        "semanticRole": "structural",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 4
+                                        }
+                                    }
+                                ],
+                                "semanticRole": "structural",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    },
+                    {
+                        "id": "84:1327",
+                        "kind": "container",
+                        "name": "Flow",
+                        "width": 1080,
+                        "height": 96,
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "spacing-xl",
+                            "padding": {
+                                "top": 18,
+                                "right": 22,
+                                "bottom": 18,
+                                "left": 22
+                            }
+                        },
+                        "responsive": {
+                            "height": "hug"
+                        },
+                        "style": {
+                            "background": "color-surface",
+                            "borderColor": "color-accent",
+                            "borderWidth": 1,
+                            "borderRadius": "radius-14"
+                        },
+                        "children": [
+                            {
+                                "id": "84:1328",
+                                "kind": "text",
+                                "name": "AFTER · INSTANT",
+                                "width": 97,
+                                "height": 16,
+                                "position": "relational",
+                                "text": {
+                                    "content": "AFTER · INSTANT",
+                                    "typography": "mono-code-small",
+                                    "color": "color-accent",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1329",
+                                "kind": "container",
+                                "name": "Chips",
+                                "width": 1036,
+                                "height": 30,
+                                "position": "relational",
+                                "layout": {
+                                    "direction": "horizontal",
+                                    "gap": "spacing-lg",
+                                    "alignItems": "center",
+                                    "wrap": true
+                                },
+                                "responsive": {
+                                    "width": "hug"
+                                },
+                                "children": [
+                                    {
+                                        "id": "84:1330",
+                                        "kind": "container",
+                                        "name": "Chip",
+                                        "width": 57,
+                                        "height": 30,
+                                        "component": "Chip",
+                                        "position": "relational",
+                                        "layout": {
+                                            "direction": "horizontal",
+                                            "padding": {
+                                                "top": 8,
+                                                "right": 14,
+                                                "bottom": 8,
+                                                "left": 14
+                                            }
+                                        },
+                                        "responsive": {
+                                            "width": "hug",
+                                            "height": "hug"
+                                        },
+                                        "style": {
+                                            "borderColor": "color-accent",
+                                            "borderWidth": 1,
+                                            "borderRadius": "radius-md"
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "84:1331",
+                                                "kind": "text",
+                                                "name": "Scan",
+                                                "width": 29,
+                                                "height": 14,
+                                                "position": "relational",
+                                                "text": {
+                                                    "content": "Scan",
+                                                    "typography": "mono-chip",
+                                                    "color": "color-text-primary",
+                                                    "textAlign": "left"
+                                                },
+                                                "semanticRole": "semantic",
+                                                "signals": {
+                                                    "nonInteractive": true
+                                                },
+                                                "context": {
+                                                    "zIndex": -1,
+                                                    "hierarchyDepth": 5
+                                                }
+                                            }
+                                        ],
+                                        "semanticRole": "structural",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 4
+                                        }
+                                    },
+                                    {
+                                        "id": "84:1332",
+                                        "kind": "text",
+                                        "name": "→",
+                                        "width": 8,
+                                        "height": 17,
+                                        "position": "relational",
+                                        "text": {
+                                            "content": "→",
+                                            "typography": "mono-label",
+                                            "color": "color-text-muted",
+                                            "textAlign": "left"
+                                        },
+                                        "semanticRole": "semantic",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 4
+                                        }
+                                    },
+                                    {
+                                        "id": "84:1333",
+                                        "kind": "container",
+                                        "name": "Chip",
+                                        "width": 79,
+                                        "height": 30,
+                                        "component": "Chip",
+                                        "position": "relational",
+                                        "layout": {
+                                            "direction": "horizontal",
+                                            "padding": {
+                                                "top": 8,
+                                                "right": 14,
+                                                "bottom": 8,
+                                                "left": 14
+                                            }
+                                        },
+                                        "responsive": {
+                                            "width": "hug",
+                                            "height": "hug"
+                                        },
+                                        "style": {
+                                            "borderColor": "color-accent",
+                                            "borderWidth": 1,
+                                            "borderRadius": "radius-md"
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "84:1334",
+                                                "kind": "text",
+                                                "name": "Resolve",
+                                                "width": 51,
+                                                "height": 14,
+                                                "position": "relational",
+                                                "text": {
+                                                    "content": "Resolve",
+                                                    "typography": "mono-chip",
+                                                    "color": "color-text-primary",
+                                                    "textAlign": "left"
+                                                },
+                                                "semanticRole": "semantic",
+                                                "signals": {
+                                                    "nonInteractive": true
+                                                },
+                                                "context": {
+                                                    "zIndex": -1,
+                                                    "hierarchyDepth": 5
+                                                }
+                                            }
+                                        ],
+                                        "semanticRole": "structural",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 4
+                                        }
+                                    },
+                                    {
+                                        "id": "84:1335",
+                                        "kind": "text",
+                                        "name": "→",
+                                        "width": 8,
+                                        "height": 17,
+                                        "position": "relational",
+                                        "text": {
+                                            "content": "→",
+                                            "typography": "mono-label",
+                                            "color": "color-text-muted",
+                                            "textAlign": "left"
+                                        },
+                                        "semanticRole": "semantic",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 4
+                                        }
+                                    },
+                                    {
+                                        "id": "84:1336",
+                                        "kind": "container",
+                                        "name": "Chip",
+                                        "width": 115,
+                                        "height": 30,
+                                        "component": "Chip",
+                                        "position": "relational",
+                                        "layout": {
+                                            "direction": "horizontal",
+                                            "padding": {
+                                                "top": 8,
+                                                "right": 14,
+                                                "bottom": 8,
+                                                "left": 14
+                                            }
+                                        },
+                                        "responsive": {
+                                            "width": "hug",
+                                            "height": "hug"
+                                        },
+                                        "style": {
+                                            "borderColor": "color-accent",
+                                            "borderWidth": 1,
+                                            "borderRadius": "radius-md"
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "84:1337",
+                                                "kind": "text",
+                                                "name": "Wallet debit",
+                                                "width": 87,
+                                                "height": 14,
+                                                "position": "relational",
+                                                "text": {
+                                                    "content": "Wallet debit",
+                                                    "typography": "mono-chip",
+                                                    "color": "color-text-primary",
+                                                    "textAlign": "left"
+                                                },
+                                                "semanticRole": "semantic",
+                                                "signals": {
+                                                    "nonInteractive": true
+                                                },
+                                                "context": {
+                                                    "zIndex": -1,
+                                                    "hierarchyDepth": 5
+                                                }
+                                            }
+                                        ],
+                                        "semanticRole": "structural",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 4
+                                        }
+                                    },
+                                    {
+                                        "id": "84:1338",
+                                        "kind": "text",
+                                        "name": "→",
+                                        "width": 8,
+                                        "height": 17,
+                                        "position": "relational",
+                                        "text": {
+                                            "content": "→",
+                                            "typography": "mono-label",
+                                            "color": "color-text-muted",
+                                            "textAlign": "left"
+                                        },
+                                        "semanticRole": "semantic",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 4
+                                        }
+                                    },
+                                    {
+                                        "id": "84:1339",
+                                        "kind": "container",
+                                        "name": "Chip",
+                                        "width": 100,
+                                        "height": 30,
+                                        "component": "Chip",
+                                        "position": "relational",
+                                        "layout": {
+                                            "direction": "horizontal",
+                                            "padding": {
+                                                "top": 8,
+                                                "right": 14,
+                                                "bottom": 8,
+                                                "left": 14
+                                            }
+                                        },
+                                        "responsive": {
+                                            "width": "hug",
+                                            "height": "hug"
+                                        },
+                                        "style": {
+                                            "borderColor": "color-accent",
+                                            "borderWidth": 1,
+                                            "borderRadius": "radius-md"
+                                        },
+                                        "children": [
+                                            {
+                                                "id": "84:1340",
+                                                "kind": "text",
+                                                "name": "Settlement",
+                                                "width": 72,
+                                                "height": 14,
+                                                "position": "relational",
+                                                "text": {
+                                                    "content": "Settlement",
+                                                    "typography": "mono-chip",
+                                                    "color": "color-text-primary",
+                                                    "textAlign": "left"
+                                                },
+                                                "semanticRole": "semantic",
+                                                "signals": {
+                                                    "nonInteractive": true
+                                                },
+                                                "context": {
+                                                    "zIndex": -1,
+                                                    "hierarchyDepth": 5
+                                                }
+                                            }
+                                        ],
+                                        "semanticRole": "structural",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 4
+                                        }
+                                    }
+                                ],
+                                "semanticRole": "structural",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    }
+                ],
+                "semanticRole": "structural",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            },
+            {
+                "id": "84:1341",
+                "kind": "text",
+                "name": "The honest tradeoffs",
+                "width": 1080,
+                "height": 29,
+                "position": "relational",
+                "text": {
+                    "content": "The honest tradeoffs",
+                    "typography": "heading-h3",
+                    "color": "color-text-primary",
+                    "textAlign": "left"
+                },
+                "semanticRole": "semantic",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            },
+            {
+                "id": "84:1342",
+                "kind": "text",
+                "name": "Holding balances raises the bar — naming the costs is part of owning the decision.",
+                "width": 1080,
+                "height": 26,
+                "position": "relational",
+                "text": {
+                    "content": "Holding balances raises the bar — naming the costs is part of owning the decision.",
+                    "typography": "body-default",
+                    "color": "color-text-secondary",
+                    "textAlign": "left"
+                },
+                "semanticRole": "semantic",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            },
+            {
+                "id": "84:1343",
+                "kind": "container",
+                "name": "Cards",
+                "width": 1080,
+                "height": 129,
+                "position": "relational",
+                "layout": {
+                    "direction": "horizontal",
+                    "gap": "spacing-2xl"
+                },
+                "responsive": {
+                    "width": "hug"
+                },
+                "children": [
+                    {
+                        "id": "84:1344",
+                        "kind": "container",
+                        "name": "Card",
+                        "width": 258,
+                        "height": 129,
+                        "component": "Card",
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "spacing-lg",
+                            "padding": "spacing-22"
+                        },
+                        "responsive": {
+                            "width": "hug"
+                        },
+                        "style": {
+                            "background": "color-surface",
+                            "borderColor": "color-border",
+                            "borderWidth": 1,
+                            "borderRadius": "radius-14"
+                        },
+                        "children": [
+                            {
+                                "id": "84:1345",
+                                "kind": "text",
+                                "name": "↑ REGULATORY SURFACE",
+                                "width": 132,
+                                "height": 13,
+                                "position": "relational",
+                                "text": {
+                                    "content": "↑ REGULATORY SURFACE",
+                                    "typography": "mono-badge",
+                                    "color": "color-accent",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1346",
+                                "kind": "text",
+                                "name": "Storing value pulls in a sponsor-bank partnership and stronger compliance controls.",
+                                "width": 214,
+                                "height": 60,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Storing value pulls in a sponsor-bank partnership and stronger compliance controls.",
+                                    "typography": "body-caption",
+                                    "color": "color-text-muted",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    },
+                    {
+                        "id": "84:1347",
+                        "kind": "container",
+                        "name": "Card",
+                        "width": 258,
+                        "height": 129,
+                        "component": "Card",
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "spacing-lg",
+                            "padding": "spacing-22"
+                        },
+                        "responsive": {
+                            "width": "hug"
+                        },
+                        "style": {
+                            "background": "color-surface",
+                            "borderColor": "color-border",
+                            "borderWidth": 1,
+                            "borderRadius": "radius-14"
+                        },
+                        "children": [
+                            {
+                                "id": "84:1348",
+                                "kind": "text",
+                                "name": "↑ USER TRUST",
+                                "width": 79,
+                                "height": 13,
+                                "position": "relational",
+                                "text": {
+                                    "content": "↑ USER TRUST",
+                                    "typography": "mono-badge",
+                                    "color": "color-accent",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1349",
+                                "kind": "text",
+                                "name": "Users now trust Shappay with balances — raising the bar on security and withdrawals.",
+                                "width": 214,
+                                "height": 60,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Users now trust Shappay with balances — raising the bar on security and withdrawals.",
+                                    "typography": "body-caption",
+                                    "color": "color-text-muted",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    },
+                    {
+                        "id": "84:1350",
+                        "kind": "container",
+                        "name": "Card",
+                        "width": 258,
+                        "height": 129,
+                        "component": "Card",
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "spacing-lg",
+                            "padding": "spacing-22"
+                        },
+                        "responsive": {
+                            "width": "hug"
+                        },
+                        "style": {
+                            "background": "color-surface",
+                            "borderColor": "color-border",
+                            "borderWidth": 1,
+                            "borderRadius": "radius-14"
+                        },
+                        "children": [
+                            {
+                                "id": "84:1351",
+                                "kind": "text",
+                                "name": "↑ LEDGER WORK",
+                                "width": 86,
+                                "height": 13,
+                                "position": "relational",
+                                "text": {
+                                    "content": "↑ LEDGER WORK",
+                                    "typography": "mono-badge",
+                                    "color": "color-accent",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1352",
+                                "kind": "text",
+                                "name": "Internal balance tracking, ledger consistency, and failed-transfer recovery.",
+                                "width": 214,
+                                "height": 60,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Internal balance tracking, ledger consistency, and failed-transfer recovery.",
+                                    "typography": "body-caption",
+                                    "color": "color-text-muted",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    },
+                    {
+                        "id": "84:1353",
+                        "kind": "container",
+                        "name": "Card",
+                        "width": 258,
+                        "height": 129,
+                        "component": "Card",
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "spacing-lg",
+                            "padding": "spacing-22"
+                        },
+                        "responsive": {
+                            "width": "hug"
+                        },
+                        "style": {
+                            "background": "color-surface",
+                            "borderColor": "color-border",
+                            "borderWidth": 1,
+                            "borderRadius": "radius-14"
+                        },
+                        "children": [
+                            {
+                                "id": "84:1354",
+                                "kind": "text",
+                                "name": "↑ FLOAT & SETTLEMENT",
+                                "width": 132,
+                                "height": 13,
+                                "position": "relational",
+                                "text": {
+                                    "content": "↑ FLOAT & SETTLEMENT",
+                                    "typography": "mono-badge",
+                                    "color": "color-accent",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1355",
+                                "kind": "text",
+                                "name": "Liquidity movement, settlement timing, reversals, and reconciliation.",
+                                "width": 214,
+                                "height": 60,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Liquidity movement, settlement timing, reversals, and reconciliation.",
+                                    "typography": "body-caption",
+                                    "color": "color-text-muted",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    }
+                ],
+                "semanticRole": "structural",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            }
+        ],
+        "semanticRole": "structural",
+        "signals": {
+            "nonInteractive": true
+        },
+        "context": {
+            "zIndex": -1
+        }
+    }
+}

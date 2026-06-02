@@ -1,0 +1,651 @@
+{
+    "version": "1.0.0",
+    "source": {
+        "fileName": "Case studies",
+        "selection": [
+            "84:1443"
+        ],
+        "extractedAt": "2026-06-02T18:18:16.390Z"
+    },
+    "tokens": {
+        "colors": {
+            "color-border": "rgba(236, 234, 224, 0.11)",
+            "color-accent": "#C7F94B",
+            "color-text-primary": "#ECEAE0",
+            "color-text-secondary": "#D6D4C9",
+            "color-surface": "#15150F",
+            "color-text-muted": "#8C8B7E"
+        },
+        "typography": {
+            "mono-kicker": {
+                "fontWeight": 400,
+                "fontSize": 12,
+                "letterSpacing": 16
+            },
+            "heading-h2": {
+                "fontWeight": 700,
+                "fontSize": 40,
+                "lineHeight": "108.00000429153442%",
+                "letterSpacing": -2
+            },
+            "body-default": {
+                "fontWeight": 400,
+                "fontSize": 16,
+                "lineHeight": "164.9999976158142%",
+                "letterSpacing": 0
+            },
+            "mono-badge": {
+                "fontWeight": 400,
+                "fontSize": 10,
+                "lineHeight": "129.99999523162842%",
+                "letterSpacing": 6
+            },
+            "heading-h4": {
+                "fontWeight": 700,
+                "fontSize": 18,
+                "lineHeight": "135.0000023841858%",
+                "letterSpacing": -1
+            },
+            "body-caption": {
+                "fontWeight": 400,
+                "fontSize": 14,
+                "lineHeight": "139.9999976158142%",
+                "letterSpacing": 0
+            }
+        },
+        "spacing": {
+            "spacing-5xl": 24,
+            "spacing-lg": 12,
+            "spacing-22": 22
+        },
+        "radius": {
+            "radius-14": 14
+        },
+        "shadows": {}
+    },
+    "components": [
+        {
+            "name": "Card",
+            "variants": [],
+            "instances": 4
+        },
+        {
+            "name": "MetricSection",
+            "variants": [],
+            "instances": 1
+        },
+        {
+            "name": "PinEntryToMerchantAlertDispatchTheStandardEveryDesignDecisionDefersTo",
+            "variants": [],
+            "instances": 1
+        }
+    ],
+    "root": {
+        "id": "84:1443",
+        "kind": "screen",
+        "name": "MetricSection",
+        "width": 1280,
+        "height": 446,
+        "component": "MetricSection",
+        "position": "relational",
+        "layout": {
+            "direction": "vertical",
+            "gap": "spacing-5xl",
+            "padding": {
+                "top": 62,
+                "right": 100,
+                "bottom": 62,
+                "left": 100
+            }
+        },
+        "style": {
+            "borderColor": "color-border",
+            "borderWidth": {
+                "top": 1
+            }
+        },
+        "children": [
+            {
+                "id": "84:1444",
+                "kind": "container",
+                "name": "Kicker",
+                "width": 173,
+                "height": 16,
+                "position": "relational",
+                "layout": {
+                    "direction": "horizontal",
+                    "gap": "spacing-lg",
+                    "alignItems": "center"
+                },
+                "responsive": {
+                    "width": "hug",
+                    "height": "hug"
+                },
+                "children": [
+                    {
+                        "id": "84:1445",
+                        "kind": "rectangle",
+                        "name": "Element",
+                        "width": 26,
+                        "height": 1,
+                        "position": "relational",
+                        "style": {
+                            "background": "color-accent"
+                        },
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    },
+                    {
+                        "id": "84:1446",
+                        "kind": "text",
+                        "name": "Success metrics",
+                        "width": 135,
+                        "height": 16,
+                        "position": "relational",
+                        "text": {
+                            "content": "Success metrics",
+                            "typography": "mono-kicker",
+                            "color": "color-accent",
+                            "textAlign": "left"
+                        },
+                        "semanticRole": "semantic",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    }
+                ],
+                "semanticRole": "structural",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            },
+            {
+                "id": "84:1447",
+                "kind": "text",
+                "name": "What good looks like, defined up front.",
+                "width": 1080,
+                "height": 43,
+                "position": "relational",
+                "text": {
+                    "content": "What good looks like, defined up front.",
+                    "typography": "heading-h2",
+                    "color": "color-text-primary",
+                    "textAlign": "left"
+                },
+                "semanticRole": "semantic",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            },
+            {
+                "id": "84:1448",
+                "kind": "text",
+                "name": "Quantified targets set before build — not retrofitted after. These are the numbers the product is designed around.",
+                "width": 1080,
+                "height": 26,
+                "position": "relational",
+                "text": {
+                    "content": "Quantified targets set before build — not retrofitted after. These are the numbers the product is designed around.",
+                    "typography": "body-default",
+                    "color": "color-text-secondary",
+                    "textAlign": "left"
+                },
+                "semanticRole": "semantic",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            },
+            {
+                "id": "84:1449",
+                "kind": "container",
+                "name": "Cards",
+                "width": 1080,
+                "height": 165,
+                "position": "relational",
+                "layout": {
+                    "direction": "horizontal",
+                    "gap": "spacing-lg"
+                },
+                "responsive": {
+                    "width": "hug"
+                },
+                "children": [
+                    {
+                        "id": "84:1450",
+                        "kind": "container",
+                        "name": "Card",
+                        "width": 258,
+                        "height": 165,
+                        "component": "Card",
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "spacing-lg",
+                            "padding": "spacing-22"
+                        },
+                        "responsive": {
+                            "width": "hug"
+                        },
+                        "style": {
+                            "background": "color-surface",
+                            "borderColor": "color-border",
+                            "borderWidth": 1,
+                            "borderRadius": "radius-14"
+                        },
+                        "children": [
+                            {
+                                "id": "84:1451",
+                                "kind": "text",
+                                "name": "RESOLUTION LATENCY",
+                                "width": 119,
+                                "height": 13,
+                                "position": "relational",
+                                "text": {
+                                    "content": "RESOLUTION LATENCY",
+                                    "typography": "mono-badge",
+                                    "color": "color-accent",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1452",
+                                "kind": "text",
+                                "name": "< 200ms",
+                                "width": 68,
+                                "height": 24,
+                                "position": "relational",
+                                "text": {
+                                    "content": "< 200ms",
+                                    "typography": "heading-h4",
+                                    "color": "color-text-primary",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1453",
+                                "kind": "text",
+                                "name": "QR parsed and routing decision output before the user reads the merchant name.",
+                                "width": 214,
+                                "height": 60,
+                                "position": "relational",
+                                "text": {
+                                    "content": "QR parsed and routing decision output before the user reads the merchant name.",
+                                    "typography": "body-caption",
+                                    "color": "color-text-muted",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    },
+                    {
+                        "id": "84:1454",
+                        "kind": "container",
+                        "name": "Card",
+                        "width": 258,
+                        "height": 165,
+                        "component": "Card",
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "spacing-lg",
+                            "padding": "spacing-22"
+                        },
+                        "responsive": {
+                            "width": "hug"
+                        },
+                        "style": {
+                            "background": "color-surface",
+                            "borderColor": "color-border",
+                            "borderWidth": 1,
+                            "borderRadius": "radius-14"
+                        },
+                        "children": [
+                            {
+                                "id": "84:1455",
+                                "kind": "text",
+                                "name": "WALLET-TO-WALLET",
+                                "width": 105,
+                                "height": 13,
+                                "position": "relational",
+                                "text": {
+                                    "content": "WALLET-TO-WALLET",
+                                    "typography": "mono-badge",
+                                    "color": "color-accent",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1456",
+                                "kind": "text",
+                                "name": "> 99%",
+                                "width": 48,
+                                "height": 24,
+                                "position": "relational",
+                                "text": {
+                                    "content": "> 99%",
+                                    "typography": "heading-h4",
+                                    "color": "color-text-primary",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1457",
+                                "kind": "text",
+                                "name": "Internal Anchor ledger transfers. Near-perfect reliability by bypassing bank uptime.",
+                                "width": 214,
+                                "height": 60,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Internal Anchor ledger transfers. Near-perfect reliability by bypassing bank uptime.",
+                                    "typography": "body-caption",
+                                    "color": "color-text-muted",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    },
+                    {
+                        "id": "84:1458",
+                        "kind": "container",
+                        "name": "Card",
+                        "width": 258,
+                        "height": 165,
+                        "component": "Card",
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "spacing-lg",
+                            "padding": "spacing-22"
+                        },
+                        "responsive": {
+                            "width": "hug"
+                        },
+                        "style": {
+                            "background": "color-surface",
+                            "borderColor": "color-border",
+                            "borderWidth": 1,
+                            "borderRadius": "radius-14"
+                        },
+                        "children": [
+                            {
+                                "id": "84:1459",
+                                "kind": "text",
+                                "name": "TIME TO CONFIRM",
+                                "width": 99,
+                                "height": 13,
+                                "position": "relational",
+                                "text": {
+                                    "content": "TIME TO CONFIRM",
+                                    "typography": "mono-badge",
+                                    "color": "color-accent",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1460",
+                                "kind": "text",
+                                "name": "< 3 seconds",
+                                "width": 95,
+                                "height": 24,
+                                "position": "relational",
+                                "text": {
+                                    "content": "< 3 seconds",
+                                    "typography": "heading-h4",
+                                    "color": "color-text-primary",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1461",
+                                "kind": "text",
+                                "name": "PinEntryToMerchantAlertDispatchTheStandardEveryDesignDecisionDefersTo",
+                                "width": 214,
+                                "height": 60,
+                                "component": "PinEntryToMerchantAlertDispatchTheStandardEveryDesignDecisionDefersTo",
+                                "position": "relational",
+                                "text": {
+                                    "content": "PIN entry to merchant alert dispatch. The standard every design decision defers to.",
+                                    "typography": "body-caption",
+                                    "color": "color-text-muted",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    },
+                    {
+                        "id": "84:1462",
+                        "kind": "container",
+                        "name": "Card",
+                        "width": 258,
+                        "height": 165,
+                        "component": "Card",
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "spacing-lg",
+                            "padding": "spacing-22"
+                        },
+                        "responsive": {
+                            "width": "hug"
+                        },
+                        "style": {
+                            "background": "color-surface",
+                            "borderColor": "color-border",
+                            "borderWidth": 1,
+                            "borderRadius": "radius-14"
+                        },
+                        "children": [
+                            {
+                                "id": "84:1463",
+                                "kind": "text",
+                                "name": "EXTERNAL PAYOUT",
+                                "width": 99,
+                                "height": 13,
+                                "position": "relational",
+                                "text": {
+                                    "content": "EXTERNAL PAYOUT",
+                                    "typography": "mono-badge",
+                                    "color": "color-accent",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1464",
+                                "kind": "text",
+                                "name": "> 95%",
+                                "width": 48,
+                                "height": 24,
+                                "position": "relational",
+                                "text": {
+                                    "content": "> 95%",
+                                    "typography": "heading-h4",
+                                    "color": "color-text-primary",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1465",
+                                "kind": "text",
+                                "name": "Async outbound bank payouts via Anchor. Accounted for in UX with async confirmation states.",
+                                "width": 214,
+                                "height": 60,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Async outbound bank payouts via Anchor. Accounted for in UX with async confirmation states.",
+                                    "typography": "body-caption",
+                                    "color": "color-text-muted",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    }
+                ],
+                "semanticRole": "structural",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            }
+        ],
+        "semanticRole": "structural",
+        "signals": {
+            "nonInteractive": true
+        },
+        "context": {
+            "zIndex": -1
+        }
+    }
+}

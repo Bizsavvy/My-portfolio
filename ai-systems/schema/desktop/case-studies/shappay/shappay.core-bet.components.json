@@ -1,0 +1,20 @@
+{
+  "section": "shappay.core-bet",
+  "componentName": "CoreBet",
+  "outputFile": "portfolio/components/case-study/CoreBet.tsx",
+  "replaces": "inline <Section> Core bet block in portfolio/app/work/shappay/page.tsx",
+  "nodes": [
+    { "figmaId": "84:1249", "name": "CoreBet root", "mapping": "section element, border-t, py-[62px], px-[var(--space-16xl)], flex-col gap-6", "rendered": true },
+    { "figmaId": "84:1250", "name": "Kicker container", "mapping": "Kicker component ('The core bet')", "rendered": true },
+    { "figmaId": "84:1251", "name": "Element (line)", "mapping": "rendered inside Kicker ✓", "rendered": true },
+    { "figmaId": "84:1252", "name": "The core bet text", "mapping": "rendered inside Kicker ✓", "rendered": true },
+    { "figmaId": "84:1253", "name": "H2 heading", "mapping": "h2 font-hanken bold clamp(28px,4vw,40px) leading-[1.08] tracking-[-0.02em]", "rendered": true },
+    { "figmaId": "84:1254", "name": "Body large paragraph", "mapping": "p font-hanken text-[20px] leading-[1.58]", "rendered": true },
+    { "figmaId": "84:1255", "name": "Cards container", "mapping": "div flex gap-3", "rendered": true },
+    { "figmaId": "84:1256", "name": "Card 1 (01 / DECISION)", "mapping": "div flex-col gap-3 p-6 bg-surface border rounded-[var(--rad-lg)]", "rendered": true },
+    { "figmaId": "84:1260", "name": "Card 2 (02 / DECISION)", "mapping": "same as Card 1", "rendered": true },
+    { "figmaId": "84:1264", "name": "Card 3 (03 / DECISION)", "mapping": "same as Card 1", "rendered": true }
+  ],
+  "skipped": [],
+  "flagged": []
+}

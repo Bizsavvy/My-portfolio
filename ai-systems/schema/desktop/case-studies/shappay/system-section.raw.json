@@ -1,0 +1,992 @@
+{
+    "version": "1.0.0",
+    "source": {
+        "fileName": "Case studies",
+        "selection": [
+            "84:1356"
+        ],
+        "extractedAt": "2026-06-02T18:14:00.811Z"
+    },
+    "tokens": {
+        "colors": {
+            "color-border": "rgba(236, 234, 224, 0.11)",
+            "color-accent": "#C7F94B",
+            "color-text-primary": "#ECEAE0",
+            "color-text-secondary": "#D6D4C9",
+            "color-surface": "#15150F",
+            "color-text-muted": "#8C8B7E"
+        },
+        "typography": {
+            "mono-kicker": {
+                "fontWeight": 400,
+                "fontSize": 12,
+                "letterSpacing": 16
+            },
+            "heading-h2": {
+                "fontWeight": 700,
+                "fontSize": 40,
+                "lineHeight": "108.00000429153442%",
+                "letterSpacing": -2
+            },
+            "body-default": {
+                "fontWeight": 400,
+                "fontSize": 16,
+                "lineHeight": "164.9999976158142%",
+                "letterSpacing": 0
+            },
+            "mono-code-small": {
+                "fontWeight": 400,
+                "fontSize": 10,
+                "lineHeight": "160.0000023841858%",
+                "letterSpacing": 5
+            },
+            "heading-h4": {
+                "fontWeight": 700,
+                "fontSize": 18,
+                "lineHeight": "135.0000023841858%",
+                "letterSpacing": -1
+            },
+            "body-caption": {
+                "fontWeight": 400,
+                "fontSize": 14,
+                "lineHeight": "139.9999976158142%",
+                "letterSpacing": 0
+            },
+            "mono-label": {
+                "fontWeight": 400,
+                "fontSize": 12,
+                "lineHeight": "139.9999976158142%",
+                "letterSpacing": 4
+            },
+            "body-footnote": {
+                "fontWeight": 400,
+                "fontSize": 14,
+                "lineHeight": "160.0000023841858%",
+                "letterSpacing": 0
+            },
+            "heading-h3": {
+                "fontWeight": 700,
+                "fontSize": 22,
+                "lineHeight": "129.99999523162842%",
+                "letterSpacing": -1
+            },
+            "mono-badge": {
+                "fontWeight": 400,
+                "fontSize": 10,
+                "lineHeight": "129.99999523162842%",
+                "letterSpacing": 6
+            }
+        },
+        "spacing": {
+            "spacing-5xl": 24,
+            "spacing-lg": 12,
+            "spacing-22": 22
+        },
+        "radius": {
+            "radius-xl": 16,
+            "radius-14": 14
+        },
+        "shadows": {}
+    },
+    "components": [
+        {
+            "name": "Card",
+            "variants": [],
+            "instances": 3
+        },
+        {
+            "name": "SystemsSection",
+            "variants": [],
+            "instances": 1
+        },
+        {
+            "name": "QrPayloadCannotBeResolvedSurfaceManualBankTransferEntryScreen—AlwaysAPathForwardNeverADeadEnd",
+            "variants": [],
+            "instances": 1
+        }
+    ],
+    "root": {
+        "id": "84:1356",
+        "kind": "screen",
+        "name": "SystemsSection",
+        "width": 1280,
+        "height": 836,
+        "component": "SystemsSection",
+        "position": "relational",
+        "layout": {
+            "direction": "vertical",
+            "gap": "spacing-5xl",
+            "padding": {
+                "top": 62,
+                "right": 100,
+                "bottom": 62,
+                "left": 100
+            }
+        },
+        "style": {
+            "borderColor": "color-border",
+            "borderWidth": {
+                "top": 1
+            }
+        },
+        "children": [
+            {
+                "id": "84:1357",
+                "kind": "container",
+                "name": "Kicker",
+                "width": 100,
+                "height": 16,
+                "position": "relational",
+                "layout": {
+                    "direction": "horizontal",
+                    "gap": "spacing-lg",
+                    "alignItems": "center"
+                },
+                "responsive": {
+                    "width": "hug",
+                    "height": "hug"
+                },
+                "children": [
+                    {
+                        "id": "84:1358",
+                        "kind": "rectangle",
+                        "name": "Element",
+                        "width": 26,
+                        "height": 1,
+                        "position": "relational",
+                        "style": {
+                            "background": "color-accent"
+                        },
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    },
+                    {
+                        "id": "84:1359",
+                        "kind": "text",
+                        "name": "Systems",
+                        "width": 62,
+                        "height": 16,
+                        "position": "relational",
+                        "text": {
+                            "content": "Systems",
+                            "typography": "mono-kicker",
+                            "color": "color-accent",
+                            "textAlign": "left"
+                        },
+                        "semanticRole": "semantic",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    }
+                ],
+                "semanticRole": "structural",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            },
+            {
+                "id": "84:1360",
+                "kind": "text",
+                "name": "Three layers, one loop.",
+                "width": 1080,
+                "height": 43,
+                "position": "relational",
+                "text": {
+                    "content": "Three layers, one loop.",
+                    "typography": "heading-h2",
+                    "color": "color-text-primary",
+                    "textAlign": "left"
+                },
+                "semanticRole": "semantic",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            },
+            {
+                "id": "84:1361",
+                "kind": "text",
+                "name": "The pivot resolved into a clean separation of concerns. Being able to build each layer is what let me design the UX around its real constraints.",
+                "width": 1080,
+                "height": 26,
+                "position": "relational",
+                "text": {
+                    "content": "The pivot resolved into a clean separation of concerns. Being able to build each layer is what let me design the UX around its real constraints.",
+                    "typography": "body-default",
+                    "color": "color-text-secondary",
+                    "textAlign": "left"
+                },
+                "semanticRole": "semantic",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            },
+            {
+                "id": "84:1362",
+                "kind": "container",
+                "name": "Arch",
+                "width": 1080,
+                "height": 176,
+                "position": "relational",
+                "layout": {
+                    "direction": "horizontal"
+                },
+                "responsive": {
+                    "width": "hug"
+                },
+                "style": {
+                    "borderColor": "color-border",
+                    "borderWidth": 1,
+                    "borderRadius": "radius-xl"
+                },
+                "children": [
+                    {
+                        "id": "84:1363",
+                        "kind": "container",
+                        "name": "Node",
+                        "width": 360,
+                        "height": 176,
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "spacing-lg",
+                            "padding": {
+                                "top": 26,
+                                "right": 22,
+                                "bottom": 26,
+                                "left": 22
+                            }
+                        },
+                        "responsive": {
+                            "width": "hug"
+                        },
+                        "style": {
+                            "background": "color-surface",
+                            "borderColor": "color-border",
+                            "borderWidth": 1
+                        },
+                        "children": [
+                            {
+                                "id": "84:1364",
+                                "kind": "text",
+                                "name": "→ 01",
+                                "width": 26,
+                                "height": 16,
+                                "position": "relational",
+                                "text": {
+                                    "content": "→ 01",
+                                    "typography": "mono-code-small",
+                                    "color": "color-accent",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1365",
+                                "kind": "text",
+                                "name": "Identity Layer",
+                                "width": 110,
+                                "height": 24,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Identity Layer",
+                                    "typography": "heading-h4",
+                                    "color": "color-text-primary",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1366",
+                                "kind": "text",
+                                "name": "EMVCo / NQR payload generation and parsing, plus name@shappay VPA addressing — two ways to identify any destination.",
+                                "width": 316,
+                                "height": 60,
+                                "position": "relational",
+                                "text": {
+                                    "content": "EMVCo / NQR payload generation and parsing, plus name@shappay VPA addressing — two ways to identify any destination.",
+                                    "typography": "body-caption",
+                                    "color": "color-text-muted",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    },
+                    {
+                        "id": "84:1367",
+                        "kind": "container",
+                        "name": "Node",
+                        "width": 360,
+                        "height": 176,
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "spacing-lg",
+                            "padding": {
+                                "top": 26,
+                                "right": 22,
+                                "bottom": 26,
+                                "left": 22
+                            }
+                        },
+                        "style": {
+                            "background": "color-surface",
+                            "borderColor": "color-border",
+                            "borderWidth": 1
+                        },
+                        "children": [
+                            {
+                                "id": "84:1368",
+                                "kind": "text",
+                                "name": "→ 02",
+                                "width": 26,
+                                "height": 16,
+                                "position": "relational",
+                                "text": {
+                                    "content": "→ 02",
+                                    "typography": "mono-code-small",
+                                    "color": "color-accent",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1369",
+                                "kind": "text",
+                                "name": "Resolution Layer",
+                                "width": 134,
+                                "height": 24,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Resolution Layer",
+                                    "typography": "heading-h4",
+                                    "color": "color-text-primary",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1370",
+                                "kind": "text",
+                                "name": "Merchant and account resolution, settlement-preference routing, and rail selection.",
+                                "width": 316,
+                                "height": 40,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Merchant and account resolution, settlement-preference routing, and rail selection.",
+                                    "typography": "body-caption",
+                                    "color": "color-text-muted",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    },
+                    {
+                        "id": "84:1371",
+                        "kind": "container",
+                        "name": "Node",
+                        "width": 360,
+                        "height": 176,
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "spacing-lg",
+                            "padding": {
+                                "top": 26,
+                                "right": 22,
+                                "bottom": 26,
+                                "left": 22
+                            }
+                        },
+                        "style": {
+                            "background": "color-surface"
+                        },
+                        "children": [
+                            {
+                                "id": "84:1372",
+                                "kind": "text",
+                                "name": "→ 03",
+                                "width": 26,
+                                "height": 16,
+                                "position": "relational",
+                                "text": {
+                                    "content": "→ 03",
+                                    "typography": "mono-code-small",
+                                    "color": "color-accent",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1373",
+                                "kind": "text",
+                                "name": "Execution Layer",
+                                "width": 128,
+                                "height": 24,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Execution Layer",
+                                    "typography": "heading-h4",
+                                    "color": "color-text-primary",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1374",
+                                "kind": "text",
+                                "name": "Wallet infrastructure, bank transfer rails, and settlement execution.",
+                                "width": 316,
+                                "height": 40,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Wallet infrastructure, bank transfer rails, and settlement execution.",
+                                    "typography": "body-caption",
+                                    "color": "color-text-muted",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    }
+                ],
+                "semanticRole": "structural",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            },
+            {
+                "id": "84:1375",
+                "kind": "text",
+                "name": "scan / VPA → resolve → wallet debit → settlement",
+                "width": 1080,
+                "height": 17,
+                "position": "relational",
+                "text": {
+                    "content": "scan / VPA → resolve → wallet debit → settlement",
+                    "typography": "mono-label",
+                    "color": "color-text-muted",
+                    "textAlign": "center"
+                },
+                "semanticRole": "semantic",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            },
+            {
+                "id": "84:1376",
+                "kind": "text",
+                "name": "Funding via Mono DirectPay. Wallet, ledger, and outbound payouts via Anchor.",
+                "width": 1080,
+                "height": 22,
+                "position": "relational",
+                "text": {
+                    "content": "Funding via Mono DirectPay. Wallet, ledger, and outbound payouts via Anchor.",
+                    "typography": "body-footnote",
+                    "color": "color-text-muted",
+                    "textAlign": "left"
+                },
+                "semanticRole": "semantic",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            },
+            {
+                "id": "84:1377",
+                "kind": "text",
+                "name": "Routing rules",
+                "width": 1080,
+                "height": 29,
+                "position": "relational",
+                "text": {
+                    "content": "Routing rules",
+                    "typography": "heading-h3",
+                    "color": "color-text-primary",
+                    "textAlign": "left"
+                },
+                "semanticRole": "semantic",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            },
+            {
+                "id": "84:1378",
+                "kind": "text",
+                "name": "The resolution engine outputs a routing decision on every transaction. Three cases, evaluated in order:",
+                "width": 1080,
+                "height": 26,
+                "position": "relational",
+                "text": {
+                    "content": "The resolution engine outputs a routing decision on every transaction. Three cases, evaluated in order:",
+                    "typography": "body-default",
+                    "color": "color-text-secondary",
+                    "textAlign": "left"
+                },
+                "semanticRole": "semantic",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            },
+            {
+                "id": "84:1379",
+                "kind": "container",
+                "name": "Cards",
+                "width": 1080,
+                "height": 165,
+                "position": "relational",
+                "layout": {
+                    "direction": "horizontal",
+                    "gap": "spacing-lg"
+                },
+                "responsive": {
+                    "width": "hug"
+                },
+                "children": [
+                    {
+                        "id": "84:1380",
+                        "kind": "container",
+                        "name": "Card",
+                        "width": 349.33,
+                        "height": 165,
+                        "component": "Card",
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "spacing-lg",
+                            "padding": "spacing-22"
+                        },
+                        "responsive": {
+                            "width": "hug"
+                        },
+                        "style": {
+                            "background": "color-surface",
+                            "borderColor": "color-border",
+                            "borderWidth": 1,
+                            "borderRadius": "radius-14"
+                        },
+                        "children": [
+                            {
+                                "id": "84:1381",
+                                "kind": "text",
+                                "name": "CASE A · FAST PATH",
+                                "width": 119,
+                                "height": 13,
+                                "position": "relational",
+                                "text": {
+                                    "content": "CASE A · FAST PATH",
+                                    "typography": "mono-badge",
+                                    "color": "color-accent",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1382",
+                                "kind": "text",
+                                "name": "Shappay → Shappay",
+                                "width": 168,
+                                "height": 24,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Shappay → Shappay",
+                                    "typography": "heading-h4",
+                                    "color": "color-text-primary",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1383",
+                                "kind": "text",
+                                "name": "Destination has a Shappay wallet. Execute instant ledger transfer on Anchor — wallet to wallet. Highest success rate, lowest latency.",
+                                "width": 305.33,
+                                "height": 60,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Destination has a Shappay wallet. Execute instant ledger transfer on Anchor — wallet to wallet. Highest success rate, lowest latency.",
+                                    "typography": "body-caption",
+                                    "color": "color-text-muted",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    },
+                    {
+                        "id": "84:1384",
+                        "kind": "container",
+                        "name": "Card",
+                        "width": 349.33,
+                        "height": 165,
+                        "component": "Card",
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "spacing-lg",
+                            "padding": "spacing-22"
+                        },
+                        "responsive": {
+                            "width": "hug"
+                        },
+                        "style": {
+                            "background": "color-surface",
+                            "borderColor": "color-border",
+                            "borderWidth": 1,
+                            "borderRadius": "radius-14"
+                        },
+                        "children": [
+                            {
+                                "id": "84:1385",
+                                "kind": "text",
+                                "name": "CASE B · PAYOUT PATH",
+                                "width": 132,
+                                "height": 13,
+                                "position": "relational",
+                                "text": {
+                                    "content": "CASE B · PAYOUT PATH",
+                                    "typography": "mono-badge",
+                                    "color": "color-accent",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1386",
+                                "kind": "text",
+                                "name": "Shappay → External bank",
+                                "width": 211,
+                                "height": 24,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Shappay → External bank",
+                                    "typography": "heading-h4",
+                                    "color": "color-text-primary",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1387",
+                                "kind": "text",
+                                "name": "Destination is an external merchant. Debit customer wallet on Anchor, trigger async outbound payout to merchant's bank account.",
+                                "width": 305.33,
+                                "height": 60,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Destination is an external merchant. Debit customer wallet on Anchor, trigger async outbound payout to merchant's bank account.",
+                                    "typography": "body-caption",
+                                    "color": "color-text-muted",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    },
+                    {
+                        "id": "84:1388",
+                        "kind": "container",
+                        "name": "Card",
+                        "width": 349.33,
+                        "height": 165,
+                        "component": "Card",
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "spacing-lg",
+                            "padding": "spacing-22"
+                        },
+                        "responsive": {
+                            "width": "hug"
+                        },
+                        "style": {
+                            "background": "color-surface",
+                            "borderColor": "color-border",
+                            "borderWidth": 1,
+                            "borderRadius": "radius-14"
+                        },
+                        "children": [
+                            {
+                                "id": "84:1389",
+                                "kind": "text",
+                                "name": "CASE C · FALLBACK",
+                                "width": 112,
+                                "height": 13,
+                                "position": "relational",
+                                "text": {
+                                    "content": "CASE C · FALLBACK",
+                                    "typography": "mono-badge",
+                                    "color": "color-accent",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1390",
+                                "kind": "text",
+                                "name": "Unsupported QR scheme",
+                                "width": 200,
+                                "height": 24,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Unsupported QR scheme",
+                                    "typography": "heading-h4",
+                                    "color": "color-text-primary",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1391",
+                                "kind": "text",
+                                "name": "QrPayloadCannotBeResolvedSurfaceManualBankTransferEntryScreen—AlwaysAPathForwardNeverADeadEnd",
+                                "width": 305.33,
+                                "height": 60,
+                                "component": "QrPayloadCannotBeResolvedSurfaceManualBankTransferEntryScreen—AlwaysAPathForwardNeverADeadEnd",
+                                "position": "relational",
+                                "text": {
+                                    "content": "QR payload cannot be resolved. Surface manual bank transfer entry screen — always a path forward, never a dead end.",
+                                    "typography": "body-caption",
+                                    "color": "color-text-muted",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    }
+                ],
+                "semanticRole": "structural",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            }
+        ],
+        "semanticRole": "structural",
+        "signals": {
+            "nonInteractive": true
+        },
+        "context": {
+            "zIndex": -1
+        }
+    }
+}

@@ -18,25 +18,27 @@ export function RoadmapItem({ phase, title, status, description }: RoadmapItemPr
         alignItems: "baseline",
       }}
     >
-      <div className="phase font-mono text-[12px] text-[var(--color-accent)] tracking-[.06em]">
+      <div className="font-mono text-[12px] text-[var(--color-accent)] tracking-[.04em]">
         {phase}
       </div>
-      <div>
-        <h4 className="font-hanken font-bold text-[20px] tracking-[-0.01em] mb-[6px]">
-          {title}
+      <div className="flex flex-col gap-2">
+        <div className="flex items-center gap-[var(--space-md)]">
+          <h4 className="font-hanken font-bold text-[18px] tracking-[-0.01em] text-[var(--color-text)]">
+            {title}
+          </h4>
           {status && (
             <span
-              className={`inline-block font-mono text-[10px] tracking-[.08em] uppercase px-[9px] py-[3px] rounded-[20px] border ml-[10px] align-middle ${
+              className={`font-mono text-[10px] tracking-[.06em] px-[9px] py-[3px] rounded-[var(--rad-2xl)] border ${
                 status.now
                   ? "text-[var(--color-accent)] border-[var(--color-accent)]"
-                  : "text-[var(--color-muted)] border-[var(--color-line-strong)]"
+                  : "text-[var(--color-muted)] border-[var(--color-line)]"
               }`}
             >
               {status.label}
             </span>
           )}
-        </h4>
-        <p className="text-[14.5px] text-[var(--color-muted)] m-0 max-w-[60ch]">{description}</p>
+        </div>
+        <p className="text-[14px] leading-[1.4] text-[var(--color-muted)]">{description}</p>
       </div>
       <style>{`
         @media (max-width: 600px) {

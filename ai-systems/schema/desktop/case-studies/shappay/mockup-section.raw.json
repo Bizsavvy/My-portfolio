@@ -1,0 +1,1077 @@
+{
+    "version": "1.0.0",
+    "source": {
+        "fileName": "Case studies",
+        "selection": [
+            "84:1402"
+        ],
+        "extractedAt": "2026-06-02T18:17:29.867Z"
+    },
+    "tokens": {
+        "colors": {
+            "color-border": "rgba(236, 234, 224, 0.11)",
+            "color-accent": "#C7F94B",
+            "color-text-primary": "#ECEAE0",
+            "color-text-secondary": "#D6D4C9",
+            "color-surface": "#15150F",
+            "color-border-strong": "rgba(236, 234, 224, 0.2)",
+            "color-text-muted": "#8C8B7E"
+        },
+        "typography": {
+            "mono-kicker": {
+                "fontWeight": 400,
+                "fontSize": 12,
+                "letterSpacing": 16
+            },
+            "heading-h2": {
+                "fontWeight": 700,
+                "fontSize": 40,
+                "lineHeight": "108.00000429153442%",
+                "letterSpacing": -2
+            },
+            "body-default": {
+                "fontWeight": 400,
+                "fontSize": 16,
+                "lineHeight": "164.9999976158142%",
+                "letterSpacing": 0
+            },
+            "mono-code-small": {
+                "fontWeight": 400,
+                "fontSize": 10,
+                "lineHeight": "160.0000023841858%",
+                "letterSpacing": 5
+            }
+        },
+        "spacing": {
+            "spacing-5xl": 24,
+            "spacing-md": 12
+        },
+        "radius": {
+            "radius-20": 20
+        },
+        "shadows": {}
+    },
+    "components": [
+        {
+            "name": "DropScreenHere",
+            "variants": [],
+            "instances": 8
+        },
+        {
+            "name": "MockupRow",
+            "variants": [],
+            "instances": 2
+        },
+        {
+            "name": "MockupSection",
+            "variants": [],
+            "instances": 1
+        }
+    ],
+    "root": {
+        "id": "84:1402",
+        "kind": "screen",
+        "name": "MockupSection",
+        "width": 1280,
+        "height": 1461,
+        "component": "MockupSection",
+        "position": "relational",
+        "layout": {
+            "direction": "vertical",
+            "gap": "spacing-5xl",
+            "padding": {
+                "top": 62,
+                "right": 100,
+                "bottom": 62,
+                "left": 100
+            }
+        },
+        "style": {
+            "borderColor": "color-border",
+            "borderWidth": {
+                "top": 1
+            }
+        },
+        "children": [
+            {
+                "id": "84:1403",
+                "kind": "container",
+                "name": "Kicker",
+                "width": 91,
+                "height": 16,
+                "position": "relational",
+                "layout": {
+                    "direction": "horizontal",
+                    "gap": "spacing-md",
+                    "alignItems": "center"
+                },
+                "responsive": {
+                    "width": "hug",
+                    "height": "hug"
+                },
+                "children": [
+                    {
+                        "id": "84:1404",
+                        "kind": "rectangle",
+                        "name": "Element",
+                        "width": 26,
+                        "height": 1,
+                        "position": "relational",
+                        "style": {
+                            "background": "color-accent"
+                        },
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    },
+                    {
+                        "id": "84:1405",
+                        "kind": "text",
+                        "name": "Design",
+                        "width": 53,
+                        "height": 16,
+                        "position": "relational",
+                        "text": {
+                            "content": "Design",
+                            "typography": "mono-kicker",
+                            "color": "color-accent",
+                            "textAlign": "left"
+                        },
+                        "semanticRole": "semantic",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    }
+                ],
+                "semanticRole": "structural",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            },
+            {
+                "id": "84:1406",
+                "kind": "text",
+                "name": "Screens from the build.",
+                "width": 1080,
+                "height": 43,
+                "position": "relational",
+                "text": {
+                    "content": "Screens from the build.",
+                    "typography": "heading-h2",
+                    "color": "color-text-primary",
+                    "textAlign": "left"
+                },
+                "semanticRole": "semantic",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            },
+            {
+                "id": "84:1407",
+                "kind": "text",
+                "name": "Key screens from the Figma designs — onboarding, home, scan, payment confirmation, and my QR views. Designed in Figma, built in code.",
+                "width": 1080,
+                "height": 26,
+                "position": "relational",
+                "text": {
+                    "content": "Key screens from the Figma designs — onboarding, home, scan, payment confirmation, and my QR views. Designed in Figma, built in code.",
+                    "typography": "body-default",
+                    "color": "color-text-secondary",
+                    "textAlign": "left"
+                },
+                "semanticRole": "semantic",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            },
+            {
+                "id": "84:1408",
+                "kind": "container",
+                "name": "MockupRow",
+                "width": 1080,
+                "height": 578,
+                "component": "MockupRow",
+                "position": "relational",
+                "layout": {
+                    "direction": "horizontal",
+                    "justifyContent": "space-between"
+                },
+                "responsive": {
+                    "width": "hug"
+                },
+                "children": [
+                    {
+                        "id": "84:1409",
+                        "kind": "container",
+                        "name": "Mockup",
+                        "width": 254,
+                        "height": 578,
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "spacing-md",
+                            "alignItems": "center"
+                        },
+                        "responsive": {
+                            "width": "hug",
+                            "height": "hug"
+                        },
+                        "children": [
+                            {
+                                "id": "84:1410",
+                                "kind": "container",
+                                "name": "Phone",
+                                "width": 254,
+                                "height": 550,
+                                "position": "relational",
+                                "layout": {
+                                    "direction": "vertical",
+                                    "justifyContent": "center",
+                                    "alignItems": "center"
+                                },
+                                "style": {
+                                    "background": "color-surface",
+                                    "borderColor": "color-border-strong",
+                                    "borderWidth": 1,
+                                    "borderRadius": "radius-20"
+                                },
+                                "children": [
+                                    {
+                                        "id": "84:1411",
+                                        "kind": "text",
+                                        "name": "DropScreenHere",
+                                        "width": 104,
+                                        "height": 16,
+                                        "component": "DropScreenHere",
+                                        "position": "relational",
+                                        "text": {
+                                            "content": "Drop screen here",
+                                            "typography": "mono-code-small",
+                                            "color": "color-text-muted",
+                                            "textAlign": "left"
+                                        },
+                                        "semanticRole": "semantic",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 4
+                                        }
+                                    }
+                                ],
+                                "semanticRole": "structural",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1412",
+                                "kind": "text",
+                                "name": "Onboarding",
+                                "width": 65,
+                                "height": 16,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Onboarding",
+                                    "typography": "mono-code-small",
+                                    "color": "color-text-muted",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    },
+                    {
+                        "id": "84:1413",
+                        "kind": "container",
+                        "name": "Mockup",
+                        "width": 254,
+                        "height": 578,
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "spacing-md",
+                            "alignItems": "center"
+                        },
+                        "responsive": {
+                            "width": "hug",
+                            "height": "hug"
+                        },
+                        "children": [
+                            {
+                                "id": "84:1414",
+                                "kind": "container",
+                                "name": "Phone",
+                                "width": 254,
+                                "height": 550,
+                                "position": "relational",
+                                "layout": {
+                                    "direction": "vertical",
+                                    "justifyContent": "center",
+                                    "alignItems": "center"
+                                },
+                                "style": {
+                                    "background": "color-surface",
+                                    "borderColor": "color-border-strong",
+                                    "borderWidth": 1,
+                                    "borderRadius": "radius-20"
+                                },
+                                "children": [
+                                    {
+                                        "id": "84:1415",
+                                        "kind": "text",
+                                        "name": "DropScreenHere",
+                                        "width": 104,
+                                        "height": 16,
+                                        "component": "DropScreenHere",
+                                        "position": "relational",
+                                        "text": {
+                                            "content": "Drop screen here",
+                                            "typography": "mono-code-small",
+                                            "color": "color-text-muted",
+                                            "textAlign": "left"
+                                        },
+                                        "semanticRole": "semantic",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 4
+                                        }
+                                    }
+                                ],
+                                "semanticRole": "structural",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1416",
+                                "kind": "text",
+                                "name": "Home / Dashboard",
+                                "width": 104,
+                                "height": 16,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Home / Dashboard",
+                                    "typography": "mono-code-small",
+                                    "color": "color-text-muted",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    },
+                    {
+                        "id": "84:1417",
+                        "kind": "container",
+                        "name": "Mockup",
+                        "width": 254,
+                        "height": 578,
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "spacing-md",
+                            "alignItems": "center"
+                        },
+                        "responsive": {
+                            "width": "hug",
+                            "height": "hug"
+                        },
+                        "children": [
+                            {
+                                "id": "84:1418",
+                                "kind": "container",
+                                "name": "Phone",
+                                "width": 254,
+                                "height": 550,
+                                "position": "relational",
+                                "layout": {
+                                    "direction": "vertical",
+                                    "justifyContent": "center",
+                                    "alignItems": "center"
+                                },
+                                "style": {
+                                    "background": "color-surface",
+                                    "borderColor": "color-border-strong",
+                                    "borderWidth": 1,
+                                    "borderRadius": "radius-20"
+                                },
+                                "children": [
+                                    {
+                                        "id": "84:1419",
+                                        "kind": "text",
+                                        "name": "DropScreenHere",
+                                        "width": 104,
+                                        "height": 16,
+                                        "component": "DropScreenHere",
+                                        "position": "relational",
+                                        "text": {
+                                            "content": "Drop screen here",
+                                            "typography": "mono-code-small",
+                                            "color": "color-text-muted",
+                                            "textAlign": "left"
+                                        },
+                                        "semanticRole": "semantic",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 4
+                                        }
+                                    }
+                                ],
+                                "semanticRole": "structural",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1420",
+                                "kind": "text",
+                                "name": "Scan QR",
+                                "width": 45,
+                                "height": 16,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Scan QR",
+                                    "typography": "mono-code-small",
+                                    "color": "color-text-muted",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    },
+                    {
+                        "id": "84:1421",
+                        "kind": "container",
+                        "name": "Mockup",
+                        "width": 254,
+                        "height": 578,
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "spacing-md",
+                            "alignItems": "center"
+                        },
+                        "responsive": {
+                            "width": "hug",
+                            "height": "hug"
+                        },
+                        "children": [
+                            {
+                                "id": "84:1422",
+                                "kind": "container",
+                                "name": "Phone",
+                                "width": 254,
+                                "height": 550,
+                                "position": "relational",
+                                "layout": {
+                                    "direction": "vertical",
+                                    "justifyContent": "center",
+                                    "alignItems": "center"
+                                },
+                                "style": {
+                                    "background": "color-surface",
+                                    "borderColor": "color-border-strong",
+                                    "borderWidth": 1,
+                                    "borderRadius": "radius-20"
+                                },
+                                "children": [
+                                    {
+                                        "id": "84:1423",
+                                        "kind": "text",
+                                        "name": "DropScreenHere",
+                                        "width": 104,
+                                        "height": 16,
+                                        "component": "DropScreenHere",
+                                        "position": "relational",
+                                        "text": {
+                                            "content": "Drop screen here",
+                                            "typography": "mono-code-small",
+                                            "color": "color-text-muted",
+                                            "textAlign": "left"
+                                        },
+                                        "semanticRole": "semantic",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 4
+                                        }
+                                    }
+                                ],
+                                "semanticRole": "structural",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1424",
+                                "kind": "text",
+                                "name": "Payment Confirm",
+                                "width": 97,
+                                "height": 16,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Payment Confirm",
+                                    "typography": "mono-code-small",
+                                    "color": "color-text-muted",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    }
+                ],
+                "semanticRole": "structural",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            },
+            {
+                "id": "84:1425",
+                "kind": "container",
+                "name": "MockupRow",
+                "width": 1080,
+                "height": 578,
+                "component": "MockupRow",
+                "position": "relational",
+                "layout": {
+                    "direction": "horizontal",
+                    "justifyContent": "space-between"
+                },
+                "responsive": {
+                    "width": "hug"
+                },
+                "children": [
+                    {
+                        "id": "84:1426",
+                        "kind": "container",
+                        "name": "Mockup",
+                        "width": 254,
+                        "height": 578,
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "spacing-md",
+                            "alignItems": "center"
+                        },
+                        "responsive": {
+                            "width": "hug",
+                            "height": "hug"
+                        },
+                        "children": [
+                            {
+                                "id": "84:1427",
+                                "kind": "container",
+                                "name": "Phone",
+                                "width": 254,
+                                "height": 550,
+                                "position": "relational",
+                                "layout": {
+                                    "direction": "vertical",
+                                    "justifyContent": "center",
+                                    "alignItems": "center"
+                                },
+                                "style": {
+                                    "background": "color-surface",
+                                    "borderColor": "color-border-strong",
+                                    "borderWidth": 1,
+                                    "borderRadius": "radius-20"
+                                },
+                                "children": [
+                                    {
+                                        "id": "84:1428",
+                                        "kind": "text",
+                                        "name": "DropScreenHere",
+                                        "width": 104,
+                                        "height": 16,
+                                        "component": "DropScreenHere",
+                                        "position": "relational",
+                                        "text": {
+                                            "content": "Drop screen here",
+                                            "typography": "mono-code-small",
+                                            "color": "color-text-muted",
+                                            "textAlign": "left"
+                                        },
+                                        "semanticRole": "semantic",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 4
+                                        }
+                                    }
+                                ],
+                                "semanticRole": "structural",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1429",
+                                "kind": "text",
+                                "name": "Transaction History",
+                                "width": 123,
+                                "height": 16,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Transaction History",
+                                    "typography": "mono-code-small",
+                                    "color": "color-text-muted",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    },
+                    {
+                        "id": "84:1430",
+                        "kind": "container",
+                        "name": "Mockup",
+                        "width": 254,
+                        "height": 578,
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "spacing-md",
+                            "alignItems": "center"
+                        },
+                        "responsive": {
+                            "width": "hug",
+                            "height": "hug"
+                        },
+                        "children": [
+                            {
+                                "id": "84:1431",
+                                "kind": "container",
+                                "name": "Phone",
+                                "width": 254,
+                                "height": 550,
+                                "position": "relational",
+                                "layout": {
+                                    "direction": "vertical",
+                                    "justifyContent": "center",
+                                    "alignItems": "center"
+                                },
+                                "style": {
+                                    "background": "color-surface",
+                                    "borderColor": "color-border-strong",
+                                    "borderWidth": 1,
+                                    "borderRadius": "radius-20"
+                                },
+                                "children": [
+                                    {
+                                        "id": "84:1432",
+                                        "kind": "text",
+                                        "name": "DropScreenHere",
+                                        "width": 104,
+                                        "height": 16,
+                                        "component": "DropScreenHere",
+                                        "position": "relational",
+                                        "text": {
+                                            "content": "Drop screen here",
+                                            "typography": "mono-code-small",
+                                            "color": "color-text-muted",
+                                            "textAlign": "left"
+                                        },
+                                        "semanticRole": "semantic",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 4
+                                        }
+                                    }
+                                ],
+                                "semanticRole": "structural",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1433",
+                                "kind": "text",
+                                "name": "Wallet Funding",
+                                "width": 91,
+                                "height": 16,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Wallet Funding",
+                                    "typography": "mono-code-small",
+                                    "color": "color-text-muted",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    },
+                    {
+                        "id": "84:1434",
+                        "kind": "container",
+                        "name": "Mockup",
+                        "width": 254,
+                        "height": 578,
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "spacing-md",
+                            "alignItems": "center"
+                        },
+                        "responsive": {
+                            "width": "hug",
+                            "height": "hug"
+                        },
+                        "children": [
+                            {
+                                "id": "84:1435",
+                                "kind": "container",
+                                "name": "Phone",
+                                "width": 254,
+                                "height": 550,
+                                "position": "relational",
+                                "layout": {
+                                    "direction": "vertical",
+                                    "justifyContent": "center",
+                                    "alignItems": "center"
+                                },
+                                "style": {
+                                    "background": "color-surface",
+                                    "borderColor": "color-border-strong",
+                                    "borderWidth": 1,
+                                    "borderRadius": "radius-20"
+                                },
+                                "children": [
+                                    {
+                                        "id": "84:1436",
+                                        "kind": "text",
+                                        "name": "DropScreenHere",
+                                        "width": 104,
+                                        "height": 16,
+                                        "component": "DropScreenHere",
+                                        "position": "relational",
+                                        "text": {
+                                            "content": "Drop screen here",
+                                            "typography": "mono-code-small",
+                                            "color": "color-text-muted",
+                                            "textAlign": "left"
+                                        },
+                                        "semanticRole": "semantic",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 4
+                                        }
+                                    }
+                                ],
+                                "semanticRole": "structural",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1437",
+                                "kind": "text",
+                                "name": "name@shappay P2P",
+                                "width": 104,
+                                "height": 16,
+                                "position": "relational",
+                                "text": {
+                                    "content": "name@shappay P2P",
+                                    "typography": "mono-code-small",
+                                    "color": "color-text-muted",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    },
+                    {
+                        "id": "84:1438",
+                        "kind": "container",
+                        "name": "Mockup",
+                        "width": 254,
+                        "height": 578,
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "spacing-md",
+                            "alignItems": "center"
+                        },
+                        "responsive": {
+                            "width": "hug",
+                            "height": "hug"
+                        },
+                        "children": [
+                            {
+                                "id": "84:1439",
+                                "kind": "container",
+                                "name": "Phone",
+                                "width": 254,
+                                "height": 550,
+                                "position": "relational",
+                                "layout": {
+                                    "direction": "vertical",
+                                    "justifyContent": "center",
+                                    "alignItems": "center"
+                                },
+                                "style": {
+                                    "background": "color-surface",
+                                    "borderColor": "color-border-strong",
+                                    "borderWidth": 1,
+                                    "borderRadius": "radius-20"
+                                },
+                                "children": [
+                                    {
+                                        "id": "84:1440",
+                                        "kind": "text",
+                                        "name": "DropScreenHere",
+                                        "width": 104,
+                                        "height": 16,
+                                        "component": "DropScreenHere",
+                                        "position": "relational",
+                                        "text": {
+                                            "content": "Drop screen here",
+                                            "typography": "mono-code-small",
+                                            "color": "color-text-muted",
+                                            "textAlign": "left"
+                                        },
+                                        "semanticRole": "semantic",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 4
+                                        }
+                                    }
+                                ],
+                                "semanticRole": "structural",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1441",
+                                "kind": "text",
+                                "name": "My QR",
+                                "width": 32,
+                                "height": 16,
+                                "position": "relational",
+                                "text": {
+                                    "content": "My QR",
+                                    "typography": "mono-code-small",
+                                    "color": "color-text-muted",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    }
+                ],
+                "semanticRole": "structural",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            }
+        ],
+        "semanticRole": "structural",
+        "signals": {
+            "nonInteractive": true
+        },
+        "context": {
+            "zIndex": -1
+        }
+    }
+}

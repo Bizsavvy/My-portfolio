@@ -1,0 +1,64 @@
+{
+  "section": "desktop.case-studies.shappay.navbar",
+  "componentName": "CaseStudyNavbar",
+  "nameNote": "Leaf segment 'navbar' → PascalCase 'Navbar' collides with main Nav component; resolved to 'CaseStudyNavbar' per case-study component prefix convention.",
+  "outputFile": "portfolio/components/case-study/CaseStudyNavbar.tsx",
+  "replaces": "inline <nav> block in portfolio/components/case-study/CaseStudyHero.tsx (lines 33–47)",
+  "props": [
+    { "name": "title", "type": "string", "required": true, "description": "Current page name (e.g. 'Shappay') shown as the active breadcrumb segment" },
+    { "name": "status", "type": "string", "required": false, "default": "In development · MVP", "description": "Project status text shown on the right side" }
+  ],
+  "nodes": [
+    {
+      "figmaId": "84:1209",
+      "name": "Nav",
+      "mapping": "nav element",
+      "primitive": true,
+      "rendered": true
+    },
+    {
+      "figmaId": "84:1210",
+      "name": "Crumb",
+      "mapping": "div (flex row)",
+      "primitive": true,
+      "rendered": true
+    },
+    {
+      "figmaId": "84:1211",
+      "name": "Work /",
+      "mapping": "inline text node inside Crumb div",
+      "primitive": true,
+      "rendered": true
+    },
+    {
+      "figmaId": "84:1212",
+      "name": "Shappay",
+      "mapping": "span with text-[var(--color-text)] — parameterized as {title}",
+      "primitive": true,
+      "rendered": true
+    },
+    {
+      "figmaId": "84:1213",
+      "name": "Status",
+      "mapping": "div (flex row, gap-2)",
+      "primitive": true,
+      "rendered": true
+    },
+    {
+      "figmaId": "84:1214",
+      "name": "Element (circle)",
+      "mapping": "span 7×7px rounded-full bg-[var(--color-accent)] + pulse animation",
+      "primitive": true,
+      "rendered": true
+    },
+    {
+      "figmaId": "84:1215",
+      "name": "In development · MVP",
+      "mapping": "inline text node — parameterized as {status}",
+      "primitive": true,
+      "rendered": true
+    }
+  ],
+  "skipped": [],
+  "flagged": []
+}

@@ -1,0 +1,19 @@
+{
+  "section": "shappay.qr-engine-demo",
+  "componentName": "QrEngineDemo",
+  "outputFile": "portfolio/components/case-study/QrEngineDemo.tsx",
+  "replaces": "inline <Section> Live engine/demo block in portfolio/app/work/shappay/page.tsx",
+  "nodes": [
+    { "figmaId": "90:1853", "name": "QrEngineDemo root", "mapping": "section element", "rendered": true },
+    { "figmaId": "90:1854", "name": "Kicker container", "mapping": "Kicker component ('Live · The engine')", "rendered": true },
+    { "figmaId": "90:1855", "name": "Element (line)", "mapping": "inside Kicker ✓", "rendered": true },
+    { "figmaId": "90:1856", "name": "Live · The engine text", "mapping": "inside Kicker ✓", "rendered": true },
+    { "figmaId": "90:1857", "name": "H2", "mapping": "h2 heading", "rendered": true },
+    { "figmaId": "90:1858", "name": "Body paragraph", "mapping": "p font-hanken text-[16px] leading-[1.65] color-body", "rendered": true },
+    { "figmaId": "90:1859", "name": "Demo container", "mapping": "DemoWidget component (preserves all live QR engine logic)", "rendered": true }
+  ],
+  "skipped": [
+    { "element": "footnote", "reason": "Not in Figma — was a page-level addition, removed" }
+  ],
+  "flagged": []
+}

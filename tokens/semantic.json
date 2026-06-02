@@ -71,7 +71,7 @@
   "light": {
     "color": {
       "bg": {
-        "value": "{color.white}",
+        "value": "{color.off-white}",
         "type": "color",
         "prefix": "semantic"
       },
@@ -86,7 +86,7 @@
         "prefix": "semantic"
       },
       "accent": {
-        "value": "{color.lime}",
+        "value": "{color.lime-dark}",
         "type": "color",
         "prefix": "semantic"
       },
@@ -101,7 +101,7 @@
         "prefix": "semantic"
       },
       "on-accent": {
-        "value": "{color.ink}",
+        "value": "{color.pure-white}",
         "type": "color",
         "prefix": "semantic"
       },

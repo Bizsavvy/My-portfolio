@@ -1,0 +1,66 @@
+{
+  "section": "shappay.qr-engine-demo",
+  "source": "ai-systems/schema/desktop/case-studies/shappay/qr-engine-demo.raw.json",
+  "frameworkInterpretation": "next",
+  "layout": {
+    "element": "section",
+    "border": "border-t border-[var(--color-line)]",
+    "padding": { "vertical": "62px", "horizontal": "100px → px-[var(--space-16xl)]" },
+    "direction": "vertical",
+    "gap": "spacing-5xl → 24px → gap-6",
+    "maxWidth": "var(--width-maxw) mx-auto"
+  },
+  "children": [
+    {
+      "name": "Kicker",
+      "mapping": "Kicker component",
+      "content": "Live · The engine"
+    },
+    {
+      "name": "H2",
+      "content": "This is the payload, built in real time.",
+      "typography": "heading-h2 → font-hanken 700 clamp(28px,4vw,40px) -0.02em leading-[1.08]",
+      "color": "color-text-primary → var(--color-text)"
+    },
+    {
+      "name": "Body",
+      "content": "Every NQR code is an EMVCo TLV string — a chain of Tag · Length · Value triplets sealed with a CRC-16 checksum. In the live build this regenerates as you type; here is the engine's output for a static merchant code.",
+      "typography": "body-default → font-hanken 16px leading-[1.65]",
+      "color": "color-text-secondary → var(--color-body)"
+    },
+    {
+      "name": "Demo",
+      "mapping": "DemoWidget component (existing interactive implementation)",
+      "note": "661KB of interactive form + QR + TLV display. Preserved as-is — building from raw would lose all live logic.",
+      "style": {
+        "background": "color-surface",
+        "border": "color-border-strong 1px",
+        "borderRadius": "radius-20 → 20px"
+      },
+      "children": {
+        "DemoHead": {
+          "padding": "20px vertical, 26px horizontal",
+          "layout": "flex justify-between items-center",
+          "border": "bottom 1px color-border",
+          "left": "SHAPPAY · NQR PAYLOAD BUILDER (mono-meta-label, muted)",
+          "right": "7px accent dot + EMVCo MPM · CRC-16/CCITT (mono-label, accent)"
+        },
+        "DemoGrid": "handled by DemoWidget"
+      }
+    }
+  ],
+  "omitted": [
+    {
+      "element": "footnote paragraph",
+      "reason": "Not present in Figma JSON — was a page-level addition. Removed to match design."
+    }
+  ],
+  "tokenNotes": {
+    "spacing-5xl (24px)": "gap-6 ✓",
+    "heading-h2 (40px)": "clamp(28px,4vw,40px) ✓ — maxWidth: 20ch removed (not in Figma)",
+    "body-default (16px 1.65)": "font-hanken text-[16px] leading-[1.65] ✓",
+    "color-text-secondary": "var(--color-body) ✓",
+    "radius-20": "rounded-[20px] ✓",
+    "padding-horizontal (100px)": "--space-16xl ✓"
+  }
+}

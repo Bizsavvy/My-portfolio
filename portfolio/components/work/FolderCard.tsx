@@ -37,7 +37,7 @@ export function FolderCard({
       {/* Tab */}
       <div className={tabRowClass}>
         <span
-          className="tab inline-flex items-center gap-[9px] bg-[var(--color-surface-2)] px-[22px] py-[10px] border border-b-0 border-[var(--color-border)] relative transition-colors duration-300"
+          className="tab inline-flex items-center gap-[8px] bg-[var(--color-surface)] px-[22px] py-[10px] border border-b-0 border-[var(--color-border)] relative transition-colors duration-300"
           style={{ borderRadius: "var(--rad-lg) var(--rad-lg) 0 0", top: 1 }}
         >
           <span className="no ts-mono-label-md text-[var(--color-accent)] transition-[text-shadow] duration-300">

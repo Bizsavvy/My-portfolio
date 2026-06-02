@@ -1,0 +1,25 @@
+{
+  "section": "shappay.problem-statement",
+  "componentName": "ProblemStatement",
+  "outputFile": "portfolio/components/case-study/ProblemStatement.tsx",
+  "replaces": "inline <Section> block in portfolio/app/work/shappay/page.tsx (Problem section)",
+  "nodes": [
+    { "figmaId": "84:1239", "name": "ProblemStatement root", "mapping": "section element with border-t, py-[62px], px-[var(--space-16xl)]", "rendered": true },
+    { "figmaId": "84:1240", "name": "Two", "mapping": "div flex gap-12", "rendered": true },
+    { "figmaId": "84:1241", "name": "ColL", "mapping": "div flex flex-col gap-6 reveal", "rendered": true },
+    { "figmaId": "84:1242", "name": "Kicker container", "mapping": "Kicker component (existing contract)", "rendered": true },
+    { "figmaId": "84:1243", "name": "Element (accent line)", "mapping": "rendered inside Kicker component ✓", "rendered": true },
+    { "figmaId": "84:1244", "name": "The problem text", "mapping": "rendered inside Kicker component ✓", "rendered": true },
+    { "figmaId": "84:1245", "name": "H2 heading", "mapping": "h2 font-hanken bold clamp(28px,4vw,40px) leading-[1.08] tracking-[-0.02em]", "rendered": true },
+    { "figmaId": "84:1246", "name": "ColR", "mapping": "div flex flex-col gap-4 reveal", "rendered": true },
+    { "figmaId": "84:1247", "name": "P1 text", "mapping": "p font-hanken text-[16px] leading-[1.65]", "rendered": true },
+    { "figmaId": "84:1248", "name": "P2 text", "mapping": "p font-hanken text-[16px] leading-[1.65]", "rendered": true }
+  ],
+  "skipped": [],
+  "flagged": [
+    {
+      "node": "ColL gap vs Kicker mb-5",
+      "issue": "Figma ColL gap is 24px (gap-6). Kicker component has mb-5 (20px). Inside flex-col, the margin collapses and gap-6 takes precedence — net gap is 24px. No action needed."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "section": "shappay.hero",
+  "componentName": "CaseStudyHero",
+  "outputFile": "portfolio/components/case-study/CaseStudyHero.tsx",
+  "replaces": "existing CaseStudyHero.tsx <header> block — padding fix only; structure, animation, rich lede preserved",
+  "props": [
+    { "name": "eyebrow", "type": "string", "required": true },
+    { "name": "title", "type": "string", "required": true },
+    { "name": "lede", "type": "React.ReactNode", "required": true, "note": "ReactNode preserved from existing for rich italic/accent markup" },
+    { "name": "meta", "type": "MetaItem[]", "required": true },
+    { "name": "status", "type": "string", "required": false, "default": "In development · MVP", "note": "passed to CaseStudyNavbar" }
+  ],
+  "nodes": [
+    { "figmaId": "84:1216", "name": "Hero root", "mapping": "header element", "rendered": true },
+    { "figmaId": "90:2151", "name": "Header", "mapping": "div flex-col gap-4", "rendered": true },
+    { "figmaId": "84:1217", "name": "Eyebrow text", "mapping": "div ts-eyebrow / font-mono tracking-[.18em] uppercase color-accent", "rendered": true },
+    { "figmaId": "84:1218", "name": "Shappay title", "mapping": "h1 font-pixel clamp(56px,11vw,120px) with scan-beam span overlay", "rendered": true },
+    { "figmaId": "84:1219", "name": "Lede text", "mapping": "p ts-lede / clamp(20px,2.5vw,28px) leading-[1.38] tracking-[-0.01em] max-w-[660px]", "rendered": true },
+    { "figmaId": "84:1220", "name": "Meta container", "mapping": "dl grid auto-fit gap-px rounded-[14px] overflow-hidden bg-[var(--color-line)]", "rendered": true },
+    { "figmaId": "84:1221-1236", "name": "6× Tile", "mapping": "div bg-[var(--color-bg)] px-5 py-[18px] with dt/dd inside", "rendered": true }
+  ],
+  "skipped": [],
+  "flagged": [
+    { "node": "Tile internal gap", "issue": "spacing-7 (7px) has no exact token; nearest --space-sm=8px; emitted as gap-[7px] literal" }
+  ]
+}

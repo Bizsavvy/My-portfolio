@@ -1,0 +1,74 @@
+{
+  "section": "shappay.video-demo",
+  "source": "ai-systems/schema/desktop/case-studies/shappay/video-demo.raw.json",
+  "frameworkInterpretation": "next",
+  "layout": {
+    "element": "section",
+    "border": "border-t border-[var(--color-line)]",
+    "padding": { "vertical": "62px", "horizontal": "100px → px-[var(--space-16xl)]" },
+    "direction": "vertical",
+    "gap": "spacing-5xl → 24px → gap-6",
+    "maxWidth": "var(--width-maxw) mx-auto"
+  },
+  "children": [
+    { "name": "Kicker", "mapping": "Kicker component", "content": "Experience" },
+    { "name": "H2", "content": "See it in motion.", "typography": "heading-h2 → clamp(28px,4vw,40px) 700 -0.02em 1.08", "color": "color-text-primary" },
+    { "name": "Body", "content": "A 90-second walkthrough...", "typography": "body-default → 16px 1.65", "color": "color-text-secondary → var(--color-body)" },
+    {
+      "name": "VideoSlot",
+      "kind": "container",
+      "height": "520px",
+      "layout": "flex items-center justify-center",
+      "style": "bg-surface border border-[var(--color-border-strong)] rounded-[var(--rad-2xl)]",
+      "interpretation": "Circle (72px accent) + Polygon (24×28 on-accent) → single play button: rounded-full accent bg + centered SVG triangle. Not two literal shapes — one interactive play button.",
+      "implementation": "button.rounded-full.bg-accent with SVG polygon inside"
+    },
+    {
+      "name": "Trace text",
+      "content": "Scan → Resolve → Wallet debit → Confirmation",
+      "typography": "mono-code-small → font-mono 10px 0.05em",
+      "color": "color-text-muted → var(--color-muted)"
+    },
+    {
+      "name": "ButtonRow",
+      "direction": "horizontal",
+      "gap": "spacing-lg → 16px → gap-4",
+      "paddingTop": "10px",
+      "children": [
+        {
+          "name": "ButtonTry",
+          "kind": "a",
+          "label": "Try the live demo →",
+          "style": "px-[26px] py-[14px] rounded-full bg-accent",
+          "typography": "mono-cta-medium → font-mono 500 14px 0.04em",
+          "color": "color-on-accent"
+        },
+        {
+          "name": "ButtonExpo",
+          "kind": "a",
+          "label": "Open in Expo Go",
+          "style": "px-[26px] py-[14px] rounded-full border border-[color-border-strong]",
+          "typography": "mono-cta → font-mono 400 12px",
+          "color": "color-text-primary"
+        },
+        {
+          "name": "Footnote",
+          "kind": "span",
+          "content": "Scan the QR with Expo Go to run the real app on your phone",
+          "typography": "body-footnote → font-hanken 14px 1.6",
+          "color": "color-text-muted"
+        }
+      ]
+    }
+  ],
+  "tokenNotes": {
+    "spacing-5xl (24px)": "gap-6 ✓",
+    "spacing-lg (16px)": "gap-4 ✓ (project --space-2xl: 16px)",
+    "radius-20": "--rad-2xl: 20px ✓",
+    "radius-30": "rounded-full (30px > half of 42px button height → pill) ✓",
+    "mono-cta-medium (14px 500 0.04em)": "font-mono font-medium text-[14px] tracking-[.04em] ✓",
+    "mono-cta (12px 400 0)": "font-mono text-[12px] ✓",
+    "mono-code-small (10px 0.05em)": "font-mono text-[10px] tracking-[.05em] ✓",
+    "body-footnote (14px 1.6)": "font-hanken text-[14px] leading-[1.6] ✓"
+  }
+}

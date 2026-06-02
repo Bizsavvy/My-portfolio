@@ -1,0 +1,303 @@
+{
+    "version": "1.0.0",
+    "source": {
+        "fileName": "Case studies",
+        "selection": [
+            "84:1392"
+        ],
+        "extractedAt": "2026-06-02T18:14:43.693Z"
+    },
+    "tokens": {
+        "colors": {
+            "color-border": "rgba(236, 234, 224, 0.11)",
+            "color-accent": "#C7F94B",
+            "color-text-secondary": "#D6D4C9"
+        },
+        "typography": {
+            "mono-kicker": {
+                "fontWeight": 400,
+                "fontSize": 12,
+                "letterSpacing": 16
+            },
+            "body-blockquote": {
+                "fontWeight": 400,
+                "fontSize": 30,
+                "lineHeight": "135.0000023841858%",
+                "letterSpacing": -1
+            },
+            "body-default": {
+                "fontWeight": 400,
+                "fontSize": 16,
+                "lineHeight": "164.9999976158142%",
+                "letterSpacing": 0
+            }
+        },
+        "spacing": {
+            "spacing-5xl": 24,
+            "spacing-md": 12,
+            "spacing-18": 18
+        },
+        "radius": {},
+        "shadows": {}
+    },
+    "components": [
+        {
+            "name": "WitSection",
+            "variants": [],
+            "instances": 1
+        },
+        {
+            "name": "ColL",
+            "variants": [],
+            "instances": 1
+        },
+        {
+            "name": "ColR",
+            "variants": [],
+            "instances": 1
+        }
+    ],
+    "root": {
+        "id": "84:1392",
+        "kind": "screen",
+        "name": "WitSection",
+        "width": 1280,
+        "height": 392,
+        "component": "WitSection",
+        "position": "relational",
+        "layout": {
+            "direction": "vertical",
+            "padding": {
+                "top": 62,
+                "right": 100,
+                "bottom": 62,
+                "left": 100
+            }
+        },
+        "style": {
+            "borderColor": "color-border",
+            "borderWidth": {
+                "top": 1
+            }
+        },
+        "children": [
+            {
+                "id": "84:1393",
+                "kind": "container",
+                "name": "Two",
+                "width": 1080,
+                "height": 268,
+                "position": "relational",
+                "layout": {
+                    "direction": "vertical",
+                    "gap": "spacing-5xl"
+                },
+                "responsive": {
+                    "height": "hug"
+                },
+                "children": [
+                    {
+                        "id": "84:1394",
+                        "kind": "container",
+                        "name": "ColL",
+                        "width": 1080,
+                        "height": 122,
+                        "component": "ColL",
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "spacing-5xl"
+                        },
+                        "responsive": {
+                            "height": "hug"
+                        },
+                        "children": [
+                            {
+                                "id": "84:1395",
+                                "kind": "container",
+                                "name": "Kicker",
+                                "width": 164,
+                                "height": 16,
+                                "position": "relational",
+                                "layout": {
+                                    "direction": "horizontal",
+                                    "gap": "spacing-md",
+                                    "alignItems": "center"
+                                },
+                                "responsive": {
+                                    "width": "hug",
+                                    "height": "hug"
+                                },
+                                "children": [
+                                    {
+                                        "id": "84:1396",
+                                        "kind": "rectangle",
+                                        "name": "Element",
+                                        "width": 26,
+                                        "height": 1,
+                                        "position": "relational",
+                                        "style": {
+                                            "background": "color-accent"
+                                        },
+                                        "semanticRole": "structural",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 4
+                                        }
+                                    },
+                                    {
+                                        "id": "84:1397",
+                                        "kind": "text",
+                                        "name": "Why it matters",
+                                        "width": 126,
+                                        "height": 16,
+                                        "position": "relational",
+                                        "text": {
+                                            "content": "Why it matters",
+                                            "typography": "mono-kicker",
+                                            "color": "color-accent",
+                                            "textAlign": "left"
+                                        },
+                                        "semanticRole": "semantic",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "hierarchyDepth": 4
+                                        }
+                                    }
+                                ],
+                                "semanticRole": "structural",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1398",
+                                "kind": "text",
+                                "name": "An interoperable QR is public infrastructure, it bridges the digital divide instead of building another silo.",
+                                "width": 1080,
+                                "height": 82,
+                                "position": "relational",
+                                "text": {
+                                    "content": "An interoperable QR is public infrastructure, it bridges the digital divide instead of building another silo.",
+                                    "typography": "body-blockquote",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    },
+                    {
+                        "id": "84:1399",
+                        "kind": "container",
+                        "name": "ColR",
+                        "width": 1080,
+                        "height": 122,
+                        "component": "ColR",
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "spacing-18"
+                        },
+                        "responsive": {
+                            "height": "hug"
+                        },
+                        "children": [
+                            {
+                                "id": "84:1400",
+                                "kind": "text",
+                                "name": "Interoperable QR is a form of Digital Public Infrastructure — the same pattern that took India's UPI from zero to billions of transactions. The CDPI specification is already in discussion with 30+ central banks, Nigeria among them.",
+                                "width": 1080,
+                                "height": 52,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Interoperable QR is a form of Digital Public Infrastructure — the same pattern that took India's UPI from zero to billions of transactions. The CDPI specification is already in discussion with 30+ central banks, Nigeria among them.",
+                                    "typography": "body-default",
+                                    "color": "color-text-secondary",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            },
+                            {
+                                "id": "84:1401",
+                                "kind": "text",
+                                "name": "Shappay builds on NIBSS NQR as Nigeria's implementation and treats the design problem as: how do you make national-scale financial inclusion feel like scanning a square?",
+                                "width": 1080,
+                                "height": 52,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Shappay builds on NIBSS NQR as Nigeria's implementation and treats the design problem as: how do you make national-scale financial inclusion feel like scanning a square?",
+                                    "typography": "body-default",
+                                    "color": "color-text-secondary",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "hierarchyDepth": 3
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "hierarchyDepth": 2
+                        }
+                    }
+                ],
+                "semanticRole": "structural",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "hierarchyDepth": 1
+                }
+            }
+        ],
+        "semanticRole": "structural",
+        "signals": {
+            "nonInteractive": true
+        },
+        "context": {
+            "zIndex": -1
+        }
+    }
+}

@@ -9,7 +9,7 @@ export function FlowCard({ variant, label, chips }: FlowCardProps) {
   return (
     <div
       className={`flow border rounded-[14px] p-[18px_22px] bg-[var(--color-surface)] ${
-        isAfter ? "border-[rgba(56,189,248,.28)]" : "border-[var(--color-line)]"
+        isAfter ? "border-[var(--color-accent)]" : "border-[var(--color-line)]"
       }`}
     >
       <span
@@ -23,10 +23,10 @@ export function FlowCard({ variant, label, chips }: FlowCardProps) {
         {chips.map((chip, i) => (
           <span key={i} className="flex items-center gap-[12px]">
             <span
-              className={`font-mono text-[13px] px-[14px] py-2 border rounded-[8px] ${
+              className={`font-mono text-[12px] px-[14px] py-2 border rounded-[8px] ${
                 isAfter
-                  ? "text-[var(--color-text)] border-[rgba(56,189,248,.32)]"
-                  : "text-[var(--color-muted)] border-[var(--color-line-strong)] opacity-60"
+                  ? "text-[var(--color-text)] border-[var(--color-accent)]"
+                  : "text-[var(--color-muted)] border-[var(--color-line-strong)]"
               }`}
             >
               {chip}
