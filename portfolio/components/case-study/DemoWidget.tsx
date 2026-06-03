@@ -32,9 +32,12 @@ export function DemoWidget() {
         canvas.width = dim;
         canvas.height = dim;
         const ctx = canvas.getContext("2d")!;
-        ctx.fillStyle = "#EFEBE0";
+        const styles = getComputedStyle(canvas);
+        const bg = styles.getPropertyValue("--color-bg").trim() || "#0C0C0A";
+        const fg = styles.getPropertyValue("--color-text-primary").trim() || "#ECEAE0";
+        ctx.fillStyle = bg;
         ctx.fillRect(0, 0, dim, dim);
-        ctx.fillStyle = "#0C0C0A";
+        ctx.fillStyle = fg;
         for (let r = 0; r < count; r++) {
           for (let c = 0; c < count; c++) {
             if (qr.isDark(r, c)) {
@@ -63,6 +66,16 @@ export function DemoWidget() {
     setCrc(result.crc);
     renderQR(result.payload);
   }, [merchant, city, mode, amount, renderQR]);
+
+  // Redraw the QR with the active theme's tokens when the theme toggles
+  useEffect(() => {
+    const obs = new MutationObserver(() => renderQR(payload));
+    obs.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-theme"],
+    });
+    return () => obs.disconnect();
+  }, [payload, renderQR]);
 
   const handleCopy = async () => {
     try {
@@ -188,7 +201,7 @@ export function DemoWidget() {
             <span
               className="scanline absolute left-0 w-full h-9 pointer-events-none"
               style={{
-                background: "linear-gradient(180deg,transparent,rgba(56,189,248,.55),transparent)",
+                background: "linear-gradient(180deg,transparent,color-mix(in srgb, var(--color-accent) 50%, transparent),transparent)",
                 opacity: 0,
               }}
             />
