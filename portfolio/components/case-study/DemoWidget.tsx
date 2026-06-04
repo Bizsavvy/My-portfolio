@@ -181,8 +181,8 @@ export function DemoWidget() {
             />
             <div className="text-[12.5px] text-[var(--color-muted)] mt-2 font-hanken">
               {mode === "static"
-                ? "Static QR carries no amount — the payer types it at scan time."
-                : "Dynamic QR embeds the amount — payer just confirms."}
+                ? "Static QR carries no amount; the payer types it at scan time."
+                : "Dynamic QR embeds the amount; payer just confirms."}
             </div>
           </div>
         </div>

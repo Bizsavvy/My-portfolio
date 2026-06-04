@@ -25,7 +25,7 @@ export function ReflectionSection() {
             the obvious wedge.
           </p>
           <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)]">
-            The hardest decisions weren&apos;t visual — and the most important was admitting the
+            The hardest decisions weren&apos;t visual; the most important was admitting the
             first architecture was wrong. Re-drawing the line between funding and checkout,
             choosing to hold a wallet, deciding where settlement lands: those are the calls that
             turned a fragile demo into something shippable.

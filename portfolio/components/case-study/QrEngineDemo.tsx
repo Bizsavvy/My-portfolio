@@ -19,7 +19,7 @@ export function QrEngineDemo() {
         </div>
 
         <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)] reveal">
-          Every NQR code is an EMVCo TLV string — a chain of Tag · Length · Value triplets sealed
+          Every NQR code is an EMVCo TLV string: a chain of Tag · Length · Value triplets sealed
           with a CRC-16 checksum. In the live build this regenerates as you type; here is the
           engine&apos;s output for a static merchant code.
         </p>

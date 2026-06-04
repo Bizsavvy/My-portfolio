@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "UI to JSON — Case Study · Haye",
+  title: "UI to JSON: Case Study · Haye",
 };
 
 export default function UItoJSONPage() {

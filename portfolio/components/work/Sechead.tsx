@@ -12,7 +12,7 @@ export function Sechead() {
         </h2>
       </div>
       <p className="ts-body text-[var(--color-muted)] text-right leading-[1.6] max-w-[320px]">
-        Not static mockups — products designed, coded, and made ready for backend integration.
+        Not static mockups; products designed, coded, and made ready for backend integration.
       </p>
     </div>
   );

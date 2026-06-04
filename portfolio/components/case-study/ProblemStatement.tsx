@@ -21,7 +21,7 @@ export function ProblemStatement() {
           <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-text)]">
             Most Nigerians hold multiple bank accounts across different banks. Every transfer
             means typing a 10-digit account number, choosing the right bank from a growing list,
-            and hoping you got it right — multiplied across every account you own.
+            and hoping you got it right, multiplied across every account you own.
           </p>
           <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-text)]">
             It is the single most error-prone moment in everyday payments and it scales terribly

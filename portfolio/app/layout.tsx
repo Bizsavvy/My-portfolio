@@ -37,9 +37,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Haye — Design Engineer",
+  title: "Haye: Design Engineer",
   description:
-    "Design engineer who designs and builds consumer & fintech products — from interface to infrastructure.",
+    "Design engineer who designs and builds consumer & fintech products: from interface to infrastructure.",
 };
 
 export default function RootLayout({

@@ -3,7 +3,7 @@ import { FlowCard } from "@/components/case-study/FlowCard";
 
 const tradeoffs = [
   { badge: "↑ REGULATORY SURFACE", body: "Storing value pulls in a sponsor-bank partnership and stronger compliance controls." },
-  { badge: "↑ USER TRUST",         body: "Users now trust Shappay with balances — raising the bar on security and withdrawals." },
+  { badge: "↑ USER TRUST",         body: "Users now trust Shappay with balances: raising the bar on security and withdrawals." },
   { badge: "↑ LEDGER WORK",        body: "Internal balance tracking, ledger consistency, and failed-transfer recovery." },
   { badge: "↑ FLOAT & SETTLEMENT", body: "Liquidity movement, settlement timing, reversals, and reconciliation." },
 ];
@@ -37,7 +37,7 @@ export function PivotSection() {
             </h3>
             <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)]">
               Providers like Mono DirectPay handle account linking, authorization, and payment
-              initiation — but not persistent, real-time orchestration across multiple banks.
+              initiation, but not persistent, real-time orchestration across multiple banks.
               Every payment would have inherited bank uptime, latency, high fees, and redirects.
             </p>
           </div>
@@ -48,7 +48,7 @@ export function PivotSection() {
             <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-text)]">
               Separate the two flows that were wrongly fused:{" "}
               <strong className="font-semibold">funding ≠ checkout.</strong>{" "}
-              Banks are touched when a user funds their wallet — not on every scan. Payments
+              Banks are touched when a user funds their wallet: not on every scan. Payments
               execute against wallet balance. For a high volume transaction startup, this
               architecture fits perfectly.
             </p>
@@ -73,7 +73,7 @@ export function PivotSection() {
         </h3>
 
         <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)] reveal">
-          Holding balances raises the bar — naming the costs is part of owning the decision.
+          Holding balances raises the bar; naming the costs is part of owning the decision.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 reveal">

@@ -21,7 +21,7 @@ export function WhyItMatters() {
 
         <div className="flex flex-col gap-4 reveal">
           <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)]">
-            Interoperable QR is a form of Digital Public Infrastructure — the same pattern that
+            Interoperable QR is a form of Digital Public Infrastructure; the same pattern that
             took India&apos;s UPI from zero to billions of transactions. The CDPI specification
             is already in discussion with 30+ central banks, Nigeria among them.
           </p>

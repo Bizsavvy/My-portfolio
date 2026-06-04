@@ -1,5 +1,5 @@
 const rows = [
-  { k: "Building", v: "Shappay — wallet-first QR" },
+  { k: "Building", v: "Shappay: wallet-first QR" },
   { k: "Shipping", v: "UI to JSON · 170+ users" },
   { k: "Based in", v: "Abuja, NG · remote-friendly" },
   { k: "Open to",  v: "Roles · contract · worldwide" },

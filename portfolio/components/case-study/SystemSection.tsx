@@ -4,7 +4,7 @@ const archNodes = [
   {
     index: "→ 01",
     title: "Identity Layer",
-    body: "EMVCo / NQR payload generation and parsing, plus name@shappay VPA addressing — two ways to identify any destination.",
+    body: "EMVCo / NQR payload generation and parsing, plus name@shappay VPA addressing: two ways to identify any destination.",
   },
   {
     index: "→ 02",
@@ -22,7 +22,7 @@ const routingCards = [
   {
     badge: "CASE A · FAST PATH",
     title: "Shappay → Shappay",
-    body: "Destination has a Shappay wallet. Execute instant ledger transfer on Anchor — wallet to wallet. Highest success rate, lowest latency.",
+    body: "Destination has a Shappay wallet. Execute instant ledger transfer on Anchor: wallet to wallet. Highest success rate, lowest latency.",
   },
   {
     badge: "CASE B · PAYOUT PATH",
@@ -32,7 +32,7 @@ const routingCards = [
   {
     badge: "CASE C · FALLBACK",
     title: "Unsupported QR scheme",
-    body: "QR payload cannot be resolved. Surface manual bank transfer entry screen — always a path forward, never a dead end.",
+    body: "QR payload cannot be resolved. Surface manual bank transfer entry screen: always a path forward, never a dead end.",
   },
 ];
 

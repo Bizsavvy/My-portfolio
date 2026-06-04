@@ -3,15 +3,15 @@ import { CaseStudyHero } from "@/components/case-study/CaseStudyHero";
 import { CaseStudyFooter } from "@/components/case-study/CaseStudyFooter";
 
 export const metadata: Metadata = {
-  title: "Flow — Brand Identity · Haye",
+  title: "Flow: Brand Identity · Haye",
   description:
-    "A complete brand identity system for a modern period care brand — built on vibrant colour, warm personality, and dignified design.",
+    "A complete brand identity system for a modern period care brand: built on vibrant colour, warm personality, and dignified design.",
 };
 
 const VIOLET = "#8A4BEB";
 
 const guidelines = [
-  { src: "/assets/flow/guidelines/01-cover-slide.svg",       alt: "Flow Brand Guidelines — Cover" },
+  { src: "/assets/flow/guidelines/01-cover-slide.svg",       alt: "Flow Brand Guidelines: Cover" },
   { src: "/assets/flow/guidelines/02-table-of-contents.svg", alt: "Table of Contents" },
   { src: "/assets/flow/guidelines/03-wordmark.svg",          alt: "Flow Wordmark" },
   { src: "/assets/flow/guidelines/04-wordmark-1.svg",        alt: "Wordmark on Backgrounds" },
@@ -44,7 +44,7 @@ export default function FlowPage() {
             <em className="italic" style={{ color: VIOLET }}>
               complete brand identity system
             </em>{" "}
-            for a modern period care brand — built on vibrant colour, warm
+            for a modern period care brand: built on vibrant colour, warm
             personality, and dignified design.
           </>
         }
@@ -66,7 +66,7 @@ export default function FlowPage() {
             className="font-mono text-[11px] tracking-[.18em] uppercase mb-5"
             style={{ color: VIOLET }}
           >
-            01 — The Challenge
+            01: The Challenge
           </div>
           <h2
             className="font-hanken font-bold tracking-[-0.02em] mb-10"
@@ -76,13 +76,13 @@ export default function FlowPage() {
           </h2>
           <div className="grid md:grid-cols-2 gap-10" style={{ maxWidth: 900 }}>
             <p className="text-[var(--color-body)] text-[17px] leading-[1.65]">
-              Most period care brands default to one of two scripts — clinical blue
+              Most period care brands default to one of two scripts: clinical blue
               that signals medical necessity, or bubblegum pink that signals something
               to be ashamed of. Flow needed neither.
             </p>
             <p className="text-[var(--color-body)] text-[17px] leading-[1.65]">
               The brief: build a brand that treats the body with dignity and genuine
-              joy — one that speaks directly, without medical euphemism or forced
+              joy, one that speaks directly, without medical euphemism or forced
               cuteness. Direct. Warm. Joyful. Bold.
             </p>
           </div>
@@ -107,7 +107,7 @@ export default function FlowPage() {
         nextHref="/work/shappay"
         nextLabel="Shappay"
         stat="Brand Guideline v1.0 · 18 sections"
-        colophonLeft="Flow — Brand Identity case study"
+        colophonLeft="Flow: Brand Identity case study"
       />
     </div>
   );

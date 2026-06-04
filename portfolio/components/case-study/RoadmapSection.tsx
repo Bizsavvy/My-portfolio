@@ -23,7 +23,7 @@ export function RoadmapSection() {
             phase="NOW"
             title="Wallet-first MVP"
             status={{ label: "IN BUILD", now: true }}
-            description="Link banks, fund wallet, pay by scanning a QR or typing name@shappay — settling to wallet or bank."
+            description="Link banks, fund wallet, pay by scanning a QR or typing name@shappay, settling to wallet or bank."
           />
           <RoadmapItem
             phase="NEXT"

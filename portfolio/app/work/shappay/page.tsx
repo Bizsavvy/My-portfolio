@@ -13,7 +13,7 @@ import { ReflectionSection } from "@/components/case-study/ReflectionSection";
 import { CaseStudyFooter } from "@/components/case-study/CaseStudyFooter";
 
 export const metadata: Metadata = {
-  title: "Shappay — Case Study · Haye",
+  title: "Shappay: Case Study · Haye",
   description: "A wallet-first QR payments app on Nigeria's NIBSS NQR rails.",
 };
 
@@ -29,7 +29,7 @@ export default function ShappayPage() {
             <em className="italic text-[var(--color-accent)]">
               QR-driven payment resolution engine
             </em>{" "}
-            that selects the correct financial rail — wallet, bank, or external network — based on
+            that selects the correct financial rail (wallet, bank, or external network) based on
             merchant and user preferences.
           </>
         }
@@ -39,7 +39,7 @@ export default function ShappayPage() {
           { label: "Model",    value: "Wallet-first QR" },
           { label: "Rails",    value: "NIBSS NQR · EMVCo" },
           { label: "Platform", value: "React Native · Mobile" },
-          { label: "Year",     value: "2025 — present" },
+          { label: "Year",     value: "2025–present" },
         ]}
       />
 
@@ -78,7 +78,7 @@ export default function ShappayPage() {
         nextHref="/work/ui-to-json"
         nextLabel="UI to JSON"
         stat="170+ users in production"
-        colophonLeft="Shappay — Design Engineering case study"
+        colophonLeft="Shappay: Design Engineering case study"
       />
     </div>
   );

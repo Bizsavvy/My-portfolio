@@ -18,7 +18,7 @@ export function VideoDemo() {
         </div>
 
         <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)] reveal">
-          A 90-second walkthrough of the core payment loop — scan, resolve, and settle. Running
+          A 90-second walkthrough of the core payment loop: scan, resolve, and settle. Running
           on the actual React Native build.
         </p>
 

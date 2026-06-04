@@ -9,7 +9,7 @@ const cards = [
   {
     badge: "02 / DECISION",
     title: "Two addressing modes",
-    body: "Every user gets a name@shappay virtual address — so P2P payments work by typing an ID, not only scanning. QR and VPA resolve through the same engine.",
+    body: "Every user gets a name@shappay virtual address; so P2P payments work by typing an ID, not only scanning. QR and VPA resolve through the same engine.",
   },
   {
     badge: "03 / DECISION",

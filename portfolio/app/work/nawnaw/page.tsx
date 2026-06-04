@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "NawNaw — Case Study · Haye",
+  title: "NawNaw: Case Study · Haye",
 };
 
 export default function NawNawPage() {

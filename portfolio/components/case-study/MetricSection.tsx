@@ -41,7 +41,7 @@ export function MetricSection() {
         </div>
 
         <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)] reveal">
-          Quantified targets set before build — not retrofitted after. These are the numbers the
+          Quantified targets set before build; not retrofitted after. These are the numbers the
           product is designed around.
         </p>
 
