@@ -11,36 +11,32 @@ export const metadata: Metadata = {
     "A QR-first ordering and payment platform for restaurants and bars: designed and built end to end.",
 };
 
-// ── Placeholder for screens not yet supplied ──────────────────────────────────
-function ScreenPlaceholder({
+// ── Screenshot tile ───────────────────────────────────────────────────────────
+function Shot({
+  src,
   label,
-  ratio = "9/19.5",
   rounded = 28,
 }: {
+  src: string;
   label: string;
-  ratio?: string;
   rounded?: number;
 }) {
   return (
     <div
       style={{
-        aspectRatio: ratio,
-        background: "var(--color-surface)",
-        border: "1px dashed var(--color-line)",
         borderRadius: rounded,
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        gap: 6,
+        overflow: "hidden",
+        border: "1px solid var(--color-line)",
+        background: "var(--color-surface)",
       }}
     >
-      <span className="font-mono text-[11px] tracking-[.1em] uppercase text-[var(--color-muted)]">
-        {label}
-      </span>
-      <span className="font-mono text-[10px] text-[var(--color-muted)]" style={{ opacity: 0.4 }}>
-        screenshot coming
-      </span>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={src}
+        alt={`Oshap ${label}`}
+        loading="lazy"
+        style={{ width: "100%", height: "auto", display: "block" }}
+      />
     </div>
   );
 }
@@ -297,12 +293,12 @@ export default function OshapPage() {
             Customer screens
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-            <ScreenPlaceholder label="Menu" />
-            <ScreenPlaceholder label="Cart drawer" />
-            <ScreenPlaceholder label="Pay: transfer" />
-            <ScreenPlaceholder label="Order Together" />
-            <ScreenPlaceholder label="My Orders" />
-            <ScreenPlaceholder label="Notif. center" />
+            <Shot src="/assets/oshap/Menu.png" label="Menu" />
+            <Shot src="/assets/oshap/Cart-drawer.png" label="Cart drawer" />
+            <Shot src="/assets/oshap/Pay-transfer.png" label="Pay: transfer" />
+            <Shot src="/assets/oshap/Order-together.png" label="Order Together" />
+            <Shot src="/assets/oshap/My-orders.png" label="My Orders" />
+            <Shot src="/assets/oshap/Notification.png" label="Notification center" />
           </div>
         </div>
       </S>
@@ -399,13 +395,13 @@ export default function OshapPage() {
           <div className="font-mono text-[11px] tracking-[.08em] uppercase text-[var(--color-muted)]">
             Admin screens
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-            <ScreenPlaceholder label="Dashboard" ratio="4/3" rounded={12} />
-            <ScreenPlaceholder label="Kitchen" ratio="4/3" rounded={12} />
-            <ScreenPlaceholder label="History" ratio="4/3" rounded={12} />
-            <ScreenPlaceholder label="Menu + Inventory" ratio="4/3" rounded={12} />
-            <ScreenPlaceholder label="Analytics" ratio="4/3" rounded={12} />
-            <ScreenPlaceholder label="Settings" ratio="4/3" rounded={12} />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <Shot src="/assets/oshap/Dashboard.png" label="Dashboard" rounded={12} />
+            <Shot src="/assets/oshap/Kitchen.png" label="Kitchen" rounded={12} />
+            <Shot src="/assets/oshap/History.png" label="History" rounded={12} />
+            <Shot src="/assets/oshap/Menu-admin.png" label="Menu + Inventory" rounded={12} />
+            <Shot src="/assets/oshap/Analytics.png" label="Analytics" rounded={12} />
+            <Shot src="/assets/oshap/Settings.png" label="Settings" rounded={12} />
           </div>
         </div>
       </S>
@@ -418,7 +414,7 @@ export default function OshapPage() {
             className="font-hanken font-bold tracking-[-0.02em]"
             style={{ fontSize: "clamp(28px,4vw,40px)", lineHeight: 1.08 }}
           >
-            The third app: Oshap's own back-office.
+            The third app: Oshap&apos;s own back-office.
           </h2>
         </div>
 
@@ -483,7 +479,7 @@ export default function OshapPage() {
 
         <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)] reveal" style={{ maxWidth: "60ch" }}>
           Order integrity is the hard constraint. No duplicate orders, no lost orders,
-          no terminal states you can't recover from. Every state has a single owner and
+          no terminal states you can&apos;t recover from. Every state has a single owner and
           a defined transition trigger.
         </p>
 
@@ -560,7 +556,7 @@ export default function OshapPage() {
           <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)]">
             FCM push covers the instants that feel urgent: new order, waiter called,
             POS requested. When the admin tab is hidden the service worker shows OS
-            notifications. When it's open the{" "}
+            notifications. When it&apos;s open the{" "}
             <code className="font-mono text-[14px] text-[var(--color-text)]">AlertCenter</code>{" "}
             fires a chime and queues a toast.
           </p>

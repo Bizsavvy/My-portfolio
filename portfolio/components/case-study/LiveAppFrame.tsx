@@ -8,6 +8,7 @@ const IFRAME_H = 932;
 const NOTCH = 44;
 const HOME = 34;
 const PHONE_H = NOTCH + IFRAME_H + HOME; // 1010
+const SCROLLBAR_W = 16; // widen the iframe by this so its native scrollbar is clipped out of view
 
 export function LiveAppFrame() {
   const [active, setActive] = useState(false);
@@ -139,7 +140,7 @@ export function LiveAppFrame() {
                     position: "absolute",
                     top: 0,
                     left: 0,
-                    width: IFRAME_W,
+                    width: IFRAME_W + SCROLLBAR_W,
                     height: IFRAME_H,
                     border: "none",
                     transformOrigin: "top left",
