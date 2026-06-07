@@ -28,7 +28,7 @@ const projects = [
     index: 2,
     tab: "Production Tool",
     title: "UI to JSON",
-    badge: { label: "170+ users", variant: "accent" as const },
+    badge: { label: "250+ users", variant: "accent" as const },
     hook: "A Figma plugin that converts UI into code-ready JSON. Live in production with a real, growing user base: a tool built for designers who think in systems.",
     tags: ["Figma Plugin", "Design Tooling", "TypeScript"],
     href: "/work/ui-to-json",

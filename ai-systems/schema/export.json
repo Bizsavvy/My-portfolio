@@ -1,0 +1,731 @@
+{
+    "version": "1.0.0",
+    "source": {
+        "fileName": "ShapPay User app",
+        "selection": [
+            "1812:16347"
+        ],
+        "extractedAt": "2026-06-07T15:58:42.966Z"
+    },
+    "tokens": {
+        "colors": {
+            "surface-colors-surface-container-lowest": "#FFFFFF",
+            "text-colors-primary-text": "#343234",
+            "surface-colors-surface-container": "#F0EFF0",
+            "success-colors-success-icon-bg": "rgba(0, 204, 136, 0.1)",
+            "accent-colors-2-accent-icon-bg-2": "rgba(204, 84, 0, 0.1)",
+            "primary-colors-primary-icon-bg": "rgba(95, 37, 159, 0.1)",
+            "tertiary-colors-tertiary-icon-bg": "rgba(156, 99, 109, 0.1)"
+        },
+        "typography": {
+            "label-l5-inter-reg-400": {
+                "fontWeight": 400,
+                "fontSize": 12,
+                "lineHeight": "100%",
+                "letterSpacing": -2
+            },
+            "label-l1-inter-semi-bold-700": {
+                "fontWeight": 600,
+                "fontSize": 24,
+                "lineHeight": "100%",
+                "letterSpacing": -2
+            },
+            "caption-c2-inter-med-500": {
+                "fontWeight": 500,
+                "fontSize": 10,
+                "lineHeight": "100%",
+                "letterSpacing": -2
+            }
+        },
+        "spacing": {
+            "l": 24,
+            "m": 16,
+            "s": 8,
+            "spacing-10": 10
+        },
+        "radius": {
+            "m": 16,
+            "radius-100": 100
+        },
+        "shadows": {}
+    },
+    "components": [
+        {
+            "name": "QuickActionsCard",
+            "variants": [
+                "Price=Visible"
+            ],
+            "instances": 1
+        },
+        {
+            "name": "IconFund",
+            "variants": [],
+            "instances": 1
+        },
+        {
+            "name": "AddLine",
+            "variants": [],
+            "instances": 1
+        },
+        {
+            "name": "IconSend",
+            "variants": [],
+            "instances": 1
+        },
+        {
+            "name": "IconSplit",
+            "variants": [],
+            "instances": 1
+        },
+        {
+            "name": "IconRequest",
+            "variants": [],
+            "instances": 1
+        }
+    ],
+    "root": {
+        "id": "1812:16347",
+        "kind": "screen",
+        "name": "QuickActionsCard",
+        "width": 382,
+        "height": 174,
+        "component": "QuickActionsCard",
+        "variant": {
+            "Price": "Visible"
+        },
+        "position": "relational",
+        "layout": {
+            "direction": "vertical",
+            "gap": "l",
+            "padding": "m",
+            "alignItems": "center"
+        },
+        "style": {
+            "background": "surface-colors-surface-container-lowest",
+            "borderRadius": "m"
+        },
+        "children": [
+            {
+                "id": "I1812:16347;1808:8106",
+                "kind": "container",
+                "name": "WalletBalance",
+                "width": 350,
+                "height": 44,
+                "position": "relational",
+                "layout": {
+                    "direction": "vertical",
+                    "gap": "s"
+                },
+                "responsive": {
+                    "height": "hug"
+                },
+                "children": [
+                    {
+                        "id": "I1812:16347;1808:8099",
+                        "kind": "container",
+                        "name": "Heading",
+                        "width": 350,
+                        "height": 12,
+                        "position": "relational",
+                        "layout": {
+                            "direction": "horizontal"
+                        },
+                        "responsive": {
+                            "width": "hug"
+                        },
+                        "children": [
+                            {
+                                "id": "I1812:16347;1808:8096",
+                                "kind": "text",
+                                "name": "Shappay Balance",
+                                "width": 95,
+                                "height": 12,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Shappay Balance",
+                                    "typography": "label-l5-inter-reg-400",
+                                    "color": "text-colors-primary-text",
+                                    "textAlign": "left"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "insideComponent": true,
+                                    "hierarchyDepth": 3
+                                },
+                                "interaction": {
+                                    "insideInteractiveComponent": true
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "insideComponent": true,
+                            "hierarchyDepth": 2
+                        },
+                        "interaction": {
+                            "insideInteractiveComponent": true
+                        }
+                    },
+                    {
+                        "id": "I1812:16347;1808:8107",
+                        "kind": "container",
+                        "name": "Balance",
+                        "width": 350,
+                        "height": 24,
+                        "position": "relational",
+                        "layout": {
+                            "direction": "horizontal",
+                            "justifyContent": "space-between",
+                            "alignItems": "center"
+                        },
+                        "responsive": {
+                            "width": "hug"
+                        },
+                        "children": [
+                            {
+                                "id": "I1812:16347;1808:8101",
+                                "kind": "text",
+                                "name": "₦0.00",
+                                "width": 70,
+                                "height": 24,
+                                "position": "relational",
+                                "text": {
+                                    "content": "₦0.00",
+                                    "typography": "label-l1-inter-semi-bold-700",
+                                    "color": "text-colors-primary-text",
+                                    "textAlign": "center"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "insideComponent": true,
+                                    "hierarchyDepth": 3
+                                },
+                                "interaction": {
+                                    "insideInteractiveComponent": true
+                                }
+                            },
+                            {
+                                "id": "I1812:16347;1808:8097",
+                                "kind": "icon",
+                                "name": "EyeRegular",
+                                "width": 20,
+                                "height": 20,
+                                "position": "relational",
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "insideComponent": true,
+                                    "hierarchyDepth": 3
+                                },
+                                "interaction": {
+                                    "insideInteractiveComponent": true
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "insideComponent": true,
+                            "hierarchyDepth": 2
+                        },
+                        "interaction": {
+                            "insideInteractiveComponent": true
+                        }
+                    }
+                ],
+                "semanticRole": "structural",
+                "signals": {
+                    "nonInteractive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "insideComponent": true,
+                    "hierarchyDepth": 1
+                },
+                "interaction": {
+                    "insideInteractiveComponent": true
+                }
+            },
+            {
+                "id": "I1812:16347;1808:16291",
+                "kind": "button",
+                "name": "QuickActionsButtons",
+                "width": 350,
+                "height": 74,
+                "position": "relational",
+                "layout": {
+                    "direction": "horizontal",
+                    "gap": "s",
+                    "alignItems": "center"
+                },
+                "responsive": {
+                    "width": "hug"
+                },
+                "style": {
+                    "borderRadius": "m"
+                },
+                "children": [
+                    {
+                        "id": "I1812:16347;1808:8135",
+                        "kind": "container",
+                        "name": "Fund",
+                        "width": 81.5,
+                        "height": 74,
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "s",
+                            "padding": {
+                                "top": 8,
+                                "right": 16,
+                                "bottom": 8,
+                                "left": 16
+                            },
+                            "justifyContent": "center",
+                            "alignItems": "center"
+                        },
+                        "responsive": {
+                            "width": "hug"
+                        },
+                        "style": {
+                            "background": "surface-colors-surface-container",
+                            "borderRadius": "m"
+                        },
+                        "children": [
+                            {
+                                "id": "I1812:16347;1811:16329",
+                                "kind": "container",
+                                "name": "IconFund",
+                                "width": 40,
+                                "height": 40,
+                                "component": "IconFund",
+                                "position": "relational",
+                                "layout": {
+                                    "direction": "horizontal",
+                                    "padding": "spacing-10",
+                                    "justifyContent": "center",
+                                    "alignItems": "center"
+                                },
+                                "style": {
+                                    "background": "success-colors-success-icon-bg",
+                                    "borderRadius": "radius-100"
+                                },
+                                "children": [
+                                    {
+                                        "id": "I1812:16347;1811:16330",
+                                        "kind": "icon",
+                                        "name": "AddLine",
+                                        "width": 20,
+                                        "height": 20,
+                                        "component": "AddLine",
+                                        "position": "relational",
+                                        "semanticRole": "semantic",
+                                        "signals": {
+                                            "nonInteractive": true
+                                        },
+                                        "context": {
+                                            "zIndex": -1,
+                                            "insideComponent": true,
+                                            "hierarchyDepth": 4
+                                        },
+                                        "interaction": {
+                                            "insideInteractiveComponent": true
+                                        }
+                                    }
+                                ],
+                                "semanticRole": "structural",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "insideComponent": true,
+                                    "hierarchyDepth": 3
+                                },
+                                "interaction": {
+                                    "insideInteractiveComponent": true
+                                }
+                            },
+                            {
+                                "id": "I1812:16347;1808:8137",
+                                "kind": "text",
+                                "name": "Fund",
+                                "width": 24,
+                                "height": 10,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Fund",
+                                    "typography": "caption-c2-inter-med-500",
+                                    "color": "text-colors-primary-text",
+                                    "textAlign": "center"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "insideComponent": true,
+                                    "hierarchyDepth": 3
+                                },
+                                "interaction": {
+                                    "insideInteractiveComponent": true
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "insideComponent": true,
+                            "hierarchyDepth": 2
+                        },
+                        "interaction": {
+                            "insideInteractiveComponent": true
+                        }
+                    },
+                    {
+                        "id": "I1812:16347;1808:8127",
+                        "kind": "container",
+                        "name": "Send",
+                        "width": 81.5,
+                        "height": 74,
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "s",
+                            "padding": {
+                                "top": 8,
+                                "right": 16,
+                                "bottom": 8,
+                                "left": 16
+                            },
+                            "justifyContent": "center",
+                            "alignItems": "center"
+                        },
+                        "responsive": {
+                            "width": "hug"
+                        },
+                        "style": {
+                            "background": "surface-colors-surface-container",
+                            "borderRadius": "m"
+                        },
+                        "children": [
+                            {
+                                "id": "I1812:16347;1811:16323",
+                                "kind": "icon",
+                                "name": "IconSend",
+                                "width": 40,
+                                "height": 40,
+                                "component": "IconSend",
+                                "position": "relational",
+                                "layout": {
+                                    "direction": "horizontal",
+                                    "padding": "spacing-10",
+                                    "justifyContent": "center",
+                                    "alignItems": "center"
+                                },
+                                "style": {
+                                    "background": "accent-colors-2-accent-icon-bg-2",
+                                    "borderRadius": "radius-100"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "insideComponent": true,
+                                    "hierarchyDepth": 3
+                                },
+                                "interaction": {
+                                    "insideInteractiveComponent": true
+                                }
+                            },
+                            {
+                                "id": "I1812:16347;1808:8129",
+                                "kind": "text",
+                                "name": "Send",
+                                "width": 24,
+                                "height": 10,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Send",
+                                    "typography": "caption-c2-inter-med-500",
+                                    "color": "text-colors-primary-text",
+                                    "textAlign": "center"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "insideComponent": true,
+                                    "hierarchyDepth": 3
+                                },
+                                "interaction": {
+                                    "insideInteractiveComponent": true
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "insideComponent": true,
+                            "hierarchyDepth": 2
+                        },
+                        "interaction": {
+                            "insideInteractiveComponent": true
+                        }
+                    },
+                    {
+                        "id": "I1812:16347;1808:16292",
+                        "kind": "container",
+                        "name": "Split",
+                        "width": 81.5,
+                        "height": 74,
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "s",
+                            "padding": {
+                                "top": 8,
+                                "right": 16,
+                                "bottom": 8,
+                                "left": 16
+                            },
+                            "justifyContent": "center",
+                            "alignItems": "center"
+                        },
+                        "responsive": {
+                            "width": "hug"
+                        },
+                        "style": {
+                            "background": "surface-colors-surface-container",
+                            "borderRadius": "m"
+                        },
+                        "children": [
+                            {
+                                "id": "I1812:16347;1811:16335",
+                                "kind": "icon",
+                                "name": "IconSplit",
+                                "width": 40,
+                                "height": 40,
+                                "component": "IconSplit",
+                                "position": "relational",
+                                "layout": {
+                                    "direction": "horizontal",
+                                    "padding": "spacing-10",
+                                    "justifyContent": "center",
+                                    "alignItems": "center"
+                                },
+                                "style": {
+                                    "background": "primary-colors-primary-icon-bg",
+                                    "borderRadius": "radius-100"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "insideComponent": true,
+                                    "hierarchyDepth": 3
+                                },
+                                "interaction": {
+                                    "insideInteractiveComponent": true
+                                }
+                            },
+                            {
+                                "id": "I1812:16347;1808:16294",
+                                "kind": "text",
+                                "name": "Split",
+                                "width": 21,
+                                "height": 10,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Split",
+                                    "typography": "caption-c2-inter-med-500",
+                                    "color": "text-colors-primary-text",
+                                    "textAlign": "center"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "insideComponent": true,
+                                    "hierarchyDepth": 3
+                                },
+                                "interaction": {
+                                    "insideInteractiveComponent": true
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "insideComponent": true,
+                            "hierarchyDepth": 2
+                        },
+                        "interaction": {
+                            "insideInteractiveComponent": true
+                        }
+                    },
+                    {
+                        "id": "I1812:16347;1808:16305",
+                        "kind": "container",
+                        "name": "Request",
+                        "width": 81.5,
+                        "height": 74,
+                        "position": "relational",
+                        "layout": {
+                            "direction": "vertical",
+                            "gap": "s",
+                            "padding": {
+                                "top": 8,
+                                "right": 16,
+                                "bottom": 8,
+                                "left": 16
+                            },
+                            "justifyContent": "center",
+                            "alignItems": "center"
+                        },
+                        "responsive": {
+                            "width": "hug"
+                        },
+                        "style": {
+                            "background": "surface-colors-surface-container",
+                            "borderRadius": "m"
+                        },
+                        "children": [
+                            {
+                                "id": "I1812:16347;1811:16341",
+                                "kind": "icon",
+                                "name": "IconRequest",
+                                "width": 40,
+                                "height": 40,
+                                "component": "IconRequest",
+                                "position": "relational",
+                                "layout": {
+                                    "direction": "horizontal",
+                                    "padding": "spacing-10",
+                                    "justifyContent": "center",
+                                    "alignItems": "center"
+                                },
+                                "style": {
+                                    "background": "tertiary-colors-tertiary-icon-bg",
+                                    "borderRadius": "radius-100"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "insideComponent": true,
+                                    "hierarchyDepth": 3
+                                },
+                                "interaction": {
+                                    "insideInteractiveComponent": true
+                                }
+                            },
+                            {
+                                "id": "I1812:16347;1808:16307",
+                                "kind": "text",
+                                "name": "Request",
+                                "width": 39,
+                                "height": 10,
+                                "position": "relational",
+                                "text": {
+                                    "content": "Request",
+                                    "typography": "caption-c2-inter-med-500",
+                                    "color": "text-colors-primary-text",
+                                    "textAlign": "center"
+                                },
+                                "semanticRole": "semantic",
+                                "signals": {
+                                    "nonInteractive": true
+                                },
+                                "context": {
+                                    "zIndex": -1,
+                                    "insideComponent": true,
+                                    "hierarchyDepth": 3
+                                },
+                                "interaction": {
+                                    "insideInteractiveComponent": true
+                                }
+                            }
+                        ],
+                        "semanticRole": "structural",
+                        "signals": {
+                            "nonInteractive": true
+                        },
+                        "context": {
+                            "zIndex": -1,
+                            "insideComponent": true,
+                            "hierarchyDepth": 2
+                        },
+                        "interaction": {
+                            "insideInteractiveComponent": true
+                        }
+                    }
+                ],
+                "semanticRole": "interactive",
+                "signals": {
+                    "interactive": true
+                },
+                "context": {
+                    "zIndex": -1,
+                    "insideComponent": true,
+                    "interactive": true,
+                    "hierarchyDepth": 1
+                },
+                "interaction": {
+                    "interactive": true,
+                    "insideInteractiveComponent": true
+                }
+            }
+        ],
+        "semanticRole": "interactive",
+        "signals": {
+            "interactive": true
+        },
+        "context": {
+            "zIndex": -1,
+            "insideComponent": true,
+            "interactive": true
+        },
+        "interaction": {
+            "interactive": true
+        }
+    }
+}

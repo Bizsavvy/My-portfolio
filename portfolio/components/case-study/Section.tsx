@@ -11,7 +11,7 @@ export function Section({ children, className = "" }: SectionProps) {
       className={`relative z-[5] border-t border-[var(--color-line)] ${className}`}
       style={{ padding: "62px 0" }}
     >
-      <div className="max-w-[1080px] site-wrap">{children}</div>
+      <div className="cs-wrap">{children}</div>
     </section>
   );
 }

@@ -77,7 +77,7 @@ export default function ShappayPage() {
       <CaseStudyFooter
         nextHref="/work/ui-to-json"
         nextLabel="UI to JSON"
-        stat="170+ users in production"
+        stat="250+ users in production"
         colophonLeft="Shappay: Design Engineering case study"
       />
     </div>
