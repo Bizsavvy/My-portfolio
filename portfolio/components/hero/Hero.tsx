@@ -99,9 +99,9 @@ export function Hero() {
 
           {/* Eyebrow */}
           <div className="eyebrow ts-eyebrow text-[10px] md:text-[12px] text-[var(--color-accent)] inline-flex items-center gap-2 md:gap-[var(--space-2xl)] whitespace-nowrap">
-            <span className="w-5 md:w-7 h-px bg-[var(--color-accent)]" aria-hidden="true" />
+            {/* <span className="w-5 md:w-7 h-px bg-[var(--color-accent)]" aria-hidden="true" /> */}
             Design Engineer · Abuja, working worldwide
-            <span className="w-5 md:w-7 h-px bg-[var(--color-accent)]" aria-hidden="true" />
+            {/* <span className="w-5 md:w-7 h-px bg-[var(--color-accent)]" aria-hidden="true" /> */}
           </div>
 
           {/* Intro */}

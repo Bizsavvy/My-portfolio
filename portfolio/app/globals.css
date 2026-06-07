@@ -208,15 +208,6 @@
     overflow-x: hidden;
   }
 
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 1;
-    background: radial-gradient(110% 60% at 50% 0%, rgba(199, 249, 75, .07), transparent 55%);
-  }
-
   ::selection {
     background: var(--color-accent);
     color: var(--color-on-accent);

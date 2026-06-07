@@ -46,7 +46,7 @@ export function CaseStudyHero({ eyebrow, title, lede, meta, status = "In develop
         <div className="cs-wrap flex flex-col gap-6">
           {/* Eyebrow + title */}
           <div className="flex flex-col gap-4">
-            <div className="eyebrow font-mono text-[12px] tracking-[.18em] uppercase text-[var(--color-accent)]">
+            <div className="eyebrow font-mono text-[12px] tracking-[0] uppercase text-[var(--color-accent)]">
               {eyebrow}
             </div>
 

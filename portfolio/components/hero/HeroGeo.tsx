@@ -1,19 +1,7 @@
 export function HeroGeo() {
   return (
     <div className="hero-geo absolute inset-0 pointer-events-none z-0">
-      {/* dot grid via pseudo-element — defined in globals */}
-      <style>{`
-        .hero-geo::before {
-          content: "";
-          position: absolute;
-          inset: 0;
-          background-image: radial-gradient(rgba(236,234,224,.09) 1px, transparent 1px);
-          background-size: 28px 28px;
-          -webkit-mask-image: radial-gradient(ellipse 80% 100% at 50% 0%, #000 40%, transparent 100%);
-          mask-image: radial-gradient(ellipse 80% 100% at 50% 0%, #000 40%, transparent 100%);
-        }
-      `}</style>
-      <svg
+<svg
         viewBox="0 0 1440 680"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
