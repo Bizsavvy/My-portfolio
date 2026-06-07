@@ -81,58 +81,77 @@ export async function runHomeAnimations() {
       },
     });
 
-    /* 4. Scroll reveals */
-    function revealOnScroll() {
-      const winH = window.innerHeight;
-
-      document
-        .querySelectorAll<HTMLElement>(".sechead, .aboutgrid > div, .nowcard")
-        .forEach((el) => {
-          if ((el as any)._revealed) return;
-          if (el.getBoundingClientRect().top < winH * 0.9) {
-            (el as any)._revealed = true;
-            gsap.fromTo(el, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.75, ease });
+    /* 4. Scroll reveals — driven by ScrollTrigger so fast scrolling can't
+       snap an already-visible element back to its start state. */
+    gsap.utils
+      .toArray<HTMLElement>(".sechead, .aboutgrid > div, .nowcard")
+      .forEach((el) => {
+        gsap.fromTo(
+          el,
+          { opacity: 0, y: 30 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.75,
+            ease,
+            scrollTrigger: { trigger: el, start: "top 90%", once: true },
           }
-        });
-
-      document.querySelectorAll<HTMLElement>(".folder").forEach((folder) => {
-        if ((folder as any)._revealed) return;
-        if (folder.getBoundingClientRect().top < winH * 0.92) {
-          (folder as any)._revealed = true;
-          const fromX = folder.classList.contains("odd") ? -36 : 36;
-          gsap.fromTo(
-            folder,
-            { opacity: 0, x: fromX, y: 20 },
-            { opacity: 1, x: 0, y: 0, duration: 0.8, ease }
-          );
-        }
+        );
       });
 
-      const mq = document.querySelector<HTMLElement>(".marquee");
-      if (mq && !(mq as any)._revealed && mq.getBoundingClientRect().top < winH) {
-        (mq as any)._revealed = true;
-        gsap.fromTo(mq, { opacity: 0 }, { opacity: 1, duration: 0.7, ease: easeSoft });
-      }
+    gsap.utils.toArray<HTMLElement>(".folder").forEach((folder) => {
+      const fromX = folder.classList.contains("odd") ? -36 : 36;
+      gsap.fromTo(
+        folder,
+        { opacity: 0, x: fromX, y: 20 },
+        {
+          opacity: 1,
+          x: 0,
+          y: 0,
+          duration: 0.8,
+          ease,
+          scrollTrigger: { trigger: folder, start: "top 92%", once: true },
+        }
+      );
+    });
 
-      const ct = document.querySelector<HTMLElement>(".contact-section");
-      if (ct && !(ct as any)._revealed && ct.getBoundingClientRect().top < winH * 0.88) {
-        (ct as any)._revealed = true;
-        gsap.fromTo(
-          ".geo-contact rect",
-          { scale: 0.7, opacity: 0, transformOrigin: "center center" },
-          { scale: 1, opacity: 1, duration: 1, stagger: 0.1, ease: easeSoft }
-        );
-        gsap.fromTo(".bigcta", { opacity: 0, y: 36 }, { opacity: 1, y: 0, duration: 0.8, ease, delay: 0.2 });
-        gsap.fromTo(
-          ".contact-section p, .links a, .links button",
-          { opacity: 0, y: 16 },
-          { opacity: 1, y: 0, duration: 0.55, stagger: 0.08, ease: easeSoft, delay: 0.4 }
-        );
-      }
+    const mq = document.querySelector<HTMLElement>(".marquee");
+    if (mq) {
+      gsap.fromTo(
+        mq,
+        { opacity: 0 },
+        {
+          opacity: 1,
+          duration: 0.7,
+          ease: easeSoft,
+          scrollTrigger: { trigger: mq, start: "top 100%", once: true },
+        }
+      );
     }
 
-    revealOnScroll();
-    window.addEventListener("scroll", revealOnScroll, { passive: true });
+    const ct = document.querySelector<HTMLElement>(".contact-section");
+    if (ct) {
+      const ctTl = gsap.timeline({
+        scrollTrigger: { trigger: ct, start: "top 88%", once: true },
+      });
+      ctTl.fromTo(
+        ".geo-contact rect",
+        { scale: 0.7, opacity: 0, transformOrigin: "center center" },
+        { scale: 1, opacity: 1, duration: 1, stagger: 0.1, ease: easeSoft }
+      );
+      ctTl.fromTo(
+        ".bigcta",
+        { opacity: 0, y: 36 },
+        { opacity: 1, y: 0, duration: 0.8, ease },
+        0.2
+      );
+      ctTl.fromTo(
+        ".contact-section p, .links a, .links button",
+        { opacity: 0, y: 16 },
+        { opacity: 1, y: 0, duration: 0.55, stagger: 0.08, ease: easeSoft },
+        0.4
+      );
+    }
 
     /* 5. Magnetic primary CTA */
     document.querySelectorAll<HTMLElement>(".btn.primary").forEach((btn) => {
