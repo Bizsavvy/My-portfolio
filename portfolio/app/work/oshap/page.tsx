@@ -101,7 +101,7 @@ export default function OshapPage() {
         meta={[
           { label: "Role",     value: "Design Engineer & Founder" },
           { label: "Scope",    value: "Product design → frontend" },
-          { label: "Apps",     value: "Customer SPA · Admin PWA · Platform Portal" },
+          { label: "Apps",     value: "Customer Web App · Admin PWA · Platform Portal" },
           { label: "Stack",    value: "Vite 6 · React 19 · Tailwind v4 · Vitest" },
           { label: "Platform", value: "Web · Mobile-first" },
           { label: "Year",     value: "2025–present" },

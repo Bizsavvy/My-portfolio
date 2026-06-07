@@ -8,11 +8,14 @@ const IFRAME_H = 932;
 const NOTCH = 44;
 const HOME = 34;
 const PHONE_H = NOTCH + IFRAME_H + HOME; // 1010
-const SCROLLBAR_W = 16; // widen the iframe by this so its native scrollbar is clipped out of view
 
 export function LiveAppFrame() {
   const [active, setActive] = useState(false);
   const [scale, setScale] = useState(1);
+  // Native scrollbar width: ~16 on desktop (classic), 0 on mobile (overlay).
+  // We widen the iframe by exactly this so the scrollbar is clipped without
+  // cutting any real content off the right edge.
+  const [sbW, setSbW] = useState(0);
   const shellRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -23,6 +26,15 @@ export function LiveAppFrame() {
     });
     ro.observe(el);
     return () => ro.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const probe = document.createElement("div");
+    probe.style.cssText =
+      "position:absolute;top:-9999px;width:100px;height:100px;overflow:scroll;";
+    document.body.appendChild(probe);
+    setSbW(probe.offsetWidth - probe.clientWidth);
+    probe.remove();
   }, []);
 
   const s = scale;
@@ -140,7 +152,7 @@ export function LiveAppFrame() {
                     position: "absolute",
                     top: 0,
                     left: 0,
-                    width: IFRAME_W + SCROLLBAR_W,
+                    width: IFRAME_W + sbW,
                     height: IFRAME_H,
                     border: "none",
                     transformOrigin: "top left",
