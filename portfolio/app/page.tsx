@@ -57,7 +57,7 @@ const projects = [
     index: 5,
     tab: "Brand Identity",
     title: "Flow",
-    badge: { label: "Identity", variant: "violet" as const },
+    badge: { label: "Identity", variant: "accent" as const },
     hook: "A full brand system for a period-care brand: built around Cheerful Violet and a leaf-droplet mark integrated into the wordmark, with complete brand guidelines.",
     tags: ["Branding", "Identity System", "Guidelines"],
     href: "/work/flow",

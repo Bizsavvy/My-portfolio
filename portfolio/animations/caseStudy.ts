@@ -30,7 +30,10 @@ export async function runCaseStudyAnimations() {
 
   try {
     const { gsap } = await import("gsap");
+    const { ScrollTrigger } = await import("gsap/ScrollTrigger");
     clearTimeout(safetyTimer);
+
+    gsap.registerPlugin(ScrollTrigger);
 
     const ease = "power3.out";
     const easeSoft = "power2.out";
@@ -53,19 +56,22 @@ export async function runCaseStudyAnimations() {
     gsap.set(".meta > div", { opacity: 0, y: 14 });
     gsap.to(".meta > div", { opacity: 1, y: 0, duration: 0.5, stagger: 0.07, ease, delay: 0.85 });
 
-    /* scroll reveal */
-    function revealOnScroll() {
-      const winH = window.innerHeight;
-      document.querySelectorAll<HTMLElement>(".reveal").forEach((el) => {
-        if ((el as any)._revealed) return;
-        if (el.getBoundingClientRect().top < winH * 0.91) {
-          (el as any)._revealed = true;
-          gsap.fromTo(el, { opacity: 0, y: 28 }, { opacity: 1, y: 0, duration: 0.75, ease });
+    /* scroll reveal — ScrollTrigger evaluates real scroll position even when
+       scroll skips frames, so a fast flick can't snap an already-visible
+       element back to its hidden start state. */
+    gsap.utils.toArray<HTMLElement>(".reveal").forEach((el) => {
+      gsap.fromTo(
+        el,
+        { opacity: 0, y: 28 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.75,
+          ease,
+          scrollTrigger: { trigger: el, start: "top 91%", once: true },
         }
-      });
-    }
-    revealOnScroll();
-    window.addEventListener("scroll", revealOnScroll, { passive: true });
+      );
+    });
 
     /* card hover lift */
     document.querySelectorAll<HTMLElement>(".card").forEach((card) => {

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     "A complete brand identity system for a modern period care brand: built on vibrant colour, warm personality, and dignified design.",
 };
 
-const VIOLET = "#8A4BEB";
+const ACCENT = "var(--color-accent)";
 
 const guidelines = [
   { src: "/assets/flow/guidelines/01-cover-slide.svg",       alt: "Flow Brand Guidelines: Cover" },
@@ -41,7 +41,7 @@ export default function FlowPage() {
         lede={
           <>
             A{" "}
-            <em className="italic" style={{ color: VIOLET }}>
+            <em className="italic" style={{ color: ACCENT }}>
               complete brand identity system
             </em>{" "}
             for a modern period care brand: built on vibrant colour, warm
@@ -64,7 +64,7 @@ export default function FlowPage() {
         <div className="cs-wrap">
           <div
             className="font-mono text-[11px] tracking-[.18em] uppercase mb-5"
-            style={{ color: VIOLET }}
+            style={{ color: ACCENT }}
           >
             01: The Challenge
           </div>

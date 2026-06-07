@@ -140,7 +140,7 @@ export function Nav() {
         className={`md:hidden absolute left-0 w-full border-b border-[var(--color-line)] transition-all duration-300 overflow-hidden ${
           mobileMenuOpen ? "max-h-[240px] opacity-100" : "max-h-0 opacity-0 border-b-0"
         }`}
-        style={{ top: "66px", zIndex: 30, background: "var(--color-nav-bg)", backdropFilter: "blur(14px)" }}
+        style={{ top: "66px", zIndex: 30, background: "var(--color-bg)", backdropFilter: "blur(24px)" }}
       >
         <div className="site-wrap flex flex-col gap-4 py-6 font-mono text-[14px] tracking-[.04em]">
           {links.map(({ href, label }) => (
