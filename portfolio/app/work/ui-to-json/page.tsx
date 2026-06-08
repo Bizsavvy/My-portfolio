@@ -5,6 +5,7 @@ import { Kicker } from "@/components/ui/Kicker";
 import { ArchGrid } from "@/components/case-study/ArchGrid";
 import { RoadmapItem } from "@/components/case-study/RoadmapItem";
 import { CaseStudyFooter } from "@/components/case-study/CaseStudyFooter";
+import { LightboxImage } from "@/components/case-study/LightboxImage";
 
 export const metadata: Metadata = {
   title: "UI to JSON: Case Study · Haye",
@@ -155,8 +156,7 @@ export default function UItoJSONPage() {
 
       {/* ── Cover ── */}
       <div className="cs-wrap reveal flex flex-col items-start gap-10" style={{ paddingBlock: "62px" }}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <LightboxImage
           src="/assets/ui-to-json/cover.png"
           alt="UI to JSON: turn Figma designs into AI-ready semantic JSON"
           className="w-full h-auto rounded-[16px] border border-[var(--color-line)]"
@@ -249,8 +249,7 @@ export default function UItoJSONPage() {
         </div>
         {/* The plugin in Figma: select a frame, get the semantic JSON. */}
         <div className="mt-8 reveal rounded-[16px] border border-[var(--color-line)] overflow-hidden">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <LightboxImage
             src="/assets/ui-to-json/screenshot.png"
             alt="UI to JSON plugin panel in Figma, showing a Shappay frame and its extracted semantic JSON"
             className="w-full h-auto"
@@ -383,8 +382,7 @@ export default function UItoJSONPage() {
             were already feeling in their AI workflows.
           </p>
           <div className="reveal rounded-[16px] border border-[var(--color-line)] overflow-hidden w-full max-w-[460px]">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <LightboxImage
               src="/assets/ui-to-json/testimonial.jpeg"
               alt="Launch post on X for UI to JSON with 40K views and 586 likes, and a reply praising the plugin"
               className="w-full h-auto"

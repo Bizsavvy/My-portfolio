@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { CaseStudyHero } from "@/components/case-study/CaseStudyHero";
 import { CaseStudyFooter } from "@/components/case-study/CaseStudyFooter";
+import { LightboxImage } from "@/components/case-study/LightboxImage";
 
 export const metadata: Metadata = {
   title: "Flow: Brand Identity · Haye",
@@ -72,7 +73,7 @@ export default function FlowPage() {
             className="font-hanken font-bold tracking-[-0.02em] mb-10"
             style={{ fontSize: "clamp(32px,5vw,56px)", lineHeight: 1.05, maxWidth: "18ch" }}
           >
-            Periods are universal. The brands haven't been.
+            Periods are universal. The brands haven&apos;t been.
           </h2>
           <div className="grid md:grid-cols-2 gap-10" style={{ maxWidth: 900 }}>
             <p className="text-[var(--color-body)] text-[17px] leading-[1.65]">
@@ -92,8 +93,7 @@ export default function FlowPage() {
       {/* ── Brand Guidelines ── */}
       <div style={{ display: "flex", flexDirection: "column" }}>
         {guidelines.map(({ src, alt }) => (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
+          <LightboxImage
             key={src}
             src={src}
             alt={alt}

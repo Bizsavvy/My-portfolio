@@ -4,6 +4,7 @@ import { CaseStudyFooter } from "@/components/case-study/CaseStudyFooter";
 import { LiveAppFrame } from "@/components/case-study/LiveAppFrame";
 import { RoadmapItem } from "@/components/case-study/RoadmapItem";
 import { Kicker } from "@/components/ui/Kicker";
+import { LightboxImage } from "@/components/case-study/LightboxImage";
 
 export const metadata: Metadata = {
   title: "Oshap: Case Study · Haye",
@@ -30,11 +31,9 @@ function Shot({
         background: "var(--color-surface)",
       }}
     >
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
+      <LightboxImage
         src={src}
         alt={`Oshap ${label}`}
-        loading="lazy"
         style={{ width: "100%", height: "auto", display: "block" }}
       />
     </div>
