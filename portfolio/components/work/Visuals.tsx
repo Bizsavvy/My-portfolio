@@ -162,9 +162,14 @@ export function VisualNawNaw() {
 export function VisualFlow() {
   return (
     <div className="v-flow absolute inset-0">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/assets/Flow-Business card mockup.jpg"
+        src="/assets/flow-business-card.webp"
         alt="Flow Business Card"
+        width={1600}
+        height={914}
+        loading="lazy"
+        decoding="async"
         className="w-full h-full object-cover"
       />
     </div>

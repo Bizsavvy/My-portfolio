@@ -100,14 +100,11 @@ export async function runHomeAnimations() {
       });
 
     gsap.utils.toArray<HTMLElement>(".folder").forEach((folder) => {
-      const fromX = folder.classList.contains("odd") ? -36 : 36;
       gsap.fromTo(
         folder,
-        { opacity: 0, x: fromX, y: 20 },
+        { opacity: 0 },
         {
           opacity: 1,
-          x: 0,
-          y: 0,
           duration: 0.8,
           ease,
           scrollTrigger: { trigger: folder, start: "top 92%", once: true },
