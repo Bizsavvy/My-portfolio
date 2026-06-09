@@ -100,7 +100,7 @@ export function VisualJSON() {
         className="absolute bottom-5 right-5 font-mono text-[11.5px] font-semibold tracking-[.02em] px-[13px] py-[7px] rounded-[20px]"
         style={{ background: "var(--color-accent)", color: "var(--color-ink)" }}
       >
-        170+ installs
+        250+ users
       </div>
     </div>
   );

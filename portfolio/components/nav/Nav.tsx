@@ -6,7 +6,7 @@ import { useClock } from "@/hooks/useClock";
 const links = [
   { href: "/#work", label: "Work" },
   { href: "/#about", label: "About" },
-  { href: "/#lab", label: "Playground" },
+  { href: "/decisions", label: "Decisions" },
   { href: "/#contact", label: "Contact" },
 ];
 

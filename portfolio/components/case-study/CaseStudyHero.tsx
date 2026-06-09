@@ -14,9 +14,11 @@ interface CaseStudyHeroProps {
   lede: React.ReactNode;
   meta: MetaItem[];
   status?: string;
+  parentLabel?: string;
+  parentHref?: string;
 }
 
-export function CaseStudyHero({ eyebrow, title, lede, meta, status = "In development · MVP" }: CaseStudyHeroProps) {
+export function CaseStudyHero({ eyebrow, title, lede, meta, status = "In development · MVP", parentLabel, parentHref }: CaseStudyHeroProps) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -39,7 +41,7 @@ export function CaseStudyHero({ eyebrow, title, lede, meta, status = "In develop
       />
 
       {/* Nav breadcrumb */}
-      <CaseStudyNavbar title={title} status={status} />
+      <CaseStudyNavbar title={title} status={status} parentLabel={parentLabel} parentHref={parentHref} />
 
       {/* Hero */}
       <header className="relative z-[5] overflow-hidden" style={{ padding: "36px 0 72px" }}>

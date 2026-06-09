@@ -3,21 +3,25 @@ import Link from "next/link";
 interface CaseStudyNavbarProps {
   title: string;
   status?: string;
+  parentLabel?: string;
+  parentHref?: string;
 }
 
 export function CaseStudyNavbar({
   title,
   status = "In development · MVP",
+  parentLabel = "Work",
+  parentHref = "/#work",
 }: CaseStudyNavbarProps) {
   return (
     <nav className="relative z-[5] py-[28px] font-mono text-[12px] tracking-[.04em]">
       <div className="cs-wrap flex justify-between items-center">
         <div className="text-[var(--color-muted)]">
           <Link
-            href="/#work"
+            href={parentHref}
             className="hover:text-[var(--color-accent)] transition-colors duration-[250ms]"
           >
-            Work
+            {parentLabel}
           </Link>
           &nbsp;&nbsp;/&nbsp;&nbsp;
           <span className="text-[var(--color-text)]">{title}</span>

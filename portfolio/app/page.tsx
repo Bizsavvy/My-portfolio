@@ -1,6 +1,7 @@
 import { Nav } from "@/components/nav/Nav";
 import { Hero } from "@/components/hero/Hero";
 import { Marquee } from "@/components/marquee/Marquee";
+import { HomeReel } from "@/components/reel/HomeReel";
 import { Sechead } from "@/components/work/Sechead";
 import { FolderCard } from "@/components/work/FolderCard";
 import {
@@ -72,6 +73,7 @@ export default function Home() {
       <Nav />
       <Hero />
       <Marquee />
+      <HomeReel />
 
       {/* Work */}
       <section id="work" className="relative z-[5]" style={{ padding: "88px 0" }}>
@@ -102,9 +104,19 @@ export default function Home() {
       <Contact />
 
       <footer className="border-t border-[var(--color-line)]" style={{ padding: "34px 0" }}>
-        <div className="max-w-[var(--width-maxw)] site-wrap flex justify-between flex-wrap gap-3 font-mono text-[11.5px] text-[var(--color-muted)] tracking-[.04em]">
+        <div className="max-w-[var(--width-maxw)] site-wrap flex justify-between items-center flex-wrap gap-x-6 gap-y-3 font-mono text-[11.5px] text-[var(--color-muted)] tracking-[.04em]">
           <span>Haye: Product Designer &amp; Engineer</span>
-          <span>Designed &amp; built end to end · {new Date().getFullYear()}</span>
+          <span className="hidden md:inline text-center">
+            This site, built end to end with Next.js 15 · Tailwind v4 · GSAP
+          </span>
+          <a
+            href="https://github.com/Bizsavvy/My-portfolio"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[var(--color-accent)] transition-colors duration-[250ms]"
+          >
+            View source ↗
+          </a>
         </div>
       </footer>
 

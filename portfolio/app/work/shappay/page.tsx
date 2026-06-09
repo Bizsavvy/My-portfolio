@@ -4,6 +4,7 @@ import { ProblemStatement } from "@/components/case-study/ProblemStatement";
 import { CoreBet } from "@/components/case-study/CoreBet";
 import { VideoDemo } from "@/components/case-study/VideoDemo";
 import { QrEngineDemo } from "@/components/case-study/QrEngineDemo";
+import { FlowStrip } from "@/components/case-study/FlowStrip";
 import { PivotSection } from "@/components/case-study/PivotSection";
 import { SystemSection } from "@/components/case-study/SystemSection";
 import { WhyItMatters } from "@/components/case-study/WhyItMatters";
@@ -54,6 +55,19 @@ export default function ShappayPage() {
 
       {/* Live engine / demo */}
       <QrEngineDemo />
+
+      {/* Annotated core flow */}
+      <FlowStrip
+        kicker="The core flow"
+        heading="Four screens, one decision each."
+        description="The whole payment loop is short on purpose. Every screen earns its place; here is what each one is doing and why."
+        steps={[
+          { stage: "Scan", annotation: "Open straight to the camera. No menu, no account number to read aloud." },
+          { stage: "Resolve", annotation: "The engine names the merchant and the rail before any money moves, so the payer knows who they are paying." },
+          { stage: "Confirm", annotation: "Surfaces the resolved merchant and amount before settling, so the payer is always in control." },
+          { stage: "Done", annotation: "Instant wallet debit with a receipt the payer can act on, not a spinner waiting on a bank." },
+        ]}
+      />
 
       {/* The pivot */}
       <PivotSection />
