@@ -24,7 +24,7 @@ export function About() {
           </div>
 
           <p className="ts-about text-[var(--color-text-primary)]">
-            I'm a design engineer who doesn't stop at the mockup.
+            I'm a product designer and engineer who doesn't stop at the mockup.
             I take vague problems, design them, and{" "}
             <span className="text-[var(--color-accent)]">ship them to working code</span>;
             owning the loop from interface to infrastructure.

@@ -98,7 +98,7 @@ export default function OshapPage() {
           </>
         }
         meta={[
-          { label: "Role",     value: "Design Engineer & Founder" },
+          { label: "Role",     value: "Product Designer & Engineer · Founder" },
           { label: "Scope",    value: "Product design → frontend" },
           { label: "Apps",     value: "Customer Web App · Admin PWA · Platform Portal" },
           { label: "Stack",    value: "Vite 6 · React 19 · Tailwind v4 · Vitest" },
@@ -765,7 +765,7 @@ export default function OshapPage() {
         nextHref="/work/nawnaw"
         nextLabel="NawNaw"
         stat="3 apps · 1 shared package · backend pending"
-        colophonLeft="Oshap: Design Engineering case study"
+        colophonLeft="Oshap: Product Design & Engineering case study"
       />
     </div>
   );

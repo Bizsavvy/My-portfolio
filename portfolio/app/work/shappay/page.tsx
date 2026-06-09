@@ -34,7 +34,7 @@ export default function ShappayPage() {
           </>
         }
         meta={[
-          { label: "Role",     value: "Design Engineer & Founder" },
+          { label: "Role",     value: "Product Designer & Engineer · Founder" },
           { label: "Scope",    value: "Product design → front-end" },
           { label: "Model",    value: "Wallet-first QR" },
           { label: "Rails",    value: "NIBSS NQR · EMVCo" },
@@ -78,7 +78,7 @@ export default function ShappayPage() {
         nextHref="/work/ui-to-json"
         nextLabel="UI to JSON"
         stat="250+ users in production"
-        colophonLeft="Shappay: Design Engineering case study"
+        colophonLeft="Shappay: Product Design & Engineering case study"
       />
     </div>
   );

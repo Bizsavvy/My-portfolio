@@ -100,7 +100,7 @@ export function Hero() {
           {/* Eyebrow */}
           <div className="eyebrow ts-eyebrow text-[10px] md:text-[12px] text-[var(--color-accent)] inline-flex items-center gap-2 md:gap-[var(--space-2xl)] whitespace-nowrap">
             {/* <span className="w-5 md:w-7 h-px bg-[var(--color-accent)]" aria-hidden="true" /> */}
-            Design Engineer · Abuja, working worldwide
+            Product Designer &amp; Engineer · Abuja, open to remote roles
             {/* <span className="w-5 md:w-7 h-px bg-[var(--color-accent)]" aria-hidden="true" /> */}
           </div>
 
@@ -129,7 +129,7 @@ export function Hero() {
 
         {/* Pills */}
         <div className="herometa flex flex-wrap gap-[var(--space-md)] items-center justify-center">
-          <Pill variant="go">Available for design engineering roles</Pill>
+          <Pill variant="go">Available for product design &amp; engineering roles</Pill>
           <Pill>Currently building Shappay</Pill>
           <Pill>Open to remote / global work</Pill>
         </div>

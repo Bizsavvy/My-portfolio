@@ -34,7 +34,7 @@ export function About() {
             className="font-hanken font-normal text-[var(--color-text-primary)] tracking-[-0.01em]"
             style={{ fontSize: "clamp(20px,2.6vw,30px)", lineHeight: 1.48, maxWidth: "28ch" }}
           >
-            I&apos;m a design engineer who doesn&apos;t stop at the mockup. I take vague problems,
+            I&apos;m a product designer and engineer who doesn&apos;t stop at the mockup. I take vague problems,
             design them, and ship them to working code; owning the loop from interface to
             infrastructure.
           </p>

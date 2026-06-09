@@ -103,7 +103,7 @@ export default function Home() {
 
       <footer className="border-t border-[var(--color-line)]" style={{ padding: "34px 0" }}>
         <div className="max-w-[var(--width-maxw)] site-wrap flex justify-between flex-wrap gap-3 font-mono text-[11.5px] text-[var(--color-muted)] tracking-[.04em]">
-          <span>Haye: Design Engineer</span>
+          <span>Haye: Product Designer &amp; Engineer</span>
           <span>Designed &amp; built end to end · {new Date().getFullYear()}</span>
         </div>
       </footer>
