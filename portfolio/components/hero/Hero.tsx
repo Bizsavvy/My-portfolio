@@ -98,7 +98,7 @@ export function Hero() {
         <div className="flex flex-col items-center gap-[var(--space-8xl)]">
 
           {/* Eyebrow */}
-          <div className="eyebrow ts-eyebrow text-[10px] md:text-[12px] text-[var(--color-accent)] inline-flex items-center gap-2 md:gap-[var(--space-2xl)] whitespace-nowrap">
+          <div className="eyebrow ts-eyebrow text-[10px] md:text-[12px] text-[var(--color-accent)] inline-flex items-center justify-center text-center gap-2 md:gap-[var(--space-2xl)] whitespace-normal max-w-[90vw] text-balance">
             {/* <span className="w-5 md:w-7 h-px bg-[var(--color-accent)]" aria-hidden="true" /> */}
             Product Designer &amp; Engineer · Abuja, open to remote roles
             {/* <span className="w-5 md:w-7 h-px bg-[var(--color-accent)]" aria-hidden="true" /> */}
