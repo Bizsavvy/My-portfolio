@@ -8,7 +8,7 @@ const rows = [
 export function NowCard() {
   return (
     <div
-      className="nowcard w-full max-w-full md:max-w-[360px] h-full flex flex-col bg-[var(--color-surface)] border border-[var(--color-border)] rounded-[var(--rad-xl)] p-[var(--space-6xl)]"
+      className="nowcard w-full max-w-full md:max-w-[360px] flex flex-col bg-[var(--color-surface)] border border-[var(--color-border)] rounded-[var(--rad-xl)] p-[var(--space-6xl)]"
     >
       <div className="flex items-center gap-[var(--space-sm)] ts-mono-label text-[var(--color-text-muted)] mb-[var(--space-3xl)]">
         <span
