@@ -152,7 +152,7 @@ export function VisualNawNaw() {
           }}
         />
       </div>
-      <div className="font-pixel text-[24px] text-[var(--color-text)] tracking-[.02em]">&lt; 15 min</div>
+      <div className="font-hanken font-bold text-[24px] text-[var(--color-text)] tracking-[.02em]">Delivery in &lt; 15 Min.</div>
       <div className="font-mono text-[11px] text-[var(--color-muted)] tracking-[.08em]">DARK STORE MODEL</div>
     </div>
   );
