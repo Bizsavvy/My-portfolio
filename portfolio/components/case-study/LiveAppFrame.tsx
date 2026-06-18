@@ -2,42 +2,31 @@
 import { useState, useEffect, useRef } from "react";
 import { Kicker } from "@/components/ui/Kicker";
 
-// iPhone 14 Pro Max logical pixels
-const IFRAME_W = 430;
-const IFRAME_H = 932;
-const NOTCH = 44;
-const HOME = 34;
-const PHONE_H = NOTCH + IFRAME_H + HOME; // 1010
+const FRAME_W = 416.35;
+const FRAME_H = 849.04;
+const SCREEN_W = 376.76;
+const SCREEN_H = 815.15;
+const STATUS_BAR_H = 54;
+const IFRAME_H = SCREEN_H - STATUS_BAR_H;
+const OFFSET_X = (FRAME_W - SCREEN_W) / 2;
+const OFFSET_Y = (FRAME_H - SCREEN_H) / 2;
 
 export function LiveAppFrame() {
   const [active, setActive] = useState(false);
-  const [scale, setScale] = useState(1);
-  // Native scrollbar width: ~16 on desktop (classic), 0 on mobile (overlay).
-  // We widen the iframe by exactly this so the scrollbar is clipped without
-  // cutting any real content off the right edge.
-  const [sbW, setSbW] = useState(0);
+  const [shellH, setShellH] = useState(1000);
   const shellRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const el = shellRef.current;
     if (!el) return;
     const ro = new ResizeObserver(([entry]) => {
-      setScale(entry.contentRect.height / PHONE_H);
+      setShellH(entry.contentRect.height);
     });
     ro.observe(el);
     return () => ro.disconnect();
   }, []);
 
-  useEffect(() => {
-    const probe = document.createElement("div");
-    probe.style.cssText =
-      "position:absolute;top:-9999px;width:100px;height:100px;overflow:scroll;";
-    document.body.appendChild(probe);
-    setSbW(probe.offsetWidth - probe.clientWidth);
-    probe.remove();
-  }, []);
-
-  const s = scale;
+  const s = shellH / FRAME_H;
 
   return (
     <section
@@ -81,151 +70,151 @@ export function LiveAppFrame() {
               height: "calc(100svh - 80px)",
             }}
           >
-            {/*
-              Shell has NO border — content box = exactly IFRAME_W*s × PHONE_H*s.
-              The bezel is overlaid as a pointer-events:none div so it never
-              creates a gap between the iframe and the container edge.
-            */}
             <div
               ref={shellRef}
               style={{
                 position: "relative",
                 height: "100%",
-                aspectRatio: `${IFRAME_W} / ${PHONE_H}`,
-                borderRadius: 55 * s,
-                background: "#000",
-                overflow: "hidden",
-                display: "flex",
-                flexDirection: "column",
-                boxShadow:
-                  "0 40px 100px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.07)",
+                aspectRatio: `${FRAME_W} / ${FRAME_H}`,
               }}
             >
-              {/* Bezel overlay — purely visual */}
+              {/* Iframe wrapper - exact screen position */}
               <div
                 style={{
                   position: "absolute",
-                  inset: 0,
-                  borderRadius: 55 * s,
-                  border: `${10 * s}px solid var(--color-surface)`,
-                  pointerEvents: "none",
-                  zIndex: 10,
-                }}
-              />
-
-              {/* Dynamic island */}
-              <div
-                style={{
-                  flexShrink: 0,
-                  height: NOTCH * s,
-                  background: "#000",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <div
-                  style={{
-                    width: 126 * s,
-                    height: 34 * s,
-                    background: "#111",
-                    borderRadius: 20 * s,
-                  }}
-                />
-              </div>
-
-              {/* Iframe — renders at 430×932, scaled to fill shell */}
-              <div
-                style={{
-                  flexShrink: 0,
-                  width: "100%",
-                  height: IFRAME_H * s,
+                  left: OFFSET_X * s,
+                  top: OFFSET_Y * s,
+                  width: SCREEN_W * s,
+                  height: SCREEN_H * s,
                   overflow: "hidden",
-                  position: "relative",
+                  borderRadius: 40 * s,
+                  zIndex: 1,
+                  background: "#000",
                 }}
               >
                 <iframe
-                  src="https://oshap-frontend-customer.vercel.app/menu?table=T1"
+                  src="https://oshap-frontend-customer.vercel.app/menu?table=T1&theme=dark"
                   title="Oshap customer app: live"
                   loading="lazy"
                   style={{
                     position: "absolute",
-                    top: 0,
+                    top: STATUS_BAR_H * s,
                     left: 0,
-                    width: IFRAME_W + sbW,
+                    width: SCREEN_W,
                     height: IFRAME_H,
                     border: "none",
                     transformOrigin: "top left",
                     transform: `scale(${s})`,
+                    colorScheme: "dark",
                     pointerEvents: active ? "auto" : "none",
                   }}
                 />
-              </div>
 
-              {/* Home indicator */}
-              <div
-                style={{
-                  flexShrink: 0,
-                  height: HOME * s,
-                  background: "#000",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
+                {/* Status Bar Overlay */}
                 <div
                   style={{
-                    width: 134 * s,
-                    height: 5 * s,
-                    background: "rgba(255,255,255,0.25)",
-                    borderRadius: 3 * s,
-                  }}
-                />
-              </div>
-
-              {/* Tap-to-interact overlay */}
-              {!active && (
-                <button
-                  onClick={() => setActive(true)}
-                  aria-label="Tap to interact with the live app"
-                  style={{
                     position: "absolute",
-                    inset: 0,
-                    zIndex: 20,
-                    background: "rgba(0,0,0,0.5)",
-                    backdropFilter: "blur(2px)",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    height: STATUS_BAR_H * s,
                     display: "flex",
-                    flexDirection: "column",
+                    justifyContent: "space-between",
                     alignItems: "center",
-                    justifyContent: "center",
-                    gap: 12 * s,
-                    cursor: "pointer",
-                    border: "none",
+                    padding: `0 ${36 * s}px`,
+                    zIndex: 10,
+                    pointerEvents: "none",
+                    color: "#fff",
+                    fontFamily: "-apple-system, BlinkMacSystemFont, sans-serif",
+                    fontSize: 15 * s,
+                    fontWeight: 600,
                   }}
                 >
-                  <div
-                    style={{
-                      width: 52 * s,
-                      height: 52 * s,
-                      borderRadius: "50%",
-                      border: `${1.5 * s}px solid rgba(255,255,255,0.4)`,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <svg width={20 * s} height={20 * s} viewBox="0 0 24 24">
-                      <path d="M10 8l6 4-6 4V8z" fill="rgba(255,255,255,0.85)" />
+                  {/* Left: Time & Moon */}
+                  <div style={{ display: "flex", alignItems: "center", gap: 6 * s }}>
+                    <span>17:54</span>
+                    <svg width={12 * s} height={12 * s} viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12.1,22c-5.1,0-9.2-4.1-9.2-9.2c0-4.1,2.7-7.7,6.6-8.9c0.2-0.1,0.5-0.1,0.7,0.1c0.2,0.2,0.2,0.5,0.1,0.7c-0.8,1.4-1,3-0.5,4.6c0.6,2.1,2.3,3.8,4.4,4.4c1.6,0.5,3.2,0.3,4.6-0.5c0.2-0.1,0.5-0.1,0.7,0.1c0.2,0.2,0.3,0.5,0.2,0.7C18.4,18.7,15.4,22,12.1,22z"/>
                     </svg>
                   </div>
-                  <span
-                    className="font-mono tracking-[.1em] uppercase"
-                    style={{ color: "rgba(255,255,255,0.75)", fontSize: 11 * s }}
+
+                  {/* Right: Cellular, 5G, Battery */}
+                  <div style={{ display: "flex", alignItems: "center", gap: 6 * s }}>
+                    <svg width={18 * s} height={12 * s} viewBox="0 0 18 12" fill="currentColor">
+                      <rect x="1" y="8" width="3" height="4" rx="1" />
+                      <rect x="6" y="5" width="3" height="7" rx="1" />
+                      <rect x="11" y="2" width="3" height="10" rx="1" />
+                      <rect x="16" y="0" width="3" height="12" rx="1" fillOpacity="0.4" />
+                    </svg>
+                    <span style={{ fontSize: 13 * s, fontWeight: 700, letterSpacing: "-0.5px" }}>5G</span>
+                    <svg width={25 * s} height={12 * s} viewBox="0 0 25 12" fill="currentColor">
+                      <rect x="0.5" y="0.5" width="21" height="11" rx="3.5" fill="none" stroke="currentColor" strokeWidth="1" />
+                      <rect x="2" y="2" width="6" height="8" rx="2" />
+                      <path d="M23 4V8C23.6 8 24 7.6 24 7V5C24 4.4 23.6 4 23 4Z" />
+                    </svg>
+                  </div>
+                </div>
+
+                {/* Tap-to-interact overlay */}
+                {!active && (
+                  <button
+                    onClick={() => setActive(true)}
+                    aria-label="Tap to interact with the live app"
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      zIndex: 20,
+                      background: "rgba(0,0,0,0.5)",
+                      backdropFilter: "blur(2px)",
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: 12 * s,
+                      cursor: "pointer",
+                      border: "none",
+                    }}
                   >
-                    Tap to interact
-                  </span>
-                </button>
-              )}
+                    <div
+                      style={{
+                        width: 52 * s,
+                        height: 52 * s,
+                        borderRadius: "50%",
+                        border: `${1.5 * s}px solid rgba(255,255,255,0.4)`,
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <svg width={20 * s} height={20 * s} viewBox="0 0 24 24">
+                        <path d="M10 8l6 4-6 4V8z" fill="rgba(255,255,255,0.85)" />
+                      </svg>
+                    </div>
+                    <span
+                      className="font-mono tracking-[.1em] uppercase"
+                      style={{ color: "rgba(255,255,255,0.75)", fontSize: 11 * s }}
+                    >
+                      Tap to interact
+                    </span>
+                  </button>
+                )}
+              </div>
+
+              {/* iPhone Image overlay */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/assets/oshap/iPhone frame.png"
+                alt="iPhone frame"
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  width: "100%",
+                  height: "100%",
+                  pointerEvents: "none",
+                  zIndex: 10,
+                  // filter: "drop-shadow(0 40px 100px rgba(0,0,0,0.45))",
+                }}
+              />
             </div>
           </div>
 

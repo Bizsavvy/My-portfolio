@@ -27,8 +27,6 @@ function Shot({
       style={{
         borderRadius: rounded,
         overflow: "hidden",
-        border: "1px solid var(--color-line)",
-        background: "var(--color-surface)",
       }}
     >
       <LightboxImage
