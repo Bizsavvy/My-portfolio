@@ -8,6 +8,8 @@ interface VideoDemoProps {
   flowCaption?: string;
   /** When provided, renders a real <video> player instead of the placeholder. */
   videoSrc?: string;
+  /** When provided, renders a Vimeo iframe player instead of the placeholder. */
+  vimeoSrc?: string;
   poster?: string;
   /** Live prototype link. Omit to render the CTA in a disabled "coming soon" state. */
   liveHref?: string;
@@ -15,6 +17,8 @@ interface VideoDemoProps {
   secondaryHref?: string;
   secondaryLabel?: string;
   secondaryNote?: string;
+  /** When true, renders the video/vimeo inside an iPhone frame instead of a landscape rectangle. */
+  isMobile?: boolean;
 }
 
 export function VideoDemo({
@@ -23,11 +27,13 @@ export function VideoDemo({
   description = "A 90-second walkthrough of the core payment loop: scan, resolve, and settle. Running on the actual React Native build.",
   flowCaption = "Scan → Resolve → Wallet debit → Confirmation",
   videoSrc,
+  vimeoSrc,
   poster,
   liveHref,
   secondaryHref,
   secondaryLabel = "Open in Expo Go",
   secondaryNote = "Scan the QR with Expo Go to run the real app on your phone",
+  isMobile = false,
 }: VideoDemoProps) {
   return (
     <section
@@ -49,7 +55,93 @@ export function VideoDemo({
           {description}
         </p>
 
-        {videoSrc ? (
+        {vimeoSrc && isMobile ? (
+          <div className="reveal mx-auto relative w-full max-w-[320px] sm:max-w-[360px]" style={{ aspectRatio: "416.35 / 849.04" }}>
+            <div
+              style={{
+                position: "absolute",
+                left: "4.7544%",
+                top: "1.9958%",
+                width: "90.491%",
+                height: "96.008%",
+                borderRadius: "10%",
+                overflow: "hidden",
+                background: "#000",
+                zIndex: 1,
+              }}
+            >
+              <iframe
+                src={vimeoSrc}
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowFullScreen
+                className="absolute top-0 left-0 w-full h-full"
+              />
+            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/assets/oshap/iPhone frame.png"
+              alt="iPhone frame"
+              style={{
+                position: "absolute",
+                inset: 0,
+                width: "100%",
+                height: "100%",
+                pointerEvents: "none",
+                zIndex: 10,
+              }}
+            />
+          </div>
+        ) : vimeoSrc ? (
+          <div className="relative w-full rounded-[var(--rad-2xl)] border border-[var(--color-border-strong)] bg-[var(--color-surface)] overflow-hidden reveal" style={{ aspectRatio: "16 / 9" }}>
+            <iframe
+              src={vimeoSrc}
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+              className="absolute top-0 left-0 w-full h-full"
+            />
+          </div>
+        ) : videoSrc && isMobile ? (
+          <div className="reveal mx-auto relative w-full max-w-[320px] sm:max-w-[360px]" style={{ aspectRatio: "416.35 / 849.04" }}>
+            <div
+              style={{
+                position: "absolute",
+                left: "4.7544%",
+                top: "1.9958%",
+                width: "90.491%",
+                height: "96.008%",
+                borderRadius: "10%",
+                overflow: "hidden",
+                background: "#000",
+                zIndex: 1,
+              }}
+            >
+              <video
+                controls
+                playsInline
+                preload="metadata"
+                poster={poster}
+                className="absolute top-0 left-0 w-full h-full object-cover"
+              >
+                <source src={videoSrc} />
+              </video>
+            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/assets/oshap/iPhone frame.png"
+              alt="iPhone frame"
+              style={{
+                position: "absolute",
+                inset: 0,
+                width: "100%",
+                height: "100%",
+                pointerEvents: "none",
+                zIndex: 10,
+              }}
+            />
+          </div>
+        ) : videoSrc ? (
           <video
             controls
             playsInline
@@ -81,7 +173,7 @@ export function VideoDemo({
         </p>
 
         <div className="flex flex-col sm:flex-row sm:items-center gap-4 pt-[10px] reveal">
-          {liveHref ? (
+          {liveHref && (
             <a
               href={liveHref}
               target="_blank"
@@ -90,13 +182,6 @@ export function VideoDemo({
             >
               Try the live demo →
             </a>
-          ) : (
-            <span
-              className="inline-flex items-center justify-center px-[26px] py-[14px] rounded-full border border-[var(--color-border-strong)] font-mono font-medium text-[14px] tracking-[.04em] text-[var(--color-muted)] whitespace-nowrap cursor-default"
-              title="Live demo coming soon"
-            >
-              Live demo coming soon
-            </span>
           )}
 
           {secondaryHref && (

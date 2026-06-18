@@ -4,6 +4,7 @@ import { Section } from "@/components/case-study/Section";
 import { Kicker } from "@/components/ui/Kicker";
 import { CaseStudyFooter } from "@/components/case-study/CaseStudyFooter";
 import { LightboxImage } from "@/components/case-study/LightboxImage";
+import { VideoDemo } from "@/components/case-study/VideoDemo";
 
 export const metadata: Metadata = {
   title: "NawNaw: Case Study · Haye",
@@ -348,6 +349,16 @@ export default function NawNawPage() {
           </div>
         </div>
       </Section>
+
+      {/* Video demo */}
+      <VideoDemo
+        kicker="Experience"
+        heading="See it in motion."
+        description="A quick walkthrough of the core NawNaw shopping experience, from browsing an aisle to tracking a 15-minute delivery."
+        flowCaption="Home → Aisle → Cart → Checkout → Track Order"
+        vimeoSrc="https://player.vimeo.com/video/1202342817"
+        isMobile
+      />
 
       <Section>
         <div className="flex flex-col gap-6">
