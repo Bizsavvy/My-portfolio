@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
+import Image from "next/image";
 
 interface LightboxImageProps {
   src: string;
@@ -35,13 +36,16 @@ export function LightboxImage({ src, alt, className, style, loading = "lazy" }: 
 
   return (
     <>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
+      <Image
         src={src}
         alt={alt}
-        loading={loading}
+        loading={loading === "eager" ? undefined : "lazy"}
+        priority={loading === "eager"}
+        width={1600}
+        height={1600}
+        quality={90}
         className={className}
-        style={{ cursor: "zoom-in", ...style }}
+        style={{ width: "auto", height: "auto", cursor: "zoom-in", ...style }}
         role="button"
         tabIndex={0}
         aria-label={`${alt} — click to enlarge`}
@@ -100,20 +104,23 @@ export function LightboxImage({ src, alt, className, style, loading = "lazy" }: 
               ×
             </button>
 
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={src}
-              alt={alt}
+            <div
+              className="relative w-full h-full max-w-6xl"
               onClick={(e) => e.stopPropagation()}
-              style={{
-                maxWidth: "100%",
-                maxHeight: "100%",
-                objectFit: "contain",
-                borderRadius: 12,
-                boxShadow: "0 30px 80px rgba(0,0,0,0.5)",
-                cursor: "default",
-              }}
-            />
+            >
+              <Image
+                src={src}
+                alt={alt}
+                fill
+                quality={100}
+                style={{
+                  objectFit: "contain",
+                  borderRadius: 12,
+                  filter: "drop-shadow(0 30px 80px rgba(0,0,0,0.5))",
+                  cursor: "default",
+                }}
+              />
+            </div>
 
             <style>{`@keyframes lbx-fade{from{opacity:0}to{opacity:1}}`}</style>
           </div>,

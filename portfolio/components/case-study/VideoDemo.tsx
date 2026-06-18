@@ -1,4 +1,5 @@
 import { Kicker } from "@/components/ui/Kicker";
+import Image from "next/image";
 
 interface VideoDemoProps {
   kicker?: string;
@@ -78,18 +79,14 @@ export function VideoDemo({
                 className="absolute top-0 left-0 w-full h-full"
               />
             </div>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            {/* iPhone Image overlay */}
+            <Image
               src="/assets/oshap/iPhone frame.png"
               alt="iPhone frame"
-              style={{
-                position: "absolute",
-                inset: 0,
-                width: "100%",
-                height: "100%",
-                pointerEvents: "none",
-                zIndex: 10,
-              }}
+              fill
+              priority
+              quality={100}
+              style={{ pointerEvents: "none", zIndex: 10, objectFit: "contain" }}
             />
           </div>
         ) : vimeoSrc ? (
@@ -127,18 +124,14 @@ export function VideoDemo({
                 <source src={videoSrc} />
               </video>
             </div>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            {/* iPhone Image overlay */}
+            <Image
               src="/assets/oshap/iPhone frame.png"
               alt="iPhone frame"
-              style={{
-                position: "absolute",
-                inset: 0,
-                width: "100%",
-                height: "100%",
-                pointerEvents: "none",
-                zIndex: 10,
-              }}
+              fill
+              priority
+              quality={100}
+              style={{ pointerEvents: "none", zIndex: 10, objectFit: "contain" }}
             />
           </div>
         ) : videoSrc ? (

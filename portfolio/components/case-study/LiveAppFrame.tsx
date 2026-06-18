@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import { Kicker } from "@/components/ui/Kicker";
 
 const FRAME_W = 416.35;
@@ -201,19 +202,13 @@ export function LiveAppFrame() {
               </div>
 
               {/* iPhone Image overlay */}
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src="/assets/oshap/iPhone frame.png"
                 alt="iPhone frame"
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  width: "100%",
-                  height: "100%",
-                  pointerEvents: "none",
-                  zIndex: 10,
-                  // filter: "drop-shadow(0 40px 100px rgba(0,0,0,0.45))",
-                }}
+                fill
+                priority
+                quality={100}
+                style={{ pointerEvents: "none", zIndex: 10, objectFit: "contain" }}
               />
             </div>
           </div>
