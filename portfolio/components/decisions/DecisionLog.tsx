@@ -69,10 +69,45 @@ const decisions: Decision[] = [
   },
   {
     project: "NawNaw",
-    title: "A separate model for tier-2 entry",
+    title: "Serve the affluent customer, by arithmetic not taste",
     constraint:
-      "Sub-15-minute delivery economics do not transfer cleanly from tier-1 to tier-2 cities; the dark-store math changes.",
-    call: "Designed a distinct market-entry approach for tier-2 instead of copy-pasting the tier-1 model into a market it doesn't fit.",
+      "In Nigeria's big cities, operating cost (rent, power, overhead) runs higher than India's while shopper spending power runs lower. Mass-market baskets are too small to support 15-minute delivery economics.",
+    call: "Target the tier-1, convenience-paying customer who already values twenty minutes over a few hundred naira. The choice of who to serve fell straight out of the economics, and quietly decided everything downstream.",
+  },
+  {
+    project: "NawNaw",
+    title: "Sell time and convenience, not price",
+    constraint:
+      "The moment you teach this customer to hunt for discounts, you start a fight the margins can't win.",
+    call: "Lead with speed and proximity everywhere; the home screen's top line shows the delivery time and store distance, not a sale banner. The customer is paying for speed, so the product talks about speed.",
+  },
+  {
+    project: "NawNaw",
+    title: "Surface the want; don't make people hunt",
+    constraint:
+      "For the youngest, most frequent shoppers most orders are unplanned. They open the app because they remembered they're out of something, not with a list, so an empty search box is the wrong tool.",
+    call: "The home screen shows aisles, not products: each aisle a 2x2 peek of what's inside. You read the whole store in a glance and tap straight to it, while the catalog gently tempts the impulse buyer.",
+  },
+  {
+    project: "NawNaw",
+    title: "Optimize for monthly customer value, not the biggest basket",
+    constraint:
+      "The easy way to lift average order value is to discourage small orders, but small frequent orders are exactly the habit that keeps a customer coming back. Push too hard and you win the order while losing the customer.",
+    call: "Design toward what a customer is worth over a month, order size and frequency together. The cart nudges baskets upward gently instead of bullying them.",
+  },
+  {
+    project: "NawNaw",
+    title: "Offer an account, never force one",
+    constraint:
+      "Asking who someone is should never stand between them and the thing they came to buy. A sign-up wall at the door kills speed.",
+    call: "Guests shop straight past the sign-up screen. Identity is collected only at the one moment it matters, placing the order, and only the minimum a delivery needs (phone, name, address), as a sheet over checkout so no one loses their place.",
+  },
+  {
+    project: "NawNaw",
+    title: "The wait is part of the product",
+    constraint:
+      "The fifteen minutes between paying and opening the door is where the promise either feels kept or doesn't. It is not dead time to hide behind a spinner.",
+    call: "Show the order moving through real stages (accepted, packed, on the way) with a live countdown on screen, making the brand's whole claim visible and accountable.",
   },
   {
     project: "Flow",
