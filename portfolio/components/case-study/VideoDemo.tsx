@@ -42,7 +42,7 @@ export function VideoDemo({
       style={{ padding: "62px 0" }}
     >
       <div className="cs-wrap flex flex-col gap-6">
-        <div className="flex flex-col gap-6 reveal">
+        <div className={`flex flex-col gap-6 reveal ${isMobile ? "items-center text-center mx-auto" : ""}`}>
           <Kicker>{kicker}</Kicker>
           <h2
             className="font-hanken font-bold tracking-[-0.02em]"
@@ -52,7 +52,10 @@ export function VideoDemo({
           </h2>
         </div>
 
-        <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)] reveal">
+        <p 
+          className={`font-hanken text-[16px] leading-[1.65] text-[var(--color-body)] reveal ${isMobile ? "text-center mx-auto" : ""}`}
+          style={isMobile ? { maxWidth: "50ch" } : undefined}
+        >
           {description}
         </p>
 
@@ -161,11 +164,11 @@ export function VideoDemo({
           </div>
         )}
 
-        <p className="font-mono text-[10px] tracking-[.05em] text-[var(--color-muted)] reveal">
+        <p className={`font-mono text-[10px] tracking-[.05em] text-[var(--color-muted)] reveal ${isMobile ? "text-center" : ""}`}>
           {flowCaption}
         </p>
 
-        <div className="flex flex-col sm:flex-row sm:items-center gap-4 pt-[10px] reveal">
+        <div className={`flex flex-col sm:flex-row sm:items-center gap-4 pt-[10px] reveal ${isMobile ? "justify-center" : ""}`}>
           {liveHref && (
             <a
               href={liveHref}
