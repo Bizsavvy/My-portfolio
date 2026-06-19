@@ -1,7 +1,6 @@
 import { Nav } from "@/components/nav/Nav";
 import { Hero } from "@/components/hero/Hero";
 import { Marquee } from "@/components/marquee/Marquee";
-import { HomeReel } from "@/components/reel/HomeReel";
 import { Sechead } from "@/components/work/Sechead";
 import { FolderCard } from "@/components/work/FolderCard";
 import {
@@ -73,7 +72,6 @@ export default function Home() {
       <Nav />
       <Hero />
       <Marquee />
-      <HomeReel />
 
       {/* Work */}
       <section id="work" className="relative z-[5]" style={{ padding: "88px 0" }}>

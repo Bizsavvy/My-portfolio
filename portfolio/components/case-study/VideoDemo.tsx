@@ -25,7 +25,7 @@ interface VideoDemoProps {
 export function VideoDemo({
   kicker = "Experience",
   heading = "See it in motion.",
-  description = "A 90-second walkthrough of the core payment loop: scan, resolve, and settle. Running on the actual React Native build.",
+  description = "A 60-second walkthrough of the core payment loop: scan, resolve, and settle. Running on the actual React Native build.",
   flowCaption = "Scan → Resolve → Wallet debit → Confirmation",
   videoSrc,
   vimeoSrc,
@@ -119,6 +119,7 @@ export function VideoDemo({
             >
               <video
                 controls
+                controlsList="nodownload"
                 playsInline
                 preload="metadata"
                 poster={poster}
@@ -140,6 +141,7 @@ export function VideoDemo({
         ) : videoSrc ? (
           <video
             controls
+            controlsList="nodownload"
             playsInline
             preload="metadata"
             poster={poster}

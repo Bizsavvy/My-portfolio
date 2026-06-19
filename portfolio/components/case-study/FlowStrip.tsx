@@ -58,8 +58,8 @@ export function FlowStrip({
                   <img
                     src={step.img}
                     alt={`${step.stage} screen`}
-                    className="w-full rounded-[18px] border border-[var(--color-line)] bg-[var(--color-surface)]"
-                    style={{ aspectRatio: "9 / 19", objectFit: "cover", display: "block" }}
+                    className="w-full h-auto"
+                    style={{ display: "block" }}
                   />
                 ) : (
                   <div

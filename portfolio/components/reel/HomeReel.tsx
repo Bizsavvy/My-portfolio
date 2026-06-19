@@ -1,13 +1,14 @@
 interface HomeReelProps {
   /** When provided, renders the muted autoplay reel; otherwise a placeholder. */
   videoSrc?: string;
+  vimeoSrc?: string;
   poster?: string;
 }
 
 // A ~60s muted, text-overlay reel that shows the build → ship loop:
 // real product → Figma → code → deployed link. Encountered muted on a laptop,
 // so no narration. Drop in a videoSrc when the cut is ready.
-export function HomeReel({ videoSrc, poster }: HomeReelProps) {
+export function HomeReel({ videoSrc, vimeoSrc, poster }: HomeReelProps) {
   return (
     <section id="reel" className="relative z-[5]" style={{ padding: "44px 0" }}>
       <div className="max-w-[var(--width-maxw)] site-wrap flex flex-col gap-6">
@@ -20,7 +21,17 @@ export function HomeReel({ videoSrc, poster }: HomeReelProps) {
           </span>
         </div>
 
-        {videoSrc ? (
+        {vimeoSrc ? (
+          <div className="reveal relative w-full rounded-[var(--rad-2xl)] border border-[var(--color-line)] bg-[var(--color-surface)] overflow-hidden mx-auto" style={{ aspectRatio: "16 / 9", maxWidth: "calc((100vh - 160px) * 16 / 9)" }}>
+            <iframe
+              src={vimeoSrc}
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+              className="absolute top-0 left-0 w-full h-full"
+            />
+          </div>
+        ) : videoSrc ? (
           <video
             autoPlay
             muted

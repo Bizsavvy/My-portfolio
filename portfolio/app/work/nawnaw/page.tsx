@@ -356,7 +356,7 @@ export default function NawNawPage() {
         heading="See it in motion."
         description="A quick walkthrough of the core NawNaw shopping experience, from browsing an aisle to tracking a 15-minute delivery."
         flowCaption="Home → Aisle → Cart → Checkout → Track Order"
-        vimeoSrc="https://player.vimeo.com/video/1202342817"
+        videoSrc="/assets/nawnaw/NawNaw%20demo.mov"
         isMobile
       />
 

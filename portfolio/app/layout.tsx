@@ -55,6 +55,7 @@ export default function RootLayout({
       </head>
       <body
         className={`${caveat.variable} ${pixelifySans.variable} ${hankenGrotesk.variable} ${jetbrainsMono.variable}`}
+        suppressHydrationWarning
       >
         <CustomCursor />
         {children}
