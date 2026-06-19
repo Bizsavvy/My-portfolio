@@ -6,6 +6,8 @@ import {
   JetBrains_Mono,
 } from "next/font/google";
 import { CustomCursor } from "@/components/ui/CustomCursor";
+import { Analytics } from "@vercel/analytics/next";
+import { siteUrl, siteName } from "@/lib/site";
 import "./globals.css";
 
 const caveat = Caveat({
@@ -36,10 +38,27 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+const title = "Haye: Product Designer & Engineer";
+const description =
+  "Product designer and engineer who designs and builds consumer & fintech products: from interface to infrastructure.";
+
 export const metadata: Metadata = {
-  title: "Haye: Product Designer & Engineer",
-  description:
-    "Product designer and engineer who designs and builds consumer & fintech products: from interface to infrastructure.",
+  metadataBase: siteUrl,
+  title,
+  description,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    siteName,
+    url: "/",
+    title,
+    description,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+  },
 };
 
 export default function RootLayout({
@@ -59,6 +78,7 @@ export default function RootLayout({
       >
         <CustomCursor />
         {children}
+        <Analytics />
       </body>
     </html>
   );

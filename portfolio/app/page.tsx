@@ -48,7 +48,7 @@ const projects = [
     index: 4,
     tab: "Concept · 0 → 1",
     title: "NawNaw",
-    hook: "Quick-commerce grocery delivery concept: a sub-15-minute experience built on a dark-store model for Nigerian tier-1 cities, with a distinct approach for tier-2 market entry.",
+    hook: "Quick-commerce grocery delivery concept: a sub-15-minute experience built on a dark-store model for Nigerian tier-1 cities, with warehouse ops as the next chapter.",
     tags: ["Quick Commerce", "0 → 1", "Consumer App"],
     href: "/work/nawnaw",
     visual: <VisualNawNaw />,
@@ -105,7 +105,7 @@ export default function Home() {
         <div className="max-w-[var(--width-maxw)] site-wrap flex justify-between items-center flex-wrap gap-x-6 gap-y-3 font-mono text-[11.5px] text-[var(--color-muted)] tracking-[.04em]">
           <span>Haye: Product Designer &amp; Engineer</span>
           <span className="hidden md:inline text-center">
-            This site, built end to end with Next.js 15 · Tailwind v4 · GSAP
+            This site, built end to end with Next.js 16.2.6 · Tailwind v4 · GSAP
           </span>
           <a
             href="https://github.com/Bizsavvy/My-portfolio"
