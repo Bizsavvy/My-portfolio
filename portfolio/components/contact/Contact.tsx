@@ -5,9 +5,12 @@ import { GeoContact } from "./GeoContact";
 
 const links = [
   { href: "#", label: "Email" },
-  { href: "#", label: "LinkedIn" },
-  { href: "#", label: "GitHub" },
-  { href: "#", label: "Read.cv" },
+  { href: "https://www.linkedin.com/in/haye-binjo", label: "LinkedIn" },
+  { href: "https://github.com/Bizsavvy", label: "GitHub" },
+  {
+    href: "https://quiet-maize-841.notion.site/Emmanuel-Haye-Binjo-384ce046204b80a1ae83db2b9968ad62?source=copy_link",
+    label: "CV",
+  },
 ];
 
 export function Contact() {
@@ -136,6 +139,8 @@ export function Contact() {
               <a
                 key={label}
                 href={href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="ts-colophon text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors duration-[250ms]"
               >
                 {label}
