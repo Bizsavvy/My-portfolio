@@ -32,6 +32,57 @@ const guidelines = [
   { src: "/assets/flow/guidelines/18-dos-and-donts.svg",     alt: "Do's & Don'ts" },
 ];
 
+/* A run of full-bleed brand slides. */
+function Slides({ items }: { items: typeof guidelines }) {
+  return (
+    <div style={{ display: "flex", flexDirection: "column" }}>
+      {items.map(({ src, alt }) => (
+        <LightboxImage
+          key={src}
+          src={src}
+          alt={alt}
+          style={{ width: "100%", height: "auto", display: "block" }}
+        />
+      ))}
+    </div>
+  );
+}
+
+/* A short framing block that sits before a group of slides and explains the thinking. */
+function Intro({
+  eyebrow,
+  title,
+  children,
+}: {
+  eyebrow: string;
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <section style={{ padding: "100px 0 48px" }}>
+      <div className="cs-wrap">
+        <div
+          className="font-mono text-[11px] tracking-[.18em] uppercase mb-5"
+          style={{ color: ACCENT }}
+        >
+          {eyebrow}
+        </div>
+        <h2
+          className="font-hanken font-bold tracking-[-0.02em] mb-8"
+          style={{ fontSize: "clamp(28px,4vw,44px)", lineHeight: 1.06, maxWidth: "20ch" }}
+        >
+          {title}
+        </h2>
+        <div className="grid md:grid-cols-2 gap-10" style={{ maxWidth: 900 }}>
+          {children}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const P = "text-[var(--color-body)] text-[17px] leading-[1.65]";
+
 export default function FlowPage() {
   return (
     <div style={{ background: "var(--color-ink)" }}>
@@ -91,16 +142,71 @@ export default function FlowPage() {
       </section>
 
       {/* ── Brand Guidelines ── */}
-      <div style={{ display: "flex", flexDirection: "column" }}>
-        {guidelines.map(({ src, alt }) => (
-          <LightboxImage
-            key={src}
-            src={src}
-            alt={alt}
-            style={{ width: "100%", height: "auto", display: "block" }}
-          />
-        ))}
-      </div>
+      {/* Cover + table of contents */}
+      <Slides items={guidelines.slice(0, 2)} />
+
+      {/* 02 · The Identity — wordmark + icon mark */}
+      <Intro eyebrow="02: The Identity" title="A mark that speaks plainly.">
+        <p className={P}>
+          The wordmark had one job: to sound like a brand that talks to you, not
+          down at you. No medical serif, no winking lowercase cuteness, just a
+          confident, direct letterform that carries warmth without apology.
+        </p>
+        <p className={P}>
+          The icon mark distils that into a single shape that survives being shrunk
+          to an app tile or pressed onto a wrapper. It stays legible and
+          recognisably Flow at any size, on any background.
+        </p>
+      </Intro>
+      <Slides items={guidelines.slice(2, 8)} />
+
+      {/* 03 · Colour & Type */}
+      <Intro eyebrow="03: Colour & Type" title="Colour does the emotional work.">
+        <p className={P}>
+          This is where the brand refuses both defaults at once. Clinical blue
+          signals illness; bubblegum pink signals shame. Flow&apos;s palette is built
+          to signal neither: vivid and warm, dignified without being sterile,
+          joyful without being juvenile.
+        </p>
+        <p className={P}>
+          Type carries the voice the same way. A confident display presence pairs
+          with a calm, readable body, so the brand can be bold on a pack and gentle
+          in a paragraph without ever feeling like two different brands.
+        </p>
+      </Intro>
+      <Slides items={guidelines.slice(8, 12)} />
+
+      {/* 04 · Packaging */}
+      <Intro eyebrow="04: Packaging" title="The most personal surface.">
+        <p className={P}>
+          Packaging is where a period care brand is actually held: carried in a
+          bag, seen in a bathroom, reached for in a hurry. It is the most intimate,
+          most physical moment of the whole system, and it had to feel like
+          something you would not mind being seen with.
+        </p>
+        <p className={P}>
+          The packaging system and the individual wrapper carry the identity down
+          to the smallest unit, so the promise holds whether you are looking at a
+          full box or a single product in your hand.
+        </p>
+      </Intro>
+      <Slides items={guidelines.slice(12, 14)} />
+
+      {/* 05 · The System in Use */}
+      <Intro eyebrow="05: The System in Use" title="A living system, not a logo.">
+        <p className={P}>
+          An identity is only as good as its weakest application. The UI
+          components, patterns, and motion principles exist so Flow behaves
+          consistently in the places a static logo never reaches: on screen, in
+          motion, in the hands of whoever builds with it next.
+        </p>
+        <p className={P}>
+          The do&apos;s and don&apos;ts close the system by drawing its edges. The
+          clearest way to keep a brand intact is to be explicit about what would
+          break it.
+        </p>
+      </Intro>
+      <Slides items={guidelines.slice(14, 18)} />
 
       {/* ── Footer ── */}
       <CaseStudyFooter

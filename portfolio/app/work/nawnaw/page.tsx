@@ -4,6 +4,7 @@ import { Section } from "@/components/case-study/Section";
 import { Kicker } from "@/components/ui/Kicker";
 import { CaseStudyFooter } from "@/components/case-study/CaseStudyFooter";
 import { LightboxImage } from "@/components/case-study/LightboxImage";
+import { ImageCallouts } from "@/components/case-study/ImageCallouts";
 import { VideoDemo } from "@/components/case-study/VideoDemo";
 
 export const metadata: Metadata = {
@@ -52,6 +53,33 @@ export default function NawNawPage() {
             <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)]">
               Two different mornings, one need. Sometimes the world isn’t open yet. Sometimes it’s open and you still can’t get there, because the thing you’re short of is time, not access. NawNaw is built for both. It isn’t really an app about essentials. It’s an app about time, and about handing a little of it back.
             </p>
+          </div>
+        </div>
+      </Section>
+
+      <Section>
+        <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 reveal">
+            <Kicker>The whole idea, in one screen</Kicker>
+            <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)] max-w-[68ch]">
+              Before any of the business reasoning that follows, here is the whole idea in a single screen: a store you can read in a glance, leading with time instead of price. Everything later is in service of this.
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-3 reveal items-center">
+            <LightboxImage
+              src="/assets/nawnaw/Dashboard-User.png"
+              alt="Home Screen"
+              loading="eager"
+              className="max-w-full max-h-[60vh] w-auto object-contain"
+            />
+            <div className="w-full max-w-[480px]">
+              <ImageCallouts
+                items={[
+                  <>ETA sits where a discount banner would — <strong className="text-[var(--color-text)] font-medium">you sell time, not price</strong>.</>,
+                ]}
+              />
+            </div>
           </div>
         </div>
       </Section>
@@ -219,9 +247,12 @@ export default function NawNawPage() {
                 alt="Home Screen"
                 className="max-w-full max-h-[85vh] w-auto object-contain"
               />
-              <div className="text-center font-mono text-[12px] text-[var(--color-muted)] tracking-widest uppercase mt-2">
-                The home screen showing aisles and delivery time banner.
-              </div>
+              <ImageCallouts
+                items={[
+                  <>ETA sits where a discount banner would — <strong className="text-[var(--color-text)] font-medium">you sell time, not price</strong>.</>,
+                  <><strong className="text-[var(--color-text)] font-medium">2×2 aisle peek</strong>: recognise the whole store in a glance, no supermarket scroll.</>,
+                ]}
+              />
             </div>
           </div>
 
@@ -240,9 +271,11 @@ export default function NawNawPage() {
                 alt="Profile Sensitive Items Toggle"
                 className="max-w-full max-h-[85vh] w-auto object-contain"
               />
-              <div className="text-center font-mono text-[12px] text-[var(--color-muted)] tracking-widest uppercase mt-2">
-                Profile view with the sensitive items toggle.
-              </div>
+              <ImageCallouts
+                items={[
+                  <>One toggle reshapes the catalog — <strong className="text-[var(--color-text)] font-medium">the shop bends to the shopper</strong>, and the items stay one switch away.</>,
+                ]}
+              />
             </div>
           </div>
 
@@ -261,9 +294,12 @@ export default function NawNawPage() {
                 alt="Cart States"
                 className="max-w-full max-h-[85vh] w-auto object-contain"
               />
-              <div className="text-center font-mono text-[12px] text-[var(--color-muted)] tracking-widest uppercase mt-2">
-                Cart nudges for small order fee and free delivery.
-              </div>
+              <ImageCallouts
+                items={[
+                  <>“Add ₦400 to skip the fee” — <strong className="text-[var(--color-text)] font-medium">framed as avoidable, never a punishment</strong>.</>,
+                  <>The free-delivery progress bar turns <strong className="text-[var(--color-text)] font-medium">“spend more” into a winnable game</strong>.</>,
+                ]}
+              />
             </div>
           </div>
 
@@ -285,9 +321,12 @@ export default function NawNawPage() {
                 alt="Guest Checkout Flow"
                 className="max-w-full max-h-[85vh] w-auto object-contain"
               />
-              <div className="text-center font-mono text-[12px] text-[var(--color-muted)] tracking-widest uppercase mt-2">
-                Guest checkout with late authentication sheet.
-              </div>
+              <ImageCallouts
+                items={[
+                  <>Auth is <strong className="text-[var(--color-text)] font-medium">deferred to the one moment it matters</strong>: placing the order.</>,
+                  <>It <strong className="text-[var(--color-text)] font-medium">slides up as a sheet</strong> over checkout — you never lose your place.</>,
+                ]}
+              />
             </div>
           </div>
 
@@ -303,9 +342,11 @@ export default function NawNawPage() {
                 alt="Address Confirmation"
                 className="max-w-full max-h-[85vh] w-auto object-contain"
               />
-              <div className="text-center font-mono text-[12px] text-[var(--color-muted)] tracking-widest uppercase mt-2">
-                Address input prioritizing typed landmarks alongside the map.
-              </div>
+              <ImageCallouts
+                items={[
+                  <>The <strong className="text-[var(--color-text)] font-medium">typed landmark is the real instruction</strong>; the map just builds confidence you’ll be found.</>,
+                ]}
+              />
             </div>
           </div>
 
@@ -324,9 +365,12 @@ export default function NawNawPage() {
                 alt="Order Tracking"
                 className="max-w-full max-h-[85vh] w-auto object-contain"
               />
-              <div className="text-center font-mono text-[12px] text-[var(--color-muted)] tracking-widest uppercase mt-2">
-                Staged order progress with live countdown.
-              </div>
+              <ImageCallouts
+                items={[
+                  <>A <strong className="text-[var(--color-text)] font-medium">live countdown</strong> makes the 15-minute promise accountable on screen.</>,
+                  <><strong className="text-[var(--color-text)] font-medium">Real stages</strong> (packing → on the way), not an anonymous spinner.</>,
+                ]}
+              />
             </div>
           </div>
 
@@ -342,9 +386,11 @@ export default function NawNawPage() {
                 alt="Product Details Page"
                 className="max-w-full max-h-[85vh] w-auto object-contain"
               />
-              <div className="text-center font-mono text-[12px] text-[var(--color-muted)] tracking-widest uppercase mt-2">
-                Detailed view for considered purchases.
-              </div>
+              <ImageCallouts
+                items={[
+                  <>The <strong className="text-[var(--color-text)] font-medium">calm end of the app</strong> — considered buys, without ever slowing the impulse ones.</>,
+                ]}
+              />
             </div>
           </div>
         </div>

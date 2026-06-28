@@ -5,6 +5,7 @@ import { LiveAppFrame } from "@/components/case-study/LiveAppFrame";
 import { RoadmapItem } from "@/components/case-study/RoadmapItem";
 import { Kicker } from "@/components/ui/Kicker";
 import { LightboxImage } from "@/components/case-study/LightboxImage";
+import { ImageCallouts } from "@/components/case-study/ImageCallouts";
 
 export const metadata: Metadata = {
   title: "Oshap: Case Study · Haye",
@@ -17,23 +18,28 @@ function Shot({
   src,
   label,
   rounded = 28,
+  annotation,
 }: {
   src: string;
   label: string;
   rounded?: number;
+  annotation?: string;
 }) {
   return (
-    <div
-      style={{
-        borderRadius: rounded,
-        overflow: "hidden",
-      }}
-    >
-      <LightboxImage
-        src={src}
-        alt={`Oshap ${label}`}
-        style={{ width: "100%", height: "auto", display: "block" }}
-      />
+    <div className="flex flex-col gap-3">
+      <div
+        style={{
+          borderRadius: rounded,
+          overflow: "hidden",
+        }}
+      >
+        <LightboxImage
+          src={src}
+          alt={`Oshap ${label}`}
+          style={{ width: "100%", height: "auto", display: "block" }}
+        />
+      </div>
+      {annotation && <ImageCallouts items={[annotation]} />}
     </div>
   );
 }
@@ -289,13 +295,13 @@ export default function OshapPage() {
           <div className="font-mono text-[11px] tracking-[.08em] uppercase text-[var(--color-muted)]">
             Customer screens
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-            <Shot src="/assets/oshap/Menu.png" label="Menu" />
-            <Shot src="/assets/oshap/Cart-drawer.png" label="Cart drawer" />
-            <Shot src="/assets/oshap/Pay-transfer.png" label="Pay: transfer" />
-            <Shot src="/assets/oshap/Order-together.png" label="Order Together" />
-            <Shot src="/assets/oshap/My-orders.png" label="My Orders" />
-            <Shot src="/assets/oshap/Notification.png" label="Notification center" />
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            <Shot src="/assets/oshap/Menu.png" label="Menu" annotation="Scan lands straight here — browse and add with no login between the guest and the food." />
+            <Shot src="/assets/oshap/Cart-drawer.png" label="Cart drawer" annotation="The cart is a drawer, not a page — you adjust the order without ever leaving the menu." />
+            <Shot src="/assets/oshap/Pay-transfer.png" label="Pay: transfer" annotation="Transfer-first, because that is how Nigerians actually pay — with a POS request one tap away." />
+            <Shot src="/assets/oshap/Order-together.png" label="Order Together" annotation="One shared tab on a 4-digit PIN — the table merges carts yet can still pay separately." />
+            <Shot src="/assets/oshap/My-orders.png" label="My Orders" annotation="The kitchen's live state, mirrored to the guest — no asking a waiter where the order is." />
+            <Shot src="/assets/oshap/Notification.png" label="Notification center" annotation="A per-table feed that survives refresh — every toast is kept, not lost the moment it fades." />
           </div>
         </div>
       </S>
@@ -392,13 +398,13 @@ export default function OshapPage() {
           <div className="font-mono text-[11px] tracking-[.08em] uppercase text-[var(--color-muted)]">
             Admin screens
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <Shot src="/assets/oshap/Dashboard.png" label="Dashboard" rounded={12} />
-            <Shot src="/assets/oshap/Kitchen.png" label="Kitchen" rounded={12} />
-            <Shot src="/assets/oshap/History.png" label="History" rounded={12} />
-            <Shot src="/assets/oshap/Menu-admin.png" label="Menu + Inventory" rounded={12} />
-            <Shot src="/assets/oshap/Analytics.png" label="Analytics" rounded={12} />
-            <Shot src="/assets/oshap/Settings.png" label="Settings" rounded={12} />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <Shot src="/assets/oshap/Dashboard.png" label="Dashboard" rounded={12} annotation="Every active table live via SSE — unpaid and pending totals visible without refreshing." />
+            <Shot src="/assets/oshap/Kitchen.png" label="Kitchen" rounded={12} annotation="One tap moves an order forward, and the guest sees that same state change in real time." />
+            <Shot src="/assets/oshap/History.png" label="History" rounded={12} annotation="Settled orders with per-page revenue — the day's takings reconcile without a spreadsheet." />
+            <Shot src="/assets/oshap/Menu-admin.png" label="Menu + Inventory" rounded={12} annotation="Stock counts auto-disable an item at zero, so the menu can never sell what the kitchen lacks." />
+            <Shot src="/assets/oshap/Analytics.png" label="Analytics" rounded={12} annotation="Owner-only revenue, peak hours, and top items — the numbers that decide what to stock and staff." />
+            <Shot src="/assets/oshap/Settings.png" label="Settings" rounded={12} annotation="Role-gated controls: only the Owner creates accounts and assigns who can see what." />
           </div>
         </div>
       </S>
