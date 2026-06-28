@@ -112,6 +112,16 @@ export default function NawNawPage() {
         </div>
       </Section>
 
+      {/* Video demo */}
+      <VideoDemo
+        kicker="Experience"
+        heading="See it in motion."
+        description="A quick walkthrough of the core NawNaw shopping experience, from browsing an aisle to tracking a 15-minute delivery."
+        flowCaption="Home → Aisle → Cart → Checkout → Track Order"
+        videoSrc="/assets/nawnaw/NawNaw%20demo.mov"
+        isMobile
+      />
+
       <Section>
         <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-6 reveal">
@@ -395,16 +405,6 @@ export default function NawNawPage() {
           </div>
         </div>
       </Section>
-
-      {/* Video demo */}
-      <VideoDemo
-        kicker="Experience"
-        heading="See it in motion."
-        description="A quick walkthrough of the core NawNaw shopping experience, from browsing an aisle to tracking a 15-minute delivery."
-        flowCaption="Home → Aisle → Cart → Checkout → Track Order"
-        videoSrc="/assets/nawnaw/NawNaw%20demo.mov"
-        isMobile
-      />
 
       <Section>
         <div className="flex flex-col gap-6">
