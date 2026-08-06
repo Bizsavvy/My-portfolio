@@ -4,9 +4,9 @@ import { useState, useEffect } from "react";
 import { useClock } from "@/hooks/useClock";
 
 const links = [
-  { href: "/#work", label: "Work" },
+  { href: "/#work", label: "Projects" },
+  { href: "/articles", label: "Articles" },
   { href: "/#about", label: "About" },
-  { href: "/decisions", label: "Decisions" },
   { href: "/#contact", label: "Contact" },
 ];
 

@@ -62,7 +62,7 @@
         "prefix": "semantic"
       },
       "secondary": {
-        "value": "{color.violet}",
+        "value": "{color.violet-light}",
         "type": "color",
         "prefix": "semantic"
       }
@@ -131,7 +131,7 @@
         "prefix": "semantic"
       },
       "secondary": {
-        "value": "{color.violet}",
+        "value": "{color.violet-dark}",
         "type": "color",
         "prefix": "semantic"
       }

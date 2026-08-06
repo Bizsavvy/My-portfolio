@@ -35,6 +35,16 @@
       "type": "color",
       "prefix": "primitives"
     },
+    "violet-light": {
+      "value": "#b892f7",
+      "type": "color",
+      "prefix": "primitives"
+    },
+    "violet-dark": {
+      "value": "#6d2fd0",
+      "type": "color",
+      "prefix": "primitives"
+    },
     "off-white": {
       "value": "#f6fee1",
       "type": "color",

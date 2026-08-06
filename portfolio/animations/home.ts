@@ -15,7 +15,7 @@ export function charSplit(el: HTMLElement): HTMLSpanElement[] {
 function showAll() {
   document
     .querySelectorAll(
-      ".reveal, .hero-label, .bigname, .statement, .herometa, .herocta, nav, .folder, .sechead, .aboutgrid > div, .nowcard, .bigcta, .contact-section p, .links a, .links button, .marquee, .geo-contact rect"
+      ".reveal, .hero-label, .bigname, .statement, .herometa, .herocta, .herolinks a, nav, .pcard, .sechead, .aboutgrid > div, .nowcard, .bigcta, .contact-section p, .links a, .links button, .marquee, .geo-contact rect"
     )
     .forEach((el) => {
       (el as HTMLElement).style.opacity = "1";
@@ -50,11 +50,12 @@ export async function runHomeAnimations() {
     gsap.set(".statement", { opacity: 0, y: 20 });
     gsap.set(".herometa .pill", { opacity: 0, y: 14 });
     gsap.set(".herocta .btn", { opacity: 0, y: 12 });
+    gsap.set(".herolinks a", { opacity: 0, y: 10 });
     gsap.set("nav", { opacity: 0, y: -20 });
 
     /* 1b. initial states for scroll reveals (prevents glitching) */
     gsap.set(
-      ".sechead, .aboutgrid > div, .nowcard, .folder, .marquee, .geo-contact rect, .bigcta, .contact-section p, .links a, .links button",
+      ".sechead, .aboutgrid > div, .nowcard, .pcard, .marquee, .geo-contact rect, .bigcta, .contact-section p, .links a, .links button",
       { opacity: 0 }
     );
 
@@ -68,6 +69,7 @@ export async function runHomeAnimations() {
     heroTl.to(".statement", { opacity: 1, y: 0, duration: 0.6 }, "-=0.25");
     heroTl.to(".herometa .pill", { opacity: 1, y: 0, duration: 0.5, stagger: 0.08 }, "-=0.3");
     heroTl.to(".herocta .btn", { opacity: 1, y: 0, duration: 0.5, stagger: 0.1 }, "-=0.25");
+    heroTl.to(".herolinks a", { opacity: 1, y: 0, duration: 0.4, stagger: 0.06 }, "-=0.2");
 
     /* 3. Hero geo parallax */
     gsap.to(".hero-geo svg", {
@@ -99,15 +101,18 @@ export async function runHomeAnimations() {
         );
       });
 
-    gsap.utils.toArray<HTMLElement>(".folder").forEach((folder) => {
+    /* Project grid: short staggered fade-up per card. */
+    gsap.utils.toArray<HTMLElement>(".pcard").forEach((card, i) => {
       gsap.fromTo(
-        folder,
-        { opacity: 0 },
+        card,
+        { opacity: 0, y: 24 },
         {
           opacity: 1,
-          duration: 0.8,
+          y: 0,
+          duration: 0.6,
+          delay: (i % 3) * 0.08,
           ease,
-          scrollTrigger: { trigger: folder, start: "top 92%", once: true },
+          scrollTrigger: { trigger: card, start: "top 94%", once: true },
         }
       );
     });
@@ -163,15 +168,7 @@ export async function runHomeAnimations() {
       });
     });
 
-    /* 6. Folder tab number scale */
-    document.querySelectorAll<HTMLElement>(".folder").forEach((folder) => {
-      const no = folder.querySelector<HTMLElement>(".no");
-      if (!no) return;
-      folder.addEventListener("mouseenter", () => gsap.to(no, { scale: 1.1, duration: 0.22, ease: easeSoft }));
-      folder.addEventListener("mouseleave", () => gsap.to(no, { scale: 1, duration: 0.32, ease: easeSoft }));
-    });
-
-    /* 7. bigcta letter-spacing breathe */
+    /* 6. bigcta letter-spacing breathe */
     const bigcta = document.querySelector<HTMLElement>(".bigcta");
     if (bigcta) {
       bigcta.addEventListener("mouseenter", () =>

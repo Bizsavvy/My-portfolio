@@ -2,15 +2,13 @@
 
 import { useState } from "react";
 import { GeoContact } from "./GeoContact";
+import { links as site } from "@/lib/links";
 
 const links = [
-  { href: "#", label: "Email" },
-  { href: "https://www.linkedin.com/in/haye-binjo", label: "LinkedIn" },
-  { href: "https://github.com/Bizsavvy", label: "GitHub" },
-  {
-    href: "https://quiet-maize-841.notion.site/Emmanuel-Haye-Binjo-384ce046204b80a1ae83db2b9968ad62?source=copy_link",
-    label: "CV",
-  },
+  { href: site.email ? `mailto:${site.email}` : "#", label: "Email" },
+  { href: site.linkedin, label: "LinkedIn" },
+  { href: site.github, label: "GitHub" },
+  { href: site.resume, label: "CV" },
 ];
 
 export function Contact() {

@@ -14,6 +14,11 @@
   --prim-lime: #c7f94b;
   --prim-lime-dark: #4d7c0f;
   --prim-violet: #8a4beb;
+  /* Per-surface violets. The base #8a4beb measures ~4.0:1 on --prim-ink, which
+     fails for the 10px uppercase labels it gets used in, so dark surfaces take
+     the light tint (~7.9:1) and light surfaces the deeper one (~6.8:1). */
+  --prim-violet-light: #b892f7;
+  --prim-violet-dark: #6d2fd0;
   --prim-off-white: #f6fee1;
   --prim-pure-white: #ffffff;
   --prim-light-surface: #f2f0eb;
@@ -37,7 +42,7 @@
   --theme-text-muted: var(--prim-neutral);
   --theme-border: #1a1a1614;
   --theme-border-strong: #1a1a1624;
-  --theme-secondary: var(--prim-violet);
+  --theme-secondary: var(--prim-violet-dark);
   --theme-nav-bg: rgba(246, 254, 225, .88);
 
   /* Spacing */
@@ -87,7 +92,7 @@
     --theme-text-muted: var(--prim-neutral-2);
     --theme-border: #eceae01c;
     --theme-border-strong: #eceae033;
-    --theme-secondary: var(--prim-violet);
+    --theme-secondary: var(--prim-violet-light);
     --theme-nav-bg: rgba(12, 12, 10, .72);
   }
 }
@@ -106,7 +111,7 @@
   --theme-text-muted: var(--prim-neutral-2);
   --theme-border: #eceae01c;
   --theme-border-strong: #eceae033;
-  --theme-secondary: var(--prim-violet);
+  --theme-secondary: var(--prim-violet-light);
   --theme-nav-bg: rgba(12, 12, 10, .72);
 }
 
@@ -123,7 +128,7 @@
   --theme-text-muted: var(--prim-neutral);
   --theme-border: #1a1a1614;
   --theme-border-strong: #1a1a1624;
-  --theme-secondary: var(--prim-violet);
+  --theme-secondary: var(--prim-violet-dark);
   --theme-nav-bg: rgba(246, 254, 225, .88);
 }
 

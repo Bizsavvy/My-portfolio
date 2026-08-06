@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import { CaseStudyHero } from "@/components/case-study/CaseStudyHero";
+import { CaseHeader } from "@/components/case-study/CaseHeader";
 import { Section } from "@/components/case-study/Section";
 import { Kicker } from "@/components/ui/Kicker";
 import { ArchGrid } from "@/components/case-study/ArchGrid";
-import { RoadmapItem } from "@/components/case-study/RoadmapItem";
 import { CaseStudyFooter } from "@/components/case-study/CaseStudyFooter";
 import { LightboxImage } from "@/components/case-study/LightboxImage";
 
@@ -129,39 +128,50 @@ const sampleJson = `{
 export default function UItoJSONPage() {
   return (
     <div style={{ background: "var(--color-ink)" }}>
-      {/* ── Hero ── */}
-      <CaseStudyHero
+      <CaseHeader
         eyebrow="Production tool · Figma plugin · AI tooling"
         title="UI to JSON"
-        lede={
+        status="Live in production"
+        tagline={
           <>
             A Figma plugin that compiles design files into{" "}
             <em className="italic text-[var(--color-accent)]">
               AI-optimized semantic JSON
             </em>
-            : a clean intermediate representation built for AI frontend
-            generation, not noisy CSS export.
+            : a clean intermediate representation built for AI frontend generation, not
+            noisy CSS export.
           </>
         }
-        meta={[
-          { label: "Role",     value: "Designer & Engineer" },
-          { label: "Scope",    value: "Concept → plugin → production" },
-          { label: "Users",    value: "250+ and growing" },
-          { label: "Stack",    value: "React · TypeScript · Figma API" },
-          { label: "Surface",  value: "Figma Plugin" },
-          { label: "Year",     value: "2026" },
+        problem={
+          <>
+            Figma-to-code tools emit noisy exports with broken hierarchy and absolute
+            positioning. Feed that to an AI agent and you get hallucinated code — the
+            bottleneck is the representation, not the model.
+          </>
+        }
+        outcomes={[
+          { stat: "250+", label: "users reached, and growing" },
+          { stat: "119", label: "Figma Community installs" },
+          { stat: "40K", label: "views on the launch post, 586 likes" },
         ]}
-        status="Live in production"
+        meta={[
+          { label: "Role", value: "Designer & Engineer" },
+          { label: "Timeline", value: "2026 · shipped 20 May" },
+          { label: "Team", value: "Solo" },
+          { label: "Tools", value: "React · TypeScript · Figma API" },
+        ]}
+        banner={{
+          src: "/assets/ui-to-json/cover.webp",
+          alt: "UI to JSON: turn Figma designs into AI-ready semantic JSON",
+          width: 1920,
+          height: 1080,
+        }}
+        readMoreHref="/articles/ui-to-json"
+        readMoreLabel="Read the full case study"
       />
 
-      {/* ── Cover ── */}
-      <div className="cs-wrap reveal flex flex-col items-start gap-10" style={{ paddingBlock: "62px" }}>
-        <LightboxImage
-          src="/assets/ui-to-json/cover.png"
-          alt="UI to JSON: turn Figma designs into AI-ready semantic JSON"
-          className="w-full h-auto rounded-[16px] border border-[var(--color-line)]"
-          style={{ display: "block" }}
-        />
+      {/* Outbound proof, high on the page. */}
+      <div className="cs-wrap reveal" style={{ paddingBottom: "48px" }}>
         <a
           href="https://www.figma.com/community/plugin/1638581049555435822"
           target="_blank"
@@ -171,70 +181,6 @@ export default function UItoJSONPage() {
           Try it on Figma Community →
         </a>
       </div>
-
-      {/* ── Problem ── */}
-      <Section>
-        <div className="flex flex-col gap-6 reveal">
-          <Kicker>01: The problem</Kicker>
-          <h2
-            className="font-hanken font-bold tracking-[-0.02em]"
-            style={{ fontSize: "clamp(28px,4vw,44px)", lineHeight: 1.08, maxWidth: "20ch" }}
-          >
-            AI doesn&apos;t struggle to write code. It struggles to read design.
-          </h2>
-        </div>
-        <div className="grid md:grid-cols-2 gap-8 mt-8" style={{ maxWidth: 900 }}>
-          <p className="text-[var(--color-body)] text-[17px] leading-[1.65] reveal">
-            Figma-to-code tools optimise for the wrong thing: CSS extraction, HTML
-            generation, developer handoff. They emit noisy exports with broken
-            hierarchy, absolute positioning everywhere, and metadata that has nothing
-            to do with how a UI is actually built.
-          </p>
-          <p className="text-[var(--color-body)] text-[17px] leading-[1.65] reveal">
-            Feed that to an AI agent and you get hallucinated, inconsistent code. The
-            real bottleneck in AI frontend generation isn&apos;t the model. It&apos;s the
-            quality of the intermediate representation you hand it.
-          </p>
-        </div>
-      </Section>
-
-      {/* ── The bet / philosophy ── */}
-      <Section>
-        <div className="flex flex-col gap-6 reveal">
-          <Kicker>The core bet</Kicker>
-          <h2
-            className="font-hanken font-bold tracking-[-0.02em]"
-            style={{ fontSize: "clamp(28px,4vw,40px)", lineHeight: 1.08 }}
-          >
-            Compile intent, not pixels.
-          </h2>
-        </div>
-        <p className="font-hanken text-[20px] leading-[1.58] text-[var(--color-text)] reveal mt-6">
-          UI to JSON treats a design like source code for a compiler. It extracts the
-          semantic structure a developer would infer by eye, then normalises it into a
-          UI Abstract Syntax Tree built specifically for machine reasoning.
-        </p>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-8 reveal">
-          {[
-            ["Intent", "Geometry"],
-            ["Structure", "Pixels"],
-            ["Relationships", "Coordinates"],
-            ["Semantics", "Raw nodes"],
-          ].map(([keep, drop]) => (
-            <div
-              key={keep}
-              className="flex flex-col gap-1 p-5 bg-[var(--color-surface)] border border-[var(--color-line)] rounded-[var(--rad-lg)]"
-            >
-              <span className="font-hanken font-bold text-[18px] text-[var(--color-text)]">
-                {keep}
-              </span>
-              <span className="font-mono text-[12px] text-[var(--color-muted)] line-through decoration-[var(--color-accent)]">
-                {drop}
-              </span>
-            </div>
-          ))}
-        </div>
-      </Section>
 
       {/* ── Live: design → JSON ── */}
       <Section>
@@ -250,7 +196,7 @@ export default function UItoJSONPage() {
         {/* The plugin in Figma: select a frame, get the semantic JSON. */}
         <div className="mt-8 reveal rounded-[16px] border border-[var(--color-line)] overflow-hidden">
           <LightboxImage
-            src="/assets/ui-to-json/screenshot.png"
+            src="/assets/ui-to-json/screenshot.webp"
             alt="UI to JSON plugin panel in Figma, showing a Shappay frame and its extracted semantic JSON"
             className="w-full h-auto"
             style={{ display: "block" }}
@@ -383,7 +329,7 @@ export default function UItoJSONPage() {
           </p>
           <div className="reveal rounded-[16px] border border-[var(--color-line)] overflow-hidden w-full max-w-[460px]">
             <LightboxImage
-              src="/assets/ui-to-json/testimonial.jpeg"
+              src="/assets/ui-to-json/testimonial.webp"
               alt="Launch post on X for UI to JSON with 40K views and 586 likes, and a reply praising the plugin"
               className="w-full h-auto"
               style={{ display: "block" }}
@@ -392,79 +338,9 @@ export default function UItoJSONPage() {
         </div>
       </Section>
 
-      {/* ── Roadmap ── */}
-      <Section>
-        <div className="flex flex-col gap-6 reveal">
-          <Kicker>Roadmap</Kicker>
-          <h2
-            className="font-hanken font-bold tracking-[-0.02em]"
-            style={{ fontSize: "clamp(28px,4vw,40px)", lineHeight: 1.08 }}
-          >
-            From extraction layer to AI-native workflow.
-          </h2>
-        </div>
-        <div className="mt-4">
-          <RoadmapItem
-            phase="NOW"
-            title="Semantic export engine"
-            status={{ label: "IN PRODUCTION", now: true }}
-            description="Layout, component, token, naming, and constraint extraction into AI-optimized JSON, with optional markdown context."
-          />
-          <RoadmapItem
-            phase="NEXT"
-            title="Direct AI agent integration"
-            status={{ label: "ROADMAP" }}
-            description="Code-generation adapters and multi-framework output so the AST flows straight into a coding agent."
-          />
-          <RoadmapItem
-            phase="THEN"
-            title="Responsive + animation intelligence"
-            status={{ label: "ROADMAP" }}
-            description="Breakpoint inference, animation extraction, and accessibility recommendations layered onto the spec."
-          />
-          <RoadmapItem
-            phase="LATER"
-            title="Design system sync"
-            status={{ label: "ROADMAP" }}
-            description="Semantic diffing, live code preview, and feedback loops between design systems and generated code."
-          />
-        </div>
-      </Section>
-
-      {/* ── Reflection ── */}
-      <Section>
-        <div className="flex flex-col gap-6 reveal">
-          <Kicker>Reflection</Kicker>
-          <h2
-            className="font-hanken font-bold tracking-[-0.02em]"
-            style={{ fontSize: "clamp(28px,4vw,40px)", lineHeight: 1.08 }}
-          >
-            The interesting problem was deciding what to throw away.
-          </h2>
-        </div>
-        <div className="flex flex-col gap-4 mt-6 reveal" style={{ maxWidth: 760 }}>
-          <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)]">
-            Every export tool I&apos;d used optimised for completeness: capture every
-            property, every pixel, every node. UI to JSON is the opposite bet. The value
-            isn&apos;t in what it records, it&apos;s in what it confidently discards.
-            Deciding which visual details carry meaning, and which are noise, was the
-            whole design problem.
-          </p>
-          <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)]">
-            The insight that landed with people was practical: you don&apos;t need MCP
-            servers or screenshots that burn tokens to get an AI from design to code. A
-            small, clean, semantic representation does more than a large noisy one.
-            Building it as a shipped plugin, not a demo, forced that to survive contact
-            with messy real files made by people who never expected a machine to read
-            them. That constraint is what makes the output trustworthy.
-          </p>
-        </div>
-      </Section>
-
-      {/* ── Footer ── */}
       <CaseStudyFooter
-        nextHref="/work/oshap"
-        nextLabel="Oshap"
+        nextHref="/articles/ui-to-json"
+        nextLabel="Read the full write-up"
         stat="250+ users in production"
         colophonLeft="UI to JSON: Design tooling case study"
       />

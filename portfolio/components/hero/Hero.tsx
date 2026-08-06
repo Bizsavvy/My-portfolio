@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import Link from "next/link";
 import { HeroGeo } from "./HeroGeo";
 import { Pill } from "@/components/ui/Pill";
+import { socialLinks } from "@/lib/links";
 import { runHomeAnimations } from "@/animations/home";
 
 function QrMark() {
@@ -122,9 +123,33 @@ export function Hero() {
             className="statement ts-statement text-[var(--color-text)] text-center"
             style={{ fontSize: "clamp(20px,2.5vw,36px)", lineHeight: 1.32, maxWidth: "680px" }}
           >
-            I design & build <CodeMark /> consumer &
+            I design &amp; build <CodeMark /> consumer &amp;
             <em className="italic text-[var(--color-accent)]"> fintech</em> products from interface to infrastructure.
           </p>
+
+          <p
+            className="statement font-hanken text-[var(--color-body)] text-center"
+            style={{ fontSize: "clamp(15px,1.6vw,18px)", lineHeight: 1.6, maxWidth: "600px" }}
+          >
+            Most designers hand off a file. I ship the front-end too, which means
+            the thing you see in the case study is the thing that runs. Currently
+            building payment rails for Nigerian merchants.
+          </p>
+        </div>
+
+        {/* Direct links */}
+        <div className="herolinks flex flex-wrap gap-x-6 gap-y-2 items-center justify-center font-mono text-[12px] tracking-[.04em]">
+          {socialLinks.map(({ label, href }) => (
+            <a
+              key={label}
+              href={href}
+              target={href.startsWith("mailto:") ? undefined : "_blank"}
+              rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+              className="text-[var(--color-muted)] hover:text-[var(--color-accent)] transition-colors duration-[250ms]"
+            >
+              {label} ↗
+            </a>
+          ))}
         </div>
 
         {/* Pills */}

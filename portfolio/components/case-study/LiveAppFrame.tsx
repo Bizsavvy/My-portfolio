@@ -203,7 +203,7 @@ export function LiveAppFrame() {
 
               {/* iPhone Image overlay */}
               <Image
-                src="/assets/oshap/iPhone frame.png"
+                src="/assets/oshap/iPhone frame.webp"
                 alt="iPhone frame"
                 fill
                 priority

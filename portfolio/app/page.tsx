@@ -2,67 +2,68 @@ import { Nav } from "@/components/nav/Nav";
 import { Hero } from "@/components/hero/Hero";
 import { Marquee } from "@/components/marquee/Marquee";
 import { Sechead } from "@/components/work/Sechead";
-import { FolderCard } from "@/components/work/FolderCard";
-import {
-  VisualQR,
-  VisualJSON,
-  VisualOshap,
-  VisualNawNaw,
-  VisualFlow,
-} from "@/components/work/Visuals";
+import { ProjectCard, type ProjectCardProps } from "@/components/work/ProjectCard";
 import { About } from "@/components/about/About";
 import { Contact } from "@/components/contact/Contact";
 
-const projects = [
+const projects: ProjectCardProps[] = [
   {
-    index: 1,
-    tab: "Flagship · Fintech",
     title: "Shappay",
-    badge: { label: "Anchor", variant: "accent" as const },
-    hook: "A wallet-first QR payments app on Nigeria's NIBSS NQR rails. Pay anyone by scanning a square: no account numbers, no bank silos. Designed and coded end to end, including the live EMVCo payload engine.",
-    tags: ["Consumer Fintech", "EMVCo / NQR", "Design → Front-end"],
+    context: "Consumer fintech · Founder",
+    summary:
+      "A wallet-first QR payments app on Nigeria's NIBSS NQR rails. Designed and coded end to end, including the live EMVCo payload engine.",
+    status: "Pre Alpha",
     href: "/work/shappay",
-    visual: <VisualQR />,
+    img: "/assets/shappay/landscape-shot.svg",
+    imgWidth: 1920,
+    imgHeight: 1080,
   },
   {
-    index: 2,
-    tab: "Production Tool",
     title: "UI to JSON",
-    badge: { label: "250+ users", variant: "accent" as const },
-    hook: "A Figma plugin that converts UI into code-ready JSON. Live in production with a real, growing user base: a tool built for designers who think in systems.",
-    tags: ["Figma Plugin", "Design Tooling", "TypeScript"],
+    context: "Design tooling · Figma plugin",
+    summary:
+      "A Figma plugin that converts UI into code-ready JSON. Live in production with a real, growing user base.",
+    status: "Live",
+    metric: "250+ users",
     href: "/work/ui-to-json",
-    visual: <VisualJSON />,
+    img: "/assets/ui-to-json/cover.webp",
+    imgWidth: 1920,
+    imgHeight: 1080,
+    proofHref: "https://www.figma.com/community/plugin/1638581049555435822",
+    proofLabel: "Install on Figma Community",
   },
   {
-    index: 3,
-    tab: "Shipped MVP",
     title: "Oshap",
-    badge: { label: "Shipped MVP", variant: "accent" as const },
-    hook: "A QR table-ordering and payment system for restaurants and bars. Scan, order, pay by transfer: no app, no login, no waiter. Designed and built the customer app and the full admin and kitchen dashboard.",
-    tags: ["QR Ordering", "Design → Front-end", "React 19 · Vite"],
+    context: "QR ordering · Design → front-end",
+    summary:
+      "Scan-to-order and pay for restaurants: no app, no login, no waiter. Built the customer app plus the full admin and kitchen dashboard.",
+    status: "Shipped MVP",
     href: "/work/oshap",
-    visual: <VisualOshap />,
+    img: "/assets/oshap/Dashboard.webp",
+    imgWidth: 2000,
+    imgHeight: 1579,
   },
   {
-    index: 4,
-    tab: "Concept · 0 → 1",
     title: "NawNaw",
-    hook: "Quick-commerce grocery delivery concept: a sub-15-minute experience built on a dark-store model for Nigerian tier-1 cities, with warehouse ops as the next chapter.",
-    tags: ["Quick Commerce", "0 → 1", "Consumer App"],
+    context: "Quick commerce · 0 → 1",
+    summary:
+      "A sub-15-minute grocery delivery concept on a dark-store model for Nigerian tier-1 cities.",
+    status: "Concept",
     href: "/work/nawnaw",
-    visual: <VisualNawNaw />,
+    img: "/assets/nawnaw/Guest-flow.webp",
+    imgWidth: 2000,
+    imgHeight: 1500,
   },
   {
-    index: 5,
-    tab: "Brand Identity",
     title: "Flow",
-    badge: { label: "Identity", variant: "accent" as const },
-    hook: "A full brand system for a period-care brand: built around Cheerful Violet and a leaf-droplet mark integrated into the wordmark, with complete brand guidelines.",
-    tags: ["Branding", "Identity System", "Guidelines"],
+    context: "Brand identity · Period care",
+    summary:
+      "A full brand system built around Cheerful Violet and a leaf-droplet mark integrated into the wordmark, with complete guidelines.",
+    status: "Identity",
     href: "/work/flow",
-    ctaLabel: "View the system →",
-    visual: <VisualFlow />,
+    img: "/assets/flow-business-card.webp",
+    imgWidth: 1600,
+    imgHeight: 914,
   },
 ];
 
@@ -80,18 +81,11 @@ export default function Home() {
             <Sechead />
           </div>
 
-          <div className="folders">
-            {projects.map((p, i) => (
-              <div
-                key={p.title}
-                style={{
-                  position: "sticky",
-                  top: `calc(68px + ${i} * 42px)`,
-                  zIndex: i + 1,
-                  marginTop: i > 0 ? "var(--space-8xl)" : 0,
-                }}
-              >
-                <FolderCard {...p} />
+          {/* Plain responsive grid — no sticky stacking, no scroll hijack. */}
+          <div className="pgrid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {projects.map((p) => (
+              <div key={p.title} className="h-full">
+                <ProjectCard {...p} />
               </div>
             ))}
           </div>

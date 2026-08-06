@@ -1,14 +1,14 @@
 import type { MetadataRoute } from "next";
 import { siteUrl } from "@/lib/site";
 
+const slugs = ["shappay", "ui-to-json", "oshap", "nawnaw", "flow"];
+
 const routes = [
   "",
+  "/articles",
   "/decisions",
-  "/work/shappay",
-  "/work/ui-to-json",
-  "/work/oshap",
-  "/work/nawnaw",
-  "/work/flow",
+  ...slugs.map((s) => `/work/${s}`),
+  ...slugs.map((s) => `/articles/${s}`),
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Kicker } from "@/components/ui/Kicker";
 
 export interface FlowStep {
@@ -7,7 +8,14 @@ export interface FlowStep {
   annotation: string;
   /** Screen image. Omit to render a labelled placeholder tile. */
   img?: string;
+  /** Intrinsic dimensions. Defaults to the phone-screen export size. */
+  imgWidth?: number;
+  imgHeight?: number;
 }
+
+/* Phone-screen exports are 983x2000; overridable per step for other shapes. */
+const DEFAULT_IMG_W = 983;
+const DEFAULT_IMG_H = 2000;
 
 interface FlowStripProps {
   kicker?: string;
@@ -54,10 +62,12 @@ export function FlowStrip({
             <div key={step.stage} className="flex items-stretch gap-4 md:gap-3 shrink-0">
               <figure className="flex flex-col gap-4 w-[210px] shrink-0">
                 {step.img ? (
-                  /* eslint-disable-next-line @next/next/no-img-element */
-                  <img
+                  <Image
                     src={step.img}
                     alt={`${step.stage} screen`}
+                    width={step.imgWidth ?? DEFAULT_IMG_W}
+                    height={step.imgHeight ?? DEFAULT_IMG_H}
+                    sizes="210px"
                     className="w-full h-auto"
                     style={{ display: "block" }}
                   />

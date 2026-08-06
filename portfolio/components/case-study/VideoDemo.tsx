@@ -84,7 +84,7 @@ export function VideoDemo({
             </div>
             {/* iPhone Image overlay */}
             <Image
-              src="/assets/oshap/iPhone frame.png"
+              src="/assets/oshap/iPhone frame.webp"
               alt="iPhone frame"
               fill
               priority
@@ -130,7 +130,7 @@ export function VideoDemo({
             </div>
             {/* iPhone Image overlay */}
             <Image
-              src="/assets/oshap/iPhone frame.png"
+              src="/assets/oshap/iPhone frame.webp"
               alt="iPhone frame"
               fill
               priority

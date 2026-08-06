@@ -1,7 +1,4 @@
-"use client";
-import { useEffect, useState } from "react";
-import { CaseStudyNavbar } from "@/components/case-study/CaseStudyNavbar";
-import { runCaseStudyAnimations } from "@/animations/caseStudy";
+import { CaseStudyChrome } from "@/components/case-study/CaseStudyChrome";
 
 interface MetaItem {
   label: string;
@@ -19,29 +16,9 @@ interface CaseStudyHeroProps {
 }
 
 export function CaseStudyHero({ eyebrow, title, lede, meta, status = "In development · MVP", parentLabel, parentHref }: CaseStudyHeroProps) {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    runCaseStudyAnimations();
-  }, []);
-
-  useEffect(() => {
-    const onScroll = () => setVisible(window.scrollY > 400);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
     <>
-      {/* Scroll progress bar */}
-      <div
-        id="progress"
-        className="fixed top-0 left-0 h-[2px] bg-[var(--color-accent)] z-50 transition-[width_.08s_linear]"
-        style={{ width: 0 }}
-      />
-
-      {/* Nav breadcrumb */}
-      <CaseStudyNavbar title={title} status={status} parentLabel={parentLabel} parentHref={parentHref} />
+      <CaseStudyChrome title={title} status={status} parentLabel={parentLabel} parentHref={parentHref} />
 
       {/* Hero */}
       <header className="relative z-[5] overflow-hidden" style={{ padding: "36px 0 72px" }}>
@@ -99,45 +76,6 @@ export function CaseStudyHero({ eyebrow, title, lede, meta, status = "In develop
           </dl>
         </div>
       </header>
-      {/* Back to top */}
-      <div
-        style={{
-          position: "fixed",
-          bottom: 32,
-          left: 0,
-          right: 0,
-          zIndex: 50,
-          display: "flex",
-          justifyContent: "center",
-          opacity: visible ? 1 : 0,
-          transform: visible ? "translateY(0)" : "translateY(12px)",
-          transition: "opacity 0.25s ease, transform 0.25s ease",
-          pointerEvents: visible ? "auto" : "none",
-        }}
-      >
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          aria-label="Back to top"
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 8,
-            padding: "10px 20px",
-            borderRadius: 999,
-            border: "1px solid var(--color-line)",
-            background: "var(--color-bg)",
-            color: "var(--color-muted)",
-            fontFamily: "var(--font-mono)",
-            fontSize: 11,
-            letterSpacing: "0.08em",
-            textTransform: "uppercase",
-            cursor: "pointer",
-          }}
-        >
-          <span style={{ fontSize: 13, lineHeight: 1 }}>↑</span>
-          Back to top
-        </button>
-      </div>
     </>
   );
 }
