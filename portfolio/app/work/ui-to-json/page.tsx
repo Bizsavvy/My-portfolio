@@ -339,8 +339,8 @@ export default function UItoJSONPage() {
       </Section>
 
       <CaseStudyFooter
-        nextHref="/articles/ui-to-json"
-        nextLabel="Read the full write-up"
+        nextHref="/work/nawnaw"
+        nextLabel="NawNaw"
         stat="300+ users in production"
         colophonLeft="UI to JSON: Design tooling case study"
       />
