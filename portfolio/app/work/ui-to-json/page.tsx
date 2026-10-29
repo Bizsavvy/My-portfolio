@@ -9,7 +9,7 @@ import { LightboxImage } from "@/components/case-study/LightboxImage";
 export const metadata: Metadata = {
   title: "UI to JSON: Case Study · Haye",
   description:
-    "A Figma plugin that compiles design files into AI-optimized semantic JSON: a clean intermediate representation built for AI frontend generation. Live in production with 250+ users.",
+    "A Figma plugin that compiles design files into AI-optimized semantic JSON: a clean intermediate representation built for AI frontend generation. Live in production with 300+ users.",
 };
 
 /* The pipeline from PRD §9, condensed to five legible stages. */

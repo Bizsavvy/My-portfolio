@@ -11,6 +11,6 @@ export default function Image() {
     eyebrow: "Production tool · Figma plugin",
     title: "UI to JSON",
     subtitle:
-      "A Figma plugin that compiles design files into AI-optimized semantic JSON. Live with 250+ users.",
+      "A Figma plugin that compiles design files into AI-optimized semantic JSON. Live with 300+ users.",
   });
 }
