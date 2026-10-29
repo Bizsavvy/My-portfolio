@@ -54,7 +54,7 @@ export const articles: ArticleMeta[] = [
     kind: "Case study",
     date: "2026",
     abstract:
-      "Converting Figma UI into code-ready JSON, and what 250+ users taught me about the gap between a design file and a build. Includes the schema decisions I got wrong first.",
+      "Converting Figma UI into code-ready JSON, and what 300+ users taught me about the gap between a design file and a build. Includes the schema decisions I got wrong first.",
     href: "/articles/ui-to-json",
     projectHref: "/work/ui-to-json",
     projectLabel: "UI to JSON",

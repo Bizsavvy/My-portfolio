@@ -150,7 +150,7 @@ export default function UItoJSONPage() {
           </>
         }
         outcomes={[
-          { stat: "250+", label: "users reached, and growing" },
+          { stat: "300+", label: "users reached, and growing" },
           { stat: "119", label: "Figma Community installs" },
           { stat: "40K", label: "views on the launch post, 586 likes" },
         ]}
@@ -280,12 +280,12 @@ export default function UItoJSONPage() {
         </div>
         <p className="text-[var(--color-body)] text-[17px] leading-[1.65] mt-6 reveal" style={{ maxWidth: 760 }}>
           Launched on the Figma Community on 20 May 2026, with no paid distribution.
-          250+ people have reached the tool across Community installs and shared files;
+          300+ people have reached the tool across Community installs and shared files;
           119 of those are direct Community installs to date.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-8 reveal">
           {[
-            { stat: "250+", label: "Users reached, and growing" },
+            { stat: "300+", label: "Users reached, and growing" },
             { stat: "119", label: "Figma Community installs" },
             { stat: "42", label: "Community likes" },
           ].map((m) => (
@@ -341,7 +341,7 @@ export default function UItoJSONPage() {
       <CaseStudyFooter
         nextHref="/articles/ui-to-json"
         nextLabel="Read the full write-up"
-        stat="250+ users in production"
+        stat="300+ users in production"
         colophonLeft="UI to JSON: Design tooling case study"
       />
     </div>

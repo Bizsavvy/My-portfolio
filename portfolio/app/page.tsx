@@ -24,7 +24,7 @@ const projects: ProjectCardProps[] = [
     summary:
       "A Figma plugin that converts UI into code-ready JSON. Live in production with a real, growing user base.",
     status: "Live",
-    metric: "250+ users",
+    metric: "300+ users",
     href: "/work/ui-to-json",
     img: "/assets/ui-to-json/cover.webp",
     imgWidth: 1920,
