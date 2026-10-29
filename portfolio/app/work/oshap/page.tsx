@@ -408,8 +408,8 @@ export default function OshapPage() {
         </div>
       </S>
       <CaseStudyFooter
-        nextHref="/work/flow"
-        nextLabel="Flow"
+        nextHref="/work/nawnaw"
+        nextLabel="NawNaw"
         stat="MVP shipped · Backend handoff"
         colophonLeft="Oshap: Product Design & Engineering case study"
       />

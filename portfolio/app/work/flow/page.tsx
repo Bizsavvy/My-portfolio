@@ -135,8 +135,8 @@ export default function FlowPage() {
       <Slides items={guidelines.slice(14, 18)} />
 
       <CaseStudyFooter
-        nextHref="/work/ui-to-json"
-        nextLabel="UI to JSON"
+        nextHref="/work/shappay"
+        nextLabel="Shappay"
         stat="Brand Guideline v1.0 · 18 sections"
         colophonLeft="Flow: Brand Identity case study"
       />

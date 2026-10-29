@@ -105,8 +105,8 @@ export default function ShappayPage() {
       <MetricSection />
 
       <CaseStudyFooter
-        nextHref="/work/oshap"
-        nextLabel="Oshap"
+        nextHref="/work/ui-to-json"
+        nextLabel="UI to JSON"
         stat="The reasoning, in full"
         colophonLeft="Shappay: Product Design & Engineering case study"
       />
