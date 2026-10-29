@@ -129,8 +129,8 @@ export default function NawNawPage() {
       />
 
       <CaseStudyFooter
-        nextHref="/articles/nawnaw"
-        nextLabel="Read the full write-up"
+        nextHref="/work/shappay"
+        nextLabel="Shappay"
         stat="Concept · fully designed and built"
         colophonLeft="NawNaw: Product Design & Engineering Concept"
       />

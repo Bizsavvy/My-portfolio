@@ -105,8 +105,8 @@ export default function ShappayPage() {
       <MetricSection />
 
       <CaseStudyFooter
-        nextHref="/articles/shappay"
-        nextLabel="Read the full write-up"
+        nextHref="/work/oshap"
+        nextLabel="Oshap"
         stat="The reasoning, in full"
         colophonLeft="Shappay: Product Design & Engineering case study"
       />
