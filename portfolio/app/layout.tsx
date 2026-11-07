@@ -1,18 +1,16 @@
 import type { Metadata } from "next";
-import {
-  Caveat,
-  Pixelify_Sans,
-  Hanken_Grotesk,
-  JetBrains_Mono,
-} from "next/font/google";
+import { Pixelify_Sans, Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import { CustomCursor } from "@/components/ui/CustomCursor";
 import { Analytics } from "@vercel/analytics/next";
 import { siteUrl, siteName } from "@/lib/site";
 import "./globals.css";
 
-const caveat = Caveat({
-  subsets: ["latin"],
-  weight: ["400", "600"],
+// Self-hosted: loading this one through next/font/google failed the Vercel build
+// with "next/font/google queries have exactly one entry".
+const caveat = localFont({
+  src: "./fonts/Caveat-latin.woff2",
+  weight: "400 700",
   variable: "--font-caveat",
   display: "swap",
 });

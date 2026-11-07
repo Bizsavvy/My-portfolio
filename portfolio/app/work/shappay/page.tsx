@@ -9,7 +9,7 @@ import { CaseStudyFooter } from "@/components/case-study/CaseStudyFooter";
 
 export const metadata: Metadata = {
   title: "Shappay: Case Study · Haye",
-  description: "A wallet-first QR payments app on Nigeria's NIBSS NQR rails.",
+  description: "A wallet-first QR payments app for Nigeria.",
 };
 
 export default function ShappayPage() {
@@ -39,7 +39,7 @@ export default function ShappayPage() {
         }
         outcomes={[
           { stat: "4", label: "screens end to end, one decision each" },
-          { stat: "NQR", label: "live EMVCo payload engine on NIBSS rails" },
+          { stat: "EMVCo", label: "working QR payload demo; NQR support is planned" },
           { stat: "2", label: "addressing modes: QR scan and name@shappay" },
         ]}
         meta={[
@@ -87,7 +87,7 @@ export default function ShappayPage() {
         isMobile
       />
 
-      {/* Live engine — the part that is genuinely hard to fake. */}
+      {/* Working payload demo. It runs on this page and is not in the app yet. */}
       <QrEngineDemo />
 
       <FlowStrip

@@ -26,9 +26,9 @@ export function WhyItMatters() {
             is already in discussion with 30+ central banks, Nigeria among them.
           </p>
           <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)]">
-            Shappay builds on NIBSS NQR as Nigeria&apos;s implementation and treats the design
-            problem as: how do you make national-scale financial inclusion feel like scanning a
-            square?
+            Shappay is designed to build on NIBSS NQR, Nigeria&apos;s implementation, and treats
+            the design problem as: how do you make national-scale financial inclusion feel like
+            scanning a square?
           </p>
         </div>
       </div>

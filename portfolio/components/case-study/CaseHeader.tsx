@@ -179,7 +179,7 @@ export function CaseHeader({
             </dl>
 
             <div className="reveal flex items-center gap-4 flex-wrap">
-              <Badge variant={statusVariant}>{status}</Badge>
+              {status && <Badge variant={statusVariant}>{status}</Badge>}
               {readMoreHref && (
                 <a
                   href={readMoreHref}

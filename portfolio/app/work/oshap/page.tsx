@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { CaseHeader } from "@/components/case-study/CaseHeader";
 import { CaseStudyFooter } from "@/components/case-study/CaseStudyFooter";
-import { LiveAppFrame } from "@/components/case-study/LiveAppFrame";
 import { Kicker } from "@/components/ui/Kicker";
 import { LightboxImage } from "@/components/case-study/LightboxImage";
 import { ImageCallouts } from "@/components/case-study/ImageCallouts";
@@ -61,7 +60,7 @@ export default function OshapPage() {
       <CaseHeader
         eyebrow="QR Ordering & Payments · Restaurants & Bars"
         title="Oshap"
-        status="Shipped MVP"
+        status=""
         tagline={
           <>
             A{" "}
@@ -94,8 +93,8 @@ export default function OshapPage() {
         readMoreLabel="Read the full case study"
       />
 
-      {/* The live app, before any narrative. */}
-      <LiveAppFrame />
+      {/* LiveAppFrame goes back here once the sample-data demo is hosted. Its backend is
+          offline, so the embed only shows an error. */}
 
       {/* ── 5 · Customer Journey ── */}
       <S>

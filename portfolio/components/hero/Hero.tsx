@@ -133,7 +133,7 @@ export function Hero() {
           >
             Most designers hand off a file. I ship the front-end too, which means
             the thing you see in the case study is the thing that runs. Currently
-            building payment rails for Nigerian merchants.
+            building a QR payments app for Nigerian merchants.
           </p>
         </div>
 
