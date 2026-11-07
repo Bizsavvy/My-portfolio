@@ -11,7 +11,7 @@ const projects: ProjectCardProps[] = [
     title: "Shappay",
     context: "Consumer fintech · Founder",
     summary:
-      "A wallet-first QR payments app on Nigeria's NIBSS NQR rails. Designed and coded end to end, including the live EMVCo payload engine.",
+      "A wallet-first QR payments app for Nigeria. Designed and coded end to end, with a working EMVCo payload demo. NQR support is planned.",
     status: "Pre Alpha",
     href: "/work/shappay",
     img: "/assets/shappay/landscape-shot.svg",

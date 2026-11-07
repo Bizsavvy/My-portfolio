@@ -10,6 +10,6 @@ export default function Image() {
   return renderOgImage({
     eyebrow: "Consumer fintech · QR payments",
     title: "Shappay",
-    subtitle: "A wallet-first QR payments app on Nigeria's NIBSS NQR rails.",
+    subtitle: "A wallet-first QR payments app for Nigeria.",
   });
 }

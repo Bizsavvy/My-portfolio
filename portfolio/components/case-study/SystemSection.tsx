@@ -4,7 +4,7 @@ const archNodes = [
   {
     index: "→ 01",
     title: "Identity Layer",
-    body: "EMVCo / NQR payload generation and parsing, plus name@shappay VPA addressing: two ways to identify any destination.",
+    body: "Shappay QR codes and name@shappay addressing: two ways to identify any destination. EMVCo / NQR parsing is planned.",
   },
   {
     index: "→ 02",
@@ -54,8 +54,10 @@ export function SystemSection() {
         </div>
 
         <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)] reveal">
-          The pivot resolved into a clean separation of concerns. Being able to build each layer
-          is what let me design the UX around its real constraints.
+          The pivot resolved into a clean separation of concerns. This is the target architecture:
+          the pre-alpha app runs these flows on sample data, with the services below still to be
+          connected. Working through each layer is what let me design the UX around its real
+          constraints.
         </p>
 
         <div className="flex flex-col md:flex-row rounded-[var(--rad-xl)] border border-[var(--color-line)] overflow-hidden reveal">
@@ -84,7 +86,7 @@ export function SystemSection() {
         </p>
 
         <p className="font-hanken text-[14px] leading-[1.6] text-[var(--color-muted)] reveal">
-          Funding via Mono DirectPay. Wallet, ledger, and outbound payouts via Anchor.
+          Planned: funding via Mono DirectPay; wallet, ledger, and outbound payouts via Anchor.
         </p>
 
         <h3 className="font-hanken font-bold text-[22px] tracking-[-0.01em] text-[var(--color-text)] reveal">
@@ -92,8 +94,8 @@ export function SystemSection() {
         </h3>
 
         <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)] reveal">
-          The resolution engine outputs a routing decision on every transaction. Three cases,
-          evaluated in order:
+          The resolution engine is designed to output a routing decision on every transaction.
+          Three cases, evaluated in order:
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 reveal">

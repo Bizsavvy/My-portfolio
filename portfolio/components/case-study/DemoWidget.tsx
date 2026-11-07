@@ -94,7 +94,7 @@ export function DemoWidget() {
       {/* Header */}
       <div className="demo-head px-[26px] py-5 border-b border-[var(--color-line)] flex items-center justify-between gap-4 flex-wrap">
         <span className="font-mono text-[12px] tracking-[.1em] uppercase text-[var(--color-muted)]">
-          Shappay · NQR Payload Builder
+          NQR Payload Demo
         </span>
         <span className="flex items-center gap-2 font-mono text-[11px] text-[var(--color-accent)] tracking-[.1em]">
           <span
