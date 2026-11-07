@@ -37,18 +37,6 @@ export const articles: ArticleMeta[] = [
     order: 60,
   },
   {
-    slug: "flow",
-    title: "Building a brand around a leaf and a droplet",
-    kind: "Design essay",
-    date: "April 2026",
-    abstract:
-      "A period-care identity that had to read as calm without reading as clinical. On Cheerful Violet, integrating a mark into a wordmark, and writing guidelines somebody will actually follow.",
-    href: "/articles/flow",
-    projectHref: "/work/flow",
-    projectLabel: "Flow",
-    order: 50,
-  },
-  {
     slug: "ui-to-json",
     title: "A plugin for designers who think in systems",
     kind: "Case study",

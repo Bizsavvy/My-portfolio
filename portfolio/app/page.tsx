@@ -37,7 +37,6 @@ const projects: ProjectCardProps[] = [
     context: "QR ordering · Design → front-end",
     summary:
       "Scan-to-order and pay for restaurants: no app, no login, no waiter. Built the customer app plus the full admin and kitchen dashboard.",
-    status: "Shipped MVP",
     href: "/work/oshap",
     img: "/assets/oshap/Dashboard.webp",
     imgWidth: 2000,
@@ -53,17 +52,6 @@ const projects: ProjectCardProps[] = [
     img: "/assets/nawnaw/Guest-flow.webp",
     imgWidth: 2000,
     imgHeight: 1500,
-  },
-  {
-    title: "Flow",
-    context: "Brand identity · Period care",
-    summary:
-      "A full brand system built around Cheerful Violet and a leaf-droplet mark integrated into the wordmark, with complete guidelines.",
-    status: "Identity",
-    href: "/work/flow",
-    img: "/assets/flow-business-card.webp",
-    imgWidth: 1600,
-    imgHeight: 914,
   },
 ];
 

@@ -26,13 +26,15 @@ export function CaseStudyNavbar({
           &nbsp;&nbsp;/&nbsp;&nbsp;
           <span className="text-[var(--color-text)]">{title}</span>
         </div>
-        <div className="flex items-center gap-2 text-[var(--color-muted)]">
-          <span
-            className="w-[7px] h-[7px] rounded-full bg-[var(--color-accent)] flex-shrink-0"
-            style={{ animation: "pulse 2.4s infinite" }}
-          />
-          {status}
-        </div>
+        {status && (
+          <div className="flex items-center gap-2 text-[var(--color-muted)]">
+            <span
+              className="w-[7px] h-[7px] rounded-full bg-[var(--color-accent)] flex-shrink-0"
+              style={{ animation: "pulse 2.4s infinite" }}
+            />
+            {status}
+          </div>
+        )}
       </div>
     </nav>
   );

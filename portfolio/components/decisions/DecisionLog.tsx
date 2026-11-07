@@ -110,13 +110,6 @@ const decisions: Decision[] = [
     call: "Show the order moving through real stages (accepted, packed, on the way) with a live countdown on screen, making the brand's whole claim visible and accountable.",
   },
   {
-    project: "Flow",
-    title: "The mark lives inside the wordmark",
-    constraint:
-      "Period-care branding defaults to either clinical or overly cute, and neither earns trust.",
-    call: "A single leaf-droplet mark built into the wordmark around Cheerful Violet, carrying the system without leaning either way.",
-  },
-  {
     project: "This site",
     title: "The site is the proof",
     constraint:

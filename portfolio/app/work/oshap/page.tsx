@@ -60,7 +60,7 @@ export default function OshapPage() {
       <CaseHeader
         eyebrow="QR Ordering & Payments · Restaurants & Bars"
         title="Oshap"
-        status="Shipped MVP"
+        status=""
         tagline={
           <>
             A{" "}

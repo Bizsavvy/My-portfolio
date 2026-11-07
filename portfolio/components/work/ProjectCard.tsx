@@ -4,10 +4,8 @@ import Image from "next/image";
 
 export type ProjectStatus =
   | "Live"
-  | "Shipped MVP"
   | "Pre Alpha"
-  | "Concept"
-  | "Identity";
+  | "Concept";
 
 export interface ProjectCardProps {
   /** Project name. */
@@ -16,7 +14,7 @@ export interface ProjectCardProps {
   context: string;
   /** Two lines, max. What you built plus the impact, quantified if possible. */
   summary: string;
-  status: ProjectStatus;
+  status?: ProjectStatus;
   /** Quantified signal shown next to the status, e.g. "250+ users". */
   metric?: string;
   href: string;
@@ -34,10 +32,8 @@ export interface ProjectCardProps {
 /* Status drives colour so the grid reads at a glance without a legend. */
 const STATUS_STYLE: Record<ProjectStatus, string> = {
   Live: "text-[var(--color-accent)] border-[var(--color-accent)]",
-  "Shipped MVP": "text-[var(--color-accent)] border-[var(--color-accent)]",
   "Pre Alpha": "text-[var(--color-violet)] border-[var(--color-violet)]",
   Concept: "text-[var(--color-muted)] border-[var(--color-line-strong)]",
-  Identity: "text-[var(--color-violet)] border-[var(--color-violet)]",
 };
 
 /**
@@ -82,11 +78,13 @@ export function ProjectCard({
 
           {/* Status overlay */}
           <div className="absolute top-3 left-3 flex items-center gap-2 flex-wrap">
-            <span
-              className={`font-mono text-[10px] tracking-[.06em] uppercase border rounded-[20px] px-[9px] py-[3px] backdrop-blur-[6px] bg-[var(--color-nav-bg)] ${STATUS_STYLE[status]}`}
-            >
-              {status}
-            </span>
+            {status && (
+              <span
+                className={`font-mono text-[10px] tracking-[.06em] uppercase border rounded-[20px] px-[9px] py-[3px] backdrop-blur-[6px] bg-[var(--color-nav-bg)] ${STATUS_STYLE[status]}`}
+              >
+                {status}
+              </span>
+            )}
             {metric && (
               <span className="font-mono text-[10px] tracking-[.06em] uppercase border border-[var(--color-line-strong)] text-[var(--color-body)] rounded-[20px] px-[9px] py-[3px] backdrop-blur-[6px] bg-[var(--color-nav-bg)]">
                 {metric}

@@ -27,9 +27,8 @@ export function ProblemStatement() {
             It is the single most error-prone moment in everyday payments and it scales terribly
             to merchants, who have no terminal and no way to get paid except by dictating account
             details out loud. The rails to fix this already exist. NIBSS NQR is Nigeria&apos;s
-            national interoperable QR standard, built on the same EMVCo spec that powers
-            India&apos;s UPI QR. The standard was there. The experience and the resolution engine
-            beneath it was not.
+            national interoperable QR standard, built on the EMVCo QR specification. The standard
+            was there. The experience and the resolution engine beneath it was not.
           </p>
         </div>
       </div>
