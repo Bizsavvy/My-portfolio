@@ -10,6 +10,7 @@ import { ScreenPair } from "@/components/case/screen-pair";
 import { PhoneShot } from "@/components/home/case-study-tile";
 import { DataTable } from "@/components/case/data-table";
 import type { CaseStudy, OutcomeSection } from "@/lib/case-studies";
+import { cn } from "@/lib/utils";
 
 const wrap = "mx-auto w-full max-w-[1280px] px-g17 md:px-g27 lg:px-g44";
 
@@ -78,17 +79,20 @@ function ProblemAndImpact({ study }: { study: CaseStudy }) {
   );
 }
 
-/** The sneak peek: the product's screens in a wide card, cropped by the card's bottom edge. */
+/**
+ * The sneak peek: the product's screens in a wide card. Every phone shows whole, never cropped,
+ * and the middle one is larger (Haye, 2026-11-15). Phones show only the middle screen.
+ */
 function Preview({ study }: { study: CaseStudy }) {
   return (
     <section aria-label="Preview" className={`${wrap} pb-g116`}>
-      <div className="flex h-[360px] items-start justify-center gap-g17 overflow-hidden rounded-xl bg-card px-g27 pt-g44 sm:h-[480px] lg:h-[600px] lg:gap-g44">
+      <div className="flex items-center justify-center gap-g17 rounded-xl bg-card px-g27 py-g44 lg:gap-g44 lg:py-g72">
         {study.preview.map((shot, i) => (
           <PhoneShot
             key={shot.src}
             src={shot.src}
             alt={shot.alt}
-            className={`w-[44%] max-w-[300px] shrink-0 sm:w-[30%] ${i === 1 ? "" : "max-sm:hidden lg:mt-g72"}`}
+            className={cn("shrink-0", i === 1 ? "w-[60%] max-w-[300px] sm:w-[34%]" : "w-[26%] max-w-[230px] max-sm:hidden")}
           />
         ))}
       </div>
@@ -192,10 +196,8 @@ export function NextProject({ next }: { next: CaseStudy["next"] }) {
           <ArrowRight aria-hidden className="size-7 transition-transform duration-150 ease-standard group-hover:translate-x-1" />
         </span>
         <span className="max-w-[640px] text-lead text-foreground-secondary">{next.line}</span>
-        {/* TODO(redesign): the next project's wide preview, once its new screenshots exist. */}
-        <span className="flex aspect-[16/7] w-full items-center justify-center rounded-xl border border-dashed border-input bg-card">
-          <span className="font-mono text-label text-muted-foreground uppercase">Preview coming</span>
-        </span>
+        {/* TODO(redesign): add the next project's wide preview once its new screenshots exist.
+            Hidden until then rather than shown as an empty box (Haye, 2026-11-15). */}
       </Link>
     </section>
   );

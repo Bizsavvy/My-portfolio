@@ -107,7 +107,7 @@ export const shappay: CaseStudy = {
       ["Send to a friend's ShapID", "4/8", "5/8"],
       ["Ask a friend for money", "not tested", "4/8"],
     ],
-    note: "The same tasks, 8 testers each time, scored by the same rule: the right person paid by the right route. Paying a ShapID still misses the bar of 7/8. Request, which this redesign moved off Home, was found by only 4/8; the next build puts it back on Home, not yet tested. After launch, the measure of success is the share of payments made by scan or ShapID instead of a typed account number.",
+    note: "The same tasks, a different 8 testers each time, scored by the same rule: the right person paid by the right route. Paying a ShapID still misses the bar of 7/8. Request, which this redesign moved off Home, was found by only 4/8; the next build puts it back on Home, not yet tested. Shappay is still in development. After launch, the measure of success is the share of payments made by scan or ShapID instead of a typed account number, and the target is 90%.",
   },
   detailedHref: "/work/shappay/detailed",
   next: {

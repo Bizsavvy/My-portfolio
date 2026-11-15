@@ -10,7 +10,7 @@ type Props = {
   className?: string;
 };
 
-/** A card around the before and after slider, full width, cropped to the top of the screen. */
+/** A card around the before and after slider, full width, cropped just below the Home action row. */
 export function BeforeAfterTile({ label, before, after, className }: Props) {
   return (
     <figure className={cn(card, "px-g17 pt-g17 pb-g44", className)}>
@@ -18,7 +18,7 @@ export function BeforeAfterTile({ label, before, after, className }: Props) {
         before={before}
         after={after}
         label={label}
-        crop={{ aspect: "1170 / 1100", position: "top" }}
+        crop={{ aspect: "1170 / 925", position: "top" }}
         sizes="(min-width: 1024px) 380px, 90vw"
         className="w-full"
       />

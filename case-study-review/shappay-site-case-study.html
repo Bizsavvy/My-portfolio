@@ -1,0 +1,165 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Redesigning Shappay&#x27;s ways to pay</title><style>
+:root { --text: #1d2125; --muted: #5c6670; --bg: #ffffff; --line: #e3e7eb; --sky: #87CEEB; }
+@media (prefers-color-scheme: dark) {
+  :root { --text: #e8ebee; --muted: #a3adb7; --bg: #15181b; --line: #2b3137; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text);
+  font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif; }
+main { max-width: 760px; margin: 0 auto; padding: 48px 16px 96px; }
+h1 { font-size: 2.1rem; line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.01em; }
+h2 { font-size: 1.35rem; margin: 48px 0 12px; }
+h3 { font-size: 1.1rem; margin: 32px 0 8px; }
+p, li { color: var(--text); }
+a { color: inherit; }
+img { max-width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--line); display: block; margin: 24px 0 8px; }
+em { color: var(--muted); }
+table { border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 0.95rem; }
+th, td { border-bottom: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+blockquote { margin: 16px 0; padding: 8px 16px; border-left: 3px solid var(--line); color: var(--muted); }
+code { font-size: 0.9em; }
+hr { border: 0; border-top: 1px solid var(--line); margin: 48px 0; }
+.visual-slot { border: 2px dashed var(--sky) !important; border-radius: 10px !important;
+  padding: 16px 20px !important; margin: 24px 0 !important; background: rgba(135, 206, 235, 0.08) !important; }
+.visual-slot p { margin: 6px 0; }
+.visual-slot p:first-child strong { color: #2b8fb8; text-transform: none; }
+@media (prefers-color-scheme: dark) { .visual-slot p:first-child strong { color: var(--sky); } }
+.placeholder { background: rgba(255, 196, 0, 0.18); border-radius: 4px; padding: 0 4px; }
+</style></head><body><main>
+<h1>Redesigning Shappay's ways to pay</h1>
+<p>A usability test showed that people couldn't find Shappay's ways to pay, so I redesigned the payment screens and ran the same test on the redesign.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Role</strong></td>
+<td>Design engineer, leading product design</td>
+</tr>
+<tr>
+<td><strong>Team</strong></td>
+<td>Me; a product manager, who agreed and approved the redesign's scope; a frontend engineer, who reviewed and merged it; and a backend engineer, who built the ShapID lookup</td>
+</tr>
+<tr>
+<td><strong>Timeline</strong></td>
+<td>2025 to now; tests in November 2026</td>
+</tr>
+<tr>
+<td><strong>Platform</strong></td>
+<td>React Native with Expo, one codebase for phone and web</td>
+</tr>
+</tbody>
+</table>
+<p><strong>TL;DR:</strong> Shappay is building an interoperable QR for Nigeria: one code a customer of any bank can pay, and a scanner that reads any code made to the national standard. In testing, people with a QR code or a ShapID in front of them still went to bank transfer. After the redesign, paying by scan rose from 5/8 to 8/8 testers, and getting past a code the app couldn't read from 4/8 to 8/8, measured in usability tests on a web build with a simulated scan.</p>
+<p><img alt="Paying by scan in the current app, from Home to sent" src="../portfolio/public/assets/shappay/motion/shappay-pay-by-scan_16x9_1920x1080_poster.webp" />
+<em>Paying by scan in the current app, from Home to sent, on sample data. The web build has no camera, so the scan is simulated. (Plays as a loop on the page.)</em></p>
+<h2>People reached for the account number they knew</h2>
+<p>Sending money in Nigeria means typing a 10-digit account number and hoping the name that comes back is the one you meant. Shappay exists to remove that step. But in the first design, no task reached its bar: between 4/8 and 6/8 testers completed each one. In tasks that needed a scan or a ShapID, testers opened bank transfer at least 10 times, and at least 3 wrong payments went through it.</p>
+<p>The same unmoderated test ran twice, each time with a different 8 people in Nigeria who send money from their phones, recruited from my friends and contacts. Pass bars were set before testing, and one scoring rule judged both designs: the right person paid by the right route.</p>
+<h2>What the first test showed</h2>
+<ol>
+<li><strong>Scan was hard to find, but easy to use.</strong> 5/8 didn't go straight to Scan. Its button had an icon and no label. Everyone who did open Scan reached the amount screen without trouble.</li>
+<li><strong>"Send" read as "send to a bank account".</strong> People with a code or an ID still chose the habit.</li>
+<li><strong>The card for an unreadable code only half worked.</strong> Four tapped Send money first, which pays a ShapID, when the sign showed a bank account number.</li>
+<li><strong>"Pending" read as "paid".</strong> 3/8 said the shop had been paid; "sent" was the word they kept.</li>
+</ol>
+<h2>Home names every way to pay</h2>
+<p>The row of Fund, Send, Split and Request became Scan to pay, Send to ShapID, Send to bank and Add money. Scan leads because the product is built on it. Request and Split moved into the payments tab, one tap further away; I expected them to stay easy to find there, and added a request task to the retest to check.</p>
+<p><img alt="Shappay Home before the redesign" src="../portfolio/public/assets/shappay/redesign/before-01-home.png" />
+<img alt="Shappay Home after the redesign" src="../portfolio/public/assets/shappay/redesign/after-01-home.png" />
+<em>Cropped just below the action row. Before: Fund, Send, Split and Request. After: four ways to pay, named the way people say them.</em></p>
+<div class="visual-slot" style="border: 2px dashed #87CEEB; border-radius: 10px; padding: 16px 20px; margin: 24px 0; background: rgba(135, 206, 235, 0.08);">
+<p><strong>Visual: Options explored</strong></p>
+<p><strong>Show:</strong> The three Home row options from the decision log side by side: keep Fund, Send, Split, Request; rename them; rebuild the row around ways to pay. One line under each on why it lost or won.</p>
+<p><strong>Why:</strong> The decision log lists the options in words only; this shows the reasoning behind the row the retest proved.</p>
+</div>
+
+<h2>A code it can't read still gets paid</h2>
+<p>Until the scanner reads every code, a code it can't read still gets paid. Send to bank became the main button and Send to ShapID the second, because the shop's sign shows an account number. The title stayed "Can't read this code", because the code may be fine and simply belong to another provider.</p>
+<p><img alt="A code the app can't read, before" src="../portfolio/public/assets/shappay/redesign/before-07-cant-read.png" />
+<img alt="A code the app can't read, after" src="../portfolio/public/assets/shappay/redesign/after-07-cant-read.png" />
+<em>Before: two equal options. After: Send to bank leads, Send to ShapID comes second.</em></p>
+<div class="visual-slot" style="border: 2px dashed #87CEEB; border-radius: 10px; padding: 16px 20px; margin: 24px 0; background: rgba(135, 206, 235, 0.08);">
+<p><strong>Visual: Prototype clip</strong></p>
+<p><strong>Show:</strong> A short loop on the current app: a code that won't read, the card, Send to bank, the account number from the sign, review and sent. Same frame and canvas as the scan to pay clip.</p>
+<p><strong>Why:</strong> Getting past an unreadable code went from 4/8 to 8/8; the flow behind that number is only shown as stills.</p>
+</div>
+
+<h2>Pending says what it means</h2>
+<p>"Pending" became "On its way", with the name in the sentence: "Adaeze Bakery hasn't received this yet."</p>
+<p><img alt="A pending payment, before" src="../portfolio/public/assets/shappay/redesign/before-08-pending.png" />
+<img alt="A pending payment, after" src="../portfolio/public/assets/shappay/redesign/after-08-pending.png" />
+<em>"On its way" leaves no room to read it as paid.</em></p>
+<h2>Results: what held, what still failed, what broke</h2>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>First design</th>
+<th>Redesign</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scan a shop's code and pay</td>
+<td>5/8</td>
+<td>8/8</td>
+</tr>
+<tr>
+<td>Pay when the code can't be read</td>
+<td>4/8</td>
+<td>8/8</td>
+</tr>
+<tr>
+<td>Tell whether a pending payment has arrived</td>
+<td>5/8</td>
+<td>7/8</td>
+</tr>
+<tr>
+<td>Add money, then pay</td>
+<td>6/8</td>
+<td>7/8</td>
+</tr>
+<tr>
+<td>Send to a friend's ShapID</td>
+<td>4/8</td>
+<td>5/8</td>
+</tr>
+<tr>
+<td>Ask a friend for money</td>
+<td>not tested</td>
+<td>4/8</td>
+</tr>
+</tbody>
+</table>
+<p>The same tasks, a different 8 testers each time, scored by the same rule. Paying a ShapID still misses the bar of 7/8: two testers tapped the only name in the new Recent list on a task about someone else. Request, which this redesign moved off Home, was found by only 4/8; the next build puts it back on Home, not yet tested.</p>
+<p>Shappay is still in development. After launch, the measure of success is the share of payments made by scan or ShapID instead of a typed account number, and the target is 90%. <span class="placeholder">[ADD: why 90%, if you want it on the page]</span></p>
+<div class="visual-slot" style="border: 2px dashed #87CEEB; border-radius: 10px; padding: 16px 20px; margin: 24px 0; background: rgba(135, 206, 235, 0.08);">
+<p><strong>Visual: Annotated screen</strong></p>
+<p><strong>Show:</strong> The Payments tab bars of Monzo and Wise next to Shappay's, labels circled, as a small reference strip beside the "Pay" to "Payments" change.</p>
+<p><strong>Why:</strong> The tab name rests on the claim that Monzo and Wise use Payments for the same set, which is currently asserted, not shown.</p>
+</div>
+
+<h2>What I'd do differently</h2>
+<ul>
+<li><strong>Test the cost of every move.</strong> Moving Request off Home was a decision about space, not about people. Every feature I move now gets a task of its own.</li>
+<li><strong>Make sample data look like a real phone.</strong> The Recent list held one name; real recents hold several, and a lone name invites a wrong tap.</li>
+<li><strong>Trust completion over ease.</strong> Testers rated tasks 10/10 after paying the wrong person. Whether the right person got paid is the number that held up.</li>
+</ul>
+<hr />
+<h2>Before you publish</h2>
+<p>Placeholders to fill, in order:</p>
+<ul>
+<li>[ ] <span class="placeholder">[ADD: why 90%, if you want it on the page]</span></li>
+</ul>
+<p>Visuals to make (the sky blue boxes above):</p>
+<ul>
+<li>[ ] Options explored: the three Home row options, with why each lost or won</li>
+<li>[ ] Prototype clip: unreadable code to Send to bank on the current app</li>
+<li>[ ] Annotated screen: Monzo and Wise Payments tabs beside Shappay's</li>
+</ul>
+</main></body></html>

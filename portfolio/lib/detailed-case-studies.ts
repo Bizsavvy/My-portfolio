@@ -105,7 +105,7 @@ export const shappayDetailed: DetailedCaseStudy = {
       blocks: [
         {
           kind: "p",
-          text: "The same unmoderated test ran twice, each time with 8 people in Nigeria who send money from their phones, recruited from my friends and contacts: on the first design on 9 and 10 November 2026, and on the redesign from 12 to 14 November. Testers used their own phones and a single link.",
+          text: "The same unmoderated test ran twice, each time with a different 8 people in Nigeria who send money from their phones, recruited from my friends and contacts: on the first design on 9 and 10 November 2026, and on the redesign from 12 to 14 November. Testers used their own phones and a single link.",
         },
         {
           kind: "list",
@@ -372,7 +372,7 @@ export const shappayDetailed: DetailedCaseStudy = {
       blocks: [
         {
           kind: "p",
-          text: "When people can't find the scan or the ShapID, they fall back to Send to bank and type a 10-digit account number: the slow step Shappay exists to remove, and the one where mistakes happen. In the first test, at least 3 wrong payments went that way. So moving scan from 5/8 to 8/8 isn't polish: it's the main thing the app does, starting to work. The retest mattered as much as the redesign: it confirmed three fixes and caught the one change that broke something else, before any real user met it. After launch, the number that shows whether this works is the share of payments made by scan or ShapID instead of a typed account number.",
+          text: "When people can't find the scan or the ShapID, they fall back to Send to bank and type a 10-digit account number: the slow step Shappay exists to remove, and the one where mistakes happen. In the first test, at least 3 wrong payments went that way. So moving scan from 5/8 to 8/8 isn't polish: it's the main thing the app does, starting to work. The retest mattered as much as the redesign: it confirmed three fixes and caught the one change that broke something else, before any real user met it. Shappay is still in development. After launch, the number that shows whether this works is the share of payments made by scan or ShapID instead of a typed account number, and the target is 90%.",
         },
       ],
     },
@@ -415,16 +415,6 @@ export const shappayDetailed: DetailedCaseStudy = {
           text: "Shappay's codes and scanner are being built on NIBSS NQR, so they work across banks. Today the app reads Shappay's own payment links, and reading every NQR code is in progress. A working demo of the NQR payload format runs on this site.",
         },
         { kind: "nqr-demo" },
-        {
-          kind: "p",
-          lead: "The test build.",
-          text: "Test-only code lives on its own branch, so none of it ships. It swaps the camera for a pictured QR code that runs a Shappay link through the app's parser when tapped, sets up each task's starting state (a ₦500 balance, a code that won't read, a payment still on its way), and reports every payment or request to the testing tool: who, how much, and how it was made.",
-        },
-        {
-          kind: "p",
-          lead: "The testing tool.",
-          text: "Maze's free plan allows one study a month, so I built my own. It's a small TypeScript script that loads only when a link carries a test, inside a shadow DOM so the app's styles can't touch it. A state machine walks each tester through consent, the task, the questions and the next task. It records the screen only after consent, hides typed input, and sends events to PostHog. It scores payments itself, by person, amount and route, so a wrong payment can't count as a success. And it keeps Start locked until the app is on screen, so slow mobile data never eats into a tester's time.",
-        },
       ],
     },
   ],

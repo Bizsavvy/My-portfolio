@@ -14,12 +14,13 @@ export const shappayScreens = {
     label: "Shappay Home",
     before: shot("before-01-home", "Home before the redesign: Fund, Send, Split and Request"),
     after: shot("after-01-home", "Home after the redesign: Scan to pay, Send to ShapID, Send to bank and Add money"),
-    crop: { aspect: "1170 / 1100", position: "top" },
+    // Cropped just below the action row (Haye, 2026-11-15): the "before" has a request card under it that the "after" doesn't.
+    crop: { aspect: "1170 / 925", position: "top" },
     callouts: [
-      { on: "before", x: 45, y: 51, text: "“Send” read as “send to a bank account”." },
-      { on: "after", x: 25, y: 51, text: "Scan to pay comes first, because the product is built on it." },
-      { on: "after", x: 66, y: 51, text: "Send to ShapID and Send to bank say where the money goes." },
-      { on: "after", x: 87, y: 51, text: "“Add money” matches the screen it opens." },
+      { on: "before", x: 45, y: 61, text: "“Send” read as “send to a bank account”." },
+      { on: "after", x: 25, y: 61, text: "Scan to pay comes first, because the product is built on it." },
+      { on: "after", x: 66, y: 61, text: "Send to ShapID and Send to bank say where the money goes." },
+      { on: "after", x: 87, y: 61, text: "“Add money” matches the screen it opens." },
     ],
   },
   payHub: {
