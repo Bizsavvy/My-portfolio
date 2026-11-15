@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import type { Shot } from "@/components/site/before-after";
 import { CompareSlider } from "@/components/site/compare-slider";
+import { LoopVideo } from "@/components/site/loop-video";
 import { PhoneShot } from "@/components/home/case-study-tile";
 import { cn } from "@/lib/utils";
 
@@ -26,6 +27,19 @@ export function PhoneCard({ shot, label, className }: { shot: Shot; label: strin
       <div className={phoneArea}>
         <PhoneShot src={shot.src} alt={shot.alt} className={phone} />
       </div>
+      <CardLabel>{label}</CardLabel>
+    </figure>
+  );
+}
+
+/**
+ * A product loop on a tall card: the motion session renders the phone (desert frame, 85% of
+ * the height) on the card colour, 3:5, so the video fills the card edge to edge.
+ */
+export function PhoneVideoCard({ src, poster, label, description, className }: { src: string; poster: string; label: string; description: string; className?: string }) {
+  return (
+    <figure className={cn(card, className)}>
+      <LoopVideo src={src} poster={poster} label={description} className="aspect-[3/5] w-full" />
       <CardLabel>{label}</CardLabel>
     </figure>
   );

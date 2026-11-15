@@ -3,7 +3,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/shadcn/ta
 import { CaseStudyTile, type CaseStudyTileProps } from "@/components/home/case-study-tile";
 import { MotionTile } from "@/components/home/motion-tile";
 import { BeforeAfterTile } from "@/components/home/before-after-tile";
-import { PhoneCard, ThemeCompareCard } from "@/components/home/phone-card";
+import { PhoneCard, PhoneVideoCard, ThemeCompareCard } from "@/components/home/phone-card";
 import type { Shot } from "@/components/site/before-after";
 
 /**
@@ -17,7 +17,12 @@ const caseStudies: CaseStudyTileProps[] = [
     line: "Redesigned the ways to pay. Paying by scan rose from 5/8 to 8/8 testers.",
     href: "/work/shappay",
     outcome: "measured",
-    cover: { kind: "phone", src: "/assets/shappay/screens/shappay-home.png", alt: "Shappay home: the balance, Scan to pay, Send to ShapID, Send to bank and Add money, with Request money and Split a bill below" },
+    cover: {
+      kind: "video",
+      src: "/assets/shappay/motion/shappay-pay-by-scan_3x5_1080x1800.mp4",
+      poster: "/assets/shappay/motion/shappay-pay-by-scan_3x5_1080x1800_poster.webp",
+      label: "Paying by scan in Shappay: from Home, scan Adaeze Bakery's code, enter ₦2,500, review, enter the PIN, sent.",
+    },
   },
   {
     title: "UI to JSON",
@@ -88,11 +93,12 @@ const columns: ReactNode[][] = [
     <CaseStudyTile key="oshap" {...oshap} />,
   ],
   [
-    // TODO(redesign): the onboarding loop from the motion videos session (shappay-onboarding_3x5_1080x1800.mp4).
-    <PhoneCard
-      key="shapid"
+    <PhoneVideoCard
+      key="onboarding"
       label="Shappay · Onboarding"
-      shot={screen("shappay-shapid-dark", "Onboarding: Your ShapID, with adaeze@shappay available")}
+      src="/assets/shappay/motion/shappay-onboarding_3x5_1080x1800.mp4"
+      poster="/assets/shappay/motion/shappay-onboarding_3x5_1080x1800_poster.webp"
+      description="Signing up to Shappay: phone number, code, BVN, selfie check, ShapID, PIN and Face ID, then Home."
     />,
     <PhoneCard
       key="review"

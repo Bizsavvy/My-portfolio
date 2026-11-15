@@ -27,6 +27,8 @@ export type Block =
   | { kind: "phones"; shots: Shot[]; caption: string }
   /** A visual still to be made. Shows as a marked placeholder. */
   | { kind: "pending"; label: string; text: string }
+  /** A muted product loop from the motion session (16:9), with the site's pause control. */
+  | { kind: "video"; src: string; poster: string; label: string; caption: string }
   | { kind: "nqr-demo" };
 
 export type DetailedSection = {
@@ -87,6 +89,13 @@ export const shappayDetailed: DetailedCaseStudy = {
         {
           kind: "p",
           text: "Scanning and ShapIDs are the heart of the product, and the first design didn't make either easy to find. This is the story of its redesign: test the first design, redesign what failed, then run the same test on the redesign. Each round asked one question: when people need to pay, do they find the scan and the ID, or do they reach for the account number they know?",
+        },
+        {
+          kind: "video",
+          src: "/assets/shappay/motion/shappay-pay-by-scan_16x9_1920x1080.mp4",
+          poster: "/assets/shappay/motion/shappay-pay-by-scan_16x9_1920x1080_poster.webp",
+          label: "Paying by scan in Shappay: from Home, scan Adaeze Bakery's code, enter ₦2,500, review, enter the PIN, sent.",
+          caption: "Paying by scan in the current app, from Home to sent, on sample data. The web build has no camera, so the scan is simulated.",
         },
       ],
     },
@@ -181,8 +190,6 @@ export const shappayDetailed: DetailedCaseStudy = {
           kind: "p",
           text: "One more pattern shaped how I read the rest: five times, a tester rated a task 10/10 for ease after paying the wrong person or amount. From then on, completion was the number I trusted.",
         },
-        // TODO(redesign): replace with the clip once the motion videos session cuts it.
-        { kind: "pending", label: "Clip coming", text: "A tester circling Home before finding Scan, from a test of the first design." },
       ],
     },
     {

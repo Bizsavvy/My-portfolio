@@ -7,6 +7,7 @@ import { PhoneShot } from "@/components/home/case-study-tile";
 import { DataTable } from "@/components/case/data-table";
 import { OnThisPage } from "@/components/case/on-this-page";
 import { NqrDemo } from "@/components/case/nqr-demo";
+import { LoopVideo } from "@/components/site/loop-video";
 import { NextProject } from "@/components/case/case-study-page";
 import { readingMinutes, type Block, type DetailedCaseStudy, type Lead } from "@/lib/detailed-case-studies";
 import { cn } from "@/lib/utils";
@@ -171,6 +172,14 @@ function BlockView({ block }: { block: Block }) {
           <span className="font-mono text-label text-muted-foreground uppercase">{block.label}</span>
           <span className="max-w-[420px] text-caption text-muted-foreground">{block.text}</span>
         </div>
+      );
+
+    case "video":
+      return (
+        <figure className="my-g17 flex flex-col gap-g10">
+          <LoopVideo src={block.src} poster={block.poster} label={block.label} className="aspect-video w-full overflow-hidden rounded-lg bg-card" />
+          <figcaption className={cn(measure, "text-caption text-muted-foreground")}>{block.caption}</figcaption>
+        </figure>
       );
 
     case "nqr-demo":
