@@ -8,11 +8,11 @@ const rows = [
 export function NowCard() {
   return (
     <div
-      className="nowcard w-full max-w-full md:max-w-[360px] flex flex-col bg-[var(--color-surface)] border border-[var(--color-border)] rounded-[var(--rad-xl)] p-[var(--space-6xl)]"
+      className="nowcard w-full max-w-full md:max-w-[360px] flex flex-col bg-[var(--color-surface)] border border-[var(--color-line)] rounded-[var(--rad-xl)] p-[var(--space-6xl)]"
     >
       <div className="flex items-center gap-[var(--space-sm)] ts-mono-label text-[var(--color-text-muted)] mb-[var(--space-3xl)]">
         <span
-          className="inline-block rounded-[var(--rad-xs)] bg-[var(--color-accent)]"
+          className="inline-block rounded-[var(--rad-xs)] bg-[var(--color-legacy-accent)]"
           style={{ width: 8, height: 8 }}
         />
         CURRENTLY
@@ -22,7 +22,7 @@ export function NowCard() {
         {rows.map(({ k, v }) => (
           <div
             key={k}
-            className="nowrow flex justify-between gap-4 py-[13px] border-b border-[var(--color-border)] last:border-b-0"
+            className="nowrow flex justify-between gap-4 py-[13px] border-b border-[var(--color-line)] last:border-b-0"
           >
             <span className="ts-caption text-[var(--color-text-muted)]">{k}</span>
             <span className="ts-caption-medium text-[var(--color-text-primary)] text-right">{v}</span>

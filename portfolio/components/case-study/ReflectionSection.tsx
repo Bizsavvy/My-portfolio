@@ -18,13 +18,13 @@ export function ReflectionSection() {
         </div>
 
         <div className="flex flex-col gap-4 reveal">
-          <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)]">
+          <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-text-secondary)]">
             The temptation in fintech is to design the screens and treat the rails as someone
             else&apos;s problem. Shappay only works because I refused that split. Understanding
             the TLV format changed the product: static-first stopped being a compromise and became
             the obvious wedge.
           </p>
-          <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)]">
+          <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-text-secondary)]">
             The hardest decisions weren&apos;t visual; the most important was admitting the
             first architecture was wrong. Re-drawing the line between funding and checkout,
             choosing to hold a wallet, deciding where settlement lands: those are the calls that

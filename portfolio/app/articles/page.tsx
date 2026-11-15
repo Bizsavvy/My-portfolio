@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 };
 
 const KIND_COLOR: Record<string, string> = {
-  "Case study": "text-[var(--color-accent)] border-[var(--color-accent)]",
+  "Case study": "text-[var(--color-legacy-accent)] border-[var(--color-legacy-accent)]",
   "Design essay": "text-[var(--color-violet)] border-[var(--color-violet)]",
-  "Decision log": "text-[var(--color-body)] border-[var(--color-line-strong)]",
+  "Decision log": "text-[var(--color-text-secondary)] border-[var(--color-line-strong)]",
 };
 
 export default function ArticlesPage() {
@@ -28,7 +28,7 @@ export default function ArticlesPage() {
         lede={
           <>
             The projects page shows what got built. This is{" "}
-            <em className="italic text-[var(--color-accent)]">why</em> — full write-ups,
+            <em className="italic text-[var(--color-legacy-accent)]">why</em> — full write-ups,
             design essays, and the decisions I&apos;d defend in a review.
           </>
         }
@@ -62,13 +62,13 @@ export default function ArticlesPage() {
                   >
                     {a.kind}
                   </span>
-                  <span className="font-mono text-[11px] tracking-[.08em] uppercase text-[var(--color-muted)]">
+                  <span className="font-mono text-[11px] tracking-[.08em] uppercase text-[var(--color-text-muted)]">
                     {a.date}
                   </span>
                   {a.projectLabel && (
                     <>
                       <span className="text-[var(--color-line-strong)]">·</span>
-                      <span className="font-mono text-[11px] tracking-[.08em] uppercase text-[var(--color-muted)]">
+                      <span className="font-mono text-[11px] tracking-[.08em] uppercase text-[var(--color-text-muted)]">
                         {a.projectLabel}
                       </span>
                     </>
@@ -78,20 +78,20 @@ export default function ArticlesPage() {
                 {/* Title + arrow */}
                 <div className="flex items-start justify-between gap-6">
                   <h2
-                    className="font-hanken font-bold tracking-[-0.02em] text-[var(--color-text)] transition-colors duration-[250ms] group-hover:text-[var(--color-accent)]"
+                    className="font-hanken font-bold tracking-[-0.02em] text-[var(--color-text)] transition-colors duration-[250ms] group-hover:text-[var(--color-legacy-accent)]"
                     style={{ fontSize: "clamp(22px,2.8vw,30px)", lineHeight: 1.15 }}
                   >
                     {a.title}
                   </h2>
                   <span
-                    className="font-mono text-[18px] text-[var(--color-muted)] shrink-0 pt-1 transition-all duration-[280ms] group-hover:text-[var(--color-accent)] group-hover:translate-x-1"
+                    className="font-mono text-[18px] text-[var(--color-text-muted)] shrink-0 pt-1 transition-all duration-[280ms] group-hover:text-[var(--color-legacy-accent)] group-hover:translate-x-1"
                     aria-hidden="true"
                   >
                     →
                   </span>
                 </div>
 
-                <p className="font-hanken text-[15px] leading-[1.6] text-[var(--color-body)] max-w-[68ch]">
+                <p className="font-hanken text-[15px] leading-[1.6] text-[var(--color-text-secondary)] max-w-[68ch]">
                   {a.abstract}
                 </p>
               </Link>

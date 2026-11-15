@@ -47,13 +47,13 @@ export function CoreBet() {
               key={card.badge}
               className="flex flex-col gap-3 p-6 bg-[var(--color-surface)] border border-[var(--color-line)] rounded-[var(--rad-lg)] transition-all duration-300 hover:border-[var(--color-line-strong)] hover:-translate-y-[3px] hover:bg-[var(--color-surface-2)]"
             >
-              <div className="font-mono text-[10px] tracking-[.06em] uppercase text-[var(--color-accent)]">
+              <div className="font-mono text-[10px] tracking-[.06em] uppercase text-[var(--color-legacy-accent)]">
                 {card.badge}
               </div>
               <h3 className="font-hanken font-bold text-[18px] tracking-[-0.01em] text-[var(--color-text)]">
                 {card.title}
               </h3>
-              <p className="text-[14px] leading-[1.4] text-[var(--color-muted)]">{card.body}</p>
+              <p className="text-[14px] leading-[1.4] text-[var(--color-text-muted)]">{card.body}</p>
             </div>
           ))}
         </div>

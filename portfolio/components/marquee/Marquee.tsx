@@ -18,7 +18,7 @@ export function Marquee() {
         {doubled.map((item, i) => (
           <span
             key={i}
-            className="font-pixel text-[20px] text-[var(--color-muted)] px-7 inline-flex items-center gap-7 after:content-['✦'] after:text-[var(--color-accent)] after:text-[13px]"
+            className="font-pixel text-[20px] text-[var(--color-text-muted)] px-7 inline-flex items-center gap-7 after:content-['✦'] after:text-[var(--color-legacy-accent)] after:text-[13px]"
           >
             {item}
           </span>

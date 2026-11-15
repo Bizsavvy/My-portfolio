@@ -54,7 +54,7 @@ export function CaseStudyChrome({
       {/* Scroll progress bar */}
       <div
         id="progress"
-        className="fixed top-0 left-0 h-[2px] bg-[var(--color-accent)] z-50"
+        className="fixed top-0 left-0 h-[2px] bg-[var(--color-legacy-accent)] z-50"
         style={{ width: `${progress}%`, transition: "width .08s linear" }}
       />
 
@@ -92,7 +92,7 @@ export function CaseStudyChrome({
             borderRadius: 999,
             border: "1px solid var(--color-line)",
             background: "var(--color-bg)",
-            color: "var(--color-muted)",
+            color: "var(--color-text-muted)",
             fontFamily: "var(--font-mono)",
             fontSize: 11,
             letterSpacing: "0.08em",

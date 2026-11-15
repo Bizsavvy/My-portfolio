@@ -26,7 +26,7 @@ export function About() {
         }}
       >
         <div className="reveal">
-          <div className="font-mono text-[12.5px] tracking-[.04em] text-[var(--color-accent)] mb-[14px] flex items-center gap-[10px]">
+          <div className="font-mono text-[12.5px] tracking-[.04em] text-[var(--color-legacy-accent)] mb-[14px] flex items-center gap-[10px]">
             what&apos;s up
           </div>
 
@@ -40,7 +40,7 @@ export function About() {
           </p>
 
           <p
-            className="text-[var(--color-muted)] text-[15.5px] leading-[1.65] mt-[22px]"
+            className="text-[var(--color-text-muted)] text-[15.5px] leading-[1.65] mt-[22px]"
             style={{ maxWidth: "46ch" }}
           >
             I&apos;ve built deep product expertise in Nigerian and African markets, and I work with
@@ -51,7 +51,7 @@ export function About() {
             {skills.map((s) => (
               <span
                 key={s}
-                className="font-mono text-[12.5px] text-[var(--color-body)] border border-[var(--color-line-strong)] rounded-[30px] px-4 py-[10px]"
+                className="font-mono text-[12.5px] text-[var(--color-text-secondary)] border border-[var(--color-line-strong)] rounded-[30px] px-4 py-[10px]"
               >
                 {s}
               </span>

@@ -65,15 +65,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    // Dark is the default (Docs/Design-System.md). The `dark` class drives the new
+    // system and shadcn; `data-theme` still drives the legacy pages until they're rebuilt.
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`dark ${caveat.variable} ${pixelifySans.variable} ${hankenGrotesk.variable} ${jetbrainsMono.variable}`}
+    >
       <head>
         {/* Reads localStorage before hydration to avoid theme flash */}
-        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()` }} />
+        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem('theme');if(t){document.documentElement.setAttribute('data-theme',t);document.documentElement.classList.toggle('dark',t==='dark')}}catch(e){}})()` }} />
       </head>
-      <body
-        className={`${caveat.variable} ${pixelifySans.variable} ${hankenGrotesk.variable} ${jetbrainsMono.variable}`}
-        suppressHydrationWarning
-      >
+      <body suppressHydrationWarning>
         <CustomCursor />
         {children}
         <Analytics />

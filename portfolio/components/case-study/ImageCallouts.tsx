@@ -16,7 +16,7 @@ export function ImageCallouts({ items }: ImageCalloutsProps) {
       {items.map((item, i) => (
         <div
           key={i}
-          className="border-l-2 border-[var(--color-accent)] pl-3 font-hanken text-[14px] leading-[1.6] text-[var(--color-body)]"
+          className="border-l-2 border-[var(--color-legacy-accent)] pl-3 font-hanken text-[14px] leading-[1.6] text-[var(--color-text-secondary)]"
         >
           {item}
         </div>

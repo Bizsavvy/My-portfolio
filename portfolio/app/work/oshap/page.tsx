@@ -64,7 +64,7 @@ export default function OshapPage() {
         tagline={
           <>
             A{" "}
-            <em className="italic text-[var(--color-accent)]">
+            <em className="italic text-[var(--color-legacy-accent)]">
               QR-first ordering and payment platform
             </em>{" "}
             : customers scan, browse, order, and pay; staff manage the full operation
@@ -108,7 +108,7 @@ export default function OshapPage() {
           </h2>
         </div>
 
-        <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)] reveal" style={{ maxWidth: "60ch" }}>
+        <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-text-secondary)] reveal" style={{ maxWidth: "60ch" }}>
           The customer flow is five steps with no account creation, no redirects, and
           no dependency on staff to proceed. Three signature moves and a persistent
           notification center make it memorable.
@@ -137,13 +137,13 @@ export default function OshapPage() {
               key={move.label}
               className="flex flex-col gap-3 p-6 bg-[var(--color-surface)] border border-[var(--color-line)] rounded-[var(--rad-lg)]"
             >
-              <div className="font-mono text-[10px] tracking-[.08em] uppercase text-[var(--color-accent)]">
+              <div className="font-mono text-[10px] tracking-[.08em] uppercase text-[var(--color-legacy-accent)]">
                 {move.tag}
               </div>
               <div className="font-hanken font-bold text-[16px] text-[var(--color-text)]">
                 {move.label}
               </div>
-              <p className="text-[14px] leading-[1.5] text-[var(--color-muted)]">{move.body}</p>
+              <p className="text-[14px] leading-[1.5] text-[var(--color-text-muted)]">{move.body}</p>
             </div>
           ))}
         </div>
@@ -152,10 +152,10 @@ export default function OshapPage() {
         <div
           className="flex flex-col gap-3 p-6 bg-[var(--color-surface)] border border-[var(--color-line)] rounded-[var(--rad-lg)] reveal"
         >
-          <div className="font-mono text-[10px] tracking-[.08em] uppercase text-[var(--color-accent)]">
+          <div className="font-mono text-[10px] tracking-[.08em] uppercase text-[var(--color-legacy-accent)]">
             Notification Center
           </div>
-          <p className="text-[14px] leading-[1.5] text-[var(--color-body)]">
+          <p className="text-[14px] leading-[1.5] text-[var(--color-text-secondary)]">
             A persistent bell icon in every customer header opens a notification feed backed by{" "}
             <code className="font-mono text-[13px] text-[var(--color-text)]">localStorage</code>{" "}
             (keyed per table). Every toast also writes an entry to the feed. Unread badge,
@@ -165,7 +165,7 @@ export default function OshapPage() {
 
         {/* Customer screen placeholders */}
         <div className="flex flex-col gap-3 reveal">
-          <div className="font-mono text-[11px] tracking-[.08em] uppercase text-[var(--color-muted)]">
+          <div className="font-mono text-[11px] tracking-[.08em] uppercase text-[var(--color-text-muted)]">
             Customer screens
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
@@ -191,7 +191,7 @@ export default function OshapPage() {
           </h2>
         </div>
 
-        <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)] reveal" style={{ maxWidth: "60ch" }}>
+        <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-text-secondary)] reveal" style={{ maxWidth: "60ch" }}>
           The admin app is a PWA, installable to the home screen; works on any tablet or
           phone a restaurant already owns. The Owner creates individual accounts for each
           staff member; access is scoped to their role. Multi-branch owners get a branch
@@ -239,11 +239,11 @@ export default function OshapPage() {
                 <span className="font-hanken font-bold text-[16px] text-[var(--color-text)]">
                   {mod.module}
                 </span>
-                <span className="font-mono text-[10px] tracking-[.06em] text-[var(--color-muted)] border border-[var(--color-line)] rounded-full px-2 py-[2px]">
+                <span className="font-mono text-[10px] tracking-[.06em] text-[var(--color-text-muted)] border border-[var(--color-line)] rounded-full px-2 py-[2px]">
                   {mod.route}
                 </span>
               </div>
-              <p className="text-[14px] leading-[1.5] text-[var(--color-muted)]">{mod.body}</p>
+              <p className="text-[14px] leading-[1.5] text-[var(--color-text-muted)]">{mod.body}</p>
             </div>
           ))}
         </div>
@@ -252,10 +252,10 @@ export default function OshapPage() {
         <div
           className="flex flex-col gap-3 p-6 bg-[var(--color-surface)] border border-[var(--color-line)] rounded-[var(--rad-lg)] reveal"
         >
-          <div className="font-mono text-[10px] tracking-[.08em] uppercase text-[var(--color-accent)]">
+          <div className="font-mono text-[10px] tracking-[.08em] uppercase text-[var(--color-legacy-accent)]">
             FCM Push + PWA
           </div>
-          <p className="text-[14px] leading-[1.5] text-[var(--color-body)]">
+          <p className="text-[14px] leading-[1.5] text-[var(--color-text-secondary)]">
             Seven push trigger types: new order, order ready, payment claimed, payment verified,
             table closed, waiter called, POS requested. When the admin app is open, an{" "}
             <code className="font-mono text-[13px] text-[var(--color-text)]">AlertCenter</code>{" "}
@@ -268,7 +268,7 @@ export default function OshapPage() {
 
         {/* Admin screen placeholders */}
         <div className="flex flex-col gap-3 reveal">
-          <div className="font-mono text-[11px] tracking-[.08em] uppercase text-[var(--color-muted)]">
+          <div className="font-mono text-[11px] tracking-[.08em] uppercase text-[var(--color-text-muted)]">
             Admin screens
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -294,7 +294,7 @@ export default function OshapPage() {
           </h2>
         </div>
 
-        <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)] reveal" style={{ maxWidth: "60ch" }}>
+        <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-text-secondary)] reveal" style={{ maxWidth: "60ch" }}>
           Internal Oshap operators onboard tenant restaurants, manage subscription tiers,
           and monitor system health through a separate portal. Access is gated by an{" "}
           <code className="font-mono text-[13px] text-[var(--color-text)]">x-platform-token</code>{" "}
@@ -335,7 +335,7 @@ export default function OshapPage() {
               <span className="font-hanken font-bold text-[16px] text-[var(--color-text)]">
                 {mod.module}
               </span>
-              <p className="text-[14px] leading-[1.5] text-[var(--color-muted)]">{mod.body}</p>
+              <p className="text-[14px] leading-[1.5] text-[var(--color-text-muted)]">{mod.body}</p>
             </div>
           ))}
         </div>
@@ -353,7 +353,7 @@ export default function OshapPage() {
           </h2>
         </div>
 
-        <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)] reveal" style={{ maxWidth: "60ch" }}>
+        <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-text-secondary)] reveal" style={{ maxWidth: "60ch" }}>
           The headline metric is qualitative: faster than a waiter. These six
           measurements make it falsifiable.
         </p>
@@ -395,13 +395,13 @@ export default function OshapPage() {
               key={card.badge}
               className="flex flex-col gap-3 bg-[var(--color-surface)] border border-[var(--color-line)] rounded-[var(--rad-lg)] p-[var(--space-4xl)]"
             >
-              <div className="font-mono text-[10px] tracking-[.06em] text-[var(--color-accent)]">
+              <div className="font-mono text-[10px] tracking-[.06em] text-[var(--color-legacy-accent)]">
                 {card.badge}
               </div>
               <h4 className="font-hanken font-bold text-[18px] tracking-[-0.01em] text-[var(--color-text)]">
                 {card.stat}
               </h4>
-              <p className="text-[14px] leading-[1.4] text-[var(--color-muted)]">{card.body}</p>
+              <p className="text-[14px] leading-[1.4] text-[var(--color-text-muted)]">{card.body}</p>
             </div>
           ))}
         </div>

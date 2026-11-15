@@ -27,7 +27,7 @@ export default function ShappayArticlePage() {
         lede={
           <>
             The long version: why an interoperable QR is{" "}
-            <em className="italic text-[var(--color-accent)]">public infrastructure</em> rather
+            <em className="italic text-[var(--color-legacy-accent)]">public infrastructure</em> rather
             than another silo, and what it cost to decide to hold balances.
           </>
         }

@@ -60,15 +60,15 @@ export function VisualQR() {
             width: "110%",
             left: "-5%",
             height: 3,
-            background: "var(--color-accent)",
-            boxShadow: "0 0 18px var(--color-accent)",
+            background: "var(--color-legacy-accent)",
+            boxShadow: "0 0 18px var(--color-legacy-accent)",
             top: "50%",
             animation: "beam-scan 2.6s cubic-bezier(.5,0,.5,1) infinite",
           }}
         />
       </div>
       <div
-        className="v-tag absolute bottom-[18px] right-[18px] font-mono text-[11px] text-[var(--color-muted)] tracking-[.05em]"
+        className="v-tag absolute bottom-[18px] right-[18px] font-mono text-[11px] text-[var(--color-text-muted)] tracking-[.05em]"
       >
         EMVCo · TLV · CRC-16
       </div>
@@ -79,26 +79,26 @@ export function VisualQR() {
 /* ── UI to JSON: code block ── */
 export function VisualJSON() {
   return (
-    <div className="v-json absolute inset-0 px-9 py-[34px] font-mono text-[12px] md:text-[20px] leading-[1.9] text-[var(--color-muted)]">
-      <span className="text-[var(--color-accent)]">&quot;layout&quot;</span>: {"{"}<br />
-      &nbsp;&nbsp;<span className="text-[var(--color-accent)]">&quot;direction&quot;</span>:{" "}
-      <span className="text-[var(--color-body)]">&quot;vertical&quot;</span>,<br />
-      &nbsp;&nbsp;<span className="text-[var(--color-accent)]">&quot;padding&quot;</span>: {"{"}<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-[var(--color-accent)]">&quot;top&quot;</span>:{" "}
-      <span className="text-[var(--color-body)]">88</span>,{" "}
-      <span className="text-[var(--color-accent)]">&quot;right&quot;</span>:{" "}
-      <span className="text-[var(--color-body)]">200</span>,<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-[var(--color-accent)]">&quot;bottom&quot;</span>:{" "}
-      <span className="text-[var(--color-body)]">72</span>,{" "}
-      <span className="text-[var(--color-accent)]">&quot;left&quot;</span>:{" "}
-      <span className="text-[var(--color-body)]">200</span><br />
+    <div className="v-json absolute inset-0 px-9 py-[34px] font-mono text-[12px] md:text-[20px] leading-[1.9] text-[var(--color-text-muted)]">
+      <span className="text-[var(--color-legacy-accent)]">&quot;layout&quot;</span>: {"{"}<br />
+      &nbsp;&nbsp;<span className="text-[var(--color-legacy-accent)]">&quot;direction&quot;</span>:{" "}
+      <span className="text-[var(--color-text-secondary)]">&quot;vertical&quot;</span>,<br />
+      &nbsp;&nbsp;<span className="text-[var(--color-legacy-accent)]">&quot;padding&quot;</span>: {"{"}<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-[var(--color-legacy-accent)]">&quot;top&quot;</span>:{" "}
+      <span className="text-[var(--color-text-secondary)]">88</span>,{" "}
+      <span className="text-[var(--color-legacy-accent)]">&quot;right&quot;</span>:{" "}
+      <span className="text-[var(--color-text-secondary)]">200</span>,<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-[var(--color-legacy-accent)]">&quot;bottom&quot;</span>:{" "}
+      <span className="text-[var(--color-text-secondary)]">72</span>,{" "}
+      <span className="text-[var(--color-legacy-accent)]">&quot;left&quot;</span>:{" "}
+      <span className="text-[var(--color-text-secondary)]">200</span><br />
       &nbsp;&nbsp;{"}"},{" "}<br />
-      &nbsp;&nbsp;<span className="text-[var(--color-accent)]">&quot;alignItems&quot;</span>:{" "}
-      <span className="text-[var(--color-body)]">&quot;center&quot;</span><br />
+      &nbsp;&nbsp;<span className="text-[var(--color-legacy-accent)]">&quot;alignItems&quot;</span>:{" "}
+      <span className="text-[var(--color-text-secondary)]">&quot;center&quot;</span><br />
       {"}"}
       <div
         className="absolute bottom-5 right-5 font-mono text-[11.5px] font-semibold tracking-[.02em] px-[13px] py-[7px] rounded-[20px]"
-        style={{ background: "var(--color-accent)", color: "var(--color-ink)" }}
+        style={{ background: "var(--color-legacy-accent)", color: "var(--color-ink)" }}
       >
         300+ users
       </div>
@@ -114,16 +114,16 @@ export function VisualOshap() {
         {(["CREATED", "PREPARING", "READY"] as const).map((label, i) => (
           <span key={label} className="flex items-center gap-[10px]">
             <span
-              className="st font-mono text-[11px] tracking-[.05em] px-3 py-2 border border-[var(--color-line-strong)] rounded-[8px] text-[var(--color-muted)]"
+              className="st font-mono text-[11px] tracking-[.05em] px-3 py-2 border border-[var(--color-line-strong)] rounded-[8px] text-[var(--color-text-muted)]"
               style={{ animation: `stage-pulse 3.6s infinite ${i * 1.2}s` }}
             >
               {label}
             </span>
-            {i < 2 && <span className="text-[var(--color-muted)] text-[12px]">→</span>}
+            {i < 2 && <span className="text-[var(--color-text-muted)] text-[12px]">→</span>}
           </span>
         ))}
       </div>
-      <div className="tag font-mono text-[11px] text-[var(--color-muted)] tracking-[.05em]">
+      <div className="tag font-mono text-[11px] text-[var(--color-text-muted)] tracking-[.05em]">
         scan · table T12 · pay by transfer
       </div>
     </div>
@@ -146,14 +146,14 @@ export function VisualNawNaw() {
         <div
           className="absolute inset-[-2px] rounded-full border-2 border-transparent"
           style={{
-            borderTopColor: "var(--color-accent)",
-            borderRightColor: "var(--color-accent)",
+            borderTopColor: "var(--color-legacy-accent)",
+            borderRightColor: "var(--color-legacy-accent)",
             animation: "spin 3s linear infinite",
           }}
         />
       </div>
       <div className="font-hanken font-bold text-[24px] text-[var(--color-text)] tracking-[.02em]">Delivery in &lt; 15 Min.</div>
-      <div className="font-mono text-[11px] text-[var(--color-muted)] tracking-[.08em]">DARK STORE MODEL</div>
+      <div className="font-mono text-[11px] text-[var(--color-text-muted)] tracking-[.08em]">DARK STORE MODEL</div>
     </div>
   );
 }

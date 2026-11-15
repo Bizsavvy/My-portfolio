@@ -25,7 +25,7 @@ export default function NawNawPage() {
           <>
             A quick-commerce app named after its own promise, with every screen traced
             back to a person who was simply{" "}
-            <em className="italic text-[var(--color-accent)]">out of time</em>.
+            <em className="italic text-[var(--color-legacy-accent)]">out of time</em>.
           </>
         }
         problem={
@@ -55,7 +55,7 @@ export default function NawNawPage() {
         <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-6 reveal">
             <Kicker>The whole idea, in one screen</Kicker>
-            <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)] max-w-[68ch]">
+            <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-text-secondary)] max-w-[68ch]">
               A store you can read in a glance, leading with time instead of price.
               Everything else is in service of this.
             </p>

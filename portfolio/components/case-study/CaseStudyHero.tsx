@@ -25,7 +25,7 @@ export function CaseStudyHero({ eyebrow, title, lede, meta, status = "In develop
         <div className="cs-wrap flex flex-col gap-6">
           {/* Eyebrow + title */}
           <div className="flex flex-col gap-4">
-            <div className="eyebrow font-mono text-[12px] tracking-[0] uppercase text-[var(--color-accent)]">
+            <div className="eyebrow font-mono text-[12px] tracking-[0] uppercase text-[var(--color-legacy-accent)]">
               {eyebrow}
             </div>
 
@@ -42,9 +42,9 @@ export function CaseStudyHero({ eyebrow, title, lede, meta, status = "In develop
                     left: "-4%",
                     width: "108%",
                     height: 5,
-                    background: "var(--color-accent)",
+                    background: "var(--color-legacy-accent)",
                     top: "50%",
-                    boxShadow: "0 0 22px 2px var(--color-accent)",
+                    boxShadow: "0 0 22px 2px var(--color-legacy-accent)",
                     transform: "scaleX(0)",
                     transformOrigin: "left",
                     opacity: 0,
@@ -67,7 +67,7 @@ export function CaseStudyHero({ eyebrow, title, lede, meta, status = "In develop
           >
             {meta.map(({ label, value }) => (
               <div key={label} className="bg-[var(--color-bg)] px-5 py-[18px] flex flex-col gap-[7px]">
-                <dt className="font-mono text-[12px] tracking-[.08em] uppercase text-[var(--color-muted)]">
+                <dt className="font-mono text-[12px] tracking-[.08em] uppercase text-[var(--color-text-muted)]">
                   {label}
                 </dt>
                 <dd className="text-[14px] font-medium">{value}</dd>

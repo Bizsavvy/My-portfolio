@@ -93,12 +93,12 @@ export function DemoWidget() {
     <div className="demo bg-[var(--color-surface)] border border-[var(--color-line-strong)] rounded-[20px] overflow-hidden mt-9 reveal">
       {/* Header */}
       <div className="demo-head px-[26px] py-5 border-b border-[var(--color-line)] flex items-center justify-between gap-4 flex-wrap">
-        <span className="font-mono text-[12px] tracking-[.1em] uppercase text-[var(--color-muted)]">
+        <span className="font-mono text-[12px] tracking-[.1em] uppercase text-[var(--color-text-muted)]">
           NQR Payload Demo
         </span>
-        <span className="flex items-center gap-2 font-mono text-[11px] text-[var(--color-accent)] tracking-[.1em]">
+        <span className="flex items-center gap-2 font-mono text-[11px] text-[var(--color-legacy-accent)] tracking-[.1em]">
           <span
-            className="w-[7px] h-[7px] rounded-full bg-[var(--color-accent)]"
+            className="w-[7px] h-[7px] rounded-full bg-[var(--color-legacy-accent)]"
             style={{ animation: "pulse 2.4s infinite" }}
           />
           EMVCo MPM · CRC-16/CCITT
@@ -113,7 +113,7 @@ export function DemoWidget() {
         {/* Left — inputs */}
         <div className="demo-left px-[26px] py-[30px] border-r border-[var(--color-line)]">
           <div className="field mb-[22px]">
-            <label className="block font-mono text-[11px] tracking-[.1em] uppercase text-[var(--color-muted)] mb-[9px]">
+            <label className="block font-mono text-[11px] tracking-[.1em] uppercase text-[var(--color-text-muted)] mb-[9px]">
               Merchant name
             </label>
             <input
@@ -121,7 +121,7 @@ export function DemoWidget() {
               maxLength={25}
               value={merchant}
               onChange={(e) => setMerchant(e.target.value)}
-              className="w-full bg-[var(--color-ink)] border border-[var(--color-line-strong)] text-[var(--color-text)] font-mono text-[15px] px-[14px] py-[13px] rounded-[10px] outline-none transition-[border-color_.25s,box-shadow_.25s] focus:border-[var(--color-accent)]"
+              className="w-full bg-[var(--color-ink)] border border-[var(--color-line-strong)] text-[var(--color-text)] font-mono text-[15px] px-[14px] py-[13px] rounded-[10px] outline-none transition-[border-color_.25s,box-shadow_.25s] focus:border-[var(--color-legacy-accent)]"
               style={{}}
               onFocus={(e) => (e.currentTarget.style.boxShadow = "0 0 0 3px var(--color-accent-dim)")}
               onBlur={(e) => (e.currentTarget.style.boxShadow = "none")}
@@ -129,7 +129,7 @@ export function DemoWidget() {
           </div>
 
           <div className="field mb-[22px]">
-            <label className="block font-mono text-[11px] tracking-[.1em] uppercase text-[var(--color-muted)] mb-[9px]">
+            <label className="block font-mono text-[11px] tracking-[.1em] uppercase text-[var(--color-text-muted)] mb-[9px]">
               Merchant city
             </label>
             <input
@@ -137,14 +137,14 @@ export function DemoWidget() {
               maxLength={15}
               value={city}
               onChange={(e) => setCity(e.target.value)}
-              className="w-full bg-[var(--color-ink)] border border-[var(--color-line-strong)] text-[var(--color-text)] font-mono text-[15px] px-[14px] py-[13px] rounded-[10px] outline-none transition-[border-color_.25s,box-shadow_.25s] focus:border-[var(--color-accent)]"
+              className="w-full bg-[var(--color-ink)] border border-[var(--color-line-strong)] text-[var(--color-text)] font-mono text-[15px] px-[14px] py-[13px] rounded-[10px] outline-none transition-[border-color_.25s,box-shadow_.25s] focus:border-[var(--color-legacy-accent)]"
               onFocus={(e) => (e.currentTarget.style.boxShadow = "0 0 0 3px var(--color-accent-dim)")}
               onBlur={(e) => (e.currentTarget.style.boxShadow = "none")}
             />
           </div>
 
           <div className="field mb-[22px]">
-            <label className="block font-mono text-[11px] tracking-[.1em] uppercase text-[var(--color-muted)] mb-[9px]">
+            <label className="block font-mono text-[11px] tracking-[.1em] uppercase text-[var(--color-text-muted)] mb-[9px]">
               QR type · Point of Initiation
             </label>
             <div className="inline-flex bg-[var(--color-ink)] border border-[var(--color-line-strong)] rounded-[10px] p-1 gap-1">
@@ -154,8 +154,8 @@ export function DemoWidget() {
                   onClick={() => setMode(m)}
                   className={`font-mono text-[12px] tracking-[.06em] px-4 py-[9px] border-none rounded-[7px] cursor-pointer transition-all duration-[250ms] ${
                     mode === m
-                      ? "bg-[var(--color-accent)] text-[var(--color-ink)] font-semibold"
-                      : "bg-transparent text-[var(--color-muted)]"
+                      ? "bg-[var(--color-legacy-accent)] text-[var(--color-ink)] font-semibold"
+                      : "bg-transparent text-[var(--color-text-muted)]"
                   }`}
                 >
                   {m === "static" ? "Static · 11" : "Dynamic · 12"}
@@ -165,7 +165,7 @@ export function DemoWidget() {
           </div>
 
           <div className="field mb-0">
-            <label className="block font-mono text-[11px] tracking-[.1em] uppercase text-[var(--color-muted)] mb-[9px]">
+            <label className="block font-mono text-[11px] tracking-[.1em] uppercase text-[var(--color-text-muted)] mb-[9px]">
               Amount (₦)
             </label>
             <input
@@ -175,11 +175,11 @@ export function DemoWidget() {
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
               disabled={mode === "static"}
-              className="w-full bg-[var(--color-ink)] border border-[var(--color-line-strong)] text-[var(--color-text)] font-mono text-[15px] px-[14px] py-[13px] rounded-[10px] outline-none transition-[border-color_.25s,box-shadow_.25s] focus:border-[var(--color-accent)] disabled:opacity-40 disabled:cursor-not-allowed"
+              className="w-full bg-[var(--color-ink)] border border-[var(--color-line-strong)] text-[var(--color-text)] font-mono text-[15px] px-[14px] py-[13px] rounded-[10px] outline-none transition-[border-color_.25s,box-shadow_.25s] focus:border-[var(--color-legacy-accent)] disabled:opacity-40 disabled:cursor-not-allowed"
               onFocus={(e) => !e.currentTarget.disabled && (e.currentTarget.style.boxShadow = "0 0 0 3px var(--color-accent-dim)")}
               onBlur={(e) => (e.currentTarget.style.boxShadow = "none")}
             />
-            <div className="text-[12.5px] text-[var(--color-muted)] mt-2 font-hanken">
+            <div className="text-[12.5px] text-[var(--color-text-muted)] mt-2 font-hanken">
               {mode === "static"
                 ? "Static QR carries no amount; the payer types it at scan time."
                 : "Dynamic QR embeds the amount; payer just confirms."}
@@ -201,13 +201,13 @@ export function DemoWidget() {
             <span
               className="scanline absolute left-0 w-full h-9 pointer-events-none"
               style={{
-                background: "linear-gradient(180deg,transparent,color-mix(in srgb, var(--color-accent) 50%, transparent),transparent)",
+                background: "linear-gradient(180deg,transparent,color-mix(in srgb, var(--color-legacy-accent) 50%, transparent),transparent)",
                 opacity: 0,
               }}
             />
             <canvas ref={canvasRef} width={240} height={240} style={{ display: "block", borderRadius: 4 }} />
           </div>
-          <div className="font-mono text-[11px] text-[var(--color-muted)] mt-[18px] text-center tracking-[.05em] max-w-[30ch]">
+          <div className="font-mono text-[11px] text-[var(--color-text-muted)] mt-[18px] text-center tracking-[.05em] max-w-[30ch]">
             Scannable EMVCo QR · currency 566 (NGN) · country NG
           </div>
         </div>
@@ -218,13 +218,13 @@ export function DemoWidget() {
         <table className="w-full border-collapse font-mono text-[12.5px]">
           <thead>
             <tr>
-              <th className="text-left text-[var(--color-muted)] font-medium text-[10.5px] tracking-[.1em] uppercase px-[26px] pb-3 pt-3 border-b border-[var(--color-line)] w-[48px]">
+              <th className="text-left text-[var(--color-text-muted)] font-medium text-[10.5px] tracking-[.1em] uppercase px-[26px] pb-3 pt-3 border-b border-[var(--color-line)] w-[48px]">
                 Tag
               </th>
-              <th className="text-left text-[var(--color-muted)] font-medium text-[10.5px] tracking-[.1em] uppercase px-[26px] pb-3 pt-3 border-b border-[var(--color-line)]">
+              <th className="text-left text-[var(--color-text-muted)] font-medium text-[10.5px] tracking-[.1em] uppercase px-[26px] pb-3 pt-3 border-b border-[var(--color-line)]">
                 Field
               </th>
-              <th className="text-left text-[var(--color-muted)] font-medium text-[10.5px] tracking-[.1em] uppercase px-[26px] pb-3 pt-3 border-b border-[var(--color-line)]">
+              <th className="text-left text-[var(--color-text-muted)] font-medium text-[10.5px] tracking-[.1em] uppercase px-[26px] pb-3 pt-3 border-b border-[var(--color-line)]">
                 Value
               </th>
             </tr>
@@ -236,28 +236,28 @@ export function DemoWidget() {
                 className="border-b border-[var(--color-line)] last:border-b-0"
                 style={{ animation: `rowin .45s ${i * 35}ms both` }}
               >
-                <td className="px-[26px] py-[11px] text-[var(--color-accent)] align-top">{row.tag}</td>
+                <td className="px-[26px] py-[11px] text-[var(--color-legacy-accent)] align-top">{row.tag}</td>
                 <td className="px-[26px] py-[11px] text-[var(--color-text-secondary)] align-top">{row.name}</td>
-                <td className="px-[26px] py-[11px] text-[var(--color-muted)] align-top break-all">{row.val}</td>
+                <td className="px-[26px] py-[11px] text-[var(--color-text-muted)] align-top break-all">{row.val}</td>
               </tr>
             ))}
           </tbody>
         </table>
 
         <div className="flex justify-between items-center px-[26px] py-4">
-          <span className="font-mono text-[11px] tracking-[.1em] uppercase text-[var(--color-muted)]">
+          <span className="font-mono text-[11px] tracking-[.1em] uppercase text-[var(--color-text-muted)]">
             Raw payload
           </span>
           <button
             onClick={handleCopy}
-            className="font-mono text-[11px] text-[var(--color-accent)] bg-transparent border border-[var(--color-line-strong)] rounded-[7px] px-3 py-[6px] cursor-pointer transition-all duration-[250ms] hover:border-[var(--color-accent)] hover:bg-[var(--color-accent-dim)]"
+            className="font-mono text-[11px] text-[var(--color-legacy-accent)] bg-transparent border border-[var(--color-line-strong)] rounded-[7px] px-3 py-[6px] cursor-pointer transition-all duration-[250ms] hover:border-[var(--color-legacy-accent)] hover:bg-[var(--color-accent-dim)]"
           >
             {copied ? "Copied" : "Copy"}
           </button>
         </div>
-        <div className="font-mono text-[13px] leading-[1.9] text-[var(--color-muted)] px-[26px] pb-[22px] break-all">
+        <div className="font-mono text-[13px] leading-[1.9] text-[var(--color-text-muted)] px-[26px] pb-[22px] break-all">
           {rawWithoutCRC}
-          <span className="text-[var(--color-accent)] font-semibold">{crc}</span>
+          <span className="text-[var(--color-legacy-accent)] font-semibold">{crc}</span>
         </div>
       </div>
 

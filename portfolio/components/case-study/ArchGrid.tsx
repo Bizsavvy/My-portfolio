@@ -23,18 +23,18 @@ export function ArchGrid({ nodes, note }: ArchGridProps) {
             key={node.title}
             className="node px-[22px] py-[26px] bg-[var(--color-surface)] border-r border-[var(--color-line)] last:border-r-0 reveal"
           >
-            <div className="font-mono text-[11px] text-[var(--color-accent)] mb-[14px]">
+            <div className="font-mono text-[11px] text-[var(--color-legacy-accent)] mb-[14px]">
               → {node.index}
             </div>
             <h4 className="font-hanken font-bold text-[18px] tracking-[-0.01em] mb-2">
               {node.title}
             </h4>
-            <p className="text-[13.5px] text-[var(--color-muted)] m-0">{node.description}</p>
+            <p className="text-[13.5px] text-[var(--color-text-muted)] m-0">{node.description}</p>
           </div>
         ))}
       </div>
       {note && (
-        <div className="arch-note font-mono text-[12px] text-[var(--color-muted)] mt-[18px] text-center tracking-[.04em] reveal">
+        <div className="arch-note font-mono text-[12px] text-[var(--color-text-muted)] mt-[18px] text-center tracking-[.04em] reveal">
           {note}
         </div>
       )}

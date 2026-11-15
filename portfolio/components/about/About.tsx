@@ -19,14 +19,14 @@ export function About() {
         className="max-w-[var(--width-maxw)] site-wrap aboutflex"
       >
         <div className="reveal flex flex-col gap-[var(--space-5xl)]" style={{ maxWidth: 814 }}>
-          <div className="ts-mono-label text-[var(--color-accent)]">
+          <div className="ts-mono-label text-[var(--color-legacy-accent)]">
             what's up
           </div>
 
           <p className="ts-about text-[var(--color-text-primary)]">
             I'm a product designer and engineer who doesn't stop at the mockup.
             I take vague problems, design them, and{" "}
-            <span className="text-[var(--color-accent)]">ship them to working code</span>;
+            <span className="text-[var(--color-legacy-accent)]">ship them to working code</span>;
             owning the loop from interface to infrastructure.
           </p>
 

@@ -23,7 +23,7 @@ export default function ShappayPage() {
         tagline={
           <>
             A{" "}
-            <em className="italic text-[var(--color-accent)]">
+            <em className="italic text-[var(--color-legacy-accent)]">
               QR-driven payment resolution engine
             </em>{" "}
             that picks the right financial rail — wallet, bank, or external network — from the

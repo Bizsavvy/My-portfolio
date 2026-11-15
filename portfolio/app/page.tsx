@@ -84,7 +84,7 @@ export default function Home() {
       <Contact />
 
       <footer className="border-t border-[var(--color-line)]" style={{ padding: "34px 0" }}>
-        <div className="max-w-[var(--width-maxw)] site-wrap flex justify-between items-center flex-wrap gap-x-6 gap-y-3 font-mono text-[11.5px] text-[var(--color-muted)] tracking-[.04em]">
+        <div className="max-w-[var(--width-maxw)] site-wrap flex justify-between items-center flex-wrap gap-x-6 gap-y-3 font-mono text-[11.5px] text-[var(--color-text-muted)] tracking-[.04em]">
           <span>Haye: Product Designer &amp; Engineer</span>
           <span className="hidden md:inline text-center">
             This site, built end to end with Next.js 16.2.6 · Tailwind v4 · GSAP
@@ -93,7 +93,7 @@ export default function Home() {
             href="https://github.com/Bizsavvy/My-portfolio"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-[var(--color-accent)] transition-colors duration-[250ms]"
+            className="hover:text-[var(--color-legacy-accent)] transition-colors duration-[250ms]"
           >
             View source ↗
           </a>

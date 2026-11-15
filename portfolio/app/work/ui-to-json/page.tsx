@@ -135,7 +135,7 @@ export default function UItoJSONPage() {
         tagline={
           <>
             A Figma plugin that compiles design files into{" "}
-            <em className="italic text-[var(--color-accent)]">
+            <em className="italic text-[var(--color-legacy-accent)]">
               AI-optimized semantic JSON
             </em>
             : a clean intermediate representation built for AI frontend generation, not
@@ -176,7 +176,7 @@ export default function UItoJSONPage() {
           href="https://www.figma.com/community/plugin/1638581049555435822"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 font-mono text-[13px] tracking-[.04em] text-[var(--color-accent)] border border-[var(--color-accent)] rounded-[30px] px-5 py-3 hover:bg-[var(--color-accent)] hover:text-[var(--color-ink)] transition-all duration-[280ms]"
+          className="inline-flex items-center gap-2 font-mono text-[13px] tracking-[.04em] text-[var(--color-legacy-accent)] border border-[var(--color-legacy-accent)] rounded-[30px] px-5 py-3 hover:bg-[var(--color-legacy-accent)] hover:text-[var(--color-ink)] transition-all duration-[280ms]"
         >
           Try it on Figma Community →
         </a>
@@ -203,7 +203,7 @@ export default function UItoJSONPage() {
           />
         </div>
 
-        <p className="font-mono text-[12px] text-[var(--color-muted)] tracking-[.04em] mt-8 mb-2 reveal">
+        <p className="font-mono text-[12px] text-[var(--color-text-muted)] tracking-[.04em] mt-8 mb-2 reveal">
           Excerpt from a real export · child nodes trimmed for length
         </p>
         <div className="reveal rounded-[16px] border border-[var(--color-line)] overflow-hidden">
@@ -211,12 +211,12 @@ export default function UItoJSONPage() {
             <span className="w-3 h-3 rounded-full bg-[var(--color-line-strong)]" />
             <span className="w-3 h-3 rounded-full bg-[var(--color-line-strong)]" />
             <span className="w-3 h-3 rounded-full bg-[var(--color-line-strong)]" />
-            <span className="font-mono text-[12px] text-[var(--color-muted)] ml-2">
+            <span className="font-mono text-[12px] text-[var(--color-text-muted)] ml-2">
               ShapPay-user-app.fig → export.json
             </span>
           </div>
           <pre
-            className="m-0 overflow-x-auto p-6 font-mono text-[13px] leading-[1.6] text-[var(--color-body)]"
+            className="m-0 overflow-x-auto p-6 font-mono text-[13px] leading-[1.6] text-[var(--color-text-secondary)]"
             style={{ background: "var(--color-bg)" }}
           >
             <code>{sampleJson}</code>
@@ -241,13 +241,13 @@ export default function UItoJSONPage() {
               key={card.badge}
               className="flex flex-col gap-3 p-6 bg-[var(--color-surface)] border border-[var(--color-line)] rounded-[var(--rad-lg)] transition-all duration-300 hover:border-[var(--color-line-strong)] hover:-translate-y-[3px] hover:bg-[var(--color-surface-2)]"
             >
-              <div className="font-mono text-[10px] tracking-[.06em] uppercase text-[var(--color-accent)]">
+              <div className="font-mono text-[10px] tracking-[.06em] uppercase text-[var(--color-legacy-accent)]">
                 {card.badge}
               </div>
               <h3 className="font-hanken font-bold text-[18px] tracking-[-0.01em] text-[var(--color-text)]">
                 {card.title}
               </h3>
-              <p className="text-[14px] leading-[1.5] text-[var(--color-muted)]">{card.body}</p>
+              <p className="text-[14px] leading-[1.5] text-[var(--color-text-muted)]">{card.body}</p>
             </div>
           ))}
         </div>
@@ -278,7 +278,7 @@ export default function UItoJSONPage() {
             Not a concept. A tool people use.
           </h2>
         </div>
-        <p className="text-[var(--color-body)] text-[17px] leading-[1.65] mt-6 reveal" style={{ maxWidth: 760 }}>
+        <p className="text-[var(--color-text-secondary)] text-[17px] leading-[1.65] mt-6 reveal" style={{ maxWidth: 760 }}>
           Launched on the Figma Community on 20 May 2026, with no paid distribution.
           300+ people have reached the tool across Community installs and shared files;
           119 of those are direct Community installs to date.
@@ -294,12 +294,12 @@ export default function UItoJSONPage() {
               className="flex flex-col gap-2 p-7 bg-[var(--color-surface)] border border-[var(--color-line)] rounded-[var(--rad-lg)]"
             >
               <span
-                className="font-hanken font-bold text-[var(--color-accent)]"
+                className="font-hanken font-bold text-[var(--color-legacy-accent)]"
                 style={{ fontSize: "clamp(32px,4vw,48px)", lineHeight: 1 }}
               >
                 {m.stat}
               </span>
-              <span className="text-[14px] text-[var(--color-muted)]">{m.label}</span>
+              <span className="text-[14px] text-[var(--color-text-muted)]">{m.label}</span>
             </div>
           ))}
         </div>
@@ -315,12 +315,12 @@ export default function UItoJSONPage() {
           >
             “This will definitely save tons of tokens. Great plugin.”
           </blockquote>
-          <div className="font-mono text-[12px] tracking-[.04em] text-[var(--color-muted)]">
+          <div className="font-mono text-[12px] tracking-[.04em] text-[var(--color-text-muted)]">
             Pradeep Prakash · @ku2design
           </div>
         </div>
         <div className="flex flex-col gap-8 mt-8">
-          <p className="text-[var(--color-body)] text-[17px] leading-[1.65] reveal" style={{ maxWidth: 760 }}>
+          <p className="text-[var(--color-text-secondary)] text-[17px] leading-[1.65] reveal" style={{ maxWidth: 760 }}>
             I shipped UI to JSON with a single launch post: a full walkthrough going
             from Figma to code with no MCPs and no screenshots burning tokens, just a
             semantic JSON export. It reached 40K views and 586 likes, and the
