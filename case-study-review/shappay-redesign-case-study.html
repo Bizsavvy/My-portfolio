@@ -1,0 +1,177 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Redesigning Shappay&#x27;s ways to pay</title><style>
+:root { --text: #1d2125; --muted: #5c6670; --bg: #ffffff; --line: #e3e7eb; --sky: #87CEEB; }
+@media (prefers-color-scheme: dark) {
+  :root { --text: #e8ebee; --muted: #a3adb7; --bg: #15181b; --line: #2b3137; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text);
+  font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif; }
+main { max-width: 760px; margin: 0 auto; padding: 48px 16px 96px; }
+h1 { font-size: 2.1rem; line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.01em; }
+h2 { font-size: 1.35rem; margin: 48px 0 12px; }
+h3 { font-size: 1.1rem; margin: 32px 0 8px; }
+p, li { color: var(--text); }
+a { color: inherit; }
+img { max-width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--line); display: block; margin: 24px 0 8px; }
+em { color: var(--muted); }
+table { border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 0.95rem; }
+th, td { border-bottom: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+blockquote { margin: 16px 0; padding: 8px 16px; border-left: 3px solid var(--line); color: var(--muted); }
+code { font-size: 0.9em; }
+hr { border: 0; border-top: 1px solid var(--line); margin: 48px 0; }
+.visual-slot { border: 2px dashed var(--sky) !important; border-radius: 10px !important;
+  padding: 16px 20px !important; margin: 24px 0 !important; background: rgba(135, 206, 235, 0.08) !important; }
+.visual-slot p { margin: 6px 0; }
+.visual-slot p:first-child strong { color: #2b8fb8; text-transform: none; }
+@media (prefers-color-scheme: dark) { .visual-slot p:first-child strong { color: var(--sky); } }
+.placeholder { background: rgba(255, 196, 0, 0.18); border-radius: 4px; padding: 0 4px; }
+</style></head><body><main>
+<h1>Redesigning Shappay's ways to pay</h1>
+<p>A usability test showed that people couldn't find Shappay's ways to pay, so I redesigned the payment screens and ran the same test on the redesign.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Role</strong></td>
+<td>Design engineer, leading product design. I ship my designs in code for the frontend engineer to review.</td>
+</tr>
+<tr>
+<td><strong>Team</strong></td>
+<td>Me, a product manager, a frontend engineer and a backend engineer. <span class="placeholder">[ADD: one line on what each did in this redesign]</span></td>
+</tr>
+<tr>
+<td><strong>Timeline</strong></td>
+<td>2025 to now; tests in November 2026</td>
+</tr>
+<tr>
+<td><strong>Platform</strong></td>
+<td>React Native with Expo; tested as a web build with a simulated scan</td>
+</tr>
+</tbody>
+</table>
+<p><strong>TL;DR:</strong> Shappay is building an interoperable QR for Nigeria: one code a customer of any bank can pay, and a scanner that reads any code made to the national standard. In the first test, people with a QR code or a ShapID in front of them still went to bank transfer. After the redesign, paying by scan rose from 5/8 to 8/8 testers, and getting past a code the app couldn't read from 4/8 to 8/8.</p>
+<p><img alt="The redesigned Home screen: Scan to pay, Send to ShapID, Send to bank and Add money" src="../portfolio/public/assets/shappay/redesign/after-01-home.png" />
+<em>Four ways to pay, named the way people say them. Scan comes first.</em></p>
+<h2>People reached for the account number they knew</h2>
+<p>Sending money in Nigeria means typing a 10-digit account number, choosing the right bank from a long list, and hoping the name that comes back is the one you meant. Scanning and ShapIDs are meant to replace that, and the first design didn't make either easy to find.</p>
+<p>I ran an unmoderated test with 8 people in Nigeria who send money from their phones, on 9 and 10 November 2026. No task reached its bar of 7/8. Between 4/8 and 6/8 testers completed each one. <span class="placeholder">[ADD: how the testers were recruited]</span></p>
+<p><span class="placeholder">[ADD: the business goal this flow serves before launch, and the measure you will watch after it]</span></p>
+<h2>What the first test showed</h2>
+<ul>
+<li><strong>Bank transfer is the habit.</strong> In tasks that needed a scan or a ShapID, testers opened bank transfer at least 10 times, and at least 3 wrong payments went through it.</li>
+<li><strong>Scan was hard to find, but easy to use.</strong> On the first scan task, 5/8 didn't go straight to Scan. Its button had an icon and no label. Everyone who did open Scan reached the amount screen without trouble.</li>
+<li><strong>The card for an unreadable code only half worked.</strong> 4/8 recovered. Four tapped Send money first, which pays a ShapID, when the sign showed a bank account number.</li>
+<li><strong>"Pending" read as "paid".</strong> 3/8 said the shop had been paid. The screen said the payment "shows as sent", and "sent" was the word people kept.</li>
+</ul>
+<h2>Home names every way to pay</h2>
+<p>The row of Fund, Send, Split and Request became Scan to pay, Send to ShapID, Send to bank and Add money. Scan leads because the product is built on it. I weighed keeping the row and renaming it, and chose to rebuild it around ways to pay, because most testers hunted for Scan.</p>
+<p>Request and Split moved into the payments tab, one tap further away. Home has room for four actions, and paying comes first. I expected them to stay easy to find there, and added a request task to the retest to check.</p>
+<p><img alt="Home, first design" src="../portfolio/public/assets/shappay/redesign/before-01-home.png" />
+<em>First design: Fund, Send, Split and Request, with Scan as an unlabeled button.</em></p>
+<div class="visual-slot" style="border: 2px dashed #87CEEB; border-radius: 10px; padding: 16px 20px; margin: 24px 0; background: rgba(135, 206, 235, 0.08);">
+<p><strong>Visual: Redo: Before and after</strong></p>
+<p><strong>Show:</strong> Retake the first-design Home with the same sample data as the redesign shot, so the only differences are the action row and the tab name.</p>
+<p><strong>Why:</strong> The current first-design shot has a request card the redesign shot lacks, which a reader could credit to the redesign.</p>
+</div>
+
+<div class="visual-slot" style="border: 2px dashed #87CEEB; border-radius: 10px; padding: 16px 20px; margin: 24px 0; background: rgba(135, 206, 235, 0.08);">
+<p><strong>Visual: Options explored</strong></p>
+<p><strong>Show:</strong> Two or three Home row options you considered (the original row renamed, the row rebuilt around ways to pay) with a one-line reason each lost or won.</p>
+<p><strong>Why:</strong> Proves the row was a choice between options, not the first idea.</p>
+</div>
+
+<h2>A code the app can't read still gets paid</h2>
+<p>Until the scanner reads every NQR code, the card for a code it can't read is the way through. In the first design it offered two equal options, and half the testers chose Send money, which can't pay an account number. Shop signs in Nigeria show an account number, so Send to bank became the main button, under one line: "Pay with the account number on the shop's sign, or their Shappay ID."</p>
+<p><img alt="Can't read this code, first design" src="../portfolio/public/assets/shappay/redesign/before-07-cant-read.png" />
+<em>First design: two equal tiles.</em></p>
+<p><img alt="Can't read this code, redesign" src="../portfolio/public/assets/shappay/redesign/after-07-cant-read.png" />
+<em>Redesign: Send to bank leads, because the shop's sign shows an account number.</em></p>
+<div class="visual-slot" style="border: 2px dashed #87CEEB; border-radius: 10px; padding: 16px 20px; margin: 24px 0; background: rgba(135, 206, 235, 0.08);">
+<p><strong>Visual: Prototype clip</strong></p>
+<p><strong>Show:</strong> Two short clips: scan to pay at the bakery, and a code the app can't read leading to Send to bank, one flow per clip.</p>
+<p><strong>Why:</strong> Shows the two flows behind the biggest gains as they run, not as stills.</p>
+</div>
+
+<h2>Pending says what it means</h2>
+<p>"Pending" became "On its way", with the name in the sentence: "Adaeze Bakery hasn't received this yet. ₦2,500 has left your balance, and History will show when it arrives."</p>
+<p><img alt="Pending payment, redesign" src="../portfolio/public/assets/shappay/redesign/after-08-pending.png" />
+<em>"On its way" leaves no room to read it as paid.</em></p>
+<div class="visual-slot" style="border: 2px dashed #87CEEB; border-radius: 10px; padding: 16px 20px; margin: 24px 0; background: rgba(135, 206, 235, 0.08);">
+<p><strong>Visual: Redo: Before and after</strong></p>
+<p><strong>Show:</strong> The pending screen before and after, with the first-design shot retaken after fonts load and the test transaction ID cropped or hidden in both.</p>
+<p><strong>Why:</strong> The pair should differ only in the copy that changed.</p>
+</div>
+
+<h2>The same test, on the redesign</h2>
+<p>The same test ran again from 12 to 14 November, with 8 testers, scored by the same rule: the right person paid by the right route. Three of the four tasks with a bar now meet it, against none on the first design.</p>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>First design</th>
+<th>Redesign</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scan a shop's code and pay</td>
+<td>5/8</td>
+<td>8/8</td>
+</tr>
+<tr>
+<td>Pay when the code can't be read</td>
+<td>4/8</td>
+<td>8/8</td>
+</tr>
+<tr>
+<td>Tell whether a pending payment has arrived</td>
+<td>5/8</td>
+<td>7/8</td>
+</tr>
+<tr>
+<td>Add money, then pay</td>
+<td>6/8</td>
+<td>7/8</td>
+</tr>
+<tr>
+<td>Send to a friend's ShapID</td>
+<td>4/8</td>
+<td>5/8</td>
+</tr>
+<tr>
+<td>Ask a friend for money</td>
+<td>not tested</td>
+<td>4/8</td>
+</tr>
+</tbody>
+</table>
+<p>Paying a ShapID still misses the bar. Two testers tapped Tsoji, the only name in the new Recent list, on a task about Tunde. Request, which this redesign moved off Home, was found by only 4/8: two testers never opened Payments, and two left the Requests screen without tapping Request. The next build puts Request and Split back on Home. It is not yet tested.</p>
+<p><img alt="Home with Request money and Split a bill tiles" src="../portfolio/public/assets/shappay/redesign/final-01-home.png" />
+<em>Next, not yet tested: Request money and Split a bill sit under the balance, outside the four ways to pay.</em></p>
+<h2>What I'd do differently</h2>
+<ul>
+<li><strong>Test the cost of every move.</strong> Moving Request off Home was a decision about space, not about people. I expected it to stay easy to find, and one test task proved me wrong. Every feature I move now gets a task of its own.</li>
+<li><strong>Make sample data look like a real phone.</strong> The Recent list I added to fix the blank Send screen held one name. Real recents hold several, and a lone name invites a wrong tap.</li>
+<li><strong>Trust completion over ease.</strong> Testers rated tasks 10/10 after paying the wrong person. Whether the right person got paid is the number that held up.</li>
+</ul>
+<hr />
+<h2>Before you publish</h2>
+<p>Placeholders to fill, in order:</p>
+<ul>
+<li>[ ] <span class="placeholder">[ADD: one line on what each did in this redesign]</span></li>
+<li>[ ] <span class="placeholder">[ADD: how the testers were recruited]</span></li>
+<li>[ ] <span class="placeholder">[ADD: the business goal this flow serves before launch, and the measure you will watch after it]</span></li>
+</ul>
+<p>Visuals to make (the sky blue boxes above):</p>
+<ul>
+<li>[ ] Redo: Before and after: retake the first-design Home with matching sample data</li>
+<li>[ ] Options explored: Home row options with a reason each</li>
+<li>[ ] Prototype clip: scan to pay, and unreadable code to Send to bank</li>
+<li>[ ] Redo: Before and after: pending pair with fonts loaded and the test ID hidden</li>
+</ul>
+</main></body></html>
