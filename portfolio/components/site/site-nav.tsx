@@ -35,9 +35,9 @@ export function SiteNav() {
 
         <ul className="hidden items-center gap-g27 sm:flex">
           <li>
-            <a href="#work" className="text-button text-muted-foreground transition-colors duration-150 ease-standard hover:text-foreground">
+            <Link href="/#work" className="text-button text-muted-foreground transition-colors duration-150 ease-standard hover:text-foreground">
               Work
-            </a>
+            </Link>
           </li>
           <li>
             <a
