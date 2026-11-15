@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type CSSProperties } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
@@ -21,6 +21,7 @@ type Props = {
   /** Image sizes hint for next/image. */
   sizes?: string;
   className?: string;
+  style?: CSSProperties;
 };
 
 /**
@@ -29,12 +30,12 @@ type Props = {
  * The labels hang below the image's edges so they never cover the screenshot; leave room
  * for them under the component.
  */
-export function BeforeAfter({ before, after, label, crop, sizes = "(min-width: 1024px) 420px, 80vw", className }: Props) {
+export function BeforeAfter({ before, after, label, crop, sizes = "(min-width: 1024px) 420px, 80vw", className, style }: Props) {
   const [split, setSplit] = useState(50);
   const objectPosition = crop.position === "top" ? "object-top" : "object-bottom";
 
   return (
-    <div className={cn("relative", className)} style={{ aspectRatio: crop.aspect }}>
+    <div className={cn("relative", className)} style={{ ...style, aspectRatio: crop.aspect }}>
       <div className="absolute inset-0 overflow-hidden rounded-md select-none">
         <Image src={before.src} alt={before.alt} fill sizes={sizes} className={cn("object-cover", objectPosition)} />
         <div className="absolute inset-0" style={{ clipPath: `inset(0 0 0 ${split}%)` }}>

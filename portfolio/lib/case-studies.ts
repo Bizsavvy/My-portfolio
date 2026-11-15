@@ -121,7 +121,7 @@ export const shappay: CaseStudy = {
     ],
     note: "The same tasks, 8 testers each time, scored by the same rule: the right person paid by the right route. Paying a ShapID still misses the bar of 7/8. Request, which this redesign moved off Home, was found by only 4/8; the next build puts it back on Home, not yet tested. After launch, the measure of success is the share of payments made by scan or ShapID instead of a typed account number.",
   },
-  detailedHref: "/articles/shappay",
+  detailedHref: "/work/shappay/detailed",
   next: {
     project: "UI to JSON",
     line: "A Figma plugin that turns a design into code-ready JSON. 300+ users.",

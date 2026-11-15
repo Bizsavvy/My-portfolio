@@ -154,8 +154,11 @@ Unused shadcn sets (chart, sidebar) are left out.
 | Buttons | Button | Primary (lime pill), secondary (raised pill), link |
 | Before and after | custom, on Slider | Drag or arrow keys; announced value, e.g. "Before and after, 50%" |
 | Case study hero, outcome card, next project | Card, Separator | Per the Figma reference notes |
+| Detailed case study | Separator, Data table | The 640px reading column; tables of four or more columns and the payload demo run to 880px. On wide screens an "On this page" list sits beside it and marks the section being read with a rail and `aria-current` |
+| Data table | custom | Row dividers, label-style headers, row headers in the first column, numbers right-aligned in tabular figures; scrolls sideways inside a focusable region on narrow screens |
+| NQR payload demo | Button, native inputs | Builds an NQR payload as you type. The QR is dark on white in both themes so phones can scan it |
 
-Icons: Lucide only (copy, check, arrow-right, arrow-up-right, sun, moon, play, pause). Footer social links are text: LinkedIn, X, GitHub, each target at least 24 x 24px.
+Icons: Lucide only (copy, check, arrow-right, arrow-up-right, arrow-left, sun, moon, play, pause). Arrow-left is only for the link from a detailed case study back to its short page. Footer social links are text: LinkedIn, X, GitHub, each target at least 24 x 24px.
 
 ## Content conventions
 

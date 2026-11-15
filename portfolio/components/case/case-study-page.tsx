@@ -8,6 +8,7 @@ import { SiteNav } from "@/components/site/site-nav";
 import { SiteFooter } from "@/components/home/contact";
 import { BeforeAfter } from "@/components/site/before-after";
 import { PhoneShot } from "@/components/home/case-study-tile";
+import { DataTable } from "@/components/case/data-table";
 import type { CaseStudy, OutcomeSection } from "@/lib/case-studies";
 
 const wrap = "mx-auto w-full max-w-[1280px] px-g17 md:px-g27 lg:px-g44";
@@ -164,36 +165,7 @@ function Results({ results }: { results: NonNullable<CaseStudy["results"]> }) {
       <h2 id="results-heading" className="text-heading">
         {results.heading}
       </h2>
-      <div className="overflow-x-auto">
-        <table className="w-full min-w-[480px] border-collapse text-left">
-          <thead>
-            <tr className="border-b border-border">
-              {results.columns.map((c, i) => (
-                <th key={c} scope="col" className={`pb-g10 font-mono text-label font-medium text-muted-foreground uppercase ${i > 0 ? "text-right" : ""}`}>
-                  {c}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {results.rows.map((row) => (
-              <tr key={row[0]} className="border-b border-border">
-                {row.map((cell, i) =>
-                  i === 0 ? (
-                    <th key={i} scope="row" className="py-g17 pr-g17 text-body font-normal text-foreground">
-                      {cell}
-                    </th>
-                  ) : (
-                    <td key={i} className={`py-g17 text-right text-body tabular-nums ${i === row.length - 1 ? "text-foreground" : "text-muted-foreground"}`}>
-                      {cell}
-                    </td>
-                  )
-                )}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      <DataTable columns={results.columns} rows={results.rows} numeric={results.columns.slice(1).map((_, i) => i + 1)} emphasis={results.columns.length - 1} />
       <p className="max-w-[640px] text-body text-foreground-secondary">{results.note}</p>
     </section>
   );
@@ -213,7 +185,7 @@ function Detailed({ href }: { href: string }) {
   );
 }
 
-function NextProject({ next }: { next: CaseStudy["next"] }) {
+export function NextProject({ next }: { next: CaseStudy["next"] }) {
   return (
     <section aria-labelledby="next-heading" className={`${wrap} pb-g116`}>
       <Separator className="mb-g44" />
