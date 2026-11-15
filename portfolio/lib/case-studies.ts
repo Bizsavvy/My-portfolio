@@ -88,7 +88,7 @@ export const shappay: CaseStudy = {
     },
     {
       kind: "image",
-      src: "/assets/shappay/site/landing-desktop.webp",
+      src: "/assets/shappay/site/useshappay-landing.webp",
       alt: "The useshappay.com landing page: Nigeria has too many QR codes. You only need one.",
       width: 2880,
       height: 1800,
