@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { Badge } from "@/components/shadcn/badge";
 import { cn } from "@/lib/utils";
 
-/** Where the screen sits inside the iPhone 16 Pro Max frame (measured from the PNG). */
+/** Where the screen sits inside the iPhone 16 Pro Max frame, desert titanium (measured from the PNG). */
 // The screen's corner radius is about 187px on a 1320 x 2868 screen: 14.2% of its width, 6.5% of its height.
 const SCREEN = { left: "5.102%", top: "2.2%", width: "89.796%", height: "95.6%", borderRadius: "14.2% / 6.5%" };
 
@@ -34,11 +34,11 @@ export function PhoneShot({ src, alt, className }: { src: string; alt: string; c
           alt={alt}
           fill
           sizes="(min-width: 1024px) 260px, 45vw"
-          className="object-cover object-top transition-transform duration-150 ease-standard group-hover:scale-[1.02] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+          className="object-cover object-top"
         />
       </div>
       <Image
-        src="/assets/devices/iphone-16-pro-max-black.webp"
+        src="/assets/devices/iphone-16-pro-max-desert.webp"
         alt=""
         fill
         sizes="(min-width: 1024px) 260px, 45vw"
@@ -58,15 +58,18 @@ export function CaseStudyTile({ title, line, href, outcome, cover, className }: 
         className
       )}
     >
-      <div className="flex min-h-[260px] flex-1 items-start justify-center overflow-hidden px-g27 pt-g44">
-        {cover.kind === "phone" ? (
-          <PhoneShot src={cover.src} alt={cover.alt} className="w-[min(62%,300px)] shrink-0" />
-        ) : (
-          <div className="mb-g27 flex aspect-video w-full items-center justify-center self-center rounded-md border border-dashed border-input">
+      {cover.kind === "phone" ? (
+        // The whole phone shows, never cropped, and the caption follows close below (Haye, 2026-11-15).
+        <div className="flex justify-center px-g17 pt-g44">
+          <PhoneShot src={cover.src} alt={cover.alt} className="w-[62%] max-w-[260px] shrink-0" />
+        </div>
+      ) : (
+        <div className="flex aspect-[5/4] p-g17">
+          <div className="flex w-full items-center justify-center rounded-md border border-dashed border-input">
             <span className="font-mono text-label text-muted-foreground uppercase">{cover.note}</span>
           </div>
-        )}
-      </div>
+        </div>
+      )}
       <div className="flex flex-col gap-g6 p-g17">
         <h3 className="text-title text-foreground">{title}</h3>
         <p className="text-body text-muted-foreground">{line}</p>

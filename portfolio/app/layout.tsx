@@ -64,17 +64,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    // Dark is the default (Docs/Design-System.md). The `dark` class drives the new
-    // system and shadcn; `data-theme` still drives the legacy pages until they're rebuilt.
+    // Dark only for now (Haye, 2026-11-15): no toggle, and a saved light choice is ignored.
+    // The `dark` class drives the new system and shadcn; `data-theme` the legacy pages.
     <html
       lang="en"
+      data-theme="dark"
       suppressHydrationWarning
       className={`dark ${caveat.variable} ${pixelifySans.variable} ${hankenGrotesk.variable} ${jetbrainsMono.variable}`}
     >
-      <head>
-        {/* Reads localStorage before hydration to avoid theme flash */}
-        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem('theme');if(t){document.documentElement.setAttribute('data-theme',t);document.documentElement.classList.toggle('dark',t==='dark')}}catch(e){}})()` }} />
-      </head>
       <body suppressHydrationWarning>
         {children}
         <Analytics />

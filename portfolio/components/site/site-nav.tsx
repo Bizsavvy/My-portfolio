@@ -3,7 +3,6 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { links } from "@/lib/links";
 import { CopyEmail } from "@/components/site/copy-email";
-import { ThemeToggle } from "@/components/site/theme-toggle";
 
 /**
  * Sticky nav: photo and name, two links, the email pill and the theme toggle
@@ -54,8 +53,9 @@ export function SiteNav() {
         </ul>
 
         <div className="flex items-center gap-g6">
+          {/* Dark only for now (Haye, 2026-11-15); the light theme and its toggle
+              (components/site/theme-toggle.tsx) are kept for later. */}
           <CopyEmail variant="secondary" compactOnMobile />
-          <ThemeToggle />
         </div>
       </nav>
     </header>

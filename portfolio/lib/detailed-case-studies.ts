@@ -46,7 +46,6 @@ export type DetailedCaseStudy = {
   next: { project: string; line: string; href: string };
 };
 
-const shot = (name: string, alt: string): Shot => ({ src: `/assets/shappay/redesign/${name}.png`, alt });
 
 export const shappayDetailed: DetailedCaseStudy = {
   slug: "shappay",
@@ -349,8 +348,8 @@ export const shappayDetailed: DetailedCaseStudy = {
         {
           kind: "phones",
           shots: [
-            shot("final-01-home", "Home with the new Request money and Split a bill tiles under the balance"),
-            shot("final-12-keypad", "The amount keypad, with a 00 key"),
+            { src: "/assets/shappay/screens/shappay-home.png", alt: "Home with the new Request money and Split a bill tiles under the balance" },
+            { src: "/assets/shappay/screens/shappay-keypad.png", alt: "The amount keypad, with a 00 key" },
           ],
           caption: "Home with the Request money and Split a bill tiles, and the keypad's 00 key. Built and merged, not yet tested.",
         },

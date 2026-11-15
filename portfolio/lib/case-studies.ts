@@ -64,10 +64,10 @@ export const shappay: CaseStudy = {
     text: "After the redesign, paying by scan rose from 5/8 to 8/8 testers, and getting past a code the app couldn't read from 4/8 to 8/8. Measured in usability tests on a web build with a simulated scan.",
   },
   preview: [
-    { src: "/assets/shappay/redesign/after-07-cant-read.png", alt: "The card for a code the app can't read, leading with Send to bank" },
-    { src: "/assets/shappay/redesign/final-01-home.png", alt: "Shappay home with Scan to pay, Send to ShapID, Send to bank and Add money" },
+    { src: "/assets/shappay/screens/shappay-cant-read.png", alt: "The card for a code the app can't read, leading with Send to bank" },
+    { src: "/assets/shappay/screens/shappay-home.png", alt: "Shappay home with Scan to pay, Send to ShapID, Send to bank and Add money" },
     // Not the pending screen: in the preview its test transaction ID shows above the card's edge.
-    { src: "/assets/shappay/redesign/after-02-pay-hub.png", alt: "The Payments tab, with the same names as Home and Request or split" },
+    { src: "/assets/shappay/screens/shappay-payments.png", alt: "The Payments tab, with the same names as Home and Request or split" },
   ],
   sectionsHeading: "The redesign",
   sections: [

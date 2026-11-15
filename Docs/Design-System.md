@@ -12,7 +12,7 @@ Canonical design system for Haye's portfolio (`portfolio/`, Next.js 16, Tailwind
 
 ## Colour
 
-Dark is the default. The page starts with the `dark` class set; the theme toggle removes it and remembers the choice.
+The site is dark only for now (Haye, 2026-11-15): the page always has the `dark` class and there is no toggle. The light tokens stay defined so light mode can come back.
 
 | Token | Dark | Light | Used for |
 | --- | --- | --- | --- |
@@ -98,7 +98,7 @@ Nested corners: an element inset 6px inside a 17px tile takes 10.
 
 - Content width 1280px, centred. Case study reading column 640px.
 - Gutters: 17 on phones, 27 on tablets, 44 on desktop.
-- Bento grid: 4 columns on desktop, 2 on tablets, 1 on phones; 10px gap. Each tile variant has its own aspect ratio rather than a square cell: motion tiles 16:9; case study, website and before and after tiles set per design. Case study tiles take the largest spans. The Shappay footer clip crops from the bottom (`object-position: bottom`) if its tile is shorter than 16:9.
+- Bento grid: three masonry columns from lg (two from md, one on phones), 10px gap, after the Stephen Jude reference. Every card stands alone: one thing per card. Small cards are landscape (about 5:4); tall cards hold one phone in the iPhone frame (3:5). Case study and project cards keep a caption; picture-only cards carry a small label pill bottom left ("Shappay · Scan"). The hero stays short enough that the first row of work shows on a 1280 x 720 laptop. The Shappay footer clip crops from the bottom (`object-position: bottom`).
 
 ## Surfaces and elevation
 
@@ -145,14 +145,15 @@ Unused shadcn sets (chart, sidebar) are left out.
 
 | Component | Built from | Notes |
 | --- | --- | --- |
-| Nav | Avatar, Button | Profile photo and name, two links, email pill (secondary), theme toggle. Sticky, floating |
+| Nav | Avatar, Button | Profile photo and name, two links, email pill (secondary). Sticky, floating. The theme toggle (`components/site/theme-toggle.tsx`) is kept but hidden while the site is dark only |
 | Email pill | Button | Copies the email; label confirms "Copied" |
 | Work tabs | Tabs | Everything, Case studies. Selection shown by a capsule, not colour alone |
-| Tile | Card | Variants: case study, website, motion, before and after |
+| Tile | Card | Variants: case study, website (motion), before and after, phone, light and dark |
 | Motion tile | Card, video | Pause and play control in a corner, `aria-label` "Pause video" / "Play video" |
 | Outcome tag | Badge | Measured or Projected, label style |
 | Buttons | Button | Primary (lime pill), secondary (raised pill), link |
-| Before and after slider | custom, on Slider | Home page tiles only. Drag or arrow keys; announced value, e.g. "Before and after, 50%" |
+| Before and after slider | custom (`components/site/compare-slider.tsx`) | Home page tiles only; the same slider compares before and after, or light and dark. Side names show as dark pills in the top corners; the handle carries a left-right chevron. Drag or arrow keys; announced value, e.g. "Before and after, 50%" |
+| Phone card | custom (`components/home/phone-card.tsx`) | Home page: one app screen in the iPhone 16 Pro Max frame (desert titanium, `public/assets/devices/iphone-16-pro-max-desert.webp`), alone on a tall card, with a label pill. The light and dark variant puts the compare slider over one phone. Screens are captured from the product's own build with sample data at the app's own width (Shappay caps at 430, so 430 x 934 @3x, scaled to the 1320 x 2868 screen), with the iPhone safe area and a 9:41 status bar, never mocked up. |
 | Screen pair | custom | Case studies: before and after side by side, labelled, with numbered white markers on the screens and a matching numbered list (`components/case/screen-pair.tsx`). Static, no dragging, so it reads with the text. Markers are hidden from screen readers; the list says which screen each note is about. Shappay pairs live in `lib/shappay-screens.ts`, shared by both case study pages. |
 | Case study hero, outcome card, next project | Card, Separator | Per the Figma reference notes |
 | Detailed case study | Separator, Data table | The 640px reading column; tables of four or more columns and the payload demo run to 880px. On wide screens an "On this page" list sits beside it and marks the section being read with a rail and `aria-current` |
@@ -175,7 +176,7 @@ Icons: Lucide only (copy, check, arrow-right, arrow-up-right, arrow-left, sun, m
 Set up on branch `redesign/design-system`, 15 November 2026.
 
 - **Where the tokens live:** the "REDESIGN · DESIGN SYSTEM" block at the end of `portfolio/app/globals.css`: light values on `:root`, dark on `.dark`, Tailwind names in `@theme inline`.
-- **Theme:** `<html class="dark">` by default. The saved choice (`localStorage.theme`) and the nav toggle set both the `dark` class and the legacy `data-theme` attribute.
+- **Theme:** dark only for now: `<html class="dark" data-theme="dark">`, with no script reading a saved choice. To bring light mode back, restore the head script and the nav toggle.
 - **Tailwind names:**
   - Colours: `bg-background`, `bg-card` (surface), `bg-raised`, `bg-primary` (lime), `text-foreground`, `text-foreground-secondary`, `text-muted-foreground`, `text-brand-text`, `border-border`, `ring-ring`.
   - Spacing: `g4`, `g6`, `g10`, `g17`, `g27`, `g44`, `g72`, `g116` (for example `p-g17`, `gap-g10`), the same naming as Shappay.
