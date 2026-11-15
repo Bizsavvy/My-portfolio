@@ -55,10 +55,11 @@ const screen = (name: string, alt: string): Shot => ({ src: `/assets/shappay/scr
 const columns: ReactNode[][] = [
   [
     <CaseStudyTile key="shappay" {...shappay} />,
-    <PhoneCard
+    <ThemeCompareCard
       key="amount"
       label="Shappay · Send money"
-      shot={screen("shappay-send-amount", "Send money: ₦5,000 to Tsoji Adeyemi, with the amount keypad")}
+      light={screen("shappay-send-amount-light", "Light mode: Send money, ₦5,000 to Tsoji Adeyemi, with the amount keypad")}
+      dark={screen("shappay-send-amount", "Dark mode: Send money, ₦5,000 to Tsoji Adeyemi, with the amount keypad")}
     />,
     <CaseStudyTile key="ui-to-json" {...uiToJson} />,
   ],
@@ -87,11 +88,11 @@ const columns: ReactNode[][] = [
     <CaseStudyTile key="oshap" {...oshap} />,
   ],
   [
-    <ThemeCompareCard
+    // TODO(redesign): the onboarding loop from the motion videos session (shappay-onboarding_3x5_1080x1800.mp4).
+    <PhoneCard
       key="shapid"
       label="Shappay · Onboarding"
-      light={screen("shappay-shapid-light", "Light mode: Your ShapID, with adaeze@shappay available")}
-      dark={screen("shappay-shapid-dark", "Dark mode: Your ShapID, with adaeze@shappay available")}
+      shot={screen("shappay-shapid-dark", "Onboarding: Your ShapID, with adaeze@shappay available")}
     />,
     <PhoneCard
       key="review"
