@@ -6,7 +6,7 @@ import { Button } from "@/components/shadcn/button";
 import { Separator } from "@/components/shadcn/separator";
 import { SiteNav } from "@/components/site/site-nav";
 import { SiteFooter } from "@/components/home/contact";
-import { BeforeAfter } from "@/components/site/before-after";
+import { ScreenPair } from "@/components/case/screen-pair";
 import { PhoneShot } from "@/components/home/case-study-tile";
 import { DataTable } from "@/components/case/data-table";
 import type { CaseStudy, OutcomeSection } from "@/lib/case-studies";
@@ -143,19 +143,10 @@ function OutcomeCard({ section }: { section: OutcomeSection }) {
   }
 
   return (
-    <figure className="grid items-center gap-g27 rounded-xl bg-card p-g27 md:grid-cols-[minmax(0,5fr)_minmax(0,4fr)] lg:gap-g44 lg:p-g44">
-      {/* Bottom padding leaves room for the Before and After labels. */}
-      <div className="flex justify-center pb-g27">
-        <BeforeAfter
-          before={section.before}
-          after={section.after}
-          label={section.label}
-          crop={section.crop}
-          className="w-full max-w-[420px]"
-        />
-      </div>
-      <figcaption className="text-title text-pretty text-foreground">{section.callout}</figcaption>
-    </figure>
+    <div className="flex flex-col gap-g27 rounded-xl bg-card p-g17 md:p-g27 lg:p-g44">
+      <p className="max-w-[640px] text-title text-pretty text-foreground">{section.summary}</p>
+      <ScreenPair figure={section.figure} layout="side" />
+    </div>
   );
 }
 

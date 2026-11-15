@@ -1,4 +1,6 @@
 import type { Shot } from "@/components/site/before-after";
+import type { ScreenPairFigure } from "@/components/case/screen-pair";
+import { shappayScreens } from "@/lib/shappay-screens";
 
 /**
  * Content for the case study template (components/case/case-study-page.tsx). One file
@@ -8,14 +10,10 @@ import type { Shot } from "@/components/site/before-after";
 
 export type OutcomeSection =
   | {
-      kind: "before-after";
-      before: Shot;
-      after: Shot;
-      /** Names the comparison for screen readers. */
-      label: string;
-      crop: { aspect: string; position: "top" | "bottom" };
+      kind: "screens";
+      figure: ScreenPairFigure;
       /** What the change does and why: points at the design decision, not the image. */
-      callout: string;
+      summary: string;
     }
   | {
       kind: "image";
@@ -74,29 +72,19 @@ export const shappay: CaseStudy = {
   sectionsHeading: "The redesign",
   sections: [
     {
-      kind: "before-after",
-      label: "Shappay Home",
-      before: { src: "/assets/shappay/redesign/before-01-home.png", alt: "Home before the redesign: Fund, Send, Split and Request" },
-      after: { src: "/assets/shappay/redesign/after-01-home.png", alt: "Home after the redesign: Scan to pay, Send to ShapID, Send to bank and Add money" },
-      crop: { aspect: "1170 / 1100", position: "top" },
-      callout: "Four ways to pay, named the way people say them. Scan comes first.",
+      kind: "screens",
+      figure: shappayScreens.home,
+      summary: "Four ways to pay, named the way people say them. Scan comes first.",
     },
     {
-      kind: "before-after",
-      label: "A code the app can't read",
-      before: { src: "/assets/shappay/redesign/before-07-cant-read.png", alt: "Before: two equal options, Send to bank and Send money" },
-      after: { src: "/assets/shappay/redesign/after-07-cant-read.png", alt: "After: Send to bank as the main button, Send to ShapID second" },
-      crop: { aspect: "1170 / 1050", position: "bottom" },
-      callout:
-        "Until the scanner reads every code, a code it can't read still gets paid. Send to bank leads, because the shop's sign shows an account number.",
+      kind: "screens",
+      figure: shappayScreens.cantRead,
+      summary: "Until the scanner reads every code, a code it can't read still gets paid. Send to bank leads, because the shop's sign shows an account number.",
     },
     {
-      kind: "before-after",
-      label: "A pending payment",
-      before: { src: "/assets/shappay/redesign/before-08-pending.png", alt: "Before: Pending, with the line shows as sent in your balance" },
-      after: { src: "/assets/shappay/redesign/after-08-pending.png", alt: "After: On its way, Adaeze Bakery hasn't received this yet" },
-      crop: { aspect: "1170 / 1600", position: "top" },
-      callout: "'On its way' leaves no room to read it as paid.",
+      kind: "screens",
+      figure: shappayScreens.pending,
+      summary: "'On its way' leaves no room to read it as paid.",
     },
     {
       kind: "image",

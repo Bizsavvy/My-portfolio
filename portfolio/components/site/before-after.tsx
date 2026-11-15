@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type CSSProperties } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
@@ -21,21 +21,21 @@ type Props = {
   /** Image sizes hint for next/image. */
   sizes?: string;
   className?: string;
-  style?: CSSProperties;
 };
 
 /**
+ * Home page only: case studies show pairs side by side with callouts (components/case/screen-pair.tsx).
  * Drag, or use the arrow keys, to compare two screens. A native range input sits over the
  * images, so keyboard and screen reader support come built in. Nothing moves on its own.
  * The labels hang below the image's edges so they never cover the screenshot; leave room
  * for them under the component.
  */
-export function BeforeAfter({ before, after, label, crop, sizes = "(min-width: 1024px) 420px, 80vw", className, style }: Props) {
+export function BeforeAfter({ before, after, label, crop, sizes = "(min-width: 1024px) 420px, 80vw", className }: Props) {
   const [split, setSplit] = useState(50);
   const objectPosition = crop.position === "top" ? "object-top" : "object-bottom";
 
   return (
-    <div className={cn("relative", className)} style={{ ...style, aspectRatio: crop.aspect }}>
+    <div className={cn("relative", className)} style={{ aspectRatio: crop.aspect }}>
       <div className="absolute inset-0 overflow-hidden rounded-md select-none">
         <Image src={before.src} alt={before.alt} fill sizes={sizes} className={cn("object-cover", objectPosition)} />
         <div className="absolute inset-0" style={{ clipPath: `inset(0 0 0 ${split}%)` }}>

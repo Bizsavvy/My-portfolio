@@ -1,4 +1,6 @@
 import type { Shot } from "@/components/site/before-after";
+import type { ScreenPairFigure } from "@/components/case/screen-pair";
+import { shappayScreens } from "@/lib/shappay-screens";
 
 /**
  * Content for the detailed case study template (components/case/detailed-case-study-page.tsx).
@@ -7,15 +9,6 @@ import type { Shot } from "@/components/site/before-after";
  */
 
 export type Lead = { lead?: string; text: string };
-
-export type BeforeAfterFigure = {
-  label: string;
-  before: Shot;
-  after: Shot;
-  crop: { aspect: string; position: "top" | "bottom" };
-  /** Widest the slider gets, in px. Short crops can run wider. Default 300. */
-  width?: number;
-};
 
 export type Block =
   | ({ kind: "p" } & Lead)
@@ -29,8 +22,8 @@ export type Block =
       /** Columns (by index) holding numbers: right-aligned, tabular figures. */
       numeric?: number[];
     }
-  /** An ordered run of changes, each followed by its before and after. */
-  | { kind: "changes"; items: (Lead & { figures: BeforeAfterFigure[] })[] }
+  /** An ordered run of changes, each followed by its before and after screens. */
+  | { kind: "changes"; items: (Lead & { figures: ScreenPairFigure[] })[] }
   | { kind: "phones"; shots: Shot[]; caption: string }
   /** A visual still to be made. Shows as a marked placeholder. */
   | { kind: "pending"; label: string; text: string }
@@ -207,68 +200,27 @@ export const shappayDetailed: DetailedCaseStudy = {
             {
               lead: "Home names every way to pay.",
               text: 'The row of Fund, Send, Split and Request became Scan to pay, Send to ShapID, Send to bank and Add money. Scan leads because the product is built on it. "Add money" matches the screen it opens, which was already called that. Request and Split moved into the payments tab, one tap further away. I expected them to stay easy to find there, and added a request task to the retest to check.',
-              figures: [
-                {
-                  label: "Shappay Home",
-                  before: shot("before-01-home", "Home before the redesign: Fund, Send, Split and Request"),
-                  after: shot("after-01-home", "Home after the redesign: Scan to pay, Send to ShapID, Send to bank and Add money"),
-                  crop: { aspect: "1170 / 1100", position: "top" }, width: 420,
-                },
-              ],
+              figures: [shappayScreens.home],
             },
             {
               lead: '"Pay" became "Payments".',
               text: 'A new user couldn\'t tell that requests, splits and withdrawals lived behind "Pay". Monzo and Wise use Payments for the same set, and the tiles inside now use the same names as Home.',
-              figures: [
-                {
-                  label: "The payments tab",
-                  before: shot("before-02-pay-hub", "The Pay tab before the redesign"),
-                  after: shot("after-02-pay-hub", "The Payments tab, with the same names as Home and Request or split"),
-                  crop: { aspect: "1170 / 2000", position: "top" },
-                },
-              ],
+              figures: [shappayScreens.payHub],
             },
             {
               lead: "The Send screen talks back.",
               text: 'Recent people show before anything is typed. Typing a bare name like tunde also looks up tunde@shappay. An ID that doesn\'t exist now gets an answer: "No one on Shappay with that ID. Check the spelling, or send to a bank account."',
-              figures: [
-                {
-                  label: "The Send screen, before anything is typed",
-                  before: shot("before-03-send-empty", "Before: a blank Send screen"),
-                  after: shot("after-03-send-empty", "After: recent people listed before anything is typed"),
-                  crop: { aspect: "1170 / 1500", position: "top" },
-                },
-                {
-                  label: "The Send screen, for an ID that doesn't exist",
-                  before: shot("before-05-send-unknown", "Before: no answer for an ID that doesn't exist"),
-                  after: shot("after-05-send-unknown", "After: No one on Shappay with that ID. Check the spelling, or send to a bank account"),
-                  crop: { aspect: "1170 / 1500", position: "top" },
-                },
-              ],
+              figures: [shappayScreens.sendEmpty, shappayScreens.sendUnknown],
             },
             {
               lead: "The unreadable-code card leads with the bank.",
               text: 'Send to bank became the main button and Send to ShapID the second, under one line: "Pay with the account number on the shop\'s sign, or their Shappay ID." The title stayed "Can\'t read this code", because the code may be fine and simply belong to another provider.',
-              figures: [
-                {
-                  label: "A code the app can't read",
-                  before: shot("before-07-cant-read", "Before: two equal options, Send to bank and Send money"),
-                  after: shot("after-07-cant-read", "After: Send to bank as the main button, Send to ShapID second"),
-                  crop: { aspect: "1170 / 1400", position: "bottom" }, width: 360,
-                },
-              ],
+              figures: [shappayScreens.cantRead],
             },
             {
               lead: "Pending says what it means.",
               text: '"Pending" became "On its way", with the name in the sentence: "Adaeze Bakery hasn\'t received this yet. ₦2,500 has left your balance, and History will show when it arrives."',
-              figures: [
-                {
-                  label: "A pending payment",
-                  before: shot("before-08-pending", "Before: Pending, with the line shows as sent in your balance"),
-                  after: shot("after-08-pending", "After: On its way, Adaeze Bakery hasn't received this yet"),
-                  crop: { aspect: "1170 / 1600", position: "top" }, width: 340,
-                },
-              ],
+              figures: [shappayScreens.pending],
             },
           ],
         },

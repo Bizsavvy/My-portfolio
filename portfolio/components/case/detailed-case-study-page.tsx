@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { SiteNav } from "@/components/site/site-nav";
 import { SiteFooter } from "@/components/home/contact";
-import { BeforeAfter } from "@/components/site/before-after";
+import { ScreenPair } from "@/components/case/screen-pair";
 import { PhoneShot } from "@/components/home/case-study-tile";
 import { DataTable } from "@/components/case/data-table";
 import { OnThisPage } from "@/components/case/on-this-page";
@@ -142,24 +142,9 @@ function BlockView({ block }: { block: Block }) {
                 <h3 className="text-lead font-medium text-foreground">{item.lead?.replace(/\.$/, "")}</h3>
                 <p className="text-body text-pretty text-foreground-secondary">{item.text}</p>
               </div>
-              <div
-                className={cn(
-                  measure,
-                  "grid items-start justify-items-center gap-x-g27 gap-y-g44 rounded-lg bg-card px-g17 pt-g27 pb-g44 md:px-g27",
-                  item.figures.length > 1 && "sm:grid-cols-2"
-                )}
-              >
+              <div className={cn(measure, "flex flex-col gap-g44 rounded-lg bg-card p-g17 md:p-g27")}>
                 {item.figures.map((f) => (
-                  <BeforeAfter
-                    key={f.label}
-                    before={f.before}
-                    after={f.after}
-                    label={f.label}
-                    crop={f.crop}
-                    sizes="(min-width: 640px) 300px, 80vw"
-                    className="w-full"
-                    style={{ maxWidth: f.width ?? 300 }}
-                  />
+                  <ScreenPair key={f.label} figure={f} caption={item.figures.length > 1 ? f.label : undefined} />
                 ))}
               </div>
             </li>

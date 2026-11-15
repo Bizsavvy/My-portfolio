@@ -112,7 +112,7 @@ Nested corners: an element inset 6px inside a 17px tile takes 10.
 | What moves | Behaviour | Reduced motion |
 | --- | --- | --- |
 | Motion tiles | `<video autoplay muted loop playsinline preload="metadata" poster>`. Plays only while on screen. Every tile has a visible pause and play control with an accessible name | Poster still with a play control; nothing autoplays |
-| Before and after slider | Moves only when dragged or with the arrow keys | Unchanged |
+| Before and after slider (home page only) | Moves only when dragged or with the arrow keys | Unchanged |
 | Tile hover (fine pointer only) | Media scales to 1.02 inside the tile; caption arrow shifts 4px | Arrow shift only |
 | Copy email | Pill label changes to "Copied" for 2 seconds, announced by an `aria-live` region | Instant swap |
 | Theme switch | Instant | Instant |
@@ -152,7 +152,8 @@ Unused shadcn sets (chart, sidebar) are left out.
 | Motion tile | Card, video | Pause and play control in a corner, `aria-label` "Pause video" / "Play video" |
 | Outcome tag | Badge | Measured or Projected, label style |
 | Buttons | Button | Primary (lime pill), secondary (raised pill), link |
-| Before and after | custom, on Slider | Drag or arrow keys; announced value, e.g. "Before and after, 50%" |
+| Before and after slider | custom, on Slider | Home page tiles only. Drag or arrow keys; announced value, e.g. "Before and after, 50%" |
+| Screen pair | custom | Case studies: before and after side by side, labelled, with numbered white markers on the screens and a matching numbered list (`components/case/screen-pair.tsx`). Static, no dragging, so it reads with the text. Markers are hidden from screen readers; the list says which screen each note is about. Shappay pairs live in `lib/shappay-screens.ts`, shared by both case study pages. |
 | Case study hero, outcome card, next project | Card, Separator | Per the Figma reference notes |
 | Detailed case study | Separator, Data table | The 640px reading column; tables of four or more columns and the payload demo run to 880px. On wide screens an "On this page" list sits beside it and marks the section being read with a rail and `aria-current` |
 | Data table | custom | Row dividers, label-style headers, row headers in the first column, numbers right-aligned in tabular figures; scrolls sideways inside a focusable region on narrow screens |
