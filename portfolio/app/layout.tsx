@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Pixelify_Sans, Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
 import localFont from "next/font/local";
-import { CustomCursor } from "@/components/ui/CustomCursor";
 import { Analytics } from "@vercel/analytics/next";
 import { siteUrl, siteName } from "@/lib/site";
 import "./globals.css";
@@ -77,7 +76,6 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem('theme');if(t){document.documentElement.setAttribute('data-theme',t);document.documentElement.classList.toggle('dark',t==='dark')}}catch(e){}})()` }} />
       </head>
       <body suppressHydrationWarning>
-        <CustomCursor />
         {children}
         <Analytics />
       </body>

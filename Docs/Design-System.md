@@ -103,7 +103,8 @@ Nested corners: an element inset 6px inside a 17px tile takes 10.
 ## Surfaces and elevation
 
 - Tiles: `--surface` on `--background`. No border, no shadow.
-- Floating layers only (sticky nav, toasts, tooltips): `--surface-raised` plus one shadow, `0 10px 44px -10px` in black at 60% (dark) or zinc #18181b at 18% (light). The nav is slightly translucent with a background blur.
+- Floating layers only (toasts, tooltips): `--surface-raised` plus one shadow, `0 10px 44px -10px` in black at 60% (dark) or zinc #18181b at 18% (light).
+- The sticky nav is the page colour at 80% with a background blur, not the raised surface, so the raised email pill inside it is what stands out (refined while building the home page, 15 November 2026).
 - Borders: form fields and dividers only. No glows.
 
 ## Motion
