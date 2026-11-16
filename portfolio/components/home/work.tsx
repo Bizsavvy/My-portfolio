@@ -3,7 +3,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/shadcn/ta
 import { CaseStudyTile, type CaseStudyTileProps } from "@/components/home/case-study-tile";
 import { MotionTile } from "@/components/home/motion-tile";
 import { BeforeAfterTile } from "@/components/home/before-after-tile";
-import { PhoneCard, PhoneVideoCard, ThemeCompareCard } from "@/components/home/phone-card";
+import { PhoneCard, PhoneVideoCard, ScreenshotCard, ThemeCompareCard } from "@/components/home/phone-card";
 import type { Shot } from "@/components/site/before-after";
 
 /**
@@ -35,7 +35,12 @@ const caseStudies: CaseStudyTileProps[] = [
     title: "Oshap",
     line: "Scan-to-order and pay for restaurants, with no app and no login.",
     href: "/work/oshap",
-    cover: { kind: "placeholder", note: "New cover coming" },
+    cover: {
+      kind: "video",
+      src: "/assets/oshap/motion/oshap-order-flow_3x5_1080x1800.mp4",
+      poster: "/assets/oshap/motion/oshap-order-flow_3x5_1080x1800_poster.webp",
+      label: "Ordering in Oshap in a phone browser: a dish with choices, a drink, the cart, confirm, then paying by bank transfer and claiming the payment.",
+    },
   },
   {
     title: "NawNaw",
@@ -52,11 +57,31 @@ const [shappay, uiToJson, oshap, nawnaw] = caseStudies;
 // with the iPhone safe area and a status bar, so they sit in the frame like the real app.
 const screen = (name: string, alt: string): Shot => ({ src: `/assets/shappay/screens/${name}.png`, alt });
 
+// Oshap, captured from its last commit on sample data (Aji's Kitchen): guest screens in mobile
+// Safari at 440 x 956 @3x, staff screens at 1440 x 900 @2x.
+const oshapScreen = (name: string) => `/assets/oshap/screens/${name}`;
+
 /**
  * Three masonry columns, after the Stephen Jude reference: every card stands alone, small
  * cards are landscape and tall cards hold one phone. Below lg the columns dissolve and the
  * cards flow into two columns, then one, in the order written here.
  */
+/** The usability widget, until its clip exists. */
+// TODO(redesign): the usability widget clip from the motion videos session.
+const WIDGET_TILE = (
+    <div key="widget" className="flex flex-col overflow-hidden rounded-lg bg-card">
+      <div className="flex aspect-[5/4] p-g17">
+        <div className="flex w-full items-center justify-center rounded-md border border-dashed border-input">
+          <span className="font-mono text-label text-muted-foreground uppercase">Clip coming</span>
+        </div>
+      </div>
+      <div className="flex flex-col gap-g6 p-g17">
+        <h3 className="text-title text-foreground">Usability testing widget</h3>
+        <p className="text-body text-muted-foreground">The tool behind the Shappay tests: tasks, timing, recording and scoring in one script.</p>
+      </div>
+    </div>
+);
+
 const columns: ReactNode[][] = [
   [
     <CaseStudyTile key="shappay" {...shappay} />,
@@ -66,7 +91,16 @@ const columns: ReactNode[][] = [
       light={screen("shappay-send-amount-light", "Light mode: Send money, ₦5,000 to Tsoji Adeyemi, with the amount keypad")}
       dark={screen("shappay-send-amount", "Dark mode: Send money, ₦5,000 to Tsoji Adeyemi, with the amount keypad")}
     />,
+    <ScreenshotCard
+      key="oshap-tables"
+      label="Oshap · Tables"
+      src={oshapScreen("oshap-staff-tables.webp")}
+      alt="Oshap's staff dashboard: table T1 waits for staff to verify a transfer the guest says they sent; T2 and T3 still owe"
+      width={2880}
+      height={1800}
+    />,
     <CaseStudyTile key="ui-to-json" {...uiToJson} />,
+    WIDGET_TILE,
   ],
   [
     <MotionTile
@@ -91,6 +125,7 @@ const columns: ReactNode[][] = [
       shot={screen("shappay-cant-read", "Scan: Can't read this code, with Send to bank first and Send to ShapID second, over a shop's sign")}
     />,
     <CaseStudyTile key="oshap" {...oshap} />,
+    <CaseStudyTile key="nawnaw" {...nawnaw} />,
   ],
   [
     <PhoneVideoCard
@@ -105,19 +140,19 @@ const columns: ReactNode[][] = [
       label="Shappay · Review and send"
       shot={screen("shappay-send-review", "Review and send: ₦5,000 to Tsoji Adeyemi, the fee and the balance after")}
     />,
-    <CaseStudyTile key="nawnaw" {...nawnaw} />,
-    // TODO(redesign): the usability widget clip from the motion videos session.
-    <div key="widget" className="flex flex-col overflow-hidden rounded-lg bg-card">
-      <div className="flex aspect-[5/4] p-g17">
-        <div className="flex w-full items-center justify-center rounded-md border border-dashed border-input">
-          <span className="font-mono text-label text-muted-foreground uppercase">Clip coming</span>
-        </div>
-      </div>
-      <div className="flex flex-col gap-g6 p-g17">
-        <h3 className="text-title text-foreground">Usability testing widget</h3>
-        <p className="text-body text-muted-foreground">The tool behind the Shappay tests: tasks, timing, recording and scoring in one script.</p>
-      </div>
-    </div>,
+    <PhoneCard
+      key="oshap-pay"
+      label="Oshap · Pay by transfer"
+      shot={{ src: oshapScreen("oshap-pay-transfer.png"), alt: "Oshap's Pay Bill in a phone browser: the restaurant's bank details, a reference to copy, and I've Sent the Money" }}
+    />,
+    <ScreenshotCard
+      key="oshap-kitchen"
+      label="Oshap · Kitchen"
+      src={oshapScreen("oshap-staff-kitchen.webp")}
+      alt="Oshap's kitchen display: new orders from tables T2 and T3, each with its choices and a Start button"
+      width={2880}
+      height={1800}
+    />,
   ],
 ];
 

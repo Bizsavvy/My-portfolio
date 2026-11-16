@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import type { Shot } from "@/components/site/before-after";
 import { CompareSlider } from "@/components/site/compare-slider";
 import { LoopVideo } from "@/components/site/loop-video";
@@ -27,6 +28,19 @@ export function PhoneCard({ shot, label, className }: { shot: Shot; label: strin
       <div className={phoneArea}>
         <PhoneShot src={shot.src} alt={shot.alt} className={phone} />
       </div>
+      <CardLabel>{label}</CardLabel>
+    </figure>
+  );
+}
+
+/**
+ * A desktop screen on a small landscape card, like the dashboard cards in the reference:
+ * the whole screen, inset on the card surface, with the label pill underneath.
+ */
+export function ScreenshotCard({ src, alt, label, width, height, className }: { src: string; alt: string; label: string; width: number; height: number; className?: string }) {
+  return (
+    <figure className={cn(card, "px-g17 pt-g17 pb-g44", className)}>
+      <Image src={src} alt={alt} width={width} height={height} sizes="(min-width: 1024px) 380px, 90vw" className="h-auto w-full rounded-md" />
       <CardLabel>{label}</CardLabel>
     </figure>
   );
