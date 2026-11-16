@@ -3,6 +3,7 @@ import Image from "next/image";
 import type { Shot } from "@/components/site/before-after";
 import { CompareSlider } from "@/components/site/compare-slider";
 import { LoopVideo } from "@/components/site/loop-video";
+import { Lightbox } from "@/components/site/lightbox";
 import { PhoneShot } from "@/components/home/case-study-tile";
 import { cn } from "@/lib/utils";
 
@@ -28,6 +29,9 @@ export function PhoneCard({ shot, label, className }: { shot: Shot; label: strin
       <div className={phoneArea}>
         <PhoneShot src={shot.src} alt={shot.alt} className={phone} />
       </div>
+      <Lightbox label={label}>
+        <PhoneShot src={shot.src} alt={shot.alt} sizes="(min-width: 768px) 460px, 90vw" className="w-[min(84vw,calc(82dvh*1470/3000),470px)] shrink-0" />
+      </Lightbox>
       <CardLabel>{label}</CardLabel>
     </figure>
   );
@@ -41,6 +45,9 @@ export function ScreenshotCard({ src, alt, label, width, height, className }: { 
   return (
     <figure className={cn(card, "px-g17 pt-g17 pb-g44", className)}>
       <Image src={src} alt={alt} width={width} height={height} sizes="(min-width: 1024px) 380px, 90vw" className="h-auto w-full rounded-md" />
+      <Lightbox label={label}>
+        <Image src={src} alt={alt} width={width} height={height} sizes="90vw" className="h-auto max-h-[82dvh] w-auto max-w-[min(90vw,1440px)] rounded-lg" />
+      </Lightbox>
       <CardLabel>{label}</CardLabel>
     </figure>
   );
@@ -53,7 +60,10 @@ export function ScreenshotCard({ src, alt, label, width, height, className }: { 
 export function PhoneVideoCard({ src, poster, label, description, className }: { src: string; poster: string; label: string; description: string; className?: string }) {
   return (
     <figure className={cn(card, className)}>
-      <LoopVideo src={src} poster={poster} label={description} className="aspect-[3/5] w-full" />
+      <LoopVideo src={src} poster={poster} label={description} className="aspect-[3/5] w-full" controlClassName="z-10" />
+      <Lightbox label={label}>
+        <LoopVideo src={src} poster={poster} label={description} className="aspect-[3/5] w-[min(84vw,calc(82dvh*3/5),576px)] shrink-0 overflow-hidden rounded-xl" />
+      </Lightbox>
       <CardLabel>{label}</CardLabel>
     </figure>
   );

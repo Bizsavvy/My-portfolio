@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { LoopVideo } from "@/components/site/loop-video";
+import { Lightbox } from "@/components/site/lightbox";
 import { cn } from "@/lib/utils";
 
 type Props = {
@@ -19,7 +20,12 @@ type Props = {
 export function MotionTile({ title, line, src, poster, label, link, focus = "center", className }: Props) {
   return (
     <div className={cn("flex flex-col overflow-hidden rounded-lg bg-card text-card-foreground", className)}>
-      <LoopVideo src={src} poster={poster} label={label} focus={focus} className="aspect-video w-full" />
+      <div className="relative">
+        <LoopVideo src={src} poster={poster} label={label} focus={focus} className="aspect-video w-full" controlClassName="z-10" />
+        <Lightbox label={title} className="rounded-none">
+          <LoopVideo src={src} poster={poster} label={label} focus={focus} className="aspect-video w-[min(90vw,1400px,calc(82dvh*16/9))] overflow-hidden rounded-xl" />
+        </Lightbox>
+      </div>
       <div className="flex flex-col gap-g6 p-g17">
         <h3 className="text-title text-foreground">{title}</h3>
         <p className="text-body text-muted-foreground">{line}</p>

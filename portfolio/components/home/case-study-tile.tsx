@@ -28,7 +28,7 @@ export type CaseStudyTileProps = {
 };
 
 /** A dark phone screenshot inside the frame, clipped to the screen's rounded corners. */
-export function PhoneShot({ src, alt, className }: { src: string; alt: string; className?: string }) {
+export function PhoneShot({ src, alt, className, sizes = "(min-width: 1024px) 260px, 45vw" }: { src: string; alt: string; className?: string; sizes?: string }) {
   return (
     <div className={cn("relative aspect-[1470/3000]", className)}>
       <div className="absolute overflow-hidden" style={SCREEN}>
@@ -36,7 +36,7 @@ export function PhoneShot({ src, alt, className }: { src: string; alt: string; c
           src={src}
           alt={alt}
           fill
-          sizes="(min-width: 1024px) 260px, 45vw"
+          sizes={sizes}
           className="object-cover object-top"
         />
       </div>
@@ -44,7 +44,7 @@ export function PhoneShot({ src, alt, className }: { src: string; alt: string; c
         src="/assets/devices/iphone-16-pro-max-desert.webp"
         alt=""
         fill
-        sizes="(min-width: 1024px) 260px, 45vw"
+        sizes={sizes}
         className="pointer-events-none"
       />
     </div>
