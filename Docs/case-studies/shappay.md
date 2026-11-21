@@ -81,4 +81,4 @@ Both rounds used the same tasks, 8 different testers, and the same passing rule:
 
 Next project
 
-[UI to JSON: A Figma plugin that turns a design into code-ready JSON. 300+ users.](/work/ui-to-json)
+[Oshap: Any restaurant's colour, readable on every guest's phone.](/work/oshap)

@@ -8,9 +8,9 @@ import { ScreenshotThemeCard, ThemeCompareCard } from "@/components/home/theme-c
 import type { Shot } from "@/components/site/before-after";
 
 /**
- * The four case studies. One line each: the problem and the impact, marked Measured or
- * Projected where there is an outcome (handoff). Oshap and NawNaw have no outcome on the
- * page until their tests run, so they carry no tag.
+ * The case studies. One line each: the problem and the impact, marked Measured or Projected
+ * where there is an outcome (handoff). Oshap and NawNaw have no outcome on the page until
+ * their tests run, so they carry no tag.
  */
 const caseStudies: CaseStudyTileProps[] = [
   {
@@ -24,13 +24,6 @@ const caseStudies: CaseStudyTileProps[] = [
       poster: "/assets/shappay/motion/shappay-pay-by-scan_3x5_1080x1800_poster.webp",
       label: "Paying by scan in Shappay: from Home, scan Adaeze Bakery's code, enter ₦2,500, review, enter the PIN, sent.",
     },
-  },
-  {
-    title: "UI to JSON",
-    line: "A Figma plugin that turns a design into code-ready JSON. 300+ users.",
-    href: "/work/ui-to-json",
-    outcome: "measured",
-    cover: { kind: "placeholder", note: "New cover coming" },
   },
   {
     title: "Oshap",
@@ -51,7 +44,20 @@ const caseStudies: CaseStudyTileProps[] = [
   },
 ];
 
-const [shappay, uiToJson, oshap, nawnaw] = caseStudies;
+const [shappay, oshap, nawnaw] = caseStudies;
+
+/**
+ * UI to JSON has no case study: its card links to the plugin on Figma Community instead
+ * (Haye, 2026-11-21). It shows in Everything, not in the Case studies tab.
+ */
+const uiToJson: CaseStudyTileProps = {
+  title: "UI to JSON",
+  line: "A Figma plugin that turns a design into code-ready JSON. 300+ users.",
+  href: "https://www.figma.com/community/plugin/1638581049555435822",
+  cta: "View on Figma Community",
+  outcome: "measured",
+  cover: { kind: "placeholder", note: "New cover coming" },
+};
 
 // Captured from the Shappay web build with sample data at its full 430 width, scaled to the
 // iPhone 16 Pro Max screen (1320 x 2868),

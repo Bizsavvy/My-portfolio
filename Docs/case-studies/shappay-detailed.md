@@ -231,4 +231,4 @@ When users can't easily find QR scanning or ShapIDs, they default to Send to ban
 
 Next project
 
-[UI to JSONA Figma plugin that turns a design into code-ready JSON. 300+ users.](/work/ui-to-json)
+[Oshap: Any restaurant's colour, readable on every guest's phone.](/work/oshap)

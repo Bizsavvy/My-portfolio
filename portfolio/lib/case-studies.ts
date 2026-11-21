@@ -179,9 +179,9 @@ export const shappay: CaseStudy = {
   },
   detailedHref: "/work/shappay/detailed",
   next: {
-    project: "UI to JSON",
-    line: "A Figma plugin that turns a design into code-ready JSON. 300+ users.",
-    href: "/work/ui-to-json",
+    project: "Oshap",
+    line: "Any restaurant's colour, readable on every guest's phone.",
+    href: "/work/oshap",
   },
 };
 

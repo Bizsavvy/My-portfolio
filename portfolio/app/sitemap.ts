@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { siteUrl } from "@/lib/site";
 
-const slugs = ["shappay", "ui-to-json", "oshap", "nawnaw"];
+const slugs = ["shappay", "oshap", "nawnaw"];
 
 const routes = [
   "",

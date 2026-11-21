@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Badge } from "@/components/shadcn/badge";
 import { LoopVideo } from "@/components/site/loop-video";
 import { cn } from "@/lib/utils";
@@ -24,6 +24,8 @@ export type CaseStudyTileProps = {
   href: string;
   outcome?: "measured" | "projected";
   cover: Cover;
+  /** The call to action. Defaults to "Read case study". */
+  cta?: string;
   className?: string;
 };
 
@@ -73,7 +75,9 @@ export function PhoneShot({
  * impact. The title link stretches over the whole card, so a video cover's pause button can
  * sit above it as its own control (a button can't live inside a link).
  */
-export function CaseStudyTile({ title, line, href, outcome, cover, className }: CaseStudyTileProps) {
+export function CaseStudyTile({ title, line, href, outcome, cover, cta = "Read case study", className }: CaseStudyTileProps) {
+  // A project without a case study links out, for example UI to JSON to Figma Community (Haye, 2026-11-21).
+  const external = /^https?:\/\//.test(href);
   return (
     <div
       className={cn(
@@ -99,16 +103,27 @@ export function CaseStudyTile({ title, line, href, outcome, cover, className }: 
       )}
       <div className="flex flex-col gap-g6 p-g17">
         <h3 className="text-title text-foreground">
-          <Link href={href} className="after:absolute after:inset-0 focus-visible:outline-none">
-            {title}
-          </Link>
+          {external ? (
+            <a href={href} target="_blank" rel="noopener noreferrer" className="after:absolute after:inset-0 focus-visible:outline-none">
+              {title}
+              <span className="sr-only"> (opens in a new tab)</span>
+            </a>
+          ) : (
+            <Link href={href} className="after:absolute after:inset-0 focus-visible:outline-none">
+              {title}
+            </Link>
+          )}
         </h3>
         <p className="text-body text-muted-foreground">{line}</p>
         <div className="mt-g10 flex flex-wrap items-center gap-g10">
           {outcome && <Badge variant={outcome}>{outcome === "measured" ? "Measured" : "Projected"}</Badge>}
           <span className="inline-flex items-center gap-g4 text-button text-brand-text">
-            Read case study
-            <ArrowRight aria-hidden className="size-4 transition-transform duration-150 ease-standard group-hover:translate-x-1" />
+            {cta}
+            {external ? (
+              <ArrowUpRight aria-hidden className="size-4 transition-transform duration-150 ease-standard group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            ) : (
+              <ArrowRight aria-hidden className="size-4 transition-transform duration-150 ease-standard group-hover:translate-x-1" />
+            )}
           </span>
         </div>
       </div>
