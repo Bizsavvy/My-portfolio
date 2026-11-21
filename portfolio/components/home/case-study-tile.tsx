@@ -27,8 +27,24 @@ export type CaseStudyTileProps = {
   className?: string;
 };
 
-/** A dark phone screenshot inside the frame, clipped to the screen's rounded corners. */
-export function PhoneShot({ src, alt, className, sizes = "(min-width: 1024px) 260px, 45vw" }: { src: string; alt: string; className?: string; sizes?: string }) {
+/**
+ * A dark phone screenshot inside the frame, clipped to the screen's rounded corners. Case study
+ * pages pass `sharp`: the screen asks for about twice its drawn width at quality 90, so text
+ * stays crisp on 2x screens and under pinch zoom (Haye, 2026-11-21).
+ */
+export function PhoneShot({
+  src,
+  alt,
+  className,
+  sizes = "(min-width: 1024px) 260px, 45vw",
+  sharp = false,
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+  sizes?: string;
+  sharp?: boolean;
+}) {
   return (
     <div className={cn("relative aspect-[1470/3000]", className)}>
       <div className="absolute overflow-hidden" style={SCREEN}>
@@ -37,6 +53,7 @@ export function PhoneShot({ src, alt, className, sizes = "(min-width: 1024px) 26
           alt={alt}
           fill
           sizes={sizes}
+          quality={sharp ? 90 : undefined}
           className="object-cover object-top"
         />
       </div>

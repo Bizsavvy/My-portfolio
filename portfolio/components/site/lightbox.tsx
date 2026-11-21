@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, type ReactNode } from "react";
+import { useImperativeHandle, useRef, useState, type ReactNode, type Ref } from "react";
 import { X } from "lucide-react";
 import { Button } from "@/components/shadcn/button";
 import { cn } from "@/lib/utils";
@@ -11,7 +11,13 @@ type Props = {
   /** The large view, rendered only while open so a second video doesn't load with the page. */
   children: ReactNode;
   className?: string;
+  /** False when something else opens it through `handle` (the light/dark slider cards). */
+  trigger?: boolean;
+  /** Lets a parent open it, e.g. `handle.current?.show()`. */
+  handle?: Ref<LightboxHandle>;
 };
+
+export type LightboxHandle = { show: () => void };
 
 /**
  * A tap target laid over a picture-only card: it opens the picture or clip larger in a modal
@@ -20,7 +26,7 @@ type Props = {
  * Place it inside a positioned card, after the card's visual; controls that must stay usable
  * (a video's pause button) sit above it with z-10.
  */
-export function Lightbox({ label, children, className }: Props) {
+export function Lightbox({ label, children, className, trigger = true, handle }: Props) {
   const dialog = useRef<HTMLDialogElement>(null);
   const [open, setOpen] = useState(false);
 
@@ -30,19 +36,22 @@ export function Lightbox({ label, children, className }: Props) {
     document.documentElement.style.overflow = "hidden";
   };
   const close = () => dialog.current?.close();
+  useImperativeHandle(handle, () => ({ show }));
 
   return (
     <>
-      <button
-        type="button"
-        onClick={show}
-        aria-haspopup="dialog"
-        aria-label={`Open ${label} larger`}
-        className={cn(
-          "absolute inset-0 cursor-zoom-in rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset",
-          className
-        )}
-      />
+      {trigger && (
+        <button
+          type="button"
+          onClick={show}
+          aria-haspopup="dialog"
+          aria-label={`Open ${label} larger`}
+          className={cn(
+            "absolute inset-0 cursor-zoom-in rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset",
+            className
+          )}
+        />
+      )}
       <dialog
         ref={dialog}
         aria-label={label}

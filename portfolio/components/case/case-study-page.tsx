@@ -7,8 +7,9 @@ import { Separator } from "@/components/shadcn/separator";
 import { SiteNav } from "@/components/site/site-nav";
 import { SiteFooter } from "@/components/home/contact";
 import { ScreenPair } from "@/components/case/screen-pair";
-import { PhoneShot } from "@/components/home/case-study-tile";
+import { ZoomPhone } from "@/components/case/zoom-phone";
 import { DataTable } from "@/components/case/data-table";
+import { CaseFigureView } from "@/components/case/case-figure";
 import type { CaseStudy, OutcomeSection } from "@/lib/case-studies";
 import { cn } from "@/lib/utils";
 
@@ -16,7 +17,7 @@ const wrap = "mx-auto w-full max-w-[1280px] px-g17 md:px-g27 lg:px-g44";
 
 /**
  * The case study page template (Figma reference notes, Docs/Design-System.md):
- * a hero with title, brief, role, timeline and team; the problem and the impact;
+ * a hero with title, brief, role, timeline and team; the problem and the impact; a TL;DR;
  * a wide preview; the outcome in large cards; results; the detailed case study; next project.
  * The nav stays sticky with the email in view throughout.
  */
@@ -27,9 +28,11 @@ export function CaseStudyPage({ study }: { study: CaseStudy }) {
       <main>
         <Hero study={study} />
         <ProblemAndImpact study={study} />
+        <Tldr points={study.tldr} />
         <Preview study={study} />
         <Outcome study={study} />
         {study.results && <Results results={study.results} />}
+        {study.closing && <Closing items={study.closing} />}
         <Detailed href={study.detailedHref} />
         <NextProject next={study.next} />
       </main>
@@ -63,17 +66,57 @@ function Hero({ study }: { study: CaseStudy }) {
 /** Haye's addition to the reference hero: the problem and the impact, side by side. */
 function ProblemAndImpact({ study }: { study: CaseStudy }) {
   return (
-    <section aria-label="Problem and impact" className={`${wrap} grid gap-g10 pb-g44 md:grid-cols-2`}>
+    <section aria-label="Problem and impact" className={`${wrap} grid gap-g10 pb-g10 md:grid-cols-2`}>
       <div className="flex flex-col gap-g10 rounded-lg bg-card p-g27">
         <h2 className="font-mono text-label text-muted-foreground uppercase">Problem</h2>
-        <p className="text-body text-foreground">{study.problem}</p>
+        {paragraphs(study.problem).map((t) => (
+          <p key={t} className="text-body text-foreground">
+            {t}
+          </p>
+        ))}
       </div>
       <div className="flex flex-col gap-g10 rounded-lg bg-card p-g27">
         <div className="flex items-center gap-g10">
           <h2 className="font-mono text-label text-muted-foreground uppercase">Impact</h2>
-          <Badge variant={study.impact.outcome}>{study.impact.outcome === "measured" ? "Measured" : "Projected"}</Badge>
+          {study.impact.outcome && <Badge variant={study.impact.outcome}>{study.impact.outcome === "measured" ? "Measured" : "Projected"}</Badge>}
         </div>
-        <p className="text-body text-foreground">{study.impact.text}</p>
+        {paragraphs(study.impact.text).map((t) => (
+          <p key={t} className="text-body text-foreground">
+            {t}
+          </p>
+        ))}
+        {study.impact.list && (
+          <ul className="flex list-disc flex-col gap-g4 pl-g17 text-body text-foreground marker:text-muted-foreground">
+            {study.impact.list.map((item) => (
+              <li key={item} className="pl-g4">
+                {item}
+              </li>
+            ))}
+          </ul>
+        )}
+        {study.impact.after && <p className="text-body text-foreground-secondary">{study.impact.after}</p>}
+      </div>
+    </section>
+  );
+}
+
+const paragraphs = (text: string | string[]) => (Array.isArray(text) ? text : [text]);
+
+/** The whole case study in a few points, right under the problem and impact (Haye, 2026-11-21). */
+function Tldr({ points }: { points: string[] }) {
+  return (
+    <section aria-labelledby="tldr-heading" className={`${wrap} pb-g44`}>
+      <div className="flex flex-col gap-g10 rounded-lg bg-card p-g27">
+        <h2 id="tldr-heading" className="font-mono text-label text-muted-foreground uppercase">
+          TL;DR
+        </h2>
+        <ul className="flex max-w-[880px] list-disc flex-col gap-g6 pl-g17 text-body text-foreground marker:text-muted-foreground">
+          {points.map((point) => (
+            <li key={point} className="pl-g4">
+              {point}
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
@@ -88,10 +131,11 @@ function Preview({ study }: { study: CaseStudy }) {
     <section aria-label="Preview" className={`${wrap} pb-g116`}>
       <div className="flex items-center justify-center gap-g17 rounded-xl bg-card px-g27 py-g44 lg:gap-g44 lg:py-g72">
         {study.preview.map((shot, i) => (
-          <PhoneShot
+          <ZoomPhone
             key={shot.src}
             src={shot.src}
             alt={shot.alt}
+            sizes="(min-width: 1024px) 600px, 90vw"
             className={cn("shrink-0", i === 1 ? "w-[60%] max-w-[300px] sm:w-[34%]" : "w-[26%] max-w-[230px] max-sm:hidden")}
           />
         ))}
@@ -115,10 +159,70 @@ function Outcome({ study }: { study: CaseStudy }) {
   );
 }
 
+/** A section card's heading and optional text. */
+function CardHead({ summary, body }: { summary: string; body?: string }) {
+  return (
+    <div className="flex max-w-[720px] flex-col gap-g10">
+      <h3 className="text-title text-pretty text-foreground">{summary}</h3>
+      {body && <p className="text-body text-pretty text-foreground-secondary">{body}</p>}
+    </div>
+  );
+}
+
 function OutcomeCard({ section }: { section: OutcomeSection }) {
+  if (section.kind === "phones") {
+    return (
+      <figure className="flex flex-col gap-g27 rounded-xl bg-card p-g17 md:p-g27 lg:p-g44">
+        <CardHead summary={section.summary} body={section.body} />
+        <div className="grid grid-cols-2 gap-g17 md:grid-cols-4 lg:gap-g27">
+          {section.shots.map((s) => (
+            <ZoomPhone key={s.src} src={s.src} alt={s.alt} sizes="(min-width: 1024px) 520px, 90vw" className="w-full" />
+          ))}
+        </div>
+        <figcaption className="max-w-[720px] text-caption text-muted-foreground">{section.caption}</figcaption>
+      </figure>
+    );
+  }
+
+  if (section.kind === "figure") {
+    return (
+      <figure className="flex flex-col gap-g27 rounded-xl bg-card p-g17 md:p-g27 lg:p-g44">
+        <CardHead summary={section.summary} body={section.body} />
+        <CaseFigureView figure={section.figure} />
+        <figcaption className="max-w-[720px] text-caption text-muted-foreground">{section.caption}</figcaption>
+      </figure>
+    );
+  }
+
+  if (section.kind === "images") {
+    return (
+      <figure className="flex flex-col gap-g27 rounded-xl bg-card p-g17 md:p-g27 lg:p-g44">
+        <CardHead summary={section.summary} body={section.body} />
+        <div className="grid gap-g17 md:grid-cols-2">
+          {section.items.map((img) => (
+            <div key={img.src} className="flex flex-col gap-g6">
+              <span className="font-mono text-label text-muted-foreground uppercase">{img.label}</span>
+              <Image src={img.src} alt={img.alt} width={img.width} height={img.height} sizes="(min-width: 1280px) 560px, 92vw" className="h-auto w-full rounded-md" />
+            </div>
+          ))}
+        </div>
+        <figcaption className="max-w-[720px] text-caption text-muted-foreground">{section.caption}</figcaption>
+      </figure>
+    );
+  }
+
+  if (section.kind === "text") {
+    return (
+      <div className="flex flex-col rounded-xl bg-card p-g17 md:p-g27 lg:p-g44">
+        <CardHead summary={section.summary} body={section.body} />
+      </div>
+    );
+  }
+
   if (section.kind === "image") {
     return (
-      <figure className="flex flex-col gap-g17 rounded-xl bg-card p-g17 md:p-g27">
+      <figure className={cn("flex flex-col gap-g17 rounded-xl bg-card p-g17 md:p-g27", section.summary && "gap-g27 lg:p-g44")}>
+        {section.summary && <CardHead summary={section.summary} body={section.body} />}
         <Image
           src={section.src}
           alt={section.alt}
@@ -148,9 +252,41 @@ function OutcomeCard({ section }: { section: OutcomeSection }) {
 
   return (
     <div className="flex flex-col gap-g27 rounded-xl bg-card p-g17 md:p-g27 lg:p-g44">
-      <p className="max-w-[640px] text-title text-pretty text-foreground">{section.summary}</p>
+      <h3 className="max-w-[640px] text-title text-pretty text-foreground">{section.summary}</h3>
       <ScreenPair figure={section.figure} layout="side" />
     </div>
+  );
+}
+
+function Closing({ items }: { items: NonNullable<CaseStudy["closing"]> }) {
+  return (
+    <section aria-label="How it holds, what's next and reflection" className={`${wrap} flex flex-col gap-g72 pb-g116`}>
+      {items.map((item) => (
+        <div key={item.heading} className="flex max-w-[720px] flex-col gap-g17">
+          <h2 className="text-heading text-foreground">{item.heading}</h2>
+          {item.text && <p className="text-body text-pretty text-foreground-secondary">{item.text}</p>}
+          {item.list && (
+            <ul className="flex list-disc flex-col gap-g6 pl-g27 text-body text-foreground-secondary marker:text-muted-foreground">
+              {item.list.map((it) => (
+                <li key={it} className="pl-g4">
+                  {it}
+                </li>
+              ))}
+            </ul>
+          )}
+          {item.after && <p className="text-body text-pretty text-foreground-secondary">{item.after}</p>}
+          {item.items && (
+            <ul className="flex list-disc flex-col gap-g10 pl-g27 text-body text-foreground-secondary marker:text-muted-foreground">
+              {item.items.map((it) => (
+                <li key={it.lead} className="pl-g4">
+                  <strong className="font-semibold text-foreground">{it.lead}</strong> {it.text}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      ))}
+    </section>
   );
 }
 

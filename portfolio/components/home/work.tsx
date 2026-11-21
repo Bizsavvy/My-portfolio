@@ -3,7 +3,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/shadcn/ta
 import { CaseStudyTile, type CaseStudyTileProps } from "@/components/home/case-study-tile";
 import { MotionTile } from "@/components/home/motion-tile";
 import { BeforeAfterTile } from "@/components/home/before-after-tile";
-import { PhoneCard, PhoneVideoCard, ScreenshotCard, ThemeCompareCard } from "@/components/home/phone-card";
+import { PhoneCard, PhoneVideoCard } from "@/components/home/phone-card";
+import { ScreenshotThemeCard, ThemeCompareCard } from "@/components/home/theme-cards";
 import type { Shot } from "@/components/site/before-after";
 
 /**
@@ -33,7 +34,7 @@ const caseStudies: CaseStudyTileProps[] = [
   },
   {
     title: "Oshap",
-    line: "Scan-to-order and pay for restaurants, with no app and no login.",
+    line: "A design system that turns one restaurant colour into readable tokens across three apps.",
     href: "/work/oshap",
     cover: {
       kind: "video",
@@ -57,8 +58,9 @@ const [shappay, uiToJson, oshap, nawnaw] = caseStudies;
 // with the iPhone safe area and a status bar, so they sit in the frame like the real app.
 const screen = (name: string, alt: string): Shot => ({ src: `/assets/shappay/screens/${name}.png`, alt });
 
-// Oshap, captured from its last commit on sample data (Aji's Kitchen): guest screens in mobile
-// Safari at 440 x 956 @3x, staff screens at 1440 x 900 @2x.
+// Oshap, captured from master on sample data (Aji's Kitchen): guest screens at ec423b6
+// (2026-11-17; unchanged at 081e218), staff screens in light and dark at 081e218 (2026-11-21).
+// Guest screens in mobile Safari at 440 x 956 @3x, staff screens at 1440 x 900 @2x.
 const oshapScreen = (name: string) => `/assets/oshap/screens/${name}`;
 
 /**
@@ -91,11 +93,11 @@ const columns: ReactNode[][] = [
       light={screen("shappay-send-amount-light", "Light mode: Send money, ₦5,000 to Tsoji Adeyemi, with the amount keypad")}
       dark={screen("shappay-send-amount", "Dark mode: Send money, ₦5,000 to Tsoji Adeyemi, with the amount keypad")}
     />,
-    <ScreenshotCard
+    <ScreenshotThemeCard
       key="oshap-tables"
       label="Oshap · Tables"
-      src={oshapScreen("oshap-staff-tables.webp")}
-      alt="Oshap's staff dashboard: table T1 waits for staff to verify a transfer the guest says they sent; T2 and T3 still owe"
+      light={{ src: oshapScreen("oshap-staff-waiter-light.webp"), alt: "Light mode: Oshap's staff dashboard. Stat and table cards stay neutral; Review payments and Restock 2 items rows appear where action is due. T1 waits for staff to verify a transfer, T2 and T3 still owe, and ten free tables sit in a row below" }}
+      dark={{ src: oshapScreen("oshap-staff-waiter-dark.webp"), alt: "Dark mode: the same staff dashboard" }}
       width={2880}
       height={1800}
     />,
@@ -143,13 +145,13 @@ const columns: ReactNode[][] = [
     <PhoneCard
       key="oshap-pay"
       label="Oshap · Pay by transfer"
-      shot={{ src: oshapScreen("oshap-pay-transfer.png"), alt: "Oshap's Pay Bill in a phone browser: the restaurant's bank details, a reference to copy, and I've Sent the Money" }}
+      shot={{ src: oshapScreen("oshap-guest-pay-transfer-hd.png"), alt: "Oshap's Pay Bill in a phone browser: the restaurant's bank details, a reference to copy, and I've Sent the Money" }}
     />,
-    <ScreenshotCard
+    <ScreenshotThemeCard
       key="oshap-kitchen"
       label="Oshap · Kitchen"
-      src={oshapScreen("oshap-staff-kitchen.webp")}
-      alt="Oshap's kitchen display: new orders from tables T2 and T3, each with its choices and a Start button"
+      light={{ src: oshapScreen("oshap-staff-kitchen-light.webp"), alt: "Light mode: Oshap's kitchen display, with new orders from tables T2 and T3, each with its choices and a Start button" }}
+      dark={{ src: oshapScreen("oshap-staff-kitchen-dark.webp"), alt: "Dark mode: the same kitchen display" }}
       width={2880}
       height={1800}
     />,

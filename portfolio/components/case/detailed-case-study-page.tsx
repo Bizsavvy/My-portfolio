@@ -3,11 +3,13 @@ import { ArrowLeft } from "lucide-react";
 import { SiteNav } from "@/components/site/site-nav";
 import { SiteFooter } from "@/components/home/contact";
 import { ScreenPair } from "@/components/case/screen-pair";
-import { PhoneShot } from "@/components/home/case-study-tile";
+import { ZoomPhone } from "@/components/case/zoom-phone";
 import { DataTable } from "@/components/case/data-table";
 import { OnThisPage } from "@/components/case/on-this-page";
 import { NqrDemo } from "@/components/case/nqr-demo";
 import { LoopVideo } from "@/components/site/loop-video";
+import { CaseFigureView } from "@/components/case/case-figure";
+import Image from "next/image";
 import { NextProject } from "@/components/case/case-study-page";
 import { readingMinutes, type Block, type DetailedCaseStudy, type Lead } from "@/lib/detailed-case-studies";
 import { cn } from "@/lib/utils";
@@ -156,10 +158,49 @@ function BlockView({ block }: { block: Block }) {
     case "phones":
       return (
         <figure className="my-g17 flex flex-col gap-g17">
-          <div className="flex justify-center gap-g17 rounded-lg bg-card px-g17 py-g27 md:gap-g44 md:px-g27">
+          {/* Phones sit two to a row; tap one to see it at full size. */}
+          <div
+            className={cn(
+              "rounded-lg bg-card px-g17 py-g27 md:px-g27",
+              // Two to a row at most: four in a row shrank the app's text past reading (Haye, 2026-11-21).
+              block.shots.length > 2 ? "grid grid-cols-2 justify-items-center gap-g17 md:gap-g27" : "flex justify-center gap-g17 md:gap-g44"
+            )}
+          >
             {block.shots.map((s) => (
-              <PhoneShot key={s.src} src={s.src} alt={s.alt} className="w-[45%] max-w-[260px]" />
+              <ZoomPhone key={s.src} src={s.src} alt={s.alt} sizes="(min-width: 1024px) 640px, 90vw" className={block.shots.length > 2 ? "w-full max-w-[300px]" : "w-[45%] max-w-[260px]"} />
             ))}
+          </div>
+          <figcaption className={cn(measure, "text-caption text-muted-foreground")}>{block.caption}</figcaption>
+        </figure>
+      );
+
+    case "images":
+      return (
+        <figure className="my-g17 flex flex-col gap-g17">
+          <div className={cn("grid gap-g10 rounded-lg bg-card p-g17 md:p-g27", block.stack ? "gap-g17" : block.items.length > 1 && "md:grid-cols-2")}>
+            {block.items.map((img) => (
+              <div key={img.src} className="flex flex-col gap-g6">
+                {img.label && <span className="font-mono text-label text-muted-foreground uppercase">{img.label}</span>}
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  width={img.width}
+                  height={img.height}
+                  sizes={block.items.length > 1 && !block.stack ? "(min-width: 1024px) 420px, 90vw" : "(min-width: 1024px) 860px, 90vw"}
+                  className="h-auto w-full rounded-md"
+                />
+              </div>
+            ))}
+          </div>
+          <figcaption className={cn(measure, "text-caption text-muted-foreground")}>{block.caption}</figcaption>
+        </figure>
+      );
+
+    case "figure":
+      return (
+        <figure className="my-g17 flex flex-col gap-g17">
+          <div className="rounded-lg bg-card p-g17 md:p-g27">
+            <CaseFigureView figure={block.figure} />
           </div>
           <figcaption className={cn(measure, "text-caption text-muted-foreground")}>{block.caption}</figcaption>
         </figure>
@@ -184,7 +225,7 @@ function BlockView({ block }: { block: Block }) {
 
     case "nqr-demo":
       return (
-        <div className="my-g17">
+        <div className="my-g17" data-md-figure="nqr-demo">
           <NqrDemo />
         </div>
       );

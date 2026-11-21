@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
 import type { Shot } from "@/components/site/before-after";
-import { CompareSlider } from "@/components/site/compare-slider";
 import { LoopVideo } from "@/components/site/loop-video";
 import { Lightbox } from "@/components/site/lightbox";
 import { PhoneShot } from "@/components/home/case-study-tile";
@@ -69,25 +68,4 @@ export function PhoneVideoCard({ src, poster, label, description, className }: {
   );
 }
 
-/** One screen in light and dark, in one phone frame, with the compare slider across the card. */
-export function ThemeCompareCard({ light, dark, label, className }: { light: Shot; dark: Shot; label: string; className?: string }) {
-  return (
-    <figure className={cn(card, className)}>
-      <CompareSlider
-        label={`${label}, light and dark`}
-        labels={["Light", "Dark"]}
-        first={
-          <div className={phoneArea}>
-            <PhoneShot src={light.src} alt={light.alt} className={phone} />
-          </div>
-        }
-        second={
-          <div className={cn(phoneArea, "absolute inset-0 bg-card")}>
-            <PhoneShot src={dark.src} alt={dark.alt} className={phone} />
-          </div>
-        }
-      />
-      <CardLabel>{label}</CardLabel>
-    </figure>
-  );
-}
+// The light/dark slider cards are client components: components/home/theme-cards.tsx.
