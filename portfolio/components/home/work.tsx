@@ -1,9 +1,10 @@
 import type { ReactNode } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/shadcn/tabs";
-import { CaseStudyTile, type CaseStudyTileProps } from "@/components/home/case-study-tile";
+import { CaseStudyTile, PhoneShot, type CaseStudyTileProps } from "@/components/home/case-study-tile";
 import { MotionTile } from "@/components/home/motion-tile";
 import { BeforeAfterTile } from "@/components/home/before-after-tile";
-import { PhoneCard, PhoneVideoCard } from "@/components/home/phone-card";
+import { PhoneCard, PhoneVideoCard, card } from "@/components/home/phone-card";
+import { Lightbox } from "@/components/site/lightbox";
 import { ScreenshotThemeCard, ThemeCompareCard } from "@/components/home/theme-cards";
 import type { Shot } from "@/components/site/before-after";
 
@@ -61,7 +62,15 @@ const uiToJson: CaseStudyTileProps = {
   href: "https://www.figma.com/community/plugin/1638581049555435822",
   cta: "View on Figma Community",
   outcome: "measured",
-  cover: { kind: "placeholder", note: "New cover coming" },
+  // TODO(redesign): a 10 to 15 s loop recorded in Figma (select a frame, Extract, the JSON
+  // fills the panel), edited by the motion session. Until then, the real screenshot.
+  cover: {
+    kind: "image",
+    src: "/assets/ui-to-json/ui-to-json-figma-panel.webp",
+    alt: "UI to JSON open in Figma beside Shappay's Dashboard frame (430 × 932): the plugin's JSON tab lists the screen's id, kind, size, layout and children, above the Extract semantic JSON button",
+    width: 1140,
+    height: 912,
+  },
 };
 
 // Captured from the Shappay web build with sample data at its full 430 width, scaled to the
@@ -79,20 +88,28 @@ const oshapScreen = (name: string) => `/assets/oshap/screens/${name}`;
  * cards are landscape and tall cards hold one phone. Below lg the columns dissolve and the
  * cards flow into two columns, then one, in the order written here.
  */
-/** The usability widget, until its clip exists. */
-// TODO(redesign): the usability widget clip from the motion videos session.
+/**
+ * The usability widget: its task card open over Shappay's Home, from the Shappay usability-test
+ * build on sample data, with the widget in preview mode (nothing saved). Tapping opens it larger.
+ */
+// TODO(redesign): a loop from the motion session: task brief, timer, the task, the 1 to 10 ease rating.
+const widgetShot = {
+  src: "/assets/usability-widget/widget-task-card.png",
+  alt: "The usability widget over Shappay's Home: a Task tab with a 4:06 timer on the left edge, and the open task card reading Pay Adaeze Bakery ₦2,500 using the QR code at their counter, with Hide task and I'm stuck",
+};
 const WIDGET_TILE = (
-    <div key="widget" className="flex flex-col overflow-hidden rounded-lg bg-card">
-      <div className="flex aspect-[5/4] p-g17">
-        <div className="flex w-full items-center justify-center rounded-md border border-dashed border-input">
-          <span className="font-mono text-label text-muted-foreground uppercase">Clip coming</span>
-        </div>
-      </div>
-      <div className="flex flex-col gap-g6 p-g17">
-        <h3 className="text-title text-foreground">Usability testing widget</h3>
-        <p className="text-body text-muted-foreground">The tool behind the Shappay tests: tasks, timing, recording and scoring in one script.</p>
-      </div>
+  <figure key="widget" className={card}>
+    <div className="flex justify-center px-g17 pt-g44">
+      <PhoneShot src={widgetShot.src} alt={widgetShot.alt} className="w-[62%] max-w-[260px] shrink-0" />
     </div>
+    <Lightbox label="Usability testing widget">
+      <PhoneShot src={widgetShot.src} alt={widgetShot.alt} sizes="(min-width: 768px) 460px, 90vw" className="w-[min(84vw,calc(82dvh*1470/3000),470px)] shrink-0" />
+    </Lightbox>
+    <figcaption className="flex flex-col gap-g6 p-g17">
+      <h3 className="text-title text-foreground">Usability testing widget</h3>
+      <p className="text-body text-muted-foreground">The tool behind the Shappay tests: tasks, timing, recording and scoring in one script.</p>
+    </figcaption>
+  </figure>
 );
 
 const columns: ReactNode[][] = [

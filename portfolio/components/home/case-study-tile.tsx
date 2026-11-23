@@ -13,6 +13,8 @@ type Cover =
   | { kind: "phone"; src: string; alt: string }
   /** A 3:5 product loop from the motion session: the framed phone on the card colour. */
   | { kind: "video"; src: string; poster: string; label: string }
+  /** A desktop screenshot, inset on the card like ScreenshotCard (UI to JSON in Figma). */
+  | { kind: "image"; src: string; alt: string; width: number; height: number }
   // TODO(redesign): new screenshots for Oshap, NawNaw and UI to JSON. The old ones are
   // not reused (Haye, 2026-11-14), so these tiles show a marked placeholder until then.
   | { kind: "placeholder"; note: string };
@@ -89,6 +91,10 @@ export function CaseStudyTile({ title, line, href, outcome, cover, cta = "Read c
         // The loop leaves even space round the phone; trimming 75px off each end of the 1800
         // keeps the caption close below it (Haye, 2026-11-15), and the phone is never cut.
         <LoopVideo src={cover.src} poster={cover.poster} label={cover.label} className="aspect-[1080/1650] w-full" controlClassName="z-10" />
+      ) : cover.kind === "image" ? (
+        <div className="px-g17 pt-g17">
+          <Image src={cover.src} alt={cover.alt} width={cover.width} height={cover.height} sizes="(min-width: 1024px) 380px, 90vw" className="h-auto w-full rounded-md" />
+        </div>
       ) : cover.kind === "phone" ? (
         // The whole phone shows, never cropped, and the caption follows close below (Haye, 2026-11-15).
         <div className="flex justify-center px-g17 pt-g44">
