@@ -1015,7 +1015,7 @@ export const nawnawDetailed: DetailedCaseStudy = {
           items: [
             {
               lead: "A staged tracker, not a generic spinner (D-036).",
-              text: "Orders move clearly through Confirmed, Packing, On the way, and Delivered, complete with a live countdown during packing (D-037). A live countdown is a public promise: missing it damages trust far more than not showing a timer.",
+              text: "Orders move clearly through Confirmed, Packing, Picked Up, and Delivered, complete with a live countdown during packing (D-037). A live countdown is a public promise: missing it damages trust far more than not showing a timer.",
             },
             { lead: "One-tap reorder everywhere (D-038).", text: "Every post-order screen lets shoppers rebuild their cart from a past order and jump straight to checkout." },
             { lead: "A receipt that matches the cart (D-040).", text: "The order summary itemises every single fee, reinforcing the promise of no hidden charges." },

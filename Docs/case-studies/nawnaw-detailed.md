@@ -115,7 +115,7 @@ The trade-off is that a higher threshold widens the gap a shopper has to close, 
 
 ### After the order
 
-- **A staged tracker, not a generic spinner (D-036).** Orders move clearly through Confirmed, Packing, On the way, and Delivered, complete with a live countdown during packing (D-037). A live countdown is a public promise: missing it damages trust far more than not showing a timer.
+- **A staged tracker, not a generic spinner (D-036).** Orders move clearly through Confirmed, Packing, Picked Up, and Delivered, complete with a live countdown during packing (D-037). A live countdown is a public promise: missing it damages trust far more than not showing a timer.
 - **One-tap reorder everywhere (D-038).** Every post-order screen lets shoppers rebuild their cart from a past order and jump straight to checkout.
 - **A receipt that matches the cart (D-040).** The order summary itemises every single fee, reinforcing the promise of no hidden charges.
 

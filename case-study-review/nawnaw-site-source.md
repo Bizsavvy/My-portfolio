@@ -1,12 +1,12 @@
-# Source: NawNaw short page (/work/nawnaw) and detailed page (/work/nawnaw/detailed), Haye's rewrite, exported 2026-11-23
+# Source: NawNaw short page (/work/nawnaw) and detailed page (/work/nawnaw/detailed), Haye's rewrite with review fixes, exported 2026-11-23 for the rescore
 
-<!-- Haye's rewrite, live on /work/nawnaw since 2026-11-23. Image lines, figures and callouts come from the page. -->
+<!-- Haye's rewrite, live on /work/nawnaw since 2026-11-23; review fixes applied the same day (new closing line, trimmed toward 900 words, success signal named). Image lines, figures and callouts come from the page. -->
 
 Case study · NawNaw
 
 # A cart that does the maths
 
-NawNaw is a concept for sub-15-minute grocery delivery in Nigeria's largest cities, built for busy, higher-income shoppers and fulfilled from small closed warehouses called dark stores. Fast delivery adds real cost to every order, so the cart needs to guide each basket toward a size the business can survive on without feeling like a toll booth. I designed and built the consumer app, and every fee rule in its cart connects directly to the business's break-even model.
+NawNaw is a concept for sub-15-minute grocery delivery in Nigeria's largest cities, fulfilled from small closed warehouses called dark stores. Fast delivery adds real cost to every order, so the cart has to guide each basket toward a size the business can survive on, without feeling like a toll booth. I designed and built the consumer app, and every fee rule in its cart comes from the business's break-even model.
 
 **Role:** Product designer and frontend engineer  
 **Team:** Solo  
@@ -24,13 +24,13 @@ These shoppers often buy on impulse and expect a smooth, premium experience. A f
 
 What the design guarantees: every fee in the cart is grounded in the break-even model, and all fee rules live in a single place in the code so the interface and the business numbers can never drift apart.
 
-What is still unknown: because NawNaw never launched, nothing has been measured with real shoppers. The ₦9,000 free-delivery threshold still needs to be tested to see whether it lowers how often people order.
+What is still unknown: NawNaw never launched, so nothing has been measured with real shoppers. The signal I would watch is the model's North Star, contribution per active customer per month, alongside the share of baskets that clear ₦3,000 and reach ₦9,000.
 
 ## TL;DR
 
-- Fast grocery delivery loses money on small orders: under ₦3,000, a basket cannot even pay for its own delivery.
-- I built the fee rules directly into the cart's structure: one cart with three clear states, an obvious next step in each, and no surprise fees at checkout.
-- When I checked my initial thresholds against the business model, the free-delivery point sat below the business's survival floor. I raised it to ₦9,000 to match the target basket.
+- Fast grocery delivery loses money on small orders: under ₦3,000, a basket cannot pay for its own delivery.
+- So the fee rules shape the cart: three states, a clear next step in each, and no surprise fees at checkout.
+- My first free-delivery point sat below the business's survival floor. I raised it to ₦9,000, the target basket.
 
 ![Home: Delivering in 12 mins, Store 1.2km away, above the search and the Bestsellers grid](/assets/nawnaw/screens/nawnaw-home.png)
 
@@ -42,7 +42,7 @@ What is still unknown: because NawNaw never launched, nothing has been measured 
 
 ### 1. One cart, three states that follow the basket
 
-Fees are not just a surprise line added at checkout. They work as a ladder: a small-cart fee under ₦3,000, a ₦600 delivery fee in the middle, and free delivery starting at ₦9,000. Because of this, the cart has three states that update live with the subtotal. As a basket crosses ₦3,000 or ₦9,000, the cart shifts into the matching state, and one shared rule ensures every screen opens the right view. The alternative was a single static cart that only revealed fees at checkout, which I rejected because showing fees that late does not encourage bigger baskets and feels like an ambush.
+Fees work as a ladder: a small-cart fee under ₦3,000, a ₦600 delivery fee in the middle, and free delivery from ₦9,000. So the cart has three states that update live with the subtotal: as a basket crosses ₦3,000 or ₦9,000, the cart switches to the matching state. I rejected a single static cart that showed fees only at checkout, because fees that late do not encourage bigger baskets and feel like an ambush.
 
 ![The cart at ₦1,800: add ₦1,200 more to remove the ₦700 small cart fee; total ₦3,100](/assets/nawnaw/screens/nawnaw-cart-small.png)
 
@@ -54,7 +54,7 @@ Fees are not just a surprise line added at checkout. They work as a ladder: a sm
 
 ### 2. A fee you can remove, and a goal you can see
 
-Under ₦3,000, the cart displays "Add ₦X more to remove the ₦700 fee" in amber rather than red, signalling that it is fixable rather than an error. Between ₦3,000 and ₦9,000, a progress bar shows exactly how much more is needed to unlock free delivery. Each state also suggests products matched to the remaining gap: larger everyday items when the basket is small, and quick, low-cost add-ons when it is close. The trade-off is real: charging a fee on a premium service can feel petty, and thresholds can push shoppers to pad their baskets unnecessarily.
+Under ₦3,000, the cart shows the exact amount that removes the ₦700 fee. Between ₦3,000 and ₦9,000, a progress bar shows how much more unlocks free delivery. Each state suggests products sized to the gap: larger everyday items when the basket is small, cheap add-ons when it is close. The trade-off is real: a fee on a premium service can feel petty, and thresholds can push shoppers to pad their baskets.
 
 ![The small-cart state: add ₦1,200 more to remove the ₦700 fee, an amber notice, and suggested items](/assets/nawnaw/screens/nawnaw-cart-small.png)
 
@@ -66,14 +66,14 @@ Under ₦3,000, the cart displays "Add ₦X more to remove the ₦700 fee" in am
 
 ### 3. No surprise fees
 
-The running total is always visible, and the full breakdown is one tap away: subtotal, any small-cart fee, delivery fee, and final total. Once delivery becomes free, that row stays visible and reads FREE, because a saving the shopper cannot see does not reward them for building a bigger basket.
+The running total is always visible, and the full breakdown is one tap away. Once delivery is free, that row stays and reads FREE, because a saving the shopper cannot see does not reward them for the bigger basket.
 
 ![The cart summary at ₦9,100: subtotal ₦9,100, delivery fee FREE, total ₦9,100](/assets/nawnaw/screens/nawnaw-cart-free.png)
 
 1. The full breakdown: subtotal, any small-cart fee, delivery fee, and final total.
 2. Once delivery is free, the row stays visible and reads FREE.
 
-*The delivery row stays visible when unlocked and clearly reads FREE.*
+*The free-delivery state on sample data.*
 
 ### The number I got wrong: the thresholds
 
@@ -81,27 +81,21 @@ My first fee thresholds came straight from early Figma mock-ups: free delivery a
 
 [Figure drawn in code: nawnaw-fee-ladder]
 
-*The basket scale with the three cart states, the business's basket ladder, and the old free-delivery point below the floor. Numbers from the NawNaw repo's cart rules and decision log (D-020).*
+*The old free-delivery point sat below the floor. Numbers from the NawNaw repo's cart rules and decision log (D-020).*
 
 The trade-off is that a higher threshold widens the gap a shopper has to close, which could make them order less often. That would be the first thing to test.
 
-## How it holds
-
-- **One source for every fee.** All thresholds and fees live in a single place in the codebase, with the business reasoning documented right beside each number.
-- **The cart survives for guests.** Shoppers can browse and build a cart without creating an account, and the basket saves locally on their phone so interrupted sessions are never lost.
-- **Honest about mocks.** Payments, delivery times, phone verification, and the map are mocked, and each is designed to mirror the real behaviour it stands in for.
-
 ## What's next
 
-New shoppers receive free delivery on their first 5 orders as a built-in welcome offer instead of a promo code. It waives only the ₦600 delivery fee, so the ₦700 small-cart fee still protects thin baskets. This comes with a real cost: up to ₦3,000 per new customer, which is not yet factored into the financial model, and it pauses the cart's push toward ₦9,000 for those first 5 orders.
+New shoppers now get free delivery on their first 5 orders (D-048). It costs up to ₦3,000 per new shopper, which the model does not include yet.
 
-NawNaw never launched. Before going live, I would test the ₦9,000 free-delivery threshold against order frequency using the model's basket-versus-frequency view, and compare a speed-first home banner against a discount-first one.
+Before launch, I would test the ₦9,000 threshold against order frequency, using the model's basket-versus-frequency view, and compare a speed-first home banner with a discount-first one.
 
 ## What building it taught me
 
 The lesson I keep coming back to is how early the most important decision was made, and how far down into the product it reached. Deciding who to serve was not a branding exercise; it came straight out of the unit economics, driven by a hard reality about operating costs and local income. From that single decision, everything else fell into place: selling speed and convenience instead of low prices, designing for unplanned needs, building a cart that gently nudges instead of nickel-and-diming, and naming the whole product after the one promise that matters.
 
-> Nothing on the screen is there by accident. Every decision traces back to a real person who is simply out of time, and to what it honestly takes to give some of it back.
+> Every number on the screen now traces back to the model, and every decision to a real person who is simply out of time, and to what it honestly takes to give some of it back.
 
 [Read the detailed case study](/work/nawnaw/detailed)
 
@@ -111,7 +105,7 @@ Next project
 
 ---
 
-<!-- Haye's rewrite, live on /work/nawnaw/detailed since 2026-11-23. Image lines, figures and callouts come from the page. -->
+<!-- Haye's rewrite, live on /work/nawnaw/detailed since 2026-11-23; sign-in, address and tracker screens and the new closing line added the same day. Image lines, figures and callouts come from the page. -->
 
 [NawNaw case study](/work/nawnaw)
 
@@ -119,7 +113,7 @@ Detailed case study · NawNaw
 
 # A cart that does the maths
 
-10 min read
+11 min read
 
 ## Overview
 
@@ -211,16 +205,30 @@ The trade-off is that a higher threshold widens the gap a shopper has to close, 
 - **Reassurance right where people pay (D-027).** The estimated delivery time, a secure-payment note, and a small pinned map sit together at checkout. Every detail here has to be accurate, because misleading reassurance hurts trust more than showing nothing at all.
 - **Payment methods Nigerians actually use (D-029).** Card, bank transfer, USSD ("Dial a code, no internet needed"), and cash on delivery. Offering cash on delivery introduces real risk to the prepaid cash flow that the business model assumes.
 
+![Checkout: delivering to Home with a pinned map, an estimate of 12 to 15 minutes, and the itemised total](/assets/nawnaw/screens/nawnaw-checkout.png)
+
+![A guest taps Place order: a Confirm your number sheet slides up over checkout, with WhatsApp selected and SMS one tap away](/assets/nawnaw/screens/nawnaw-signin.png)
+
+*Checkout for a signed-in shopper, and the same screen for a guest at Place order: one sheet asks for a phone number and sends the code on WhatsApp (D-021, D-024).*
+
 ### Location: the typed address is the truth
 
 - **Asked only when needed, never up front (D-033).** Shoppers can explore the entire catalogue before sharing a location.
 - **Landmarks provide real precision (D-031).** An explicit "Landmark (helps the rider)" field, such as "Near Unity Fountain," solves a common local problem: in Nigerian cities, a map pin often lands on the right building but the wrong gate, so the typed address and landmark remain the source of truth (D-028, D-030).
 
+![Add address: a map pin to drag to the doorstep, the street address, and a Landmark (helps the rider) field reading Near Unity Fountain](/assets/nawnaw/screens/nawnaw-address.png)
+
+*The address form: the pin helps, but the typed street address and the landmark are what the rider follows (D-031).*
+
 ### After the order
 
-- **A staged tracker, not a generic spinner (D-036).** Orders move clearly through Confirmed, Packing, On the way, and Delivered, complete with a live countdown during packing (D-037). A live countdown is a public promise: missing it damages trust far more than not showing a timer.
+- **A staged tracker, not a generic spinner (D-036).** Orders move clearly through Confirmed, Packing, Picked Up, and Delivered, complete with a live countdown during packing (D-037). A live countdown is a public promise: missing it damages trust far more than not showing a timer.
 - **One-tap reorder everywhere (D-038).** Every post-order screen lets shoppers rebuild their cart from a past order and jump straight to checkout.
 - **A receipt that matches the cart (D-040).** The order summary itemises every single fee, reinforcing the promise of no hidden charges.
+
+![Packing your order: the tracker at the Packing stage, after Confirmed, with a live countdown](/assets/nawnaw/screens/nawnaw-tracking.png)
+
+*The tracker during packing: four named stages and a live countdown (D-036, D-037).*
 
 ## Tensions and honest gaps
 
@@ -254,7 +262,7 @@ The lesson I keep coming back to is how early the most important decision was ma
 
 NawNaw remains a deeply researched concept because dark stores are capital intensive, which is why this case study focuses on the thinking rather than a chart of launch metrics. Still, the one thing I want anyone reading this to take away is a claim I will stand behind even without live numbers:
 
-> Nothing on the screen is there by accident. Every decision traces back to a real person who is simply out of time, and to what it honestly takes to give some of it back.
+> Every number on the screen now traces back to the model, and every decision to a real person who is simply out of time, and to what it honestly takes to give some of it back.
 
 Next project
 
