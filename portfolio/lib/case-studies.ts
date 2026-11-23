@@ -364,7 +364,7 @@ export const nawnaw: CaseStudy = {
     },
   ],
   problem: [
-    "Every order carries about ₦600 in delivery and packaging costs. At a 20% margin, any basket under ₦3,000 cannot even cover its own delivery, and each dark store needs roughly 150 orders a day just to break even. Nigeria is an expensive market to run fast delivery in while having lower average incomes, so NawNaw targets households earning ₦6M or more a year and needs their baskets to average ₦9,000.",
+    "Every order carries about ₦600 in delivery and packaging costs. At a 20% margin, any basket under ₦3,000 cannot even cover its own delivery, and in my first model each dark store needs roughly 150 orders a day just to break even. Nigeria is an expensive market to run fast delivery in while having lower average incomes, so NawNaw targets households earning ₦6M or more a year and needs their baskets to average ₦9,000.",
     "These shoppers often buy on impulse and expect a smooth, premium experience. A fee they do not understand, or a total that suddenly jumps at checkout, is the fastest way to lose them.",
   ],
   impact: {

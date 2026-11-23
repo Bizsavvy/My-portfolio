@@ -4,10 +4,10 @@
 **Source:** /work/nawnaw and /work/nawnaw/detailed, Haye's rewrite with the first review's fixes, exported as Docs/case-studies/nawnaw.md and nawnaw-detailed.md (2026-11-23)
 **Target Level:** Mid
 **Review Mode:** Online Portfolio (short page), with the detailed page read as its deep dive
-**Overall Score:** 79/100 (79 of 100 applicable points)
-**Previous Score:** 75/100 (same day, before the fixes)
+**Overall Score:** 80/100 (80 of 100 applicable points)
+**Previous Scores:** 75/100, then 79/100 (both 2026-11-23)
 **Evidence Coverage:** High
-**Hiring Readiness:** Promising, one point short of Strong
+**Hiring Readiness:** Strong, at the edge
 
 **Update 2026-11-23:** The tracker text now says "Picked Up", matching the screen. Haye plans the shopper test for later. Score unchanged.
 
@@ -26,9 +26,24 @@
 | Name a success signal | Yes: the North Star plus the share of baskets that clear ₦3,000 and reach ₦9,000; no target | Outcomes 8 to 9 |
 | Show the sign-in sheet, landmark field and tracker | Yes, on the detailed page | Interaction 7 to 8 |
 
+## Rescore after the model and references pass (2026-11-23)
+
+The pages now drop every decision code and repo reference, add one line on the 48-decision log, and say plainly that the break-even model moved after the cart was built. Score at first: **79/100, unchanged.**
+
+| Change | Effect on the score |
+|---|---|
+| Decision codes and repo references removed | Reads cleaner, a plus for Storytelling, offset by the extra length below |
+| "I logged every product decision as I went, 48 in all" | Keeps the rigour signal for Product Thinking without the codes; already scored |
+| The model moved: per trip, about 89 orders a day, ₦650 per order, small-cart line to about ₦3,250 | More honest, a plus for credibility, but it puts two break-even figures on the short page (150 in the Problem, 89 in What's next) without saying which model the 150 comes from |
+| Short page about 1,060 words (was about 1,000) | Slightly further from 900 |
+
+Net: the gains and the new costs cancel. One small fix would tip it: call the Problem's numbers "my first model" so the two figures do not look like a contradiction.
+
+**Then:** the Problem now says "in my first model each dark store needs roughly 150 orders a day". With the clash gone, the model note counts for the page: it is a second time the designer checked their own numbers and named the change it forces (the small-cart line to about ₦3,250), after D-020. Product Thinking moves from 13 to 14. **Score: 80/100, Strong.** Evidence coverage is High and there are no Critical issues. It sits at the edge of Strong, so the shopper test is what would make it secure.
+
 ## 1. Executive verdict
 
-This is still the strongest business thinking in the portfolio, and the fixes removed the things an interviewer would have caught. The closing line now agrees with the page's best story, the short page reads faster, and Impact says what number would show the cart works. The detailed page now shows every flow it describes. What holds it just under Strong is the same thing as before: no shopper has touched the cart, so Research and Outcomes stay capped. One light test with five people, reported plainly, is now the single change most likely to move this case study.
+This is still the strongest business thinking in the portfolio, and the fixes removed the things an interviewer would have caught. The closing line now agrees with the page's best story, the short page reads faster, and Impact says what number would show the cart works. The detailed page now shows every flow it describes. It now reaches Strong, just. What keeps it at the edge is the same thing as before: no shopper has touched the cart, so Research and Outcomes stay capped. One light test with five people, reported plainly, is now the single change most likely to move this case study.
 
 ## 2. Scorecard
 
@@ -37,14 +52,14 @@ This is still the strongest business thinking in the portfolio, and the fixes re
 | Problem Definition | 8/10 | A clear cost problem with real numbers and a named shopper; the shopper's pain is reasoned, not observed. |
 | Business Context | 9/10 | Break-even, basket ladder, North Star and target customer all tied to the design; the model itself is still not linked. |
 | Research and Evidence | 6/10 | Strong economic analysis; customer profiles and the 65% impulse figure come from planning research, and no shopper has been tested. |
-| Product Thinking | 13/15 | Decisions name the rejected option and the trade-off, and the D-020 correction shows judgment against your own work. |
+| Product Thinking | 14/15 | Decisions name the rejected option and the trade-off, and two corrections (the thresholds, then the revised model) show judgment against your own work. |
 | Interaction Design | 8/10 | Cart states, callouts, the sign-in sheet, the landmark field and the tracker are all shown; live switching is described, not shown. |
 | Visual Design | 8/10 | Sharp, consistent screens and a fee ladder figure that makes the mistake visible at a glance. |
 | Outcomes and Impact | 9/15 | Honest that nothing is measured, with a named success signal and a test plan; no target and no validation of any kind. |
 | Storytelling | 8/10 | One clear spine, a strong title, no more brief and Problem overlap; about 1,000 words, still a little long. |
 | Ownership | 5/5 | Solo, with design and build both clearly the designer's. |
 | Reflection | 5/5 | A specific, earned lesson about targeting, and a closing line the page now supports. |
-| **Total** | **79/100** | **Normalized 79/100** |
+| **Total** | **80/100** | **Normalized 80/100** |
 
 No dimension is N/A: every image and figure on both pages was inspected, including the three new screens.
 
@@ -68,7 +83,7 @@ No dimension is N/A: every image and figure on both pages was inspected, includi
 - Evidence: Who it is for
 - Do this: Run a light test of the cart nudges with 5 people on the web build and report what you saw. Do not add numbers you have not measured.
 
-**Product Thinking (13/15)**
+**Product Thinking (14/15)**
 - Strength: "I rejected a single static cart that showed fees only at checkout" names the option and the reason in one line.
 - Weakness: The page never says which decision mattered most.
 - Evidence: Three decisions, and one number I got wrong
@@ -94,7 +109,7 @@ No dimension is N/A: every image and figure on both pages was inspected, includi
 
 **Storytelling (8/10)**
 - Strength: The brief, Problem and TL;DR no longer repeat each other, and the welcome offer is one sentence.
-- Weakness: About 1,000 words with page chrome; the threshold story still sits several screens down.
+- Weakness: About 1,060 words with page chrome (the model note added about 55); the threshold story still sits several screens down, and What's next is now a dense paragraph of numbers.
 - Evidence: whole short page
 - Do this: Optional: trim the reflection paragraph's list or the Stage line to reach about 900.
 
@@ -112,7 +127,7 @@ No dimension is N/A: every image and figure on both pages was inspected, includi
 
 ### Severity: Medium: No evidence from people
 - **Evidence:** "nothing has been measured with real shoppers"
-- **Why it matters:** At Mid this is acceptable when honest, which it is, but it now holds Research, Outcomes and the Strong rating.
+- **Why it matters:** At Mid this is acceptable when honest, which it is, but it caps Research and Outcomes and keeps the Strong rating at the edge.
 - **Fix:** A light test of the cart nudges with a handful of people, reported plainly.
 
 ### Severity: Low: The model is not linked
@@ -159,7 +174,7 @@ No dimension is N/A: every image and figure on both pages was inspected, includi
 
 | Priority | Change | Expected benefit | Effort |
 |---|---|---|---|
-| P1 | A light test of the cart nudges with 5 people, reported plainly | Research and Outcomes; likely moves the case study to Strong | Medium |
+| P1 | A light test of the cart nudges with 5 people, reported plainly | Research and Outcomes; makes the Strong rating secure | Medium |
 | P2 | Show the first model's inputs in one small table (the 4-tab file is not on file) | Business Context and credibility | Low |
 | Later | Show the live cart switch in section 1 | Interaction Design | Low |
 | Later | Trim toward 900 words | Storytelling | Low |
