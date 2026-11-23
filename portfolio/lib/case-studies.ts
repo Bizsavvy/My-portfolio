@@ -424,15 +424,15 @@ export const nawnaw: CaseStudy = {
       summary: "The number I got wrong: the thresholds",
       body: "My first fee thresholds came straight from early Figma mock-ups: free delivery at ₦5,000 and a small-cart fee under ₦2,000. When I checked those numbers against the actual business model, free delivery sat below ₦5,700, the lowest basket size the business could survive on. The cart was actively encouraging shoppers to place unprofitable orders. I recalculated every number from the ground up.",
       figure: "nawnaw-fee-ladder",
-      caption: "The old free-delivery point sat below the floor. Numbers from the NawNaw repo's cart rules and decision log (D-020).",
+      caption: "The old free-delivery point sat below the floor. Numbers from the app's fee rules and the first break-even model.",
       after: "The trade-off is that a higher threshold widens the gap a shopper has to close, which could make them order less often. That would be the first thing to test.",
     },
   ],
   closing: [
     {
       heading: "What's next",
-      text: "New shoppers now get free delivery on their first 5 orders (D-048). It costs up to ₦3,000 per new shopper, which the model does not include yet.",
-      after: "Before launch, I would test the ₦9,000 threshold against order frequency, using the model's basket-versus-frequency view, and compare a speed-first home banner with a discount-first one.",
+      text: "New shoppers now get free delivery on their first 5 orders. It costs up to ₦3,000 per new shopper, which the model does not include yet. I later revised the break-even model to pay riders per trip instead of a salary. That lowers the break-even to about 89 orders a day, but raises the cost of each order from ₦600 to ₦650 (₦500 for the rider and ₦150 for packaging). So before launch, I would move the small-cart line from ₦3,000 to about ₦3,250.",
+      after: "I would also test whether the ₦9,000 threshold changes how often people order, and compare a speed-first home banner with a discount-first one.",
     },
     {
       heading: "What building it taught me",

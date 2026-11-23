@@ -30,7 +30,7 @@ Oshap lets restaurant guests scan a table's QR code to order and pay, with no ap
 
 ![Pay Bill: the restaurant's bank details and I've Sent the Money](/assets/oshap/screens/oshap-guest-pay-transfer-hd.png)
 
-*A guest's order in a mobile browser, running on Oshap's main branch with sample data: the menu, a dish with options, the cart, and paying by bank transfer.*
+*A guest's order in a mobile browser, running on a development build of Oshap with sample data: the menu, a dish with options, the cart, and paying by bank transfer.*
 
 ## Why one colour is hard
 

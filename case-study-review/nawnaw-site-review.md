@@ -11,6 +11,8 @@
 
 **Update 2026-11-23:** The tracker text now says "Picked Up", matching the screen. Haye plans the shopper test for later. Score unchanged.
 
+**Update 2026-11-23, later:** The 4-tab model the pages quote (₦5.4M fixed, about 150 orders a day) is not on file; the only spreadsheet is a newer per-trip revision (₦4.2M fixed, about 89 orders a day, ₦650 cost per order). The pages keep the first model, since the cart was designed against it, and now say plainly that the model moved and what that would change (small-cart line to about ₦3,250). So "link the model" no longer applies; the fee ladder table is the evidence. Decision codes and repo references were also removed from both pages. Score unchanged.
+
 **Could not inspect:** Nothing on the two pages. The economics model (spreadsheet) and the decision log are still named but not linked, so a reader cannot check them.
 
 **First impression:** In 30 seconds a hiring manager sees a fresh title, a money problem stated in naira, a success signal under Impact, and a cart that shows the fee ladder in three screens. It reads like someone who understands unit economics. They keep reading.
@@ -158,7 +160,7 @@ No dimension is N/A: every image and figure on both pages was inspected, includi
 | Priority | Change | Expected benefit | Effort |
 |---|---|---|---|
 | P1 | A light test of the cart nudges with 5 people, reported plainly | Research and Outcomes; likely moves the case study to Strong | Medium |
-| P2 | Link or excerpt the break-even model | Business Context and credibility | Low |
+| P2 | Show the first model's inputs in one small table (the 4-tab file is not on file) | Business Context and credibility | Low |
 | Later | Show the live cart switch in section 1 | Interaction Design | Low |
 | Later | Trim toward 900 words | Storytelling | Low |
 
@@ -179,5 +181,5 @@ No rewrite this time: Haye asked for a score only. The first review's before and
 The three changes most likely to improve hiring readiness:
 
 1. Test the cart nudges with a few people and report what you saw.
-2. Link or excerpt the break-even model.
+2. Show the first model's inputs in one small table.
 3. Show the live cart switch in section 1.

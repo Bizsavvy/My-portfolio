@@ -79,15 +79,15 @@ My first fee thresholds came straight from early Figma mock-ups: free delivery a
 
 [Figure drawn in code: nawnaw-fee-ladder]
 
-*The old free-delivery point sat below the floor. Numbers from the NawNaw repo's cart rules and decision log (D-020).*
+*The old free-delivery point sat below the floor. Numbers from the app's fee rules and the first break-even model.*
 
 The trade-off is that a higher threshold widens the gap a shopper has to close, which could make them order less often. That would be the first thing to test.
 
 ## What's next
 
-New shoppers now get free delivery on their first 5 orders (D-048). It costs up to ₦3,000 per new shopper, which the model does not include yet.
+New shoppers now get free delivery on their first 5 orders. It costs up to ₦3,000 per new shopper, which the model does not include yet. I later revised the break-even model to pay riders per trip instead of a salary. That lowers the break-even to about 89 orders a day, but raises the cost of each order from ₦600 to ₦650 (₦500 for the rider and ₦150 for packaging). So before launch, I would move the small-cart line from ₦3,000 to about ₦3,250.
 
-Before launch, I would test the ₦9,000 threshold against order frequency, using the model's basket-versus-frequency view, and compare a speed-first home banner with a discount-first one.
+I would also test whether the ₦9,000 threshold changes how often people order, and compare a speed-first home banner with a discount-first one.
 
 ## What building it taught me
 
