@@ -987,7 +987,7 @@ export const nawnawDetailed: DetailedCaseStudy = {
           kind: "phones",
           shots: [
             nawnawAsset("nawnaw-checkout", "Checkout: delivering to Home with a pinned map, an estimate of 12 to 15 minutes, and the itemised total"),
-            nawnawAsset("nawnaw-signin-flag", "A guest taps Place order: a Confirm your number sheet slides up over checkout, with WhatsApp selected and SMS one tap away"),
+            nawnawAsset("nawnaw-signin-v3", "A guest taps Place order: a Confirm your number sheet slides up over checkout, with WhatsApp selected and SMS one tap away"),
           ],
           caption: "Checkout for a signed-in shopper, and the same screen for a guest at Place order: one sheet asks for a phone number and sends the code on WhatsApp.",
         },

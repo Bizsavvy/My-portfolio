@@ -100,7 +100,7 @@ The trade-off is that a higher threshold widens the gap a shopper has to close, 
 
 ![Checkout: delivering to Home with a pinned map, an estimate of 12 to 15 minutes, and the itemised total](/assets/nawnaw/screens/nawnaw-checkout.png)
 
-![A guest taps Place order: a Confirm your number sheet slides up over checkout, with WhatsApp selected and SMS one tap away](/assets/nawnaw/screens/nawnaw-signin-flag.png)
+![A guest taps Place order: a Confirm your number sheet slides up over checkout, with WhatsApp selected and SMS one tap away](/assets/nawnaw/screens/nawnaw-signin-v3.png)
 
 *Checkout for a signed-in shopper, and the same screen for a guest at Place order: one sheet asks for a phone number and sends the code on WhatsApp.*
 
