@@ -223,6 +223,9 @@ function BlockView({ block }: { block: Block }) {
         </figure>
       );
 
+    case "quote":
+      return <blockquote className={cn(measure, "my-g10 border-l-2 border-border pl-g17 text-lead text-pretty text-foreground")}>{block.text}</blockquote>;
+
     case "nqr-demo":
       return (
         <div className="my-g17" data-md-figure="nqr-demo">

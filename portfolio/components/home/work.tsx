@@ -40,7 +40,12 @@ const caseStudies: CaseStudyTileProps[] = [
     title: "NawNaw",
     line: "A cart that does the maths, for sub-15-minute grocery delivery in Nigeria.",
     href: "/work/nawnaw",
-    cover: { kind: "placeholder", note: "New cover coming" },
+    cover: {
+      kind: "video",
+      src: "/assets/nawnaw/motion/nawnaw-cart_3x5_1080x1800.mp4",
+      poster: "/assets/nawnaw/motion/nawnaw-cart_3x5_1080x1800_poster.webp",
+      label: "Filling a NawNaw cart: the ₦700 small-cart fee goes once the basket passes ₦3,000, then a bar counts down to free delivery at ₦9,000, and checkout shows delivery FREE.",
+    },
   },
 ];
 

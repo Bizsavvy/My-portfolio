@@ -10,6 +10,7 @@ import { ScreenPair } from "@/components/case/screen-pair";
 import { ZoomPhone } from "@/components/case/zoom-phone";
 import { DataTable } from "@/components/case/data-table";
 import { CaseFigureView } from "@/components/case/case-figure";
+import { AnnotatedScreen } from "@/components/case/annotated-screen";
 import type { CaseStudy, OutcomeSection } from "@/lib/case-studies";
 import { cn } from "@/lib/utils";
 
@@ -174,7 +175,7 @@ function OutcomeCard({ section }: { section: OutcomeSection }) {
     return (
       <figure className="flex flex-col gap-g27 rounded-xl bg-card p-g17 md:p-g27 lg:p-g44">
         <CardHead summary={section.summary} body={section.body} />
-        <div className="grid grid-cols-2 gap-g17 md:grid-cols-4 lg:gap-g27">
+        <div className={cn("grid grid-cols-2 gap-g17 lg:gap-g27", section.shots.length === 3 ? "md:grid-cols-3" : "md:grid-cols-4")}>
           {section.shots.map((s) => (
             <ZoomPhone key={s.src} src={s.src} alt={s.alt} sizes="(min-width: 1024px) 520px, 90vw" className="w-full" />
           ))}
@@ -189,6 +190,17 @@ function OutcomeCard({ section }: { section: OutcomeSection }) {
       <figure className="flex flex-col gap-g27 rounded-xl bg-card p-g17 md:p-g27 lg:p-g44">
         <CardHead summary={section.summary} body={section.body} />
         <CaseFigureView figure={section.figure} />
+        <figcaption className="max-w-[720px] text-caption text-muted-foreground">{section.caption}</figcaption>
+        {section.after && <p className="max-w-[720px] text-body text-pretty text-foreground-secondary">{section.after}</p>}
+      </figure>
+    );
+  }
+
+  if (section.kind === "annotated") {
+    return (
+      <figure className="flex flex-col gap-g27 rounded-xl bg-card p-g17 md:p-g27 lg:p-g44">
+        <CardHead summary={section.summary} body={section.body} />
+        <AnnotatedScreen shot={section.shot} callouts={section.callouts} />
         <figcaption className="max-w-[720px] text-caption text-muted-foreground">{section.caption}</figcaption>
       </figure>
     );
@@ -275,6 +287,7 @@ function Closing({ items }: { items: NonNullable<CaseStudy["closing"]> }) {
             </ul>
           )}
           {item.after && <p className="text-body text-pretty text-foreground-secondary">{item.after}</p>}
+          {item.quote && <blockquote className="border-l-2 border-border pl-g17 text-lead text-pretty text-foreground">{item.quote}</blockquote>}
           {item.items && (
             <ul className="flex list-disc flex-col gap-g10 pl-g27 text-body text-foreground-secondary marker:text-muted-foreground">
               {item.items.map((it) => (

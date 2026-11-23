@@ -1,5 +1,6 @@
 import type { CaseFigure } from "@/lib/case-studies";
 import { OshapButtonRuleFigure, OshapGreysFigure, OshapSurfacesFigure, OshapTokenFlowFigure } from "@/components/case/oshap-figures";
+import { NawnawFeeLadderFigure } from "@/components/case/nawnaw-figures";
 
 /** Renders a figure drawn in code, by name, so content files stay plain data. */
 export function CaseFigureView({ figure }: { figure: CaseFigure }) {
@@ -17,5 +18,7 @@ function figureFor(figure: CaseFigure) {
       return <OshapSurfacesFigure />;
     case "oshap-token-flow":
       return <OshapTokenFlowFigure />;
+    case "nawnaw-fee-ladder":
+      return <NawnawFeeLadderFigure />;
   }
 }

@@ -1,5 +1,6 @@
 import type { Shot } from "@/components/site/before-after";
 import type { ScreenPairFigure } from "@/components/case/screen-pair";
+import type { ScreenCallout } from "@/components/case/annotated-screen";
 import { shappayScreens } from "@/lib/shappay-screens";
 
 /**
@@ -9,7 +10,7 @@ import { shappayScreens } from "@/lib/shappay-screens";
  */
 
 /** Figures drawn in code from a product's own tokens (components/case/case-figure.tsx). */
-export type CaseFigure = "oshap-greys" | "oshap-button-rule" | "oshap-surfaces" | "oshap-token-flow";
+export type CaseFigure = "oshap-greys" | "oshap-button-rule" | "oshap-surfaces" | "oshap-token-flow" | "nawnaw-fee-ladder";
 
 export type OutcomeSection =
   | {
@@ -25,6 +26,17 @@ export type OutcomeSection =
       summary: string;
       body?: string;
       figure: CaseFigure;
+      caption: string;
+      /** A paragraph after the figure, for example the trade-off a table leads to. */
+      after?: string;
+    }
+  | {
+      /** One screen with numbered callouts and the notes beside it. */
+      kind: "annotated";
+      summary: string;
+      body?: string;
+      shot: Shot;
+      callouts: ScreenCallout[];
       caption: string;
     }
   | {
@@ -79,7 +91,7 @@ export type CaseStudy = {
   sections: OutcomeSection[];
   results?: { heading: string; columns: string[]; rows: string[][]; note: string };
   /** Short closing notes after the sections, for example how it ships and what's next. */
-  closing?: { heading: string; text?: string; items?: { lead: string; text: string }[]; list?: string[]; after?: string }[];
+  closing?: { heading: string; text?: string; items?: { lead: string; text: string }[]; list?: string[]; after?: string; quote?: string }[];
   detailedHref: string;
   next: { project: string; line: string; href: string };
 };
@@ -327,5 +339,111 @@ export const oshap: CaseStudy = {
     project: "NawNaw",
     line: "A cart that does the maths, for sub-15-minute grocery delivery in Nigeria.",
     href: "/work/nawnaw",
+  },
+};
+
+const nawnawShot = (name: string, alt: string): Shot => ({ src: `/assets/nawnaw/screens/${name}.png`, alt });
+
+// Copy is Haye's rewrite of Docs/case-studies/nawnaw.md (2026-11-23). Screens: the NawNaw-App
+// repo at commit 2c6a714 on sample data, for a shopper past the welcome offer.
+export const nawnaw: CaseStudy = {
+  slug: "nawnaw",
+  project: "NawNaw",
+  title: "A cart that does the maths",
+  brief:
+    "NawNaw is a concept for sub-15-minute grocery delivery in Nigeria's largest cities, fulfilled from small closed warehouses called dark stores. Fast delivery adds real cost to every order, so the cart has to guide each basket toward a size the business can survive on, without feeling like a toll booth. I designed and built the consumer app, and every fee rule in its cart comes from the business's break-even model.",
+  meta: [
+    { label: "Role", value: "Product designer and frontend engineer" },
+    { label: "Team", value: "Solo" },
+    { label: "Timeline", value: "June 2026" },
+    { label: "Tools", value: "Figma, React Native, and Expo" },
+    {
+      label: "Stage",
+      value:
+        "Concept. Raising the capital to open even one dark store was not feasible, so NawNaw never launched. Payments, delivery times, phone verification, and the map are mocked to behave like a live system.",
+    },
+  ],
+  problem: [
+    "Every order carries about ₦600 in delivery and packaging costs. At a 20% margin, any basket under ₦3,000 cannot even cover its own delivery, and each dark store needs roughly 150 orders a day just to break even. Nigeria is an expensive market to run fast delivery in while having lower average incomes, so NawNaw targets households earning ₦6M or more a year and needs their baskets to average ₦9,000.",
+    "These shoppers often buy on impulse and expect a smooth, premium experience. A fee they do not understand, or a total that suddenly jumps at checkout, is the fastest way to lose them.",
+  ],
+  impact: {
+    text: [
+      "What the design guarantees: every fee in the cart is grounded in the break-even model, and all fee rules live in a single place in the code so the interface and the business numbers can never drift apart.",
+      "What is still unknown: NawNaw never launched, so nothing has been measured with real shoppers. The signal I would watch is the model's North Star, contribution per active customer per month, alongside the share of baskets that clear ₦3,000 and reach ₦9,000.",
+    ],
+  },
+  tldr: [
+    "Fast grocery delivery loses money on small orders: under ₦3,000, a basket cannot pay for its own delivery.",
+    "So the fee rules shape the cart: three states, a clear next step in each, and no surprise fees at checkout.",
+    "My first free-delivery point sat below the business's survival floor. I raised it to ₦9,000, the target basket.",
+  ],
+  preview: [
+    nawnawShot("nawnaw-home", "Home: Delivering in 12 mins, Store 1.2km away, above the search and the Bestsellers grid"),
+    nawnawShot("nawnaw-cart-fee", "The cart at ₦6,300: ₦2,700 away from free delivery, with a progress bar and a ₦600 delivery fee"),
+    nawnawShot("nawnaw-checkout", "Checkout at ₦9,100: delivering to Home in 12 to 15 minutes, with the delivery fee shown as FREE"),
+  ],
+  sectionsHeading: "Three decisions, and one number I got wrong",
+  sections: [
+    {
+      kind: "phones",
+      summary: "1. One cart, three states that follow the basket",
+      body: "Fees work as a ladder: a small-cart fee under ₦3,000, a ₦600 delivery fee in the middle, and free delivery from ₦9,000. So the cart has three states that update live with the subtotal: as a basket crosses ₦3,000 or ₦9,000, the cart switches to the matching state. I rejected a single static cart that showed fees only at checkout, because fees that late do not encourage bigger baskets and feel like an ambush.",
+      shots: [
+        nawnawShot("nawnaw-cart-small", "The cart at ₦1,800: add ₦1,200 more to remove the ₦700 small cart fee; total ₦3,100"),
+        nawnawShot("nawnaw-cart-fee", "The cart at ₦6,300: ₦2,700 away from free delivery; total ₦6,900"),
+        nawnawShot("nawnaw-cart-free", "The cart at ₦9,100: free delivery unlocked; the delivery fee reads FREE"),
+      ],
+      caption: "One cart across its three states on sample data: small-cart fee, standard delivery fee, and free delivery.",
+    },
+    {
+      kind: "annotated",
+      summary: "2. A fee you can remove, and a goal you can see",
+      body: "Under ₦3,000, the cart shows the exact amount that removes the ₦700 fee. Between ₦3,000 and ₦9,000, a progress bar shows how much more unlocks free delivery. Each state suggests products sized to the gap: larger everyday items when the basket is small, cheap add-ons when it is close. The trade-off is real: a fee on a premium service can feel petty, and thresholds can push shoppers to pad their baskets.",
+      shot: nawnawShot("nawnaw-cart-small", "The small-cart state: add ₦1,200 more to remove the ₦700 fee, an amber notice, and suggested items"),
+      callouts: [
+        { x: 91, y: 19, text: "\"Add ₦1,200 more\": the exact amount that removes the fee." },
+        { x: 91, y: 28.5, text: "Amber rather than red: the fee is fixable, not an error." },
+        { x: 47, y: 69.5, text: "Suggested products matched to the remaining gap." },
+      ],
+      caption: "The small-cart state on sample data.",
+    },
+    {
+      kind: "annotated",
+      summary: "3. No surprise fees",
+      body: "The running total is always visible, and the full breakdown is one tap away. Once delivery is free, that row stays and reads FREE, because a saving the shopper cannot see does not reward them for the bigger basket.",
+      shot: nawnawShot("nawnaw-cart-free", "The cart summary at ₦9,100: subtotal ₦9,100, delivery fee FREE, total ₦9,100"),
+      callouts: [
+        { x: 33, y: 78.3, text: "The full breakdown: subtotal, any small-cart fee, delivery fee, and final total." },
+        { x: 76, y: 81.6, text: "Once delivery is free, the row stays visible and reads FREE." },
+      ],
+      caption: "The free-delivery state on sample data.",
+    },
+    {
+      kind: "figure",
+      summary: "The number I got wrong: the thresholds",
+      body: "My first fee thresholds came straight from early Figma mock-ups: free delivery at ₦5,000 and a small-cart fee under ₦2,000. When I checked those numbers against the actual business model, free delivery sat below ₦5,700, the lowest basket size the business could survive on. The cart was actively encouraging shoppers to place unprofitable orders. I recalculated every number from the ground up.",
+      figure: "nawnaw-fee-ladder",
+      caption: "The old free-delivery point sat below the floor. Numbers from the NawNaw repo's cart rules and decision log (D-020).",
+      after: "The trade-off is that a higher threshold widens the gap a shopper has to close, which could make them order less often. That would be the first thing to test.",
+    },
+  ],
+  closing: [
+    {
+      heading: "What's next",
+      text: "New shoppers now get free delivery on their first 5 orders (D-048). It costs up to ₦3,000 per new shopper, which the model does not include yet.",
+      after: "Before launch, I would test the ₦9,000 threshold against order frequency, using the model's basket-versus-frequency view, and compare a speed-first home banner with a discount-first one.",
+    },
+    {
+      heading: "What building it taught me",
+      text: "The lesson I keep coming back to is how early the most important decision was made, and how far down into the product it reached. Deciding who to serve was not a branding exercise; it came straight out of the unit economics, driven by a hard reality about operating costs and local income. From that single decision, everything else fell into place: selling speed and convenience instead of low prices, designing for unplanned needs, building a cart that gently nudges instead of nickel-and-diming, and naming the whole product after the one promise that matters.",
+      quote: "Every number on the screen now traces back to the model, and every decision to a real person who is simply out of time, and to what it honestly takes to give some of it back.",
+    },
+  ],
+  detailedHref: "/work/nawnaw/detailed",
+  next: {
+    project: "Shappay",
+    line: "Redesigning how people pay on Shappay.",
+    href: "/work/shappay",
   },
 };
