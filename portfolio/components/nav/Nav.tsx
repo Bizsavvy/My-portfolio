@@ -51,6 +51,7 @@ export function Nav() {
     const next = theme === "dark" ? "light" : "dark";
     setTheme(next);
     document.documentElement.setAttribute("data-theme", next);
+    document.documentElement.classList.toggle("dark", next === "dark");
     localStorage.setItem("theme", next);
   };
 
@@ -66,8 +67,8 @@ export function Nav() {
         {/* Brand */}
         <Link href="/" className="flex items-center gap-[10px] font-pixel font-bold text-[20px] tracking-[.02em]" onClick={() => setMobileMenuOpen(false)}>
           <span
-            className="w-[11px] h-[11px] rounded-[3px] bg-[var(--color-accent)]"
-            style={{ boxShadow: "0 0 14px var(--color-accent)" }}
+            className="w-[11px] h-[11px] rounded-[3px] bg-[var(--color-legacy-accent)]"
+            style={{ boxShadow: "0 0 14px var(--color-legacy-accent)" }}
           />
           Hb8
         </Link>
@@ -77,14 +78,14 @@ export function Nav() {
           {mounted && (
             <button
               onClick={toggleTheme}
-              className="flex items-center justify-center w-[30px] h-[30px] rounded-[6px] text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors duration-[200ms]"
+              className="flex items-center justify-center w-[30px] h-[30px] rounded-[6px] text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors duration-[200ms]"
               aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
             >
               {theme === "dark" ? <MoonIcon /> : <SunIcon />}
             </button>
           )}
           <button
-            className="text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors p-2 -mr-2 flex items-center justify-center"
+            className="text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors p-2 -mr-2 flex items-center justify-center"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           >
@@ -109,24 +110,24 @@ export function Nav() {
             <Link
               key={href}
               href={href}
-              className="text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors duration-[250ms] relative group"
+              className="text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors duration-[250ms] relative group"
             >
               {label}
-              <span className="absolute left-0 -bottom-1 w-0 h-px bg-[var(--color-accent)] transition-[width] duration-[280ms] group-hover:w-full" />
+              <span className="absolute left-0 -bottom-1 w-0 h-px bg-[var(--color-legacy-accent)] transition-[width] duration-[280ms] group-hover:w-full" />
             </Link>
           ))}
         </div>
 
         {/* Clock + theme toggle — hidden on mobile */}
         <div className="hidden md:flex items-center gap-[14px]">
-          <div className="flex items-center gap-2 font-mono text-[12px] text-[var(--color-muted)]">
+          <div className="flex items-center gap-2 font-mono text-[12px] text-[var(--color-text-muted)]">
             <span className="live-dot" />
             <span>{time}</span>
           </div>
           {mounted && (
             <button
               onClick={toggleTheme}
-              className="flex items-center justify-center w-[30px] h-[30px] rounded-[6px] text-[var(--color-muted)] hover:text-[var(--color-text)] hover:bg-[var(--color-surface)] transition-colors duration-[200ms]"
+              className="flex items-center justify-center w-[30px] h-[30px] rounded-[6px] text-[var(--color-text-muted)] hover:text-[var(--color-text)] hover:bg-[var(--color-surface)] transition-colors duration-[200ms]"
               aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
             >
               {theme === "dark" ? <MoonIcon /> : <SunIcon />}
@@ -148,13 +149,13 @@ export function Nav() {
               key={href}
               href={href}
               onClick={() => setMobileMenuOpen(false)}
-              className="text-[var(--color-muted)] hover:text-[var(--color-accent)] transition-colors"
+              className="text-[var(--color-text-muted)] hover:text-[var(--color-legacy-accent)] transition-colors"
             >
               {label}
             </Link>
           ))}
           {/* Mobile Clock */}
-          <div className="flex items-center gap-2 text-[var(--color-muted)] pt-2 border-t border-[var(--color-border)]">
+          <div className="flex items-center gap-2 text-[var(--color-text-muted)] pt-2 border-t border-[var(--color-line)]">
             <span className="live-dot" />
             <span>{time}</span>
           </div>

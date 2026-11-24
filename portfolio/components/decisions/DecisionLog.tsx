@@ -121,10 +121,10 @@ const decisions: Decision[] = [
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div className="flex flex-col gap-[6px]">
-      <span className="font-mono text-[10px] tracking-[.1em] uppercase text-[var(--color-muted)]">
+      <span className="font-mono text-[10px] tracking-[.1em] uppercase text-[var(--color-text-muted)]">
         {label}
       </span>
-      <p className="font-hanken text-[15px] leading-[1.55] text-[var(--color-body)]">
+      <p className="font-hanken text-[15px] leading-[1.55] text-[var(--color-text-secondary)]">
         {children}
       </p>
     </div>
@@ -141,7 +141,7 @@ export function DecisionLog() {
             className="reveal flex flex-col gap-5 p-7 md:p-8 bg-[var(--color-surface)] border border-[var(--color-line)] rounded-[var(--rad-lg)] transition-all duration-300 hover:border-[var(--color-line-strong)] hover:-translate-y-[3px] hover:bg-[var(--color-surface-2)]"
           >
             <div className="flex items-center justify-between gap-4">
-              <span className="font-mono text-[11px] tracking-[.06em] text-[var(--color-accent)]">
+              <span className="font-mono text-[11px] tracking-[.06em] text-[var(--color-legacy-accent)]">
                 {String(i + 1).padStart(2, "0")} / DECISION
               </span>
               <Badge variant="neutral">{d.project}</Badge>

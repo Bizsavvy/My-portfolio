@@ -100,7 +100,7 @@ export function SolutionAtAGlance({
         </div>
 
         {description && (
-          <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)] reveal max-w-[62ch]">
+          <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-text-secondary)] reveal max-w-[62ch]">
             {description}
           </p>
         )}
@@ -125,10 +125,10 @@ export function SolutionAtAGlance({
           <div className={`reveal grid grid-cols-2 ${cols} gap-4`}>
             {items.map((item) => (
               <div key={item.label} className="flex flex-col gap-1.5">
-                <span className="font-mono text-[10px] tracking-[.1em] uppercase text-[var(--color-accent)]">
+                <span className="font-mono text-[10px] tracking-[.1em] uppercase text-[var(--color-legacy-accent)]">
                   {item.label}
                 </span>
-                <span className="font-hanken text-[13px] leading-[1.5] text-[var(--color-body)]">
+                <span className="font-hanken text-[13px] leading-[1.5] text-[var(--color-text-secondary)]">
                   {item.blurb}
                 </span>
               </div>
@@ -174,7 +174,7 @@ export function SolutionAtAGlance({
                       className="flex items-center justify-center w-full rounded-[var(--rad-xl)] border border-dashed border-[var(--color-line-strong)] bg-[var(--color-surface)]"
                       style={{ aspectRatio: "16 / 10" }}
                     >
-                      <span className="font-mono text-[10px] tracking-[.1em] uppercase text-[var(--color-muted)]">
+                      <span className="font-mono text-[10px] tracking-[.1em] uppercase text-[var(--color-text-muted)]">
                         {item.label}
                       </span>
                     </div>
@@ -182,10 +182,10 @@ export function SolutionAtAGlance({
                 </div>
 
                 <figcaption className="flex flex-col gap-2">
-                  <span className="font-mono text-[10px] tracking-[.1em] uppercase text-[var(--color-accent)]">
+                  <span className="font-mono text-[10px] tracking-[.1em] uppercase text-[var(--color-legacy-accent)]">
                     {String(i + 1).padStart(2, "0")} · {item.label}
                   </span>
-                  <span className="font-hanken text-[15px] leading-[1.6] text-[var(--color-body)] max-w-[68ch]">
+                  <span className="font-hanken text-[15px] leading-[1.6] text-[var(--color-text-secondary)] max-w-[68ch]">
                     {item.blurb}
                   </span>
                 </figcaption>

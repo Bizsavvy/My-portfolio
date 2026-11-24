@@ -31,9 +31,9 @@ export interface ProjectCardProps {
 
 /* Status drives colour so the grid reads at a glance without a legend. */
 const STATUS_STYLE: Record<ProjectStatus, string> = {
-  Live: "text-[var(--color-accent)] border-[var(--color-accent)]",
+  Live: "text-[var(--color-legacy-accent)] border-[var(--color-legacy-accent)]",
   "Pre Alpha": "text-[var(--color-violet)] border-[var(--color-violet)]",
-  Concept: "text-[var(--color-muted)] border-[var(--color-line-strong)]",
+  Concept: "text-[var(--color-text-muted)] border-[var(--color-line-strong)]",
 };
 
 /**
@@ -56,7 +56,7 @@ export function ProjectCard({
   proofLabel = "See it live",
 }: ProjectCardProps) {
   return (
-    <article className="pcard group relative flex flex-col h-full rounded-[var(--rad-xl)] border border-[var(--color-border)] bg-[var(--color-surface)] overflow-hidden transition-all duration-300 hover:border-[var(--color-line-strong)] hover:-translate-y-1">
+    <article className="pcard group relative flex flex-col h-full rounded-[var(--rad-xl)] border border-[var(--color-line)] bg-[var(--color-surface)] overflow-hidden transition-all duration-300 hover:border-[var(--color-line-strong)] hover:-translate-y-1">
       <Link href={href} className="flex flex-col flex-1" aria-label={`${title} case study`}>
         {/* Preview */}
         <div
@@ -86,7 +86,7 @@ export function ProjectCard({
               </span>
             )}
             {metric && (
-              <span className="font-mono text-[10px] tracking-[.06em] uppercase border border-[var(--color-line-strong)] text-[var(--color-body)] rounded-[20px] px-[9px] py-[3px] backdrop-blur-[6px] bg-[var(--color-nav-bg)]">
+              <span className="font-mono text-[10px] tracking-[.06em] uppercase border border-[var(--color-line-strong)] text-[var(--color-text-secondary)] rounded-[20px] px-[9px] py-[3px] backdrop-blur-[6px] bg-[var(--color-nav-bg)]">
                 {metric}
               </span>
             )}
@@ -95,14 +95,14 @@ export function ProjectCard({
 
         {/* Body */}
         <div className="flex flex-col gap-2.5 p-5 flex-1">
-          <span className="font-mono text-[11px] tracking-[.08em] uppercase text-[var(--color-muted)]">
+          <span className="font-mono text-[11px] tracking-[.08em] uppercase text-[var(--color-text-muted)]">
             {context}
           </span>
           <h3 className="ts-card-title text-[var(--color-text)] leading-[1.15]">{title}</h3>
-          <p className="font-hanken text-[14px] leading-[1.55] text-[var(--color-body)]">
+          <p className="font-hanken text-[14px] leading-[1.55] text-[var(--color-text-secondary)]">
             {summary}
           </p>
-          <span className="mt-auto pt-2 font-mono text-[12px] tracking-[.04em] text-[var(--color-text)] inline-flex items-center gap-2 transition-all duration-[280ms] group-hover:text-[var(--color-accent)] group-hover:gap-3">
+          <span className="mt-auto pt-2 font-mono text-[12px] tracking-[.04em] text-[var(--color-text)] inline-flex items-center gap-2 transition-all duration-[280ms] group-hover:text-[var(--color-legacy-accent)] group-hover:gap-3">
             View case study →
           </span>
         </div>
@@ -114,7 +114,7 @@ export function ProjectCard({
           href={proofHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="border-t border-[var(--color-line)] px-5 py-3 font-mono text-[11px] tracking-[.06em] uppercase text-[var(--color-muted)] hover:text-[var(--color-accent)] transition-colors duration-[250ms]"
+          className="border-t border-[var(--color-line)] px-5 py-3 font-mono text-[11px] tracking-[.06em] uppercase text-[var(--color-text-muted)] hover:text-[var(--color-legacy-accent)] transition-colors duration-[250ms]"
         >
           {proofLabel} ↗
         </a>

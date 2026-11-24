@@ -26,11 +26,11 @@ function S({ children }: { children: React.ReactNode }) {
 function StateDiagram({ title, diagram }: { title: string; diagram: string }) {
   return (
     <div className="flex flex-col gap-3">
-      <div className="font-mono text-[11px] tracking-[.1em] uppercase text-[var(--color-muted)]">
+      <div className="font-mono text-[11px] tracking-[.1em] uppercase text-[var(--color-text-muted)]">
         {title}
       </div>
       <pre
-        className="font-mono text-[13px] text-[var(--color-body)]"
+        className="font-mono text-[13px] text-[var(--color-text-secondary)]"
         style={{
           lineHeight: 1.75,
           padding: "22px 24px",
@@ -59,7 +59,7 @@ export default function OshapArticlePage() {
           <>
             Three surfaces — a customer app, a kitchen view, and an admin dashboard —
             that all had to{" "}
-            <em className="italic text-[var(--color-accent)]">agree about one order</em>.
+            <em className="italic text-[var(--color-legacy-accent)]">agree about one order</em>.
           </>
         }
         meta={[
@@ -106,16 +106,16 @@ export default function OshapArticlePage() {
               key={who}
               className="flex flex-col gap-4 p-6 bg-[var(--color-surface)] border border-[var(--color-line)] rounded-[var(--rad-lg)]"
             >
-              <div className="font-mono text-[10px] tracking-[.1em] uppercase text-[var(--color-accent)]">
+              <div className="font-mono text-[10px] tracking-[.1em] uppercase text-[var(--color-legacy-accent)]">
                 {who}
               </div>
               <ul className="flex flex-col gap-2">
                 {items.map((item) => (
                   <li
                     key={item}
-                    className="flex items-start gap-3 text-[14px] leading-[1.45] text-[var(--color-body)]"
+                    className="flex items-start gap-3 text-[14px] leading-[1.45] text-[var(--color-text-secondary)]"
                   >
-                    <span className="text-[var(--color-muted)] mt-[2px] flex-shrink-0">—</span>
+                    <span className="text-[var(--color-text-muted)] mt-[2px] flex-shrink-0">—</span>
                     {item}
                   </li>
                 ))}
@@ -165,13 +165,13 @@ export default function OshapArticlePage() {
               key={card.badge}
               className="flex flex-col gap-3 p-6 bg-[var(--color-surface)] border border-[var(--color-line)] rounded-[var(--rad-lg)] transition-all duration-300 hover:border-[var(--color-line-strong)] hover:-translate-y-[3px] hover:bg-[var(--color-surface-2)]"
             >
-              <div className="font-mono text-[10px] tracking-[.06em] uppercase text-[var(--color-accent)]">
+              <div className="font-mono text-[10px] tracking-[.06em] uppercase text-[var(--color-legacy-accent)]">
                 {card.badge}
               </div>
               <h3 className="font-hanken font-bold text-[18px] tracking-[-0.01em] text-[var(--color-text)]">
                 {card.title}
               </h3>
-              <p className="text-[14px] leading-[1.4] text-[var(--color-muted)]">{card.body}</p>
+              <p className="text-[14px] leading-[1.4] text-[var(--color-text-muted)]">{card.body}</p>
             </div>
           ))}
         </div>
@@ -189,7 +189,7 @@ export default function OshapArticlePage() {
           </h2>
         </div>
 
-        <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)] reveal" style={{ maxWidth: "60ch" }}>
+        <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-text-secondary)] reveal" style={{ maxWidth: "60ch" }}>
           Order integrity is the hard constraint. No duplicate orders, no lost orders,
           no terminal states you can&apos;t recover from. Every state has a single owner and
           a defined transition trigger.
@@ -224,7 +224,7 @@ export default function OshapArticlePage() {
         </div>
 
         <div className="flex flex-col gap-2 reveal">
-          <div className="font-mono text-[11px] tracking-[.08em] uppercase text-[var(--color-muted)]">
+          <div className="font-mono text-[11px] tracking-[.08em] uppercase text-[var(--color-text-muted)]">
             Reference format
           </div>
           <code
@@ -238,7 +238,7 @@ export default function OshapArticlePage() {
             }}
           >
             OSHAP-{"{tableId}"}-{"{4-digit-random}"}
-            <span className="text-[var(--color-muted)] text-[12px] ml-4">
+            <span className="text-[var(--color-text-muted)] text-[12px] ml-4">
               ; order ref · bank-transfer reconciliation ref · one and the same
             </span>
           </code>
@@ -254,18 +254,18 @@ export default function OshapArticlePage() {
             style={{ fontSize: "clamp(22px,2.8vw,30px)", lineHeight: 1.35 }}
           >
             True real-time via{" "}
-            <span className="text-[var(--color-accent)]">SSE + push</span>: instant
+            <span className="text-[var(--color-legacy-accent)]">SSE + push</span>: instant
             updates without the overhead of WebSockets.
           </blockquote>
         </div>
 
         <div className="flex flex-col gap-4 reveal">
-          <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)]">
+          <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-text-secondary)]">
             Live screens (the waiter dashboard, the pay page, My Orders) subscribe to
             a server-sent events stream. State changes push instantly from the backend the
             moment they happen, with no client polling loop.
           </p>
-          <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)]">
+          <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-text-secondary)]">
             FCM push covers the instants that feel urgent: new order, waiter called,
             POS requested. When the admin tab is hidden the service worker shows OS
             notifications. When it&apos;s open the{" "}
@@ -325,7 +325,7 @@ export default function OshapArticlePage() {
               <div className="font-hanken font-bold text-[15px] text-[var(--color-text)]">
                 {item}
               </div>
-              <p className="text-[13px] leading-[1.5] text-[var(--color-muted)]">{note}</p>
+              <p className="text-[13px] leading-[1.5] text-[var(--color-text-muted)]">{note}</p>
             </div>
           ))}
         </div>
@@ -384,20 +384,20 @@ export default function OshapArticlePage() {
         </div>
 
         <div className="flex flex-col gap-4 reveal">
-          <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)]">
+          <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-text-secondary)]">
             The temptation in hospitality tech is to solve for the happy path:
             customer who knows what they want, places their order in thirty seconds, and
             pays immediately. That customer is maybe 20% of a restaurant. The other 80%
             are groups negotiating, people who order in rounds, customers who need to
             flag a waiter mid-meal, tables that share a bill and split it unevenly.
           </p>
-          <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)]">
+          <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-text-secondary)]">
             Order Together, Request-a-POS, and the service bell exist because I refused
             to design only for the happy path. The state machines exist because payment
             integrity is non-negotiable: a missing CONFIRMED state or a duplicate order
             means real money lost by a real business.
           </p>
-          <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)]">
+          <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-text-secondary)]">
             The hardest constraint was the zero-auth guest. Every session-management
             pattern I reached for assumed an authenticated user. Designing around a
             disposable UUID that lives in sessionStorage; making group ordering

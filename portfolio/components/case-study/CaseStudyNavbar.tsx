@@ -16,10 +16,10 @@ export function CaseStudyNavbar({
   return (
     <nav className="relative z-[5] py-[28px] font-mono text-[12px] tracking-[.04em]">
       <div className="cs-wrap flex justify-between items-center">
-        <div className="text-[var(--color-muted)]">
+        <div className="text-[var(--color-text-muted)]">
           <Link
             href={parentHref}
-            className="hover:text-[var(--color-accent)] transition-colors duration-[250ms]"
+            className="hover:text-[var(--color-legacy-accent)] transition-colors duration-[250ms]"
           >
             {parentLabel}
           </Link>
@@ -27,9 +27,9 @@ export function CaseStudyNavbar({
           <span className="text-[var(--color-text)]">{title}</span>
         </div>
         {status && (
-          <div className="flex items-center gap-2 text-[var(--color-muted)]">
+          <div className="flex items-center gap-2 text-[var(--color-text-muted)]">
             <span
-              className="w-[7px] h-[7px] rounded-full bg-[var(--color-accent)] flex-shrink-0"
+              className="w-[7px] h-[7px] rounded-full bg-[var(--color-legacy-accent)] flex-shrink-0"
               style={{ animation: "pulse 2.4s infinite" }}
             />
             {status}

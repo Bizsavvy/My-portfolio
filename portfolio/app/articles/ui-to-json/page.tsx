@@ -24,7 +24,7 @@ export default function UiToJsonArticlePage() {
           <>
             The bottleneck in AI frontend generation isn&apos;t the model. It&apos;s the
             quality of the{" "}
-            <em className="italic text-[var(--color-accent)]">
+            <em className="italic text-[var(--color-legacy-accent)]">
               intermediate representation
             </em>{" "}
             you hand it.
@@ -49,13 +49,13 @@ export default function UiToJsonArticlePage() {
           </h2>
         </div>
         <div className="grid md:grid-cols-2 gap-8 mt-8" style={{ maxWidth: 900 }}>
-          <p className="text-[var(--color-body)] text-[17px] leading-[1.65] reveal">
+          <p className="text-[var(--color-text-secondary)] text-[17px] leading-[1.65] reveal">
             Figma-to-code tools optimise for the wrong thing: CSS extraction, HTML
             generation, developer handoff. They emit noisy exports with broken
             hierarchy, absolute positioning everywhere, and metadata that has nothing
             to do with how a UI is actually built.
           </p>
-          <p className="text-[var(--color-body)] text-[17px] leading-[1.65] reveal">
+          <p className="text-[var(--color-text-secondary)] text-[17px] leading-[1.65] reveal">
             Feed that to an AI agent and you get hallucinated, inconsistent code. The
             real bottleneck in AI frontend generation isn&apos;t the model. It&apos;s the
             quality of the intermediate representation you hand it.
@@ -93,7 +93,7 @@ export default function UiToJsonArticlePage() {
               <span className="font-hanken font-bold text-[18px] text-[var(--color-text)]">
                 {keep}
               </span>
-              <span className="font-mono text-[12px] text-[var(--color-muted)] line-through decoration-[var(--color-accent)]">
+              <span className="font-mono text-[12px] text-[var(--color-text-muted)] line-through decoration-[var(--color-legacy-accent)]">
                 {drop}
               </span>
             </div>
@@ -113,14 +113,14 @@ export default function UiToJsonArticlePage() {
           </h2>
         </div>
         <div className="flex flex-col gap-4 mt-6 reveal" style={{ maxWidth: 760 }}>
-          <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)]">
+          <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-text-secondary)]">
             Every export tool I&apos;d used optimised for completeness: capture every
             property, every pixel, every node. UI to JSON is the opposite bet. The value
             isn&apos;t in what it records, it&apos;s in what it confidently discards.
             Deciding which visual details carry meaning, and which are noise, was the
             whole design problem.
           </p>
-          <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)]">
+          <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-text-secondary)]">
             The insight that landed with people was practical: you don&apos;t need MCP
             servers or screenshots that burn tokens to get an AI from design to code. A
             small, clean, semantic representation does more than a large noisy one.

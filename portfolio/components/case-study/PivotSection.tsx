@@ -35,7 +35,7 @@ export function PivotSection() {
             <h3 className="font-hanken font-bold text-[22px] tracking-[-0.01em] text-[var(--color-text)]">
               What testing revealed
             </h3>
-            <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)]">
+            <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-text-secondary)]">
               Providers like Mono DirectPay handle account linking, authorization, and payment
               initiation, but not persistent, real-time orchestration across multiple banks.
               Every payment would have inherited bank uptime, latency, high fees, and redirects.
@@ -72,7 +72,7 @@ export function PivotSection() {
           The honest tradeoffs
         </h3>
 
-        <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)] reveal">
+        <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-text-secondary)] reveal">
           Holding balances raises the bar; naming the costs is part of owning the decision.
         </p>
 
@@ -82,10 +82,10 @@ export function PivotSection() {
               key={card.badge}
               className="flex flex-col gap-3 bg-[var(--color-surface)] border border-[var(--color-line)] rounded-[var(--rad-lg)] p-[var(--space-4xl)]"
             >
-              <div className="font-mono text-[10px] tracking-[.06em] uppercase text-[var(--color-accent)]">
+              <div className="font-mono text-[10px] tracking-[.06em] uppercase text-[var(--color-legacy-accent)]">
                 {card.badge}
               </div>
-              <p className="text-[14px] leading-[1.4] text-[var(--color-muted)]">{card.body}</p>
+              <p className="text-[14px] leading-[1.4] text-[var(--color-text-muted)]">{card.body}</p>
             </div>
           ))}
         </div>

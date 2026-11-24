@@ -47,7 +47,7 @@ export function LiveAppFrame() {
               The real thing. Right here.
             </h2>
             <p
-              className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)]"
+              className="font-hanken text-[16px] leading-[1.65] text-[var(--color-text-secondary)]"
               style={{ maxWidth: "44ch" }}
             >
               Not a prototype. The live customer app: browse the menu, add to
@@ -57,7 +57,7 @@ export function LiveAppFrame() {
               href="https://oshap-frontend-customer.vercel.app/menu?table=T1"
               target="_blank"
               rel="noopener noreferrer"
-              className="self-start font-mono text-[12px] tracking-[.06em] uppercase text-[var(--color-muted)] hover:text-[var(--color-accent)] transition-colors duration-200"
+              className="self-start font-mono text-[12px] tracking-[.06em] uppercase text-[var(--color-text-muted)] hover:text-[var(--color-legacy-accent)] transition-colors duration-200"
             >
               Open full app ↗
             </a>

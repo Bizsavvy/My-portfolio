@@ -52,11 +52,11 @@ function UIMark() {
       }}
     >
       <span
-        className="absolute rounded-full bg-[var(--color-accent)]"
+        className="absolute rounded-full bg-[var(--color-legacy-accent)]"
         style={{ left: ".18em", top: ".2em", width: ".28em", height: ".28em" }}
       />
       <span
-        className="absolute rounded-[2px] bg-[var(--color-muted)]"
+        className="absolute rounded-[2px] bg-[var(--color-text-muted)]"
         style={{ left: ".18em", bottom: ".18em", right: ".18em", height: ".13em" }}
       />
     </span>
@@ -66,7 +66,7 @@ function UIMark() {
 function CodeMark() {
   return (
     <span
-      className="obj code inline-flex items-center justify-center align-middle rounded-[9px] mx-[.1em] transition-transform duration-300 hover:-rotate-[4deg] hover:scale-[1.08] cursor-default font-mono text-[var(--color-accent)]"
+      className="obj code inline-flex items-center justify-center align-middle rounded-[9px] mx-[.1em] transition-transform duration-300 hover:-rotate-[4deg] hover:scale-[1.08] cursor-default font-mono text-[var(--color-legacy-accent)]"
       style={{
         fontSize: ".46em",
         letterSpacing: 0,
@@ -99,15 +99,15 @@ export function Hero() {
         <div className="flex flex-col items-center gap-[var(--space-8xl)]">
 
           {/* Eyebrow */}
-          <div className="eyebrow ts-eyebrow text-[10px] md:text-[12px] text-[var(--color-accent)] inline-flex items-center justify-center text-center gap-2 md:gap-[var(--space-2xl)] whitespace-normal max-w-[90vw] text-balance">
-            {/* <span className="w-5 md:w-7 h-px bg-[var(--color-accent)]" aria-hidden="true" /> */}
+          <div className="eyebrow ts-eyebrow text-[10px] md:text-[12px] text-[var(--color-legacy-accent)] inline-flex items-center justify-center text-center gap-2 md:gap-[var(--space-2xl)] whitespace-normal max-w-[90vw] text-balance">
+            {/* <span className="w-5 md:w-7 h-px bg-[var(--color-legacy-accent)]" aria-hidden="true" /> */}
             Product Designer &amp; Engineer. Abuja, open to remote roles
-            {/* <span className="w-5 md:w-7 h-px bg-[var(--color-accent)]" aria-hidden="true" /> */}
+            {/* <span className="w-5 md:w-7 h-px bg-[var(--color-legacy-accent)]" aria-hidden="true" /> */}
           </div>
 
           {/* Intro */}
           <div className="flex flex-col items-center gap-[var(--space-2xl)]">
-            <span className="hero-label ts-handwritten text-[var(--color-muted)]">
+            <span className="hero-label ts-handwritten text-[var(--color-text-muted)]">
               Hi, my name is
             </span>
             <div
@@ -124,11 +124,11 @@ export function Hero() {
             style={{ fontSize: "clamp(20px,2.5vw,36px)", lineHeight: 1.32, maxWidth: "680px" }}
           >
             I design &amp; build <CodeMark /> consumer &amp;
-            <em className="italic text-[var(--color-accent)]"> fintech</em> products from interface to infrastructure.
+            <em className="italic text-[var(--color-legacy-accent)]"> fintech</em> products from interface to infrastructure.
           </p>
 
           <p
-            className="statement font-hanken text-[var(--color-body)] text-center"
+            className="statement font-hanken text-[var(--color-text-secondary)] text-center"
             style={{ fontSize: "clamp(15px,1.6vw,18px)", lineHeight: 1.6, maxWidth: "600px" }}
           >
             Most designers hand off a file. I ship the front-end too, which means
@@ -145,7 +145,7 @@ export function Hero() {
               href={href}
               target={href.startsWith("mailto:") ? undefined : "_blank"}
               rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
-              className="text-[var(--color-muted)] hover:text-[var(--color-accent)] transition-colors duration-[250ms]"
+              className="text-[var(--color-text-muted)] hover:text-[var(--color-legacy-accent)] transition-colors duration-[250ms]"
             >
               {label} ↗
             </a>
@@ -162,7 +162,7 @@ export function Hero() {
         <div className="herocta flex gap-[var(--space-2xl)] flex-wrap justify-center">
           <Link
             href="/#contact"
-            className="btn primary ts-cta-medium leading-none px-[26px] py-4 rounded-full transition-all duration-[280ms] inline-flex items-center bg-[var(--color-accent)] text-[var(--color-on-accent)] hover:-translate-y-0.5"
+            className="btn primary ts-cta-medium leading-none px-[26px] py-4 rounded-full transition-all duration-[280ms] inline-flex items-center bg-[var(--color-legacy-accent)] text-[var(--color-on-accent)] hover:-translate-y-0.5"
             style={{ boxShadow: "none" }}
             onClick={(e) => {
               e.preventDefault();
@@ -170,7 +170,7 @@ export function Hero() {
               window.history.pushState(null, "", "/#contact");
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.boxShadow = "0 10px 32px -10px var(--color-accent)";
+              (e.currentTarget as HTMLElement).style.boxShadow = "0 10px 32px -10px var(--color-legacy-accent)";
             }}
             onMouseLeave={(e) => {
               (e.currentTarget as HTMLElement).style.boxShadow = "none";
@@ -180,7 +180,7 @@ export function Hero() {
           </Link>
           <Link
             href="/#work"
-            className="btn ghost ts-cta-medium leading-none px-[26px] py-4 rounded-full transition-all duration-[280ms] inline-flex items-center border border-[var(--color-border-strong)] text-[var(--color-text)] hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
+            className="btn ghost ts-cta-medium leading-none px-[26px] py-4 rounded-full transition-all duration-[280ms] inline-flex items-center border border-[var(--color-border-strong)] text-[var(--color-text)] hover:border-[var(--color-legacy-accent)] hover:text-[var(--color-legacy-accent)]"
           >
             See the work ↓
           </Link>

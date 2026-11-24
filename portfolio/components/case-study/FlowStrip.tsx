@@ -52,7 +52,7 @@ export function FlowStrip({
         </div>
 
         {description && (
-          <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)] reveal">
+          <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-text-secondary)] reveal">
             {description}
           </p>
         )}
@@ -76,23 +76,23 @@ export function FlowStrip({
                     className="flex items-center justify-center w-full rounded-[18px] border border-dashed border-[var(--color-line-strong)] bg-[var(--color-surface)]"
                     style={{ aspectRatio: "9 / 19" }}
                   >
-                    <span className="font-mono text-[10px] tracking-[.1em] uppercase text-[var(--color-muted)]">
+                    <span className="font-mono text-[10px] tracking-[.1em] uppercase text-[var(--color-text-muted)]">
                       {step.stage}
                     </span>
                   </div>
                 )}
                 <figcaption className="flex flex-col gap-2">
-                  <span className="font-mono text-[10px] tracking-[.1em] uppercase text-[var(--color-accent)]">
+                  <span className="font-mono text-[10px] tracking-[.1em] uppercase text-[var(--color-legacy-accent)]">
                     {String(i + 1).padStart(2, "0")} · {step.stage}
                   </span>
-                  <span className="font-hanken text-[13px] leading-[1.5] text-[var(--color-body)]">
+                  <span className="font-hanken text-[13px] leading-[1.5] text-[var(--color-text-secondary)]">
                     {step.annotation}
                   </span>
                 </figcaption>
               </figure>
 
               {i < steps.length - 1 && (
-                <div className="flex items-center pt-[20%] text-[var(--color-muted)] font-mono text-[16px]">
+                <div className="flex items-center pt-[20%] text-[var(--color-text-muted)] font-mono text-[16px]">
                   →
                 </div>
               )}

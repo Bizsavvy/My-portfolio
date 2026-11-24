@@ -47,10 +47,10 @@ export function CustomCursor() {
     >
       <div className="relative" style={{ left: "-4px", top: "-4px" }}>
         {/* The dot exactly centered on the cursor */}
-        <div className="w-2 h-2 rounded-full bg-[var(--color-accent)] shadow-[0_0_8px_var(--color-accent)]" />
+        <div className="w-2 h-2 rounded-full bg-[var(--color-legacy-accent)] shadow-[0_0_8px_var(--color-legacy-accent)]" />
         
         {/* The 'You' pill positioned below the dot */}
-        <div className="absolute left-1/2 -translate-x-1/2 top-4 ts-tag bg-[var(--color-surface-elevated)] text-[var(--color-text-primary)] border border-[var(--color-accent)] rounded-[20px] px-2 py-[2px] whitespace-nowrap shadow-lg">
+        <div className="absolute left-1/2 -translate-x-1/2 top-4 ts-tag bg-[var(--color-surface-elevated)] text-[var(--color-text-primary)] border border-[var(--color-legacy-accent)] rounded-[20px] px-2 py-[2px] whitespace-nowrap shadow-lg">
           You
         </div>
       </div>

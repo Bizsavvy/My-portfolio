@@ -37,13 +37,13 @@ export function FolderCard({
       {/* Tab */}
       <div className={tabRowClass}>
         <span
-          className="tab inline-flex items-center gap-[8px] bg-[var(--color-surface)] px-[22px] py-[10px] border border-b-0 border-[var(--color-border)] relative transition-colors duration-300"
+          className="tab inline-flex items-center gap-[8px] bg-[var(--color-surface)] px-[22px] py-[10px] border border-b-0 border-[var(--color-line)] relative transition-colors duration-300"
           style={{ borderRadius: "var(--rad-lg) var(--rad-lg) 0 0", top: 1 }}
         >
-          <span className="no ts-mono-label-md text-[var(--color-accent)] transition-[text-shadow] duration-300">
+          <span className="no ts-mono-label-md text-[var(--color-legacy-accent)] transition-[text-shadow] duration-300">
             {String(index).padStart(2, "0")}
           </span>
-          <span className="tab-label font-mono text-[12px] tracking-[0.08em] text-[var(--color-muted)] transition-colors duration-300">
+          <span className="tab-label font-mono text-[12px] tracking-[0.08em] text-[var(--color-text-muted)] transition-colors duration-300">
             {tab}
           </span>
         </span>
@@ -51,7 +51,7 @@ export function FolderCard({
 
       {/* Body */}
       <div
-        className="fbody bg-[var(--color-surface)] border border-[var(--color-border)] overflow-hidden grid min-h-[480px] transition-all duration-[350ms]"
+        className="fbody bg-[var(--color-surface)] border border-[var(--color-line)] overflow-hidden grid min-h-[480px] transition-all duration-[350ms]"
         style={{ gridTemplateColumns: "1fr 1fr", borderRadius: bodyRadius }}
       >
         {/* Info pane */}
@@ -65,7 +65,7 @@ export function FolderCard({
               </span>
               {badge && <Badge variant={badge.variant}>{badge.label}</Badge>}
             </div>
-            <p className="chook ts-body text-[var(--color-body)] leading-[1.65] max-w-[46ch]">
+            <p className="chook ts-body text-[var(--color-text-secondary)] leading-[1.65] max-w-[46ch]">
               {hook}
             </p>
           </div>
@@ -76,7 +76,7 @@ export function FolderCard({
               {tags.map((tag) => (
                 <span
                   key={tag}
-                  className="font-mono text-[10px] text-[var(--color-muted)] border border-[var(--color-border)] rounded-[var(--rad-2xl)] px-[12px] py-[8px]"
+                  className="font-mono text-[10px] text-[var(--color-text-muted)] border border-[var(--color-line)] rounded-[var(--rad-2xl)] px-[12px] py-[8px]"
                 >
                   {tag}
                 </span>
@@ -105,8 +105,8 @@ export function FolderCard({
         }
         .folder:hover .tab { border-color: var(--color-line-strong); }
         .folder:hover .tab-label { color: var(--color-text); }
-        .folder:hover .no { text-shadow: 0 0 12px var(--color-accent); }
-        .folder:hover .cgo { color: var(--color-accent); gap: 14px; }
+        .folder:hover .no { text-shadow: 0 0 12px var(--color-legacy-accent); }
+        .folder:hover .cgo { color: var(--color-legacy-accent); gap: 14px; }
         @media (max-width: 760px) {
           .fbody { grid-template-columns: 1fr !important; }
           .finfo { order: 2 !important; }

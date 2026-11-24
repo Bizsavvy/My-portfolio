@@ -1,4 +1,8 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
 
 /* ══════════════════════════════════════════════════════════
    LAYER 1 · PRIMITIVES
@@ -149,25 +153,21 @@
   --color-paper: var(--prim-cream);
 
   /* Accent */
-  --color-accent: var(--theme-accent);
+  --color-legacy-accent: var(--theme-accent);
   --color-accent-dim: var(--theme-accent-dim);
   --color-accent-text: var(--theme-accent-text);
   --color-on-accent: var(--theme-on-accent);
 
   /* Secondary */
-  --color-secondary: var(--theme-secondary);
   --color-violet: var(--theme-secondary);
 
   /* Text */
   --color-text: var(--theme-text-primary);
   --color-text-primary: var(--theme-text-primary);
   --color-text-secondary: var(--theme-text-secondary);
-  --color-body: var(--theme-text-secondary);
   --color-text-muted: var(--theme-text-muted);
-  --color-muted: var(--theme-text-muted);
 
   /* Borders */
-  --color-border: var(--theme-border);
   --color-line: var(--theme-border);
   --color-border-strong: var(--theme-border-strong);
   --color-line-strong: var(--theme-border-strong);
@@ -214,7 +214,7 @@
   }
 
   ::selection {
-    background: var(--color-accent);
+    background: var(--color-legacy-accent);
     color: var(--color-on-accent);
   }
 
@@ -277,7 +277,7 @@
 
   0%,
   100% {
-    color: var(--color-muted);
+    color: var(--color-text-muted);
     border-color: var(--color-border-strong);
     background: transparent;
   }
@@ -285,8 +285,8 @@
   15%,
   32% {
     color: var(--color-on-accent);
-    background: var(--color-accent);
-    border-color: var(--color-accent);
+    background: var(--color-legacy-accent);
+    border-color: var(--color-legacy-accent);
   }
 }
 
@@ -659,8 +659,153 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: var(--color-accent);
+    background: var(--color-legacy-accent);
     animation: pulse 2.4s infinite;
     flex-shrink: 0;
   }
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   REDESIGN · DESIGN SYSTEM
+   Source: Docs/Design-System.md (approved 15 Nov 2026).
+   shadcn theme variables, colour roles and the golden scales.
+   Dark is the default: <html class="dark">. The legacy layers
+   above stay until the old pages are rebuilt, then they go.
+══════════════════════════════════════════════════════════ */
+:root {
+  --background: #f4f4f5;
+  --foreground: #18181b;
+  --card: #fafafa;
+  --card-foreground: #18181b;
+  --popover: #ffffff;
+  --popover-foreground: #18181b;
+  --primary: #c7f94b;
+  --primary-foreground: #18181b;
+  --secondary: #ffffff;
+  --secondary-foreground: #18181b;
+  --muted: #fafafa;
+  --muted-foreground: #52525b;
+  --accent: #ffffff;
+  --accent-foreground: #18181b;
+  --destructive: #dc2626;
+  --border: rgb(0 0 0 / 8%);
+  --input: rgb(0 0 0 / 14%);
+  /* Lime is 1.12:1 on the light background; the ring uses lime-dark (4.54:1). */
+  --ring: #4d7c0f;
+  --raised: #ffffff;
+  --foreground-secondary: #3f3f46;
+  --brand-text: #4d7c0f;
+  --elevation-float: 0 10px 44px -10px rgb(24 24 27 / 18%);
+  --radius: 17px;
+}
+
+.dark {
+  --background: #09090b;
+  --foreground: #fafafa;
+  --card: #18181b;
+  --card-foreground: #fafafa;
+  --popover: #27272a;
+  --popover-foreground: #fafafa;
+  --primary: #c7f94b;
+  --primary-foreground: #09090b;
+  --secondary: #27272a;
+  --secondary-foreground: #fafafa;
+  --muted: #18181b;
+  --muted-foreground: #a1a1aa;
+  --accent: #27272a;
+  --accent-foreground: #fafafa;
+  --destructive: #f87171;
+  --border: rgb(255 255 255 / 8%);
+  --input: rgb(255 255 255 / 14%);
+  --ring: #c7f94b;
+  --raised: #27272a;
+  --foreground-secondary: #d4d4d8;
+  --brand-text: #c7f94b;
+  --elevation-float: 0 10px 44px -10px rgb(0 0 0 / 60%);
+}
+
+@theme inline {
+  /* Fonts: Hanken Grotesk for reading text; JetBrains Mono (font-mono) for labels only. */
+  --font-sans: var(--font-hanken), system-ui, sans-serif;
+  --font-heading: var(--font-hanken), system-ui, sans-serif;
+
+  /* Colour roles (shadcn names, plus three of ours). */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-raised: var(--raised);
+  --color-foreground-secondary: var(--foreground-secondary);
+  --color-brand-text: var(--brand-text);
+
+  /* Elevation: floating layers only (nav, toasts, tooltips). */
+  --shadow-float: var(--elevation-float);
+
+  /* Radius: golden steps, set explicitly rather than derived. */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 17px;
+  --radius-xl: 27px;
+  --radius-2xl: 27px;
+  --radius-3xl: 27px;
+  --radius-4xl: 27px;
+
+  /* Spacing: golden steps, named by value (p-g17, gap-g10), as in Shappay. */
+  --spacing-g4: 4px;
+  --spacing-g6: 6px;
+  --spacing-g10: 10px;
+  --spacing-g17: 17px;
+  --spacing-g27: 27px;
+  --spacing-g44: 44px;
+  --spacing-g72: 72px;
+  --spacing-g116: 116px;
+
+  /* Type: golden half-steps, 16 x 1.272^n. */
+  --text-display: 53px;
+  --text-display--line-height: 56px;
+  --text-display--letter-spacing: -0.02em;
+  --text-display--font-weight: 500;
+  --text-title-xl: 42px;
+  --text-title-xl--line-height: 46px;
+  --text-title-xl--letter-spacing: -0.02em;
+  --text-title-xl--font-weight: 500;
+  --text-heading: 33px;
+  --text-heading--line-height: 40px;
+  --text-heading--letter-spacing: -0.01em;
+  --text-heading--font-weight: 500;
+  --text-title: 26px;
+  --text-title--line-height: 32px;
+  --text-title--letter-spacing: -0.01em;
+  --text-title--font-weight: 500;
+  --text-lead: 20px;
+  --text-lead--line-height: 30px;
+  --text-body: 16px;
+  --text-body--line-height: 26px;
+  --text-button: 16px;
+  --text-button--line-height: 24px;
+  --text-button--font-weight: 500;
+  --text-caption: 13px;
+  --text-caption--line-height: 20px;
+  --text-label: 13px;
+  --text-label--line-height: 20px;
+  --text-label--letter-spacing: 0.06em;
+  --text-label--font-weight: 500;
+
+  /* Motion: one curve; 150ms for hover and press, 250ms for appearing content. */
+  --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
 }

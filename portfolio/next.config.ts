@@ -1,6 +1,17 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  /* UI to JSON has no case study page: old links go to the plugin on Figma Community.
+     Not permanent, so a case study can return at this address (Haye, 2026-11-21). */
+  async redirects() {
+    return [
+      {
+        source: "/work/ui-to-json",
+        destination: "https://www.figma.com/community/plugin/1638581049555435822",
+        permanent: false,
+      },
+    ];
+  },
   images: {
     /* AVIF first — typically 20-30% below WebP on UI screenshots. */
     formats: ["image/avif", "image/webp"],

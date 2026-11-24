@@ -18,7 +18,7 @@ export function QrEngineDemo() {
           </h2>
         </div>
 
-        <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)] reveal">
+        <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-text-secondary)] reveal">
           Every NQR code is an EMVCo TLV string: a chain of Tag · Length · Value triplets sealed
           with a CRC-16 checksum. This demo builds one as you type, so you can read the format.
           It runs on this page. NQR support in the Shappay app is planned.

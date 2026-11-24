@@ -13,10 +13,10 @@ export function HomeReel({ videoSrc, vimeoSrc, poster }: HomeReelProps) {
     <section id="reel" className="relative z-[5]" style={{ padding: "44px 0" }}>
       <div className="max-w-[var(--width-maxw)] site-wrap flex flex-col gap-6">
         <div className="reveal flex items-baseline justify-between flex-wrap gap-3">
-          <h2 className="font-mono text-[12px] tracking-[.08em] uppercase text-[var(--color-accent)]">
+          <h2 className="font-mono text-[12px] tracking-[.08em] uppercase text-[var(--color-legacy-accent)]">
             The loop, in 60 seconds
           </h2>
-          <span className="font-mono text-[11px] tracking-[.04em] text-[var(--color-muted)]">
+          <span className="font-mono text-[11px] tracking-[.04em] text-[var(--color-text-muted)]">
             Design → code → deployed · no narration
           </span>
         </div>
@@ -50,14 +50,14 @@ export function HomeReel({ videoSrc, vimeoSrc, poster }: HomeReelProps) {
             style={{ aspectRatio: "16 / 9" }}
           >
             <div
-              className="flex items-center justify-center w-[68px] h-[68px] rounded-full bg-[var(--color-accent)] opacity-70"
+              className="flex items-center justify-center w-[68px] h-[68px] rounded-full bg-[var(--color-legacy-accent)] opacity-70"
               aria-hidden="true"
             >
               <svg width="22" height="26" viewBox="0 0 24 28">
                 <polygon points="2,0 24,14 2,28" fill="var(--color-on-accent)" />
               </svg>
             </div>
-            <span className="absolute bottom-5 font-mono text-[10px] tracking-[.1em] uppercase text-[var(--color-muted)]">
+            <span className="absolute bottom-5 font-mono text-[10px] tracking-[.1em] uppercase text-[var(--color-text-muted)]">
               60-second reel coming soon
             </span>
           </div>

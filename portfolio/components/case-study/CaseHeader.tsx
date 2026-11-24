@@ -67,7 +67,7 @@ export function CaseHeader({
         <div className="cs-wrap flex flex-col gap-[var(--space-8xl)]">
           {/* Title block */}
           <div className="flex flex-col gap-5">
-            <div className="eyebrow font-mono text-[12px] uppercase text-[var(--color-accent)]">
+            <div className="eyebrow font-mono text-[12px] uppercase text-[var(--color-legacy-accent)]">
               {eyebrow}
             </div>
 
@@ -84,9 +84,9 @@ export function CaseHeader({
                     left: "-4%",
                     width: "108%",
                     height: 5,
-                    background: "var(--color-accent)",
+                    background: "var(--color-legacy-accent)",
                     top: "50%",
-                    boxShadow: "0 0 22px 2px var(--color-accent)",
+                    boxShadow: "0 0 22px 2px var(--color-legacy-accent)",
                     transform: "scaleX(0)",
                     transformOrigin: "left",
                     opacity: 0,
@@ -129,28 +129,28 @@ export function CaseHeader({
             style={{ background: "var(--color-line)" }}
           >
             <div className="bg-[var(--color-bg)] p-[26px] flex flex-col gap-3">
-              <span className="font-mono text-[11px] tracking-[.1em] uppercase text-[var(--color-muted)]">
+              <span className="font-mono text-[11px] tracking-[.1em] uppercase text-[var(--color-text-muted)]">
                 The problem
               </span>
-              <p className="font-hanken text-[15.5px] leading-[1.6] text-[var(--color-body)]">
+              <p className="font-hanken text-[15.5px] leading-[1.6] text-[var(--color-text-secondary)]">
                 {problem}
               </p>
             </div>
 
             <div className="bg-[var(--color-bg)] p-[26px] flex flex-col gap-4">
-              <span className="font-mono text-[11px] tracking-[.1em] uppercase text-[var(--color-muted)]">
+              <span className="font-mono text-[11px] tracking-[.1em] uppercase text-[var(--color-text-muted)]">
                 The outcome
               </span>
               <div className="flex flex-col gap-[14px]">
                 {outcomes.map((o) => (
                   <div key={o.label} className="flex items-baseline gap-3">
                     <span
-                      className="font-pixel font-bold text-[var(--color-accent)] leading-none shrink-0"
+                      className="font-pixel font-bold text-[var(--color-legacy-accent)] leading-none shrink-0"
                       style={{ fontSize: "clamp(22px,2.4vw,30px)" }}
                     >
                       {o.stat}
                     </span>
-                    <span className="font-hanken text-[14px] leading-[1.45] text-[var(--color-body)]">
+                    <span className="font-hanken text-[14px] leading-[1.45] text-[var(--color-text-secondary)]">
                       {o.label}
                     </span>
                   </div>
@@ -170,7 +170,7 @@ export function CaseHeader({
                   key={label}
                   className="bg-[var(--color-bg)] px-5 py-[16px] flex flex-col gap-[6px]"
                 >
-                  <dt className="font-mono text-[11px] tracking-[.08em] uppercase text-[var(--color-muted)]">
+                  <dt className="font-mono text-[11px] tracking-[.08em] uppercase text-[var(--color-text-muted)]">
                     {label}
                   </dt>
                   <dd className="text-[13.5px] font-medium leading-[1.4]">{value}</dd>
@@ -183,7 +183,7 @@ export function CaseHeader({
               {readMoreHref && (
                 <a
                   href={readMoreHref}
-                  className="font-mono text-[12px] tracking-[.04em] text-[var(--color-muted)] hover:text-[var(--color-accent)] transition-colors duration-[250ms]"
+                  className="font-mono text-[12px] tracking-[.04em] text-[var(--color-text-muted)] hover:text-[var(--color-legacy-accent)] transition-colors duration-[250ms]"
                 >
                   {readMoreLabel} →
                 </a>

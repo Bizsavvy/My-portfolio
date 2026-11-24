@@ -8,9 +8,8 @@ export const alt = "Oshap — case study by Haye";
 
 export default function Image() {
   return renderOgImage({
-    eyebrow: "QR ordering · Restaurants & bars",
+    eyebrow: "Design system · Restaurant ordering",
     title: "Oshap",
-    subtitle:
-      "A QR-first ordering and payment platform for restaurants and bars — built end to end.",
+    subtitle: "Foundations and colour for a multi-brand product.",
   });
 }

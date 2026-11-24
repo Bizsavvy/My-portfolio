@@ -40,7 +40,7 @@ export function MetricSection() {
           </h2>
         </div>
 
-        <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)] reveal">
+        <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-text-secondary)] reveal">
           Quantified targets set before build; not retrofitted after. These are the numbers the
           product is designed around.
         </p>
@@ -51,13 +51,13 @@ export function MetricSection() {
               key={card.badge}
               className="flex flex-col gap-3 bg-[var(--color-surface)] border border-[var(--color-line)] rounded-[var(--rad-lg)] p-[var(--space-4xl)]"
             >
-              <div className="font-mono text-[10px] tracking-[.06em] text-[var(--color-accent)]">
+              <div className="font-mono text-[10px] tracking-[.06em] text-[var(--color-legacy-accent)]">
                 {card.badge}
               </div>
               <h4 className="font-hanken font-bold text-[18px] tracking-[-0.01em] text-[var(--color-text)]">
                 {card.stat}
               </h4>
-              <p className="text-[14px] leading-[1.4] text-[var(--color-muted)]">{card.body}</p>
+              <p className="text-[14px] leading-[1.4] text-[var(--color-text-muted)]">{card.body}</p>
             </div>
           ))}
         </div>

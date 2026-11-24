@@ -18,7 +18,7 @@ export function RoadmapItem({ phase, title, status, description }: RoadmapItemPr
         alignItems: "baseline",
       }}
     >
-      <div className="font-mono text-[12px] text-[var(--color-accent)] tracking-[.04em]">
+      <div className="font-mono text-[12px] text-[var(--color-legacy-accent)] tracking-[.04em]">
         {phase}
       </div>
       <div className="flex flex-col gap-2">
@@ -30,15 +30,15 @@ export function RoadmapItem({ phase, title, status, description }: RoadmapItemPr
             <span
               className={`font-mono text-[10px] tracking-[.06em] px-[9px] py-[3px] rounded-[var(--rad-2xl)] border ${
                 status.now
-                  ? "text-[var(--color-accent)] border-[var(--color-accent)]"
-                  : "text-[var(--color-muted)] border-[var(--color-line)]"
+                  ? "text-[var(--color-legacy-accent)] border-[var(--color-legacy-accent)]"
+                  : "text-[var(--color-text-muted)] border-[var(--color-line)]"
               }`}
             >
               {status.label}
             </span>
           )}
         </div>
-        <p className="text-[14px] leading-[1.4] text-[var(--color-muted)]">{description}</p>
+        <p className="text-[14px] leading-[1.4] text-[var(--color-text-muted)]">{description}</p>
       </div>
       <style>{`
         @media (max-width: 600px) {

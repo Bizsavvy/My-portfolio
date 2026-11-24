@@ -53,7 +53,7 @@ export function SystemSection() {
           </h2>
         </div>
 
-        <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)] reveal">
+        <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-text-secondary)] reveal">
           The pivot resolved into a clean separation of concerns. This is the target architecture:
           the pre-alpha app runs these flows on sample data, with the services below still to be
           connected. Working through each layer is what let me design the UX around its real
@@ -70,22 +70,22 @@ export function SystemSection() {
                   : ""
               }`}
             >
-              <div className="font-mono text-[10px] tracking-[.05em] text-[var(--color-accent)]">
+              <div className="font-mono text-[10px] tracking-[.05em] text-[var(--color-legacy-accent)]">
                 {node.index}
               </div>
               <h4 className="font-hanken font-bold text-[18px] tracking-[-0.01em] text-[var(--color-text)]">
                 {node.title}
               </h4>
-              <p className="text-[14px] leading-[1.4] text-[var(--color-muted)]">{node.body}</p>
+              <p className="text-[14px] leading-[1.4] text-[var(--color-text-muted)]">{node.body}</p>
             </div>
           ))}
         </div>
 
-        <p className="font-mono text-[12px] tracking-[.04em] text-center text-[var(--color-muted)] reveal">
+        <p className="font-mono text-[12px] tracking-[.04em] text-center text-[var(--color-text-muted)] reveal">
           scan / VPA → resolve → wallet debit → settlement
         </p>
 
-        <p className="font-hanken text-[14px] leading-[1.6] text-[var(--color-muted)] reveal">
+        <p className="font-hanken text-[14px] leading-[1.6] text-[var(--color-text-muted)] reveal">
           Planned: funding via Mono DirectPay; wallet, ledger, and outbound payouts via Anchor.
         </p>
 
@@ -93,7 +93,7 @@ export function SystemSection() {
           Routing rules
         </h3>
 
-        <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-body)] reveal">
+        <p className="font-hanken text-[16px] leading-[1.65] text-[var(--color-text-secondary)] reveal">
           The resolution engine is designed to output a routing decision on every transaction.
           Three cases, evaluated in order:
         </p>
@@ -104,13 +104,13 @@ export function SystemSection() {
               key={card.badge}
               className="flex flex-col gap-3 bg-[var(--color-surface)] border border-[var(--color-line)] rounded-[var(--rad-lg)] p-[var(--space-4xl)]"
             >
-              <div className="font-mono text-[10px] tracking-[.06em] text-[var(--color-accent)]">
+              <div className="font-mono text-[10px] tracking-[.06em] text-[var(--color-legacy-accent)]">
                 {card.badge}
               </div>
               <h4 className="font-hanken font-bold text-[18px] tracking-[-0.01em] text-[var(--color-text)]">
                 {card.title}
               </h4>
-              <p className="text-[14px] leading-[1.4] text-[var(--color-muted)]">{card.body}</p>
+              <p className="text-[14px] leading-[1.4] text-[var(--color-text-muted)]">{card.body}</p>
             </div>
           ))}
         </div>

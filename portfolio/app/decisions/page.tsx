@@ -21,7 +21,7 @@ export default function DecisionsPage() {
         lede={
           <>
             The hard calls behind five products, and the site you&apos;re reading. Each one in two
-            lines: <em className="italic text-[var(--color-accent)]">the constraint, and what I chose.</em>
+            lines: <em className="italic text-[var(--color-legacy-accent)]">the constraint, and what I chose.</em>
           </>
         }
         meta={[

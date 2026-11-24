@@ -21,24 +21,24 @@ export function CaseStudyFooter({
       <div className="cs-wrap flex flex-col gap-[var(--space-12xl)]">
         <div className="flex justify-between items-end flex-wrap gap-6">
           <div className="flex flex-col gap-4">
-            <div className="font-mono text-[12px] tracking-[.08em] uppercase text-[var(--color-muted)]">
+            <div className="font-mono text-[12px] tracking-[.08em] uppercase text-[var(--color-text-muted)]">
               Next project
             </div>
             <Link
               href={nextHref}
-              className="big-link font-hanken font-bold tracking-[-0.02em] leading-[1.1] text-[var(--color-text)] transition-colors duration-300 hover:text-[var(--color-accent)] flex items-center gap-4"
+              className="big-link font-hanken font-bold tracking-[-0.02em] leading-[1.1] text-[var(--color-text)] transition-colors duration-300 hover:text-[var(--color-legacy-accent)] flex items-center gap-4"
               style={{ fontSize: "clamp(32px,5vw,48px)" }}
             >
               {nextLabel}
               <span className="arrow inline-block transition-transform duration-300">→</span>
             </Link>
           </div>
-          <div className="font-mono text-[12px] tracking-[.08em] uppercase text-[var(--color-muted)]">
+          <div className="font-mono text-[12px] tracking-[.08em] uppercase text-[var(--color-text-muted)]">
             {stat}
           </div>
         </div>
 
-        <div className="flex justify-between flex-wrap gap-3 font-mono text-[12px] tracking-[.04em] text-[var(--color-muted)]">
+        <div className="flex justify-between flex-wrap gap-3 font-mono text-[12px] tracking-[.04em] text-[var(--color-text-muted)]">
           <span>{colophonLeft}</span>
           <span>Designed &amp; built end to end · {new Date().getFullYear()}</span>
         </div>
