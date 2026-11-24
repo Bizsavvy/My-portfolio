@@ -62,14 +62,13 @@ const uiToJson: CaseStudyTileProps = {
   href: "https://www.figma.com/community/plugin/1638581049555435822",
   cta: "View on Figma Community",
   outcome: "measured",
-  // TODO(redesign): a 10 to 15 s loop recorded in Figma (select a frame, Extract, the JSON
-  // fills the panel), edited by the motion session. Until then, the real screenshot.
+  // The plugin's own Figma Community cover (Haye, 2026-11-24).
   cover: {
     kind: "image",
-    src: "/assets/ui-to-json/ui-to-json-figma-panel.webp",
-    alt: "UI to JSON open in Figma beside Shappay's Dashboard frame (430 × 932): the plugin's JSON tab lists the screen's id, kind, size, layout and children, above the Extract semantic JSON button",
-    width: 1140,
-    height: 912,
+    src: "/assets/ui-to-json/ui-to-json-community-cover.webp",
+    alt: "UI to JSON's Figma Community cover: Turn Figma designs into AI-ready semantic JSON. A selected Figma frame points to its semantic.json output, above five features: Semantic Structure, Design Tokens, Layout Intelligence, Component Awareness and AI-Ready Output",
+    width: 1920,
+    height: 1080,
   },
 };
 
