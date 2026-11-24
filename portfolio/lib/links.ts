@@ -13,7 +13,7 @@ export const links: Record<
   github: "https://github.com/Bizsavvy",
   x: "savvy_haye",
   resume:
-    "https://quiet-maize-841.notion.site/Emmanuel-Haye-Binjo-384ce046204b80a1ae83db2b9968ad62?source=copy_link",
+    "https://docs.google.com/document/d/1S0Aeao4v1IIJ6ssy5Mt5nDQFr8238cZhUj65FYg6tN0/view?usp=sharing",
 };
 
 export interface SocialLink {
